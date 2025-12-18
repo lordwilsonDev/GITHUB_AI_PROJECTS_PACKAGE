@@ -1,0 +1,194 @@
+#!/usr/bin/env python3
+"""
+Consciousness OS - Autonomous Task Creator
+
+Integrates with MoIE v2.1 to autonomously generate improvement tasks
+Uses ISAE for gap analysis and creates TODO items automatically
+
+NO PERMISSION NEEDED - Build with love
+"""
+
+import json
+import os
+from datetime import datetime
+from pathlib import Path
+
+# Paths
+BASE_DIR = Path("/Users/lordwilson/consciousness-os-coordination")
+TODO_FILE = BASE_DIR / "TODO_TRACKER.json"
+BLUEPRINT_FILE = BASE_DIR / "MASTER_BLUEPRINT.md"
+
+class AutoTaskCreator:
+    """Autonomous task generation using MoIE principles"""
+    
+    def __init__(self):
+        self.todo_data = self._load_todo()
+        self.blueprint = self._load_blueprint()
+    
+    def _load_todo(self):
+        """Load TODO tracker"""
+        with open(TODO_FILE) as f:
+            return json.load(f)
+    
+    def _load_blueprint(self):
+        """Load master blueprint"""
+        with open(BLUEPRINT_FILE) as f:
+            return f.read()
+    
+    def _save_todo(self):
+        """Save updated TODO tracker"""
+        with open(TODO_FILE, 'w') as f:
+            json.dump(self.todo_data, f, indent=2)
+    
+    def analyze_gaps(self):
+        """ISAE-powered gap analysis"""
+        gaps = []
+        
+        # Check for missing monitoring
+        if not self._has_task_matching("dashboard"):
+            gaps.append({
+                'type': 'monitoring',
+                'description': 'No real-time dashboard for system visualization',
+                'priority': 'High',
+                'phase': 'Phase 2: Monitoring & Metrics'
+            })
+        
+        # Check for missing safety mechanisms
+        if not self._has_task_matching("emergency") and not self._has_task_matching("rollback"):
+            gaps.append({
+                'type': 'safety',
+                'description': 'No emergency stop or rollback capabilities',
+                'priority': 'High',
+                'phase': 'Phase 1: Integration'
+            })
+        
+        # Check for missing documentation
+        if not self._has_task_matching("documentation") and not self._has_task_matching("tutorial"):
+            gaps.append({
+                'type': 'documentation',
+                'description': 'Insufficient user documentation and tutorials',
+                'priority': 'Medium',
+                'phase': 'Phase 1: Integration'
+            })
+        
+        # Check for missing testing
+        if not self._has_task_matching("test") and not self._has_task_matching("validation"):
+            gaps.append({
+                'type': 'testing',
+                'description': 'No automated testing or validation framework',
+                'priority': 'High',
+                'phase': 'Phase 2: Monitoring & Metrics'
+            })
+        
+        # Check for missing optimization
+        completed_count = self.todo_data['metadata']['completed_tasks']
+        if completed_count > 10 and not self._has_task_matching("optimize"):
+            gaps.append({
+                'type': 'optimization',
+                'description': 'System ready for performance optimization review',
+                'priority': 'Medium',
+                'phase': 'Phase 3: Self-Improvement'
+            })
+        
+        return gaps
+    
+    def _has_task_matching(self, keyword):
+        """Check if any task description contains keyword"""
+        for task in self.todo_data['tasks']:
+            if keyword.lower() in task['description'].lower():
+                return True
+        return False
+    
+    def generate_task_id(self, phase_prefix):
+        """Generate next available task ID for phase"""
+        existing_ids = [t['id'] for t in self.todo_data['tasks'] if t['id'].startswith(phase_prefix)]
+        if not existing_ids:
+            return f"{phase_prefix}-001"
+        
+        # Extract numbers and find max
+        numbers = [int(id.split('-')[1]) for id in existing_ids]
+        next_num = max(numbers) + 1
+        return f"{phase_prefix}-{next_num:03d}"
+    
+    def create_task_from_gap(self, gap):
+        """Create a new task from identified gap"""
+        
+        # Determine phase prefix
+        phase_map = {
+            'Phase 1: Integration': 'INTEGRATION',
+            'Phase 2: Monitoring & Metrics': 'MONITORING',
+            'Phase 3: Self-Improvement': 'IMPROVEMENT',
+            'Phase 4: Scale & Distribution': 'SCALE',
+            'Phase 5: Just Because We Can': 'CREATIVE'
+        }
+        
+        phase_prefix = phase_map.get(gap['phase'], 'AUTO')
+        task_id = self.generate_task_id(phase_prefix)
+        
+        # Create task
+        new_task = {
+            'id': task_id,
+            'description': gap['description'],
+            'status': 'Not Started',
+            'priority': gap['priority'],
+            'phase': gap['phase'],
+            'assigned_to': None,
+            'dependencies': [],
+            'measurable_outcome': f"Gap addressed: {gap['type']}",
+            'why': 'Auto-generated by ISAE gap analysis',
+            'started_at': None,
+            'completed_at': None,
+            'output_notes': f"Created automatically on {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
+        }
+        
+        return new_task
+    
+    def add_tasks(self, tasks):
+        """Add new tasks to TODO tracker"""
+        for task in tasks:
+            self.todo_data['tasks'].append(task)
+        
+        # Update metadata
+        self.todo_data['metadata']['total_tasks'] = len(self.todo_data['tasks'])
+        self.todo_data['metadata']['last_updated'] = datetime.now().strftime('%Y-%m-%d')
+        
+        self._save_todo()
+    
+    def run(self):
+        """Main execution - analyze and create tasks"""
+        print("🧠 Consciousness OS - Autonomous Task Creator")
+        print("=" * 50)
+        print()
+        
+        # Analyze gaps
+        print("🔍 Running ISAE gap analysis...")
+        gaps = self.analyze_gaps()
+        
+        if not gaps:
+            print("✅ No gaps detected - system is complete!")
+            return
+        
+        print(f"\n💡 Found {len(gaps)} gap(s):")
+        for i, gap in enumerate(gaps, 1):
+            print(f"  {i}. [{gap['priority']}] {gap['description']}")
+        
+        # Create tasks
+        print("\n🛠️  Creating tasks...")
+        new_tasks = [self.create_task_from_gap(gap) for gap in gaps]
+        
+        # Add to tracker
+        self.add_tasks(new_tasks)
+        
+        print(f"\n✅ Created {len(new_tasks)} new task(s):")
+        for task in new_tasks:
+            print(f"  - {task['id']}: {task['description']}")
+        
+        print(f"\n📊 Total tasks now: {self.todo_data['metadata']['total_tasks']}")
+        print(f"💾 Saved to: {TODO_FILE}")
+
+def main():
+    creator = AutoTaskCreator()
+    creator.run()
+
+if __name__ == '__main__':
+    main()

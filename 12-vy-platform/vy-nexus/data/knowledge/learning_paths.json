@@ -1,0 +1,16 @@
+{
+  "ai_specialist": {
+    "path_id": "ai_specialist",
+    "name": "AI Specialist Path",
+    "skills": [
+      "python_advanced",
+      "machine_learning"
+    ],
+    "estimated_hours": 100,
+    "completed_hours": 0,
+    "status": "active",
+    "progress_percentage": 1.0,
+    "created_at": "2025-12-15T22:52:33.783698",
+    "updated_at": "2025-12-15T22:52:33.784002"
+  }
+}

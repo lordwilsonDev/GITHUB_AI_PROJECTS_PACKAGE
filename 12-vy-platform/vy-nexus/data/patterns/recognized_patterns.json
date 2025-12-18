@@ -1,0 +1,248 @@
+{
+  "temporal_patterns": [
+    {
+      "pattern_type": "temporal",
+      "identified_at": "2025-12-15T22:07:28.282751",
+      "peak_hours": [
+        "9:00",
+        "10:00",
+        "14:00"
+      ],
+      "peak_days": [
+        "Monday"
+      ],
+      "task_timing_preferences": {},
+      "total_interactions": 5
+    },
+    {
+      "pattern_type": "temporal",
+      "identified_at": "2025-12-15T22:08:27.982840",
+      "peak_hours": [
+        "9:00",
+        "10:00",
+        "14:00"
+      ],
+      "peak_days": [
+        "Monday"
+      ],
+      "task_timing_preferences": {},
+      "total_interactions": 5
+    }
+  ],
+  "task_sequences": [
+    {
+      "pattern_type": "task_sequence",
+      "identified_at": "2025-12-15T22:07:28.282909",
+      "common_pairs": [
+        {
+          "sequence": "file_management \u2192 code_analysis",
+          "count": 2
+        }
+      ],
+      "common_triplets": []
+    },
+    {
+      "pattern_type": "task_sequence",
+      "identified_at": "2025-12-15T22:08:27.983064",
+      "common_pairs": [
+        {
+          "sequence": "file_management \u2192 code_analysis",
+          "count": 2
+        }
+      ],
+      "common_triplets": []
+    }
+  ],
+  "tool_usage_patterns": [
+    {
+      "pattern_type": "tool_usage",
+      "identified_at": "2025-12-15T22:07:28.283015",
+      "top_tools": [
+        {
+          "tool": "terminal",
+          "count": 3
+        },
+        {
+          "tool": "finder",
+          "count": 2
+        },
+        {
+          "tool": "text_editor",
+          "count": 2
+        }
+      ],
+      "common_combinations": [],
+      "task_preferences": {
+        "file_management": [
+          {
+            "tool": "finder",
+            "usage_count": 2
+          },
+          {
+            "tool": "terminal",
+            "usage_count": 1
+          }
+        ],
+        "code_analysis": [
+          {
+            "tool": "terminal",
+            "usage_count": 2
+          },
+          {
+            "tool": "text_editor",
+            "usage_count": 1
+          }
+        ]
+      }
+    },
+    {
+      "pattern_type": "tool_usage",
+      "identified_at": "2025-12-15T22:08:27.983224",
+      "top_tools": [
+        {
+          "tool": "terminal",
+          "count": 3
+        },
+        {
+          "tool": "finder",
+          "count": 2
+        },
+        {
+          "tool": "text_editor",
+          "count": 2
+        }
+      ],
+      "common_combinations": [],
+      "task_preferences": {
+        "file_management": [
+          {
+            "tool": "finder",
+            "usage_count": 2
+          },
+          {
+            "tool": "terminal",
+            "usage_count": 1
+          }
+        ],
+        "code_analysis": [
+          {
+            "tool": "terminal",
+            "usage_count": 2
+          },
+          {
+            "tool": "text_editor",
+            "usage_count": 1
+          }
+        ]
+      }
+    }
+  ],
+  "workflow_patterns": [
+    {
+      "pattern_type": "workflow",
+      "identified_at": "2025-12-15T22:07:28.283132",
+      "common_workflows": [],
+      "total_sessions": 1
+    },
+    {
+      "pattern_type": "workflow",
+      "identified_at": "2025-12-15T22:08:27.983591",
+      "common_workflows": [],
+      "total_sessions": 1
+    }
+  ],
+  "error_patterns": [
+    {
+      "pattern_type": "error",
+      "identified_at": "2025-12-15T22:07:28.283230",
+      "common_errors": [
+        {
+          "error_type": "file_not_found",
+          "count": 1,
+          "contexts": [
+            "code_analysis"
+          ]
+        }
+      ],
+      "total_errors": 1,
+      "error_rate": 0.2
+    },
+    {
+      "pattern_type": "error",
+      "identified_at": "2025-12-15T22:08:27.983928",
+      "common_errors": [
+        {
+          "error_type": "file_not_found",
+          "count": 1,
+          "contexts": [
+            "code_analysis"
+          ]
+        }
+      ],
+      "total_errors": 1,
+      "error_rate": 0.2
+    }
+  ],
+  "success_patterns": [
+    {
+      "pattern_type": "success",
+      "identified_at": "2025-12-15T22:07:28.283349",
+      "success_by_task": {
+        "file_management": 2,
+        "code_analysis": 1,
+        "documentation": 1
+      },
+      "effective_tools": [
+        {
+          "tool": "finder",
+          "success_count": 2
+        },
+        {
+          "tool": "terminal",
+          "success_count": 2
+        },
+        {
+          "tool": "text_editor",
+          "success_count": 2
+        }
+      ],
+      "average_durations": {
+        "file_management": 105.0,
+        "code_analysis": 300.0,
+        "documentation": 600.0
+      },
+      "total_successes": 4,
+      "success_rate": 0.8
+    },
+    {
+      "pattern_type": "success",
+      "identified_at": "2025-12-15T22:08:27.984398",
+      "success_by_task": {
+        "file_management": 2,
+        "code_analysis": 1,
+        "documentation": 1
+      },
+      "effective_tools": [
+        {
+          "tool": "finder",
+          "success_count": 2
+        },
+        {
+          "tool": "terminal",
+          "success_count": 2
+        },
+        {
+          "tool": "text_editor",
+          "success_count": 2
+        }
+      ],
+      "average_durations": {
+        "file_management": 105.0,
+        "code_analysis": 300.0,
+        "documentation": 600.0
+      },
+      "total_successes": 4,
+      "success_rate": 0.8
+    }
+  ]
+}

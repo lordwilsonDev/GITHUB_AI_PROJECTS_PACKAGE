@@ -1,0 +1,66 @@
+{
+  "methods": [
+    {
+      "id": "obs_001",
+      "name": "Direct Observation",
+      "category": "observation",
+      "description": "Learning by watching and observing",
+      "characteristics": {
+        "passive": true,
+        "time_efficient": true
+      },
+      "registered_at": "2025-12-15T22:43:49.388873",
+      "usage_count": 1,
+      "success_count": 1,
+      "total_learning_time": 30,
+      "knowledge_retained": [
+        0.7
+      ]
+    },
+    {
+      "id": "exp_001",
+      "name": "Hands-on Experimentation",
+      "category": "experimentation",
+      "description": "Learning by doing and experimenting",
+      "characteristics": {
+        "active": true,
+        "retention_high": true
+      },
+      "registered_at": "2025-12-15T22:43:49.389027",
+      "usage_count": 2,
+      "success_count": 1,
+      "total_learning_time": 100,
+      "knowledge_retained": [
+        0.9,
+        0.4
+      ]
+    },
+    {
+      "id": "doc_001",
+      "name": "Documentation Study",
+      "category": "documentation_review",
+      "description": "Learning from written documentation",
+      "characteristics": {
+        "structured": true,
+        "comprehensive": true
+      },
+      "registered_at": "2025-12-15T22:43:49.389116",
+      "usage_count": 1,
+      "success_count": 1,
+      "total_learning_time": 45,
+      "knowledge_retained": [
+        0.6
+      ]
+    }
+  ],
+  "categories": [
+    "observation",
+    "experimentation",
+    "documentation_review",
+    "pattern_analysis",
+    "trial_and_error",
+    "guided_learning",
+    "peer_learning",
+    "self_reflection"
+  ]
+}

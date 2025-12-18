@@ -1,0 +1,10 @@
+Rc<smartstring::SmartString<smartstring::config::LazyCompact>>
+Pin<Box<{async block@evolution-core/src/engine.rs:74:5: 74:10}>>
+Pin<Box<(dyn Future<Output = std::result::Result<std::string::String, anyhow::Error>> + Send + 'async_trait)>>
+Pin<Box<{async block@evolution-core/src/engine.rs:99:5: 99:10}>>
+Pin<Box<(dyn Future<Output = std::result::Result<Vec<Pattern>, anyhow::Error>> + Send + 'async_trait)>>
+Pin<Box<{async block@evolution-core/src/engine.rs:191:5: 191:10}>>
+Pin<Box<(dyn Future<Output = std::result::Result<(), anyhow::Error>> + Send + 'async_trait)>>
+Pin<Box<{async block@evolution-core/src/engine.rs:215:5: 215:10}>>
+Pin<Box<{async block@evolution-core/src/engine.rs:239:5: 239:10}>>
+Pin<Box<(dyn Future<Output = std::result::Result<Vec<Improvement>, anyhow::Error>> + Send + 'async_trait)>>

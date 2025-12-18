@@ -1,0 +1,2 @@
+Unique<Box<(dyn rhai::types::variant::Variant + 'static)>>
+Box<Box<(dyn rhai::types::variant::Variant + 'static)>>

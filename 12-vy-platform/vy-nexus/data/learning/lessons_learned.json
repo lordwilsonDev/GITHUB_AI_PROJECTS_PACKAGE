@@ -1,0 +1,24 @@
+[
+  {
+    "id": "62220a0bd470",
+    "timestamp": "2025-12-15T22:10:27.077771",
+    "task_type": "code_execution",
+    "title": "Lesson from code_execution failure",
+    "what_happened": "Attempted to run Python script",
+    "why_it_failed": "Missing dependency",
+    "what_to_do_instead": "No alternative approach identified yet. Experiment with different methods.",
+    "severity": "medium",
+    "applied": false
+  },
+  {
+    "id": "f8f9c792721e",
+    "timestamp": "2025-12-15T22:10:27.078040",
+    "task_type": "code_execution",
+    "title": "Lesson from code_execution failure",
+    "what_happened": "Attempted to run another script",
+    "why_it_failed": "Missing dependency",
+    "what_to_do_instead": "No alternative approach identified yet. Experiment with different methods.",
+    "severity": "medium",
+    "applied": false
+  }
+]

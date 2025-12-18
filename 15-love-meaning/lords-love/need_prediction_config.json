@@ -1,0 +1,34 @@
+{
+  "cache_ttl_minutes": 5,
+  "suggestion_threshold": 0.7,
+  "max_suggestions": 5,
+  "prediction_horizon_hours": 24,
+  "min_confidence": 0.6,
+  "enable_proactive_suggestions": true,
+  "enable_learning": true,
+  "context_window_days": 30,
+  "optimization_settings": {
+    "auto_optimize": true,
+    "optimization_frequency_hours": 24,
+    "min_samples_for_optimization": 50
+  },
+  "need_types": [
+    "task",
+    "resource",
+    "break",
+    "meeting",
+    "research",
+    "communication",
+    "planning",
+    "review"
+  ],
+  "priority_weights": {
+    "urgency": 0.6,
+    "confidence": 0.4
+  },
+  "performance_thresholds": {
+    "high_accuracy": 0.8,
+    "low_accuracy": 0.6,
+    "min_predictions_for_stats": 10
+  }
+}

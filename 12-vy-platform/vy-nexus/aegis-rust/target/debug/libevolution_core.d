@@ -1,0 +1,1 @@
+/Users/lordwilson/vy-nexus/aegis-rust/target/debug/libevolution_core.rlib: /Users/lordwilson/vy-nexus/aegis-rust/evolution-core/src/engine.rs /Users/lordwilson/vy-nexus/aegis-rust/evolution-core/src/lib.rs

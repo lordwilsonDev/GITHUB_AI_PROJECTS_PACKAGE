@@ -1,0 +1,41 @@
+{
+  "TIER_1": [
+    "nature.com",
+    "science.org",
+    "arxiv.org",
+    "ieee.org",
+    "acm.org",
+    "pubmed.ncbi.nlm.nih.gov",
+    "scholar.google.com",
+    "jstor.org",
+    "springer.com",
+    "wiley.com",
+    "cell.com",
+    "nejm.org",
+    "lancet.com"
+  ],
+  "TIER_2": [
+    "github.com",
+    "stackoverflow.com",
+    "medium.com",
+    "wikipedia.org",
+    "reddit.com",
+    "hackernews.ycombinator.com",
+    "researchgate.net",
+    "semanticscholar.org",
+    "mit.edu",
+    "stanford.edu",
+    "harvard.edu",
+    "berkeley.edu",
+    "openai.com",
+    "anthropic.com"
+  ],
+  "TIER_3": [
+    "omicsonline.org",
+    "scirp.org",
+    "hindawi.com",
+    "mdpi.com",
+    "frontiersin.org",
+    "plos.org"
+  ]
+}

@@ -1,0 +1,1 @@
+std::option::Option<Box<(dyn for<'a, 'b> Fn(&'a str, std::option::Option<&'b str>, Position) + 'static)>>

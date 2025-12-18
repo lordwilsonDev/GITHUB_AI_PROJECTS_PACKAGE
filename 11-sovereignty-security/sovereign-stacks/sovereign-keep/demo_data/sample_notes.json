@@ -1,0 +1,102 @@
+[
+  {
+    "title": "Grocery List",
+    "textContent": "Milk\nEggs\nBread\nButter\nCheese",
+    "labels": [{"name": "Shopping"}],
+    "color": "DEFAULT",
+    "isTrashed": false,
+    "isPinned": false,
+    "isArchived": false,
+    "userEditedTimestampUsec": 1702742400000000
+  },
+  {
+    "title": "Shopping",
+    "textContent": "Need to buy:\n- Eggs\n- Milk\n- Bread\n- Butter\n- Cheese",
+    "labels": [{"name": "Shopping"}],
+    "color": "DEFAULT",
+    "isTrashed": false,
+    "isPinned": false,
+    "isArchived": false,
+    "userEditedTimestampUsec": 1702656000000000
+  },
+  {
+    "title": "Project Ideas",
+    "textContent": "Build a personal knowledge management system\nAutomate note organization\nUse AI for semantic analysis",
+    "labels": [{"name": "Work"}],
+    "color": "BLUE",
+    "isTrashed": false,
+    "isPinned": true,
+    "isArchived": false,
+    "userEditedTimestampUsec": 1702828800000000
+  },
+  {
+    "title": "App Development Ideas",
+    "textContent": "Create a tool for managing notes\nImplement semantic search\nAutomate duplicate detection",
+    "labels": [{"name": "Work"}],
+    "color": "BLUE",
+    "isTrashed": false,
+    "isPinned": false,
+    "isArchived": false,
+    "userEditedTimestampUsec": 1702742400000000
+  },
+  {
+    "title": "Meeting Notes - Q4 Planning",
+    "textContent": "Discussed quarterly goals\nReviewed budget allocations\nSet team objectives for next quarter",
+    "labels": [{"name": "Work"}],
+    "color": "YELLOW",
+    "isTrashed": false,
+    "isPinned": false,
+    "isArchived": false,
+    "userEditedTimestampUsec": 1702915200000000
+  },
+  {
+    "title": "Q4 Planning Meeting",
+    "textContent": "Team meeting about Q4\nBudget review\nObjectives for the quarter",
+    "labels": [{"name": "Work"}],
+    "color": "YELLOW",
+    "isTrashed": false,
+    "isPinned": false,
+    "isArchived": false,
+    "userEditedTimestampUsec": 1702828800000000
+  },
+  {
+    "title": "Random Thought",
+    "textContent": "Coffee",
+    "labels": [],
+    "color": "DEFAULT",
+    "isTrashed": false,
+    "isPinned": false,
+    "isArchived": false,
+    "userEditedTimestampUsec": 1702569600000000
+  },
+  {
+    "title": "Book Recommendations",
+    "textContent": "1. Thinking, Fast and Slow by Daniel Kahneman\n2. The Extended Mind by Annie Murphy Paul\n3. Building a Second Brain by Tiago Forte\n4. How to Take Smart Notes by Sönke Ahrens",
+    "labels": [{"name": "Personal"}],
+    "color": "GREEN",
+    "isTrashed": false,
+    "isPinned": false,
+    "isArchived": false,
+    "userEditedTimestampUsec": 1703001600000000
+  },
+  {
+    "title": "Workout Routine",
+    "textContent": "Monday: Chest and Triceps\nWednesday: Back and Biceps\nFriday: Legs and Shoulders\nDaily: 30 min cardio",
+    "labels": [{"name": "Personal"}],
+    "color": "RED",
+    "isTrashed": false,
+    "isPinned": false,
+    "isArchived": false,
+    "userEditedTimestampUsec": 1702915200000000
+  },
+  {
+    "title": "Password Reset",
+    "textContent": "Remember to reset password for email account",
+    "labels": [],
+    "color": "DEFAULT",
+    "isTrashed": false,
+    "isPinned": false,
+    "isArchived": false,
+    "userEditedTimestampUsec": 1702483200000000
+  }
+]

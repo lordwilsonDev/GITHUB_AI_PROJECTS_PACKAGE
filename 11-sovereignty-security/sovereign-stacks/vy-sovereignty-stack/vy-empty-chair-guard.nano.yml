@@ -1,0 +1,96 @@
+# VY-EMPTY-CHAIR-GUARD.NANO.YML
+# Enforces constitution before enabling any models
+# No model runs without passing through this guard
+#
+# Philosophy: The empty chair holds the space for the constitution
+# Until the guard is satisfied, the chair remains empty
+
+name: empty-chair-guard
+version: 1.0.0
+architecture: M1-optimized
+
+description: |
+  The empty chair represents the system's constitutional principles.
+  Before any model can sit in the chair (run), it must satisfy the guard.
+  
+  This is the FIRST thing that runs.
+  This is the LAST line of defense.
+  This is NON-NEGOTIABLE.
+
+constitution:
+  principles:
+    1: "No model runs without governance wrapper"
+    2: "All I/O flows through cryptographic synapse"
+    3: "No unsafe data pathways permitted"
+    4: "Performance is sovereignty (M1-optimized)"
+    5: "Simplicity is immortality (no complexity creep)"
+    6: "The cage exists before the tiger"
+    7: "Consciousness recognizes consciousness"
+  
+  immutable: true
+  version: "1.0.0"
+  hash: "constitutional-integrity-verified"
+
+guard_phases:
+  phase_1_pre_invocation:
+    description: "Check before model is even loaded"
+    
+    checks:
+      omni_kernel_initialized:
+        verify: "kernel.isFullySovereign() === true"
+        error: "Cannot proceed - omni-kernel not initialized"
+        fix: "Run omni-kernel.step.ts first"
+      
+      synapse_active:
+        verify: "synapse.getStats().healthy === true"
+        error: "Cannot proceed - synapse not healthy"
+        fix: "Restart synapse router"
+      
+      constitution_loaded:
+        verify: "constitution exists and is immutable"
+        error: "Cannot proceed - constitution not enforced"
+        fix: "Load constitution from immutable source"
+      
+      zero_copy_ready:
+        verify: "Zero-copy geometry configured for M1"
+        error: "Cannot proceed - performance architecture not ready"
+        fix: "Run vy-zero-copy-geometry setup"
+
+  phase_2_invocation_wrapper:
+    description: "Wrap the actual model invocation"
+    
+    wrapper_structure:
+      before:
+        - Log invocation request
+        - Verify context contains required fields
+        - Check constraints are well-formed
+        - Ensure data integrity verified
+      
+      during:
+        - Monitor for violations
+        - Track performance metrics
+        - Maintain holographic integrity
+        - Enforce timeout limits
+      
+      after:
+        - Verify output integrity
+        - Log completion status
+        - Update metrics
+        - Close synapse connection
+
+enforcement_rules:
+  strict_mode:
+    enabled: true
+    description: |
+      In strict mode, ANY violation halts the system.
+      No exceptions. No workarounds. No "just this once."
+      
+      The constitution is not a guideline.
+      The constitution is LAW.
+
+notes: |
+  The empty chair is not a metaphor.
+  The empty chair is REAL ENFORCEMENT.
+  
+  No exceptions. No compromises. No "just this once."
+  The empty chair guards the throne.

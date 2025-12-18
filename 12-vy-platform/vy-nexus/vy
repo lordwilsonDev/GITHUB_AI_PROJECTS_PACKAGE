@@ -1,0 +1,2 @@
+#!/bin/bash
+~/vy-nexus/venv/bin/python3 ~/vy-nexus/vy_cli.py "$@"

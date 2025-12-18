@@ -1,0 +1,74 @@
+==========================================================
+🚀 START: SOVEREIGN DEPLOYMENT (Self-Healing & Robust)
+Timestamp: Sat Dec 13 20:35:31 CST 2025
+==========================================================
+### [L1: Genesis Build] 1. Environment Auditing & Healing (Fixing AddrInUse)...
+1.1. Checking for lingering process on port 8080...
+✅ Port 8080 is free.
+1.2. Compiling Rust Gateway (Target: ./target/release/sovereign-gateway)...
+warning: method `get_available_tokens` is never used
+  --> src/rate_limiter.rs:85:12
+   |
+59 | impl RateLimiter {
+   | ---------------- method in this implementation
+...
+85 |     pub fn get_available_tokens(&self, key: &str) -> usize {
+   |            ^^^^^^^^^^^^^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` on by default
+
+warning: method `with_expiry` is never used
+  --> src/auth.rs:33:12
+   |
+18 | impl ApiKey {
+   | ----------- method in this implementation
+...
+33 |     pub fn with_expiry(mut self, days: i64) -> Self {
+   |            ^^^^^^^^^^^
+
+warning: methods `revoke_key`, `list_keys`, and `get_rate_limit` are never used
+   --> src/auth.rs:96:12
+    |
+57  | impl AuthManager {
+    | ---------------- methods in this implementation
+...
+96  |     pub fn revoke_key(&self, key: &str) -> Result<(), String> {
+    |            ^^^^^^^^^^
+...
+106 |     pub fn list_keys(&self) -> Vec<ApiKey> {
+    |            ^^^^^^^^^
+...
+111 |     pub fn get_rate_limit(&self, key: &str) -> Result<usize, String> {
+    |            ^^^^^^^^^^^^^^
+
+warning: methods `invalidate` and `clear` are never used
+   --> src/cache.rs:103:12
+    |
+49  | impl ResponseCache {
+    | ------------------ methods in this implementation
+...
+103 |     pub fn invalidate(&self, key: &str) -> bool {
+    |            ^^^^^^^^^^
+...
+108 |     pub fn clear(&self) {
+    |            ^^^^^
+
+warning: `sovereign-gateway` (bin "sovereign-gateway") generated 4 warnings
+    Finished `release` profile [optimized] target(s) in 0.23s
+✅ Rust Build Success. Binary path verified.
+### [L3: Autonomous Deployment] 2. Executing Deployment and Health Check...
+2.1. Bringing up Docker-Compose services...
+time="2025-12-13T20:35:45-06:00" level=warning msg="/Users/lordwilson/sovereign-gateway/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+ Container sovereign_browser  Running
+ Container sovereign_git  Starting
+ Container sovereign_git  Started
+2.2. Starting sovereign-gateway in the background...
+Gateway started with PID: 73272
+2.3. Waiting for sovereign-gateway to become healthy on 127.0.0.1:8080...
+✅ HEALTH CHECK SUCCESS (HTTP 200) on attempt 1.
+==========================================================
+✨ DEPLOYMENT COMPLETE & VERIFIED.
+Access Gateway Health: http://127.0.0.1:8080/health
+Metrics Endpoint: http://127.0.0.1:8080/metrics
+Full Deployment Log saved to: ./deploy_log_20251213_203531.txt
+==========================================================

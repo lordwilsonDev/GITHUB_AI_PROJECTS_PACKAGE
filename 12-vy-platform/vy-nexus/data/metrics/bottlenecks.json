@@ -1,0 +1,11 @@
+[
+  {
+    "id": "task_002_duration",
+    "timestamp": "2025-12-15T22:16:06.958069",
+    "task_type": "code_analysis",
+    "bottleneck_type": "duration",
+    "severity": "medium",
+    "metric_value": 720,
+    "recommendation": "Consider automating parts of code_analysis tasks to reduce duration"
+  }
+]

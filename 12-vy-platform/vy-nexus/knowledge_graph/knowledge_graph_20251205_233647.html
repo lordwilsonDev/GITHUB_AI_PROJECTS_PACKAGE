@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>VY-NEXUS Knowledge Graph</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background: #0a0e27;
+            color: #00ff41;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #00ff41;
+            text-shadow: 0 0 10px #00ff41;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: #0f1420;
+            padding: 30px;
+            border-radius: 10px;
+            border: 2px solid #00ff41;
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
+        }
+        .stats {
+            background: #1a1f35;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #00ff41;
+        }
+        .stat-item {
+            display: inline-block;
+            margin-right: 30px;
+        }
+        .mermaid {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .legend {
+            margin-top: 20px;
+            padding: 15px;
+            background: #1a1f35;
+            border-radius: 5px;
+            border: 1px solid #00ff41;
+        }
+        .legend-item {
+            display: inline-block;
+            margin-right: 20px;
+            margin-bottom: 10px;
+        }
+        .legend-color {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+            vertical-align: middle;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌌 VY-NEXUS KNOWLEDGE GRAPH</h1>
+        
+        <div class="stats">
+            <div class="stat-item">📊 <strong>Total Concepts:</strong> 6</div>
+            <div class="stat-item">🌐 <strong>Domain Clusters:</strong> 9</div>
+            <div class="stat-item">💎 <strong>High VDR (≥8.0):</strong> 0</div>
+            <div class="stat-item">⏰ <strong>Generated:</strong> 2025-12-05 23:36:47</div>
+        </div>
+        
+        <div class="mermaid">
+graph TD
+    %% VY-NEXUS Knowledge Graph
+
+    constraint["CONSTRAINT<br/>VDR:7.0 F:320"]:::mediumVDR
+    feedback["FEEDBACK<br/>VDR:7.0 F:220"]:::lowVDR
+    flow["FLOW<br/>VDR:7.0 F:160"]:::mediumVDR
+    adaptation["ADAPTATION<br/>VDR:7.1 F:140"]:::mediumVDR
+    network["NETWORK<br/>VDR:7.4 F:80"]:::mediumVDR
+    complexity["COMPLEXITY<br/>VDR:6.8 F:60"]:::lowVDR
+
+    constraint -.-> Control_Theory
+    constraint -.-> Biology
+    constraint -.-> Psychology
+    constraint -.-> Technology
+    constraint -.-> Unknown
+    constraint -.-> Governance
+    constraint -.-> Communication
+    feedback -.-> Biology
+    feedback -.-> Unknown
+    feedback -.-> Embodiment
+    feedback -.-> Control_Theory
+    flow -.-> Control_Theory
+    flow -.-> Biology
+    flow -.-> Psychology
+    flow -.-> Technology
+    flow -.-> Consciousness
+    flow -.-> Governance
+    flow -.-> Communication
+    adaptation -.-> Biology
+    adaptation -.-> Unknown
+    adaptation -.-> Embodiment
+    adaptation -.-> Psychology
+    network -.-> Control_Theory
+    network -.-> Unknown
+    network -.-> Consciousness
+    network -.-> Psychology
+    complexity -.-> Technology
+    complexity -.-> Unknown
+    complexity -.-> Biology
+
+    classDef highVDR fill:#ff6b6b,stroke:#c92a2a,stroke-width:3px
+    classDef mediumVDR fill:#ffd93d,stroke:#f59f00,stroke-width:2px
+    classDef lowVDR fill:#74c0fc,stroke:#1971c2,stroke-width:1px
+        </div>
+        
+        <div class="legend">
+            <strong>Legend:</strong><br><br>
+            <div class="legend-item">
+                <span class="legend-color" style="background:#ff6b6b;"></span>
+                <strong>High Confidence</strong> (VDR ≥ 8.0)
+            </div>
+            <div class="legend-item">
+                <span class="legend-color" style="background:#ffd93d;"></span>
+                <strong>Medium Confidence</strong> (VDR 7.0-7.9)
+            </div>
+            <div class="legend-item">
+                <span class="legend-color" style="background:#74c0fc;"></span>
+                <strong>Lower Confidence</strong> (VDR < 7.0)
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+</body>
+</html>

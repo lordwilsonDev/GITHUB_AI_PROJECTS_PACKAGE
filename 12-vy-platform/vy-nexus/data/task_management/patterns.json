@@ -1,0 +1,13 @@
+{
+  "task_type_durations": {},
+  "optimal_times": {
+    "bugfix": {
+      "22": {
+        "count": 1,
+        "success_rate": 1.0
+      }
+    }
+  },
+  "success_factors": {},
+  "dependency_patterns": {}
+}

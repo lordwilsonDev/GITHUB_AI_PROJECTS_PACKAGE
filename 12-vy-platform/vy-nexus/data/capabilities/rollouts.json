@@ -1,0 +1,49 @@
+[
+  {
+    "id": "rollout_20251215_223948",
+    "capability_id": "cap_20251215_223948",
+    "strategy": "gradual",
+    "target_percentage": 100,
+    "current_percentage": 100,
+    "status": "completed",
+    "started_at": "2025-12-15T22:39:48.032458",
+    "stages": [
+      {
+        "name": "stage_10",
+        "target": 10,
+        "started_at": "2025-12-15T22:39:48.032467",
+        "completed_at": "2025-12-15T22:39:48.032467",
+        "status": "completed"
+      },
+      {
+        "name": "stage_25",
+        "target": 25,
+        "started_at": "2025-12-15T22:39:48.032469",
+        "completed_at": "2025-12-15T22:39:48.032470",
+        "status": "completed"
+      },
+      {
+        "name": "stage_50",
+        "target": 50,
+        "started_at": "2025-12-15T22:39:48.032472",
+        "completed_at": "2025-12-15T22:39:48.032472",
+        "status": "completed"
+      },
+      {
+        "name": "stage_75",
+        "target": 75,
+        "started_at": "2025-12-15T22:39:48.032474",
+        "completed_at": "2025-12-15T22:39:48.032474",
+        "status": "completed"
+      },
+      {
+        "name": "stage_100",
+        "target": 100,
+        "started_at": "2025-12-15T22:39:48.032476",
+        "completed_at": "2025-12-15T22:39:48.032476",
+        "status": "completed"
+      }
+    ],
+    "completed_at": "2025-12-15T22:39:48.032477"
+  }
+]

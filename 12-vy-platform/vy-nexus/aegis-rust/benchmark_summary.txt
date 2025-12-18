@@ -1,0 +1,114 @@
+Benchmarking audit_system_log_action
+Benchmarking audit_system_log_action: Warming up for 3.0000 s
+Benchmarking audit_system_log_action: Collecting 100 samples in estimated 5.0719 s (217k iterations)
+Benchmarking audit_system_log_action: Analyzing
+audit_system_log_action time:   [23.541 µs 23.631 µs 23.739 µs]
+                        change: [-0.8160% -0.2625% +0.2639%] (p = 0.36 > 0.05)
+Benchmarking audit_system_verify_chain
+Benchmarking audit_system_verify_chain: Warming up for 3.0000 s
+Benchmarking audit_system_verify_chain: Collecting 100 samples in estimated 6.1254 s (25k iterations)
+Benchmarking audit_system_verify_chain: Analyzing
+                        time:   [242.38 µs 243.19 µs 244.00 µs]
+                        change: [-0.5373% -0.1533% +0.2059%] (p = 0.44 > 0.05)
+Benchmarking audit_system_query_history
+Benchmarking audit_system_query_history: Warming up for 3.0000 s
+Benchmarking audit_system_query_history: Collecting 100 samples in estimated 5.0770 s (258k iterations)
+Benchmarking audit_system_query_history: Analyzing
+                        time:   [19.444 µs 19.525 µs 19.616 µs]
+                        change: [-3.5578% -3.0661% -2.5749%] (p = 0.00 < 0.05)
+Benchmarking audit_system_get_merkle_root
+Benchmarking audit_system_get_merkle_root: Warming up for 3.0000 s
+Benchmarking audit_system_get_merkle_root: Collecting 100 samples in estimated 5.0002 s (5.1M iterations)
+Benchmarking audit_system_get_merkle_root: Analyzing
+                        time:   [969.46 ns 973.93 ns 979.28 ns]
+                        change: [-5.1907% -4.1425% -3.1774%] (p = 0.00 < 0.05)
+Benchmarking evolution_core_log_experience
+Benchmarking evolution_core_log_experience: Warming up for 3.0000 s
+Benchmarking evolution_core_log_experience: Collecting 100 samples in estimated 5.0203 s (86k iterations)
+Benchmarking evolution_core_log_experience: Analyzing
+                        time:   [294.08 µs 335.41 µs 372.70 µs]
+                        change: [-29.174% -17.479% -4.0798%] (p = 0.02 < 0.05)
+Benchmarking evolution_core_recognize_patterns
+Benchmarking evolution_core_recognize_patterns: Warming up for 3.0000 s
+Benchmarking evolution_core_recognize_patterns: Collecting 100 samples in estimated 5.0084 s (1.6M iterations)
+Benchmarking evolution_core_recognize_patterns: Analyzing
+                        time:   [3.0573 µs 3.0905 µs 3.1272 µs]
+                        change: [+3.1734% +4.3576% +5.6633%] (p = 0.00 < 0.05)
+Benchmarking evolution_core_suggest_improvements
+Benchmarking evolution_core_suggest_improvements: Warming up for 3.0000 s
+Benchmarking evolution_core_suggest_improvements: Collecting 100 samples in estimated 5.0022 s (4.6M iterations)
+Benchmarking evolution_core_suggest_improvements: Analyzing
+                        time:   [1.2911 µs 1.4565 µs 1.6283 µs]
+                        change: [+9.0721% +16.528% +27.296%] (p = 0.00 < 0.05)
+Benchmarking evolution_core_get_capability_metrics
+Benchmarking evolution_core_get_capability_metrics: Warming up for 3.0000 s
+Benchmarking evolution_core_get_capability_metrics: Collecting 100 samples in estimated 5.0000 s (4.7B iterations)
+Benchmarking evolution_core_get_capability_metrics: Analyzing
+                        time:   [893.88 ps 899.23 ps 905.73 ps]
+                        change: [-1.5931% -0.7197% +0.0040%] (p = 0.07 > 0.05)
+Benchmarking hitl_collab_request_decision
+Benchmarking hitl_collab_request_decision: Warming up for 3.0000 s
+Benchmarking hitl_collab_request_decision: Collecting 100 samples in estimated 5.0001 s (4.4M iterations)
+Benchmarking hitl_collab_request_decision: Analyzing
+                        time:   [2.1854 µs 2.2708 µs 2.3720 µs]
+                        change: [-48.983% -44.782% -40.091%] (p = 0.00 < 0.05)
+Benchmarking hitl_collab_get_pending_decisions
+Benchmarking hitl_collab_get_pending_decisions: Warming up for 3.0000 s
+Benchmarking hitl_collab_get_pending_decisions: Collecting 100 samples in estimated 5.0193 s (788k iterations)
+Benchmarking hitl_collab_get_pending_decisions: Analyzing
+                        time:   [6.3257 µs 6.3532 µs 6.3819 µs]
+                        change: [-5.3190% -3.7627% -2.3529%] (p = 0.00 < 0.05)
+Benchmarking hitl_collab_approve_decision
+Benchmarking hitl_collab_approve_decision: Warming up for 3.0000 s
+Benchmarking hitl_collab_approve_decision: Collecting 100 samples in estimated 5.0003 s (4.3M iterations)
+Benchmarking hitl_collab_approve_decision: Analyzing
+                        time:   [2.9463 µs 4.4066 µs 6.1689 µs]
+                        change: [-74.795% -64.558% -52.170%] (p = 0.00 < 0.05)
+Benchmarking hitl_collab_concurrent_decisions
+Benchmarking hitl_collab_concurrent_decisions: Warming up for 3.0000 s
+Benchmarking hitl_collab_concurrent_decisions: Collecting 100 samples in estimated 5.1041 s (1400 iterations)
+Benchmarking hitl_collab_concurrent_decisions: Analyzing
+                        time:   [12.205 ms 12.472 ms 12.735 ms]
+                        change: [-4.8062% +10.756% +28.868%] (p = 0.18 > 0.05)
+Benchmarking intent_firewall_validate_safe
+Benchmarking intent_firewall_validate_safe: Warming up for 3.0000 s
+Benchmarking intent_firewall_validate_safe: Collecting 100 samples in estimated 5.0004 s (21M iterations)
+Benchmarking intent_firewall_validate_safe: Analyzing
+                        time:   [240.05 ns 241.44 ns 243.08 ns]
+                        change: [-3.3580% -2.4681% -1.6377%] (p = 0.00 < 0.05)
+Benchmarking intent_firewall_validate_unsafe
+Benchmarking intent_firewall_validate_unsafe: Warming up for 3.0000 s
+Benchmarking intent_firewall_validate_unsafe: Collecting 100 samples in estimated 5.0006 s (18M iterations)
+Benchmarking intent_firewall_validate_unsafe: Analyzing
+                        time:   [271.17 ns 272.71 ns 274.36 ns]
+                        change: [-0.4335% +0.2096% +0.8499%] (p = 0.53 > 0.05)
+Benchmarking intent_firewall_pattern_matching
+Benchmarking intent_firewall_pattern_matching: Warming up for 3.0000 s
+Benchmarking intent_firewall_pattern_matching: Collecting 100 samples in estimated 5.0006 s (6.5M iterations)
+Benchmarking intent_firewall_pattern_matching: Analyzing
+                        time:   [761.03 ns 763.52 ns 766.35 ns]
+                        change: [-1.1847% -0.6914% -0.1756%] (p = 0.01 < 0.05)
+Benchmarking love_engine_check_ethics
+Benchmarking love_engine_check_ethics: Warming up for 3.0000 s
+Benchmarking love_engine_check_ethics: Collecting 100 samples in estimated 5.0021 s (7.3M iterations)
+Benchmarking love_engine_check_ethics: Analyzing
+                        time:   [678.86 ns 681.05 ns 683.52 ns]
+                        change: [-0.8048% -0.1790% +0.4746%] (p = 0.59 > 0.05)
+Benchmarking love_engine_detect_hallucination
+Benchmarking love_engine_detect_hallucination: Warming up for 3.0000 s
+Benchmarking love_engine_detect_hallucination: Collecting 100 samples in estimated 5.0007 s (36M iterations)
+Benchmarking love_engine_detect_hallucination: Analyzing
+                        time:   [138.59 ns 139.59 ns 140.87 ns]
+                        change: [-1.0343% +0.0749% +1.4557%] (p = 0.90 > 0.05)
+Benchmarking love_engine_compute_love_metric
+Benchmarking love_engine_compute_love_metric: Warming up for 3.0000 s
+Benchmarking love_engine_compute_love_metric: Collecting 100 samples in estimated 5.0000 s (2.2B iterations)
+Benchmarking love_engine_compute_love_metric: Analyzing
+                        time:   [2.2490 ns 2.2602 ns 2.2759 ns]
+                        change: [-1.6466% -0.6816% +0.2615%] (p = 0.17 > 0.05)
+Benchmarking love_engine_evaluate_alignment
+Benchmarking love_engine_evaluate_alignment: Warming up for 3.0000 s
+Benchmarking love_engine_evaluate_alignment: Collecting 100 samples in estimated 5.0001 s (208M iterations)
+Benchmarking love_engine_evaluate_alignment: Analyzing
+                        time:   [23.707 ns 23.810 ns 23.927 ns]
+                        change: [-3.9713% -3.1214% -2.3043%] (p = 0.00 < 0.05)

@@ -1,0 +1,50 @@
+# Background Process Optimization Configuration
+
+repetitive_task_detection:
+  min_occurrences: 3  # Minimum times a task must occur to be considered repetitive
+  time_window_hours: 24  # Time window for pattern detection
+  max_history_size: 10000  # Maximum number of tasks to keep in history
+  automation_threshold: 0.7  # Minimum automation potential to create automation
+
+performance_analysis:
+  bottleneck_threshold_ms: 1000  # Duration threshold for bottleneck detection
+  max_metrics: 5000  # Maximum number of metrics to store
+  slow_process_threshold_ms: 2000  # Threshold for identifying slow processes
+  cpu_threshold: 80.0  # CPU usage threshold for bottleneck
+  memory_threshold: 80.0  # Memory usage threshold for bottleneck
+
+workflow_optimization:
+  min_success_rate: 0.95  # Minimum acceptable success rate
+  max_duration_ms: 5000  # Maximum acceptable duration
+  max_cpu_usage: 70.0  # Maximum acceptable CPU usage
+  optimization_cycle_minutes: 5  # How often to run optimization cycle
+
+automation_creation:
+  default_template: 'workflow_sequence'  # Default automation template
+  test_before_deploy: true  # Require testing before deployment
+  auto_deploy_threshold: 0.9  # Auto-deploy if success rate above this
+  max_automations: 100  # Maximum number of automations to maintain
+
+optimization_priorities:
+  reliability: 'high'  # Priority for reliability improvements
+  performance: 'medium'  # Priority for performance improvements
+  resource_usage: 'medium'  # Priority for resource optimization
+  automation: 'high'  # Priority for automation creation
+
+reporting:
+  include_top_patterns: 10  # Number of top patterns to include in reports
+  include_slow_processes: 5  # Number of slow processes to report
+  report_interval_hours: 6  # How often to generate reports
+
+sandbox:
+  enabled: true  # Enable sandbox testing
+  timeout_seconds: 30  # Timeout for sandbox tests
+  max_concurrent_tests: 3  # Maximum concurrent sandbox tests
+  isolation_level: 'full'  # Sandbox isolation level
+
+logging:
+  level: 'INFO'
+  log_patterns: true
+  log_automations: true
+  log_optimizations: true
+  log_performance: true

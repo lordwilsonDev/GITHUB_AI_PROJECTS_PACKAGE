@@ -1,0 +1,25 @@
+{
+  "name": "moie-mac-loop",
+  "version": "1.0.0",
+  "scripts": {
+    "nano:invert": "node nano_cli.cjs --domain='Biology' --axiom='Natural selection eliminates all inefficiencies' --mode='systematic_reduction'",
+    "dev": "motia dev",
+    "start": "motia start",
+    "motia:status": "npx motia emit --topic system --message 'status ping from script'",
+    "moie:nano-fs": "python3 src/nano_fs.py",
+    "moie:synapse-check": "echo '{\"test\":\"synapse_check\"}' | node runtime/.synapse.js --target=./experience_ledger.jsonl",
+    "mon:health": "node mon_cli.cjs \"overall health\"",
+    "moie:loop": "node loop.cjs"
+  },
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "inquirer": "^9.2.14",
+    "motia": "^0.13.2-beta.163",
+    "ollama": "^0.5.0",
+    "@motiadev/core": "0.13.2-beta.163",
+    "@motiadev/plugin-logs": "0.13.2-beta.163",
+    "@motiadev/plugin-states": "0.13.2-beta.163",
+    "@motiadev/plugin-endpoint": "0.13.2-beta.163",
+    "@motiadev/plugin-observability": "0.13.2-beta.163"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "total_nodes": 1260,
+  "total_edges": 0,
+  "nodes_by_type": {
+    "Engine": 120,
+    "Breakthrough": 69,
+    "Dream": 256,
+    "KnowledgeGraph": 44,
+    "Excavation": 40,
+    "Pattern": 114,
+    "LoveMetric": 108,
+    "Insight": 108,
+    "SpawnedSystem": 110,
+    "TestResult": 110,
+    "AutoDoc": 152,
+    "Lesson": 28,
+    "LearnedVector": 1
+  },
+  "edges_by_type": {},
+  "oldest_memory": "2025-12-06T20:39:12.183505",
+  "newest_memory": "2025-12-06T20:39:58.726972",
+  "memory_lineage_depth": 0,
+  "consciousness_children": 0,
+  "breakthroughs_tracked": 0,
+  "patterns_evolved": 0
+}

@@ -1,0 +1,79 @@
+[
+  {
+    "id": "23b4e8f320f1",
+    "topic": "Better tools for file_parsing",
+    "category": "tool",
+    "priority": "high",
+    "context": "Task 'file_parsing' has been failing",
+    "reason": "failure_pattern",
+    "added_at": "2025-12-15T22:14:24.965181",
+    "status": "queued",
+    "attempts": 0
+  },
+  {
+    "id": "84016a1456b7",
+    "topic": "Better tools for data_validation",
+    "category": "tool",
+    "priority": "high",
+    "context": "Task 'data_validation' has been failing",
+    "reason": "failure_pattern",
+    "added_at": "2025-12-15T22:14:24.965300",
+    "status": "queued",
+    "attempts": 0
+  },
+  {
+    "id": "308463f7746c",
+    "topic": "Optimization techniques for slow_database_queries",
+    "category": "technique",
+    "priority": "high",
+    "context": "Performance bottleneck: slow_database_queries",
+    "reason": "performance",
+    "added_at": "2025-12-15T22:14:24.965563",
+    "status": "queued",
+    "attempts": 0
+  },
+  {
+    "id": "86af075517e3",
+    "topic": "Async Programming Best Practices",
+    "category": "technique",
+    "priority": "medium",
+    "context": "Improve async code quality",
+    "reason": "code_quality",
+    "added_at": "2025-12-15T22:14:24.964794",
+    "status": "queued",
+    "attempts": 0
+  },
+  {
+    "id": "c6ff24543f74",
+    "topic": "How to implement automated_testing",
+    "category": "technique",
+    "priority": "medium",
+    "context": "User requested: automated_testing",
+    "reason": "user_request",
+    "added_at": "2025-12-15T22:14:24.965475",
+    "status": "queued",
+    "attempts": 0
+  },
+  {
+    "id": "2fc9df702770",
+    "topic": "Implementing real_time_collaboration",
+    "category": "methodology",
+    "priority": "medium",
+    "context": "Missing capability: real_time_collaboration",
+    "reason": "capability_gap",
+    "added_at": "2025-12-15T22:14:24.965649",
+    "status": "queued",
+    "attempts": 0
+  },
+  {
+    "id": "68b8488ee6bf",
+    "topic": "Agile Development Methodology",
+    "category": "methodology",
+    "priority": "low",
+    "context": "Improve team workflow",
+    "reason": "process_improvement",
+    "added_at": "2025-12-15T22:14:24.964982",
+    "status": "queued",
+    "attempts": 0
+  }
+]

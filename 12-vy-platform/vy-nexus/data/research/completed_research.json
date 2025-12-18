@@ -1,0 +1,15 @@
+[
+  {
+    "id": "dc284b324be0",
+    "topic": "Advanced Python Debugging Tools",
+    "category": "tool",
+    "priority": "high",
+    "context": "Need better debugging capabilities",
+    "reason": "performance_improvement",
+    "added_at": "2025-12-15T22:14:24.964682",
+    "status": "completed",
+    "attempts": 1,
+    "started_at": "2025-12-15T22:14:24.965842",
+    "completed_at": "2025-12-15T22:14:24.965928"
+  }
+]

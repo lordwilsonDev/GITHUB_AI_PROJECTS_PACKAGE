@@ -1,0 +1,45 @@
+{
+  "activities": [
+    {
+      "timestamp": "2025-12-15T22:01:46.689324",
+      "type": "operation",
+      "description": "Operation 'monitoring': in_progress",
+      "severity": "warning",
+      "details": {
+        "message": "Activity monitoring started"
+      }
+    },
+    {
+      "timestamp": "2025-12-15T22:01:46.689340",
+      "type": "operation",
+      "description": "Operation 'test_operation': success",
+      "severity": "info",
+      "details": {
+        "test": true,
+        "message": "Testing activity monitor"
+      }
+    },
+    {
+      "timestamp": "2025-12-15T22:01:46.689343",
+      "type": "file_change",
+      "description": "File created: test_file.py",
+      "severity": "info",
+      "details": {
+        "filepath": "test_file.py",
+        "change_type": "created",
+        "old_hash": null,
+        "new_hash": "abc123"
+      }
+    }
+  ],
+  "stats": {
+    "files_created": 1,
+    "files_modified": 0,
+    "files_deleted": 0,
+    "operations_logged": 3,
+    "errors_detected": 0,
+    "start_time": "2025-12-15T22:01:46.689319",
+    "last_activity": "2025-12-15T22:01:46.689343"
+  },
+  "last_updated": "2025-12-15T22:01:46.689383"
+}

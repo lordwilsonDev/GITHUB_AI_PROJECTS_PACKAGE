@@ -1,0 +1,37 @@
+[
+  {
+    "id": "improvement_20251215_223641",
+    "template_id": "template_20251215_223641",
+    "type": "fix",
+    "description": "Address common issue: Permission denied on some files (occurred 1 times)",
+    "suggested_changes": {
+      "metadata": {
+        "known_issues": [
+          [
+            "Permission denied on some files",
+            1
+          ]
+        ],
+        "auto_optimized": true
+      }
+    },
+    "priority": "medium",
+    "status": "pending",
+    "created_at": "2025-12-15T22:36:41.856738"
+  },
+  {
+    "id": "improvement_20251215_223641",
+    "template_id": "template_20251215_223641",
+    "type": "optimization",
+    "description": "Improve success rate (currently 66.7%)",
+    "suggested_changes": {
+      "metadata": {
+        "needs_review": true,
+        "success_rate": 66.66666666666666
+      }
+    },
+    "priority": "high",
+    "status": "pending",
+    "created_at": "2025-12-15T22:36:41.856837"
+  }
+]

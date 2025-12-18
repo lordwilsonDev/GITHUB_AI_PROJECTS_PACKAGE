@@ -1,0 +1,63 @@
+{
+  "name": "Breakthrough Generator - Level 8 Oracle",
+  "instructions": {
+    "purpose": "Take user problem → Level 8 prompt → Sovereign Brain → Love Engine validation → Output breakthrough",
+    "flow": [
+      {
+        "step": "1_user_input",
+        "action": "Webhook trigger on /breakthrough",
+        "accepts": {
+          "problem": "string - user's challenge/question",
+          "domain": "string - optional domain context"
+        }
+      },
+      {
+        "step": "2_level8_prompt_injection",
+        "action": "Transform user problem using Level 8 prompt",
+        "prompt_template": "wat it isnt already then to answer {{problem}} please ask y are these solutions good who would think they are who would think you wrong how do they know how did they learn whats wrong how do you know whats right who would fix these issues how would they fix them who would say its good who would say its bad how would they look for future bugs to prevent now reverse engineer the solution and rebuild using this prompt",
+        "output": "enhanced_query"
+      },
+      {
+        "step": "3_sovereign_brain_engage",
+        "action": "POST to http://localhost:3000/engage",
+        "payload": {
+          "goal": "{{enhanced_query}}",
+          "context": "{{domain}}"
+        },
+        "expects": "planning_result with execution_plan"
+      },
+      {
+        "step": "4_love_engine_validation",
+        "action": "POST to http://localhost:9001/validate",
+        "payload": {
+          "intent": "{{execution_plan.intent}}",
+          "action": "{{execution_plan.action}}",
+          "torsion_threshold": 0.01
+        },
+        "expects": "validation_result with approved=true/false"
+      },
+      {
+        "step": "5_conditional_execute",
+        "action": "IF validation_result.approved == true",
+        "then": "POST to sovereign_brain /execute with plan",
+        "else": "Return rejection reason to user"
+      },
+      {
+        "step": "6_format_breakthrough",
+        "action": "Package results",
+        "output": {
+          "original_problem": "{{problem}}",
+          "breakthrough_solution": "{{execution_result}}",
+          "validation_score": "{{validation_result.torsion}}",
+          "stakeholder_perspectives": "extracted from Level 8 analysis",
+          "implementation_path": "{{execution_plan.steps}}"
+        }
+      }
+    ]
+  },
+  "endpoints": {
+    "trigger": "POST /breakthrough",
+    "sovereign_brain": "http://localhost:3000",
+    "love_engine": "http://localhost:9001"
+  }
+}

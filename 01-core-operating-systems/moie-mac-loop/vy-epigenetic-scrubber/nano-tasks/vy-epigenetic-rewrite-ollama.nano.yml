@@ -1,0 +1,78 @@
+nano_id: vy-epigenetic-rewrite-ollama
+version: 0.1.0
+label: "VY – Replace Ollama with MLX Framework"
+
+meta:
+  owner: "VY Epigenetic Scrubber"
+  intent: >
+    Replace the ollama npm dependency with native MLX Framework integration
+    to reduce external dependencies and improve M1/M2 performance.
+
+invariants:
+  - id: NO_BREAKING_CHANGES
+    rule: "Maintain existing AI functionality while removing npm dependency."
+  - id: NATIVE_FIRST
+    rule: "Use Apple Silicon optimized MLX framework for local inference."
+  - id: PERFORMANCE_IMPROVEMENT
+    rule: "New implementation should be faster on M1/M2 hardware."
+
+task:
+  id: vy-epigenetic-rewrite-ollama-001
+  origin_goal: "Replace high-risk ollama dependency with native alternative."
+  scope: "moie-mac-loop repository"
+  priority: 9
+
+  steps:
+    - id: analyze_ollama_usage
+      kind: "code_analysis"
+      description: "Identify all files using ollama and their specific usage patterns."
+      files_to_analyze:
+        - "governor.cjs"
+        - "motia_governed.cjs"
+        - "mon_core.cjs"
+        - "motia.js"
+        - "vy.js"
+
+    - id: setup_mlx_environment
+      kind: "environment_setup"
+      description: "Install and configure MLX framework for the project."
+      commands:
+        - "pip install mlx"
+        - "pip install mlx-lm"
+
+    - id: create_mlx_wrapper
+      kind: "create_file"
+      description: "Create a nano module that wraps MLX functionality."
+      output: "mlx_nano.js"
+      template: "MLX wrapper with chat and inference methods"
+
+    - id: replace_ollama_calls
+      kind: "code_replacement"
+      description: "Replace ollama import and usage with MLX wrapper."
+      pattern: "import.*ollama.*|require.*ollama.*"
+      replacement: "import { MLXNano } from './mlx_nano.js'"
+
+    - id: update_package_json
+      kind: "dependency_removal"
+      description: "Remove ollama from package.json dependencies."
+      file: "package.json"
+      remove_dependency: "ollama"
+
+    - id: test_functionality
+      kind: "testing"
+      description: "Verify all AI functionality works with MLX replacement."
+      test_files:
+        - "test_nano.js"
+        - "vy.js"
+
+acceptance_criteria:
+  - "All ollama imports/requires are replaced with MLX wrapper."
+  - "ollama dependency is removed from package.json."
+  - "AI chat and inference functionality remains intact."
+  - "Performance is equal or better on Apple Silicon."
+  - "No external npm dependencies for AI functionality."
+
+runtime_notes:
+  - "This replacement targets the highest fragility score dependency (0.66)."
+  - "MLX provides native Apple Silicon optimization for better performance."
+  - "May require model format conversion from Ollama to MLX format."

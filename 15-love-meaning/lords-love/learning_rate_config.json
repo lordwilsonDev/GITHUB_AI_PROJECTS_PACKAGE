@@ -1,0 +1,93 @@
+{
+  "default_initial_rate": 0.01,
+  "default_schedule": "adaptive",
+  "global_min_rate": 1e-06,
+  "global_max_rate": 1.0,
+  "components": {
+    "pattern_recognition": {
+      "initial_rate": 0.01,
+      "schedule": "adaptive",
+      "patience": 10,
+      "improvement_threshold": 0.01,
+      "increase_factor": 1.1,
+      "decrease_factor": 0.5
+    },
+    "prediction_models": {
+      "initial_rate": 0.001,
+      "schedule": "cosine_annealing",
+      "cycle_length": 100,
+      "min_rate": 0.0001
+    },
+    "task_optimizer": {
+      "initial_rate": 0.1,
+      "schedule": "step_decay",
+      "step_size": 50,
+      "decay_factor": 0.5
+    },
+    "adaptive_algorithms": {
+      "initial_rate": 0.05,
+      "schedule": "adaptive",
+      "patience": 15,
+      "improvement_threshold": 0.005
+    },
+    "resource_allocator": {
+      "initial_rate": 0.02,
+      "schedule": "reduce_on_plateau",
+      "patience": 20,
+      "decrease_factor": 0.7
+    },
+    "need_predictor": {
+      "initial_rate": 0.005,
+      "schedule": "exponential_decay",
+      "decay_rate": 0.95
+    },
+    "workflow_optimizer": {
+      "initial_rate": 0.03,
+      "schedule": "adaptive",
+      "patience": 12
+    },
+    "meta_learner": {
+      "initial_rate": 0.001,
+      "schedule": "cosine_annealing",
+      "cycle_length": 200
+    }
+  },
+  "adaptive_settings": {
+    "patience": 10,
+    "improvement_threshold": 0.01,
+    "increase_factor": 1.1,
+    "decrease_factor": 0.5,
+    "plateau_factor": 0.95
+  },
+  "convergence_settings": {
+    "window_size": 20,
+    "threshold": 0.001,
+    "min_steps": 50,
+    "enable_early_stopping": true
+  },
+  "schedule_parameters": {
+    "step_decay": {
+      "default_step_size": 100,
+      "default_decay_factor": 0.5
+    },
+    "exponential_decay": {
+      "default_decay_rate": 0.95
+    },
+    "cosine_annealing": {
+      "default_cycle_length": 100,
+      "default_cycle_mult": 2.0
+    },
+    "cyclical": {
+      "default_min_rate": 0.0001,
+      "default_max_rate": 0.1,
+      "default_cycle_length": 50
+    }
+  },
+  "monitoring": {
+    "log_frequency": 10,
+    "save_history": true,
+    "max_history_length": 1000,
+    "alert_on_divergence": true,
+    "divergence_threshold": 2.0
+  }
+}

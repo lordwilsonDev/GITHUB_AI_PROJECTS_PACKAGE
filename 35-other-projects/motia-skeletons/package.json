@@ -1,0 +1,33 @@
+{
+  "name": "motia-level6-kernel",
+  "version": "0.1.0",
+  "description": "Motia Level-6 Self-Certifying Sovereign Intelligence Kernel - TypeScript Implementation",
+  "main": "index.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "jest",
+    "lint": "eslint . --ext .ts"
+  },
+  "keywords": [
+    "motia",
+    "level-6",
+    "ai-safety",
+    "recursive-agency",
+    "vdr",
+    "love-alignment"
+  ],
+  "author": "Lord + MoIE",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.0.0",
+    "jest": "^29.0.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@types/jest": "^29.0.0"
+  }
+}

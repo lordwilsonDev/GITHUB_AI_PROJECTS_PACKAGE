@@ -1,0 +1,11 @@
+[
+  {
+    "type": "slow_step",
+    "step_index": 2,
+    "step_name": "Transform Data",
+    "average_duration": 60.6,
+    "percentage_of_total": 49.83552631578947,
+    "severity": "medium",
+    "identified_at": "2025-12-15T22:23:52.959707"
+  }
+]

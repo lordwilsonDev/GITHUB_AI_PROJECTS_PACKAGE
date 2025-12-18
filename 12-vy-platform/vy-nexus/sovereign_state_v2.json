@@ -1,0 +1,68 @@
+{
+  "meta": {
+    "project": "MOIE-OS Sovereign Architecture",
+    "operator": "Lord Wilson",
+    "boot_time": "2025-12-12T06:00:00",
+    "mode": "daemon",
+    "current_phase": 5,
+    "last_heartbeat": "2025-12-12T00:00:00.000Z"
+  },
+  "phases": [
+    {
+      "id": 1,
+      "name": "WIRE THE NERVOUS SYSTEM (Resurrection)",
+      "status": "active",
+      "jobs": [
+        {
+          "id": "1.1",
+          "task": "Establish Persistence",
+          "description": "Verify com.vynexus.pulse.plist is loaded in LaunchAgents.",
+          "status": "completed",
+          "verification_cmd": "launchctl list | grep com.vynexus.pulse"
+        },
+        {
+          "id": "1.2",
+          "task": "Create steps/file-system.step.ts",
+          "description": "Create the TypeScript handler for file I/O operations.",
+          "status": "completed",
+          "verification_cmd": "ls steps/file-system.step.ts"
+        },
+        {
+          "id": "1.3",
+          "task": "Link Research Logger",
+          "description": "Ensure the system_journal.md is writable.",
+          "status": "completed",
+          "verification_cmd": "test -w /Users/lordwilson/research_logs/system_journal.md"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "UPGRADE THE HEART (Llama 3)",
+      "status": "active",
+      "jobs": [
+        {
+          "id": "2.1",
+          "task": "Verify Model Inventory",
+          "description": "Check if Llama3 is pulled and ready.",
+          "status": "completed",
+          "verification_cmd": "ollama list | grep llama3"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "ETERNAL MONITORING (The Infinite Game)",
+      "status": "active",
+      "jobs": [
+        {
+          "id": "5.1",
+          "task": "Deep Research Scan",
+          "description": "Scan daily arXiv papers for physics inversions.",
+          "status": "cyclic",
+          "verification_cmd": "false"
+        }
+      ]
+    }
+  ]
+}

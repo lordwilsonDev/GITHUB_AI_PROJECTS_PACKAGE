@@ -1,0 +1,33 @@
+# nano_type: snippet
+# source_path: /Users/lordwilson/nanoapex-rade/test_rade_pipeline.py
+# function: test_nano_file_creation
+# created_at: 2025-12-04T06-10-22
+# trigger: @nanoapex
+def test_nano_file_creation(test_file):
+    """Test that .nano files are created when processing @nanoapex functions"""
+    print("[TEST] Testing .nano file creation...")
+    
+    # Get initial count of .nano files
+    nano_memory_dir = Path.home() / "nano_memory"
+    initial_nano_files = list(nano_memory_dir.glob("*.nano")) if nano_memory_dir.exists() else []
+    initial_count = len(initial_nano_files)
+    
+    # Process the test file
+    tf = TargetFinder()
+    functions = tf.list_functions(str(test_file))
+    
+    for func_name in functions:
+        body = tf.extract_function_body(str(test_file), func_name)
+        if body and has_nanoapex_trigger(body):
+            # This should create a .nano file
+            from target_finder import save_snippet_to_memory
+            save_snippet_to_memory(func_name, body, str(test_file))
+    
+    # Check if new .nano files were created
+    final_nano_files = list(nano_memory_dir.glob("*.nano")) if nano_memory_dir.exists() else []
+    final_count = len(final_nano_files)
+    
+    created_files = final_count - initial_count
+    print(f"[TEST] .nano files created: {created_files}")
+    
+    return created_files > 0

@@ -1,0 +1,17 @@
+[
+  {
+    "timestamp": "2025-12-15T23:12:58.259922",
+    "context": {
+      "current_task": "data_analysis"
+    },
+    "predictions": [
+      {
+        "action_type": "file_processing",
+        "probability": 100.0,
+        "confidence": "high",
+        "suggested_time": "23:00",
+        "reasoning": "Based on 5 previous occurrences"
+      }
+    ]
+  }
+]

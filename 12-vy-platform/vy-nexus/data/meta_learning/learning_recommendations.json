@@ -1,0 +1,13 @@
+{
+  "recommendations": [
+    {
+      "type": "underutilized",
+      "priority": "medium",
+      "method_id": "obs_001",
+      "method_name": "Direct Observation",
+      "reason": "Good effectiveness (60.33) but low usage (1)",
+      "suggestion": "Try using 'Direct Observation' more often"
+    }
+  ],
+  "generated_at": "2025-12-15T22:43:49.390435"
+}

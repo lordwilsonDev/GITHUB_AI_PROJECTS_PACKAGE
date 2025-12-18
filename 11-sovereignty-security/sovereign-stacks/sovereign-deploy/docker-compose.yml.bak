@@ -1,0 +1,99 @@
+version: "3.8"
+
+services:
+  # 🧠 THE BRAIN: Recursive Planner
+  motia-brain:
+    build: ../motia-recursive-agent
+    container_name: sovereign_brain
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - LOVE_ENGINE_URL=http://love-engine:9001
+      - REDIS_URL=redis://redis:6379
+    depends_on:
+      - redis
+      - love-engine
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 512M
+        reservations:
+          cpus: '0.5'
+          memory: 256M
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  # 💗 THE HEART: Thermodynamic Safety
+  love-engine:
+    build: ../love-engine-real
+    container_name: sovereign_heart
+    restart: unless-stopped
+    ports:
+      - "9001:9001"
+    volumes:
+      # Mount the local Ollama models so we don't redownload massive weights
+      - ~/.ollama:/root/.ollama
+    environment:
+      - OLLAMA_HOST=host.docker.internal:11434
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:9001/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 512M
+        reservations:
+          cpus: '0.5'
+          memory: 256M
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  # 💾 THE MEMORY: State Persistence
+  redis:
+    image: redis:alpine
+    container_name: sovereign_memory
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - motia_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 256M
+        reservations:
+          cpus: '0.25'
+          memory: 128M
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+volumes:
+  motia_data:

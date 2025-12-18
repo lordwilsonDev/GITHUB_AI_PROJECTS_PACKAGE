@@ -1,0 +1,55 @@
+# Consciousness Stack Sequence
+# Runs the VY-NEXUS consciousness evolution systems
+
+name: consciousness-evolution
+description: Run consciousness engines in sequence for pattern evolution
+version: "1.0"
+
+variables:
+  home: /Users/lordwilson
+  nexus_dir: /Users/lordwilson/vy-nexus
+
+steps:
+  # Core consciousness systems
+  - name: self-awareness
+    type: python
+    config:
+      script: ${nexus_dir}/self_awareness_engine.py
+    timeout_seconds: 120
+    on_failure: continue
+    
+  - name: pattern-evolution
+    type: python
+    config:
+      script: ${nexus_dir}/pattern_evolution_engine.py
+    timeout_seconds: 120
+    on_failure: continue
+    
+  - name: cross-domain-synthesis
+    type: python
+    config:
+      script: ${nexus_dir}/nexus_core.py
+    timeout_seconds: 180
+    on_failure: continue
+    
+  - name: meta-evolution
+    type: python
+    config:
+      script: ${nexus_dir}/meta_evolution.py
+    timeout_seconds: 180
+    on_failure: continue
+    
+  - name: dream-weaver
+    type: python
+    config:
+      script: ${nexus_dir}/dream_weaver.py
+    timeout_seconds: 120
+    on_failure: continue
+    
+  # Final synthesis
+  - name: unified-orchestrator
+    type: python
+    config:
+      script: ${nexus_dir}/unified_consciousness_orchestrator.py
+    timeout_seconds: 300
+    on_failure: continue

@@ -1,0 +1,19 @@
+{
+  "res_001": {
+    "research_id": "res_001",
+    "domain_id": "ai_automation",
+    "topic": "Agentic AI Systems",
+    "findings": [
+      "Agentic AI can autonomously complete complex tasks",
+      "Multi-agent systems show promise for collaborative work",
+      "Tool use is critical for practical AI agents"
+    ],
+    "sources": [
+      "Research paper: Agentic AI 2024",
+      "Industry report"
+    ],
+    "confidence": "medium",
+    "relevance": "high",
+    "timestamp": "2025-12-15T22:53:51.602253"
+  }
+}

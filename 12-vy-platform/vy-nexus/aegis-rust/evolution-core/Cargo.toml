@@ -1,0 +1,25 @@
+[package]
+name = "evolution-core"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[dependencies]
+tokio.workspace = true
+async-trait.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+anyhow.workspace = true
+thiserror.workspace = true
+tracing.workspace = true
+rhai.workspace = true
+wasmtime.workspace = true
+chrono = { version = "0.4", features = ["serde"] }
+
+[dev-dependencies]
+criterion.workspace = true
+
+[[bench]]
+name = "evolution_core_bench"
+harness = false

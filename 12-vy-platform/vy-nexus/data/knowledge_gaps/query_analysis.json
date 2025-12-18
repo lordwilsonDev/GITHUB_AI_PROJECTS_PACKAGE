@@ -1,0 +1,26 @@
+[
+  {
+    "query_id": "query_1",
+    "query": "How does gradient descent work?",
+    "answered": true,
+    "confidence": 0.8,
+    "domain": "ai_ml",
+    "timestamp": "2025-12-15T22:45:22.041274"
+  },
+  {
+    "query_id": "query_2",
+    "query": "What is database indexing?",
+    "answered": false,
+    "confidence": 0.3,
+    "domain": "programming",
+    "timestamp": "2025-12-15T22:45:22.041349"
+  },
+  {
+    "query_id": "query_3",
+    "query": "Explain SEO best practices",
+    "answered": false,
+    "confidence": 0.4,
+    "domain": "business",
+    "timestamp": "2025-12-15T22:45:22.041694"
+  }
+]

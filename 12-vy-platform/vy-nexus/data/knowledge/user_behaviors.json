@@ -1,0 +1,25 @@
+[
+  {
+    "behavior_id": "beh_1",
+    "type": "task_completion",
+    "context": {
+      "task_type": "coding"
+    },
+    "outcome": "success",
+    "timestamp": "2025-12-15T22:54:50.421063",
+    "hour": 22,
+    "day_of_week": "Monday"
+  },
+  {
+    "behavior_id": "beh_2",
+    "type": "decision",
+    "context": {
+      "decision_type": "prioritization",
+      "speed": "quick"
+    },
+    "outcome": "success",
+    "timestamp": "2025-12-15T22:54:50.421360",
+    "hour": 22,
+    "day_of_week": "Monday"
+  }
+]

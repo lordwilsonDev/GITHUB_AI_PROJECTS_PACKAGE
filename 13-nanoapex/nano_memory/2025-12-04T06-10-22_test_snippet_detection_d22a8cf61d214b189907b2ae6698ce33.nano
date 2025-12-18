@@ -1,0 +1,23 @@
+# nano_type: snippet
+# source_path: /Users/lordwilson/nanoapex-rade/test_rade_pipeline.py
+# function: test_snippet_detection
+# created_at: 2025-12-04T06-10-22
+# trigger: @nanoapex
+def test_snippet_detection(test_file):
+    """Test that RADE can detect and extract @nanoapex snippets"""
+    print("[TEST] Testing snippet detection...")
+    
+    tf = TargetFinder()
+    functions = tf.list_functions(str(test_file))
+    print(f"[TEST] Found functions: {functions}")
+    
+    snippets_found = 0
+    for func_name in functions:
+        body = tf.extract_function_body(str(test_file), func_name)
+        if body and has_nanoapex_trigger(body):
+            print(f"[TEST] ✓ Found @nanoapex snippet: {func_name}")
+            snippets_found += 1
+        else:
+            print(f"[TEST] - Skipped function (no @nanoapex): {func_name}")
+    
+    return snippets_found > 0

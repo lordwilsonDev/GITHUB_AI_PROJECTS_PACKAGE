@@ -1,0 +1,106 @@
+
+╔═══════════════════════════════════════════════════════════════╗
+║   M1 Optimization Agent - Direct Optimization Demo           ║
+║   Optimizing Apple Silicon for Local LLM Inference           ║
+╚═══════════════════════════════════════════════════════════════╝
+
+
+============================================================
+STEP 1: System Status Check
+============================================================
+
+📊 System Information:
+   • Total RAM: 16.0 GB
+   • Available RAM: 5.5 GB
+   • Used RAM: 7.6 GB (65.8%)
+   • CPU Usage: 33.0%
+   • Active Cores: 10
+
+🔧 Ollama Status:
+   • Installed: ✅ Yes
+   • Running: ✅ Yes
+   • Version: ollama version is 0.13.0
+
+============================================================
+STEP 2: Safety Pre-Check
+============================================================
+
+🛡️  Safety Check Results:
+   • Status: ✅ SAFE
+
+============================================================
+STEP 3: Available Optimizations
+============================================================
+
+🎯 System Optimizations:
+   1. Disable WindowServer animations
+   2. Disable Spotlight indexing
+   3. Reduce transparency effects
+   4. Disable background services
+
+🚀 Ollama Optimizations:
+   1. Set OLLAMA_NUM_PARALLEL=1 (prevent OOM)
+   2. Set OLLAMA_MAX_LOADED_MODELS=1 (save RAM)
+   3. Configure optimal keep-alive settings
+
+⚡ Process Optimizations:
+   1. Promote Ollama to Performance cores
+   2. Disable App Nap for inference processes
+   3. Set high QoS priority
+
+============================================================
+STEP 4: Applying Safe Optimizations
+============================================================
+
+💾 Creating restore point...
+   ✅ Restore point created: restore_1765132684
+
+🚀 Configuring Ollama environment variables...
+   ✅ Set OLLAMA_NUM_PARALLEL=1
+   ✅ Set OLLAMA_MAX_LOADED_MODELS=1
+   ✅ Set OLLAMA_KEEP_ALIVE=5m
+
+   ℹ️  Note: Restart Ollama for changes to take effect:
+      killall ollama && ollama serve
+
+⚡ Optimizing Ollama process priority...
+   ℹ️  Ollama is running - process optimization available
+   ℹ️  Run with sudo for process priority changes
+
+============================================================
+STEP 5: Recommendations
+============================================================
+
+📋 Additional Manual Optimizations:
+
+   System Settings:
+   • System Settings > Accessibility > Display > Reduce Transparency
+   • System Settings > Spotlight > Disable indexing for project folders
+
+   Terminal Commands (require sudo):
+   • Disable animations:
+     defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
+   • Disable Spotlight:
+     sudo mdutil -i off /
+   • Restart Dock:
+     killall Dock
+
+   Model Selection for Your RAM:
+   • Recommended: Llama-3.1 8B (Q5_K_M) - ~5.5GB
+   • Good: Mistral 7B (Q8_0) - ~7GB
+   • Maximum: Llama-3.1 13B (Q4_K_M) - ~8GB
+
+============================================================
+STEP 6: System Status After Optimization
+============================================================
+
+📊 Current System State:
+   • Available RAM: 5.5 GB
+   • CPU Usage: 31.1%
+
+✅ Optimization demo complete!
+
+💡 To restore previous settings:
+   python3 scripts/safety_check.py --restore restore_1765132684
+
+============================================================

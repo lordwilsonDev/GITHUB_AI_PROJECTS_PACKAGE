@@ -1,0 +1,6 @@
+{"hash": "abc123", "state": "DONE", "nano_file": "test.nano"}
+{"hash": "def456", "state": "SKIP", "nano_file": "another.nano"}
+{"hash": "abc123", "state": "DONE", "nano_file": "test.nano"}
+{"hash": "def456", "state": "SKIP", "nano_file": "another.nano"}
+{"hash": "abc123", "state": "DONE", "nano_file": "test.nano"}
+{"hash": "def456", "state": "SKIP", "nano_file": "another.nano"}

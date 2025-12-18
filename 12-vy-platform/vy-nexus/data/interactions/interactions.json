@@ -1,0 +1,90 @@
+{
+  "interactions": [
+    {
+      "id": 1,
+      "session_id": "1c2fb2261f4f",
+      "timestamp": "2025-12-15T22:05:13.613431",
+      "type": "command",
+      "task": "create_file",
+      "details": {
+        "result": null
+      },
+      "success": true,
+      "response_time": 0.5,
+      "user_feedback": null,
+      "hour_of_day": 22,
+      "day_of_week": "Monday"
+    },
+    {
+      "id": 2,
+      "session_id": "1c2fb2261f4f",
+      "timestamp": "2025-12-15T22:05:13.613448",
+      "type": "query",
+      "task": "What is the weather?",
+      "details": {
+        "answer": "Sunny"
+      },
+      "success": true,
+      "response_time": 1.2,
+      "user_feedback": null,
+      "hour_of_day": 22,
+      "day_of_week": "Monday"
+    },
+    {
+      "id": 3,
+      "session_id": "1c2fb2261f4f",
+      "timestamp": "2025-12-15T22:05:13.613453",
+      "type": "task",
+      "task": "data_analysis",
+      "details": {
+        "steps": 10
+      },
+      "success": true,
+      "response_time": 5.3,
+      "user_feedback": null,
+      "hour_of_day": 22,
+      "day_of_week": "Monday"
+    },
+    {
+      "id": 4,
+      "session_id": "1c2fb2261f4f",
+      "timestamp": "2025-12-15T22:05:13.613457",
+      "type": "error",
+      "task": "FileNotFoundError: Config file missing",
+      "details": {
+        "file": "config.json"
+      },
+      "success": false,
+      "response_time": 0.0,
+      "user_feedback": null,
+      "hour_of_day": 22,
+      "day_of_week": "Monday"
+    },
+    {
+      "id": 5,
+      "session_id": "1c2fb2261f4f",
+      "timestamp": "2025-12-15T22:05:13.613460",
+      "type": "command",
+      "task": "delete_file",
+      "details": {
+        "result": null
+      },
+      "success": true,
+      "response_time": 0.3,
+      "user_feedback": null,
+      "hour_of_day": 22,
+      "day_of_week": "Monday"
+    }
+  ],
+  "stats": {
+    "total_interactions": 5,
+    "successful_interactions": 4,
+    "failed_interactions": 1,
+    "average_response_time": 1.46,
+    "most_common_tasks": [],
+    "peak_usage_hours": [],
+    "preferred_tools": [],
+    "error_patterns": []
+  },
+  "last_updated": "2025-12-15T22:05:13.616025"
+}

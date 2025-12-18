@@ -1,0 +1,90 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database for Temporal
+  postgresql:
+    image: postgres:13
+    container_name: temporal-postgresql
+    environment:
+      POSTGRES_PASSWORD: temporal
+      POSTGRES_USER: temporal
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - agent-network
+    restart: unless-stopped
+
+  # Temporal Server - Workflow orchestration
+  temporal:
+    image: temporalio/auto-setup:latest
+    container_name: temporal-server
+    depends_on:
+      - postgresql
+    environment:
+      - DB=postgresql
+      - DB_PORT=5432
+      - POSTGRES_USER=temporal
+      - POSTGRES_PWD=temporal
+      - POSTGRES_SEEDS=postgresql
+      - DYNAMIC_CONFIG_FILE_PATH=config/dynamicconfig/development-sql.yaml
+    ports:
+      - "7233:7233"  # gRPC
+      - "8080:8080"  # Web UI
+    networks:
+      - agent-network
+    restart: unless-stopped
+
+  # NATS - High-speed messaging for agents
+  nats:
+    image: nats:alpine
+    container_name: nats-server
+    command: ["-js", "-m", "8222"]  # Enable JetStream and monitoring
+    ports:
+      - "4222:4222"  # Client connections
+      - "8222:8222"  # HTTP monitoring
+      - "6222:6222"  # Clustering
+    networks:
+      - agent-network
+    volumes:
+      - nats-data:/data
+    restart: unless-stopped
+
+  # Consul - Service discovery and configuration
+  consul:
+    image: consul:latest
+    container_name: consul-server
+    command: agent -server -ui -bootstrap-expect=1 -client=0.0.0.0
+    ports:
+      - "8500:8500"  # HTTP API and UI
+      - "8600:8600/udp"  # DNS
+    networks:
+      - agent-network
+    volumes:
+      - consul-data:/consul/data
+    restart: unless-stopped
+
+  # Ray Head Node - Distributed computing
+  ray-head:
+    image: rayproject/ray:latest
+    container_name: ray-head
+    command: ray start --head --port=6379 --dashboard-host=0.0.0.0 --block
+    ports:
+      - "6379:6379"  # Ray client
+      - "8265:8265"  # Ray dashboard
+    networks:
+      - agent-network
+    shm_size: '1gb'
+    environment:
+      - RAY_memory_monitor_refresh_ms=0
+    restart: unless-stopped
+
+networks:
+  agent-network:
+    driver: bridge
+
+volumes:
+  postgres-data:
+  nats-data:
+  consul-data:

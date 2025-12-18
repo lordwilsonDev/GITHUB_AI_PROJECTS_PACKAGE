@@ -1,0 +1,91 @@
+{
+  "started": "2025-12-06T21:32:04.680209",
+  "meta_patterns": [
+    {
+      "type": "temporal_pattern",
+      "insight": "Peak activity occurs at hour 20:00",
+      "data": {
+        "20": 1266,
+        "21": 1
+      },
+      "discovered": "2025-12-06T21:32:04.680367"
+    }
+  ],
+  "missing_connections": [],
+  "contradictions": [],
+  "structure_optimization": {
+    "metrics": {
+      "total_nodes": 1267,
+      "total_edges": 5,
+      "graph_density": 3.117164228420807e-06,
+      "isolated_nodes": 1261,
+      "avg_degree": 0.007892659826361484
+    },
+    "hubs": [
+      {
+        "node_id": "Engine_20251206_204236_82922349",
+        "degree": 5,
+        "type": "Engine"
+      },
+      {
+        "node_id": "Interaction_20251206_204236_52de9ddc",
+        "degree": 1,
+        "type": "Interaction"
+      },
+      {
+        "node_id": "Interaction_20251206_204544_52de9ddc",
+        "degree": 1,
+        "type": "Interaction"
+      },
+      {
+        "node_id": "Interaction_20251206_204720_52de9ddc",
+        "degree": 1,
+        "type": "Interaction"
+      },
+      {
+        "node_id": "Interaction_20251206_205401_52de9ddc",
+        "degree": 1,
+        "type": "Interaction"
+      },
+      {
+        "node_id": "Interaction_20251206_211401_52de9ddc",
+        "degree": 1,
+        "type": "Interaction"
+      }
+    ],
+    "isolated_nodes": [
+      "Engine_20251206_203912_676e1fe4",
+      "Engine_20251206_203912_abcca0b3",
+      "Engine_20251206_203912_2bb2d3c1",
+      "Engine_20251206_203912_a19078d6",
+      "Engine_20251206_203912_404c72db",
+      "Engine_20251206_203912_7dfe6653",
+      "Engine_20251206_203912_de745aaa",
+      "Engine_20251206_203912_cd5ff094",
+      "Engine_20251206_203912_2283f37c",
+      "Engine_20251206_203912_685f45af"
+    ],
+    "recommendations": [
+      {
+        "type": "high_isolation",
+        "message": "1261 isolated nodes detected - consider pruning or connecting them"
+      },
+      {
+        "type": "low_density",
+        "message": "Graph is sparse - more connections could improve knowledge synthesis"
+      }
+    ],
+    "analyzed": "2025-12-06T21:32:04.680718"
+  },
+  "usage_insights": {
+    "most_connected_types": {
+      "Engine": 5,
+      "Interaction": 5
+    },
+    "temporal_distribution": {
+      "2025-12-06": 100
+    },
+    "learned": "2025-12-06T21:32:04.680801"
+  },
+  "completed": "2025-12-06T21:32:04.680960"
+}

@@ -1,0 +1,100 @@
+warning: field `default_timeout` is never read
+  --> hitl-collab/src/collaborator.rs:23:5
+   |
+20 | pub struct BasicHITLCollaborator {
+   |            --------------------- field in this struct
+...
+23 |     default_timeout: u64,
+   |     ^^^^^^^^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` on by default
+
+warning: unused variable: `collaborator`
+   --> hitl-collab/src/lib.rs:403:17
+    |
+403 |         let mut collaborator = BasicHITLCollaborator::new(300);
+    |                 ^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_collaborator`
+    |
+    = note: `#[warn(unused_variables)]` on by default
+
+warning: variable does not need to be mutable
+   --> hitl-collab/src/lib.rs:403:13
+    |
+403 |         let mut collaborator = BasicHITLCollaborator::new(300);
+    |             ----^^^^^^^^^^^^
+    |             |
+    |             help: remove this `mut`
+    |
+    = note: `#[warn(unused_mut)]` on by default
+
+warning: `hitl-collab` (lib) generated 1 warning
+warning: `hitl-collab` (lib test) generated 3 warnings (1 duplicate) (run `cargo fix --lib -p hitl-collab --tests` to apply 1 suggestion)
+warning: unused import: `VerifyingKey`
+ --> audit-system/src/logger.rs:9:52
+  |
+9 | use ed25519_dalek::{SigningKey, Signature, Signer, VerifyingKey};
+  |                                                    ^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: fields `tools` and `rhai_engine` are never read
+  --> evolution-core/src/engine.rs:10:5
+   |
+7  | pub struct BasicEvolutionEngine {
+   |            -------------------- fields in this struct
+...
+10 |     tools: HashMap<String, ToolImplementation>,
+   |     ^^^^^
+11 |     metrics: CapabilityMetrics,
+12 |     rhai_engine: rhai::Engine,
+   |     ^^^^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` on by default
+
+warning: `audit-system` (lib) generated 1 warning (run `cargo fix --lib -p audit-system` to apply 1 suggestion)
+warning: `evolution-core` (lib) generated 1 warning
+warning: `audit-system` (lib test) generated 1 warning (1 duplicate)
+warning: `evolution-core` (lib test) generated 1 warning (1 duplicate)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.46s
+     Running unittests src/lib.rs (target/debug/deps/audit_system-afb6e81e79cfa511)
+
+running 15 tests
+test tests::test_hash_creation ... ok
+test tests::test_basic_audit_logger_creation ... ok
+test tests::test_query_history_with_action_type_filter ... ok
+test tests::test_log_single_action ... ok
+test tests::test_query_history_no_filter ... ok
+test tests::test_signature_uniqueness ... ok
+test tests::test_verify_chain_empty ... ok
+test tests::test_get_merkle_root ... ok
+test tests::test_zero_hash ... ok
+test tests::test_query_history_with_limit ... ok
+test tests::test_log_multiple_actions ... FAILED
+test tests::test_export_log ... ok
+test tests::test_verify_chain_valid ... FAILED
+test tests::test_persistent_storage ... ok
+test tests::test_query_history_with_time_range ... ok
+
+failures:
+
+---- tests::test_log_multiple_actions stdout ----
+
+thread 'tests::test_log_multiple_actions' panicked at audit-system/src/lib.rs:130:9:
+assertion `left != right` failed
+  left: Hash([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+ right: Hash([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+---- tests::test_verify_chain_valid stdout ----
+
+thread 'tests::test_verify_chain_valid' panicked at audit-system/src/lib.rs:154:9:
+assertion failed: result.unwrap()
+
+
+failures:
+    tests::test_log_multiple_actions
+    tests::test_verify_chain_valid
+
+test result: FAILED. 13 passed; 2 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.07s
+
+error: test failed, to rerun pass `-p audit-system --lib`

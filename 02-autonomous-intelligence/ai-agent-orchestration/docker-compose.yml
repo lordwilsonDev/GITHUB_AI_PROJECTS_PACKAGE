@@ -1,0 +1,190 @@
+version: "3.9"
+
+services:
+  # Consul - Service Discovery & Configuration
+  consul:
+    image: consul:1.12
+    container_name: consul
+    restart: always
+    ports:
+      - "8500:8500"  # HTTP API
+      - "8600:8600"  # DNS
+    volumes:
+      - consul_data:/consul/data
+    command: "agent -server -ui -bootstrap-expect=1 -client=0.0.0.0"
+    networks:
+      - orchestration_net
+
+  # NATS - High-speed messaging
+  nats:
+    image: nats:latest
+    container_name: nats
+    restart: always
+    ports:
+      - "4222:4222"  # Client connections
+      - "8222:8222"  # Monitoring
+      - "6222:6222"  # Cluster routes
+    command: ["-js", "-m", "8222"]  # Enable JetStream and monitoring
+    networks:
+      - orchestration_net
+
+  # Temporal - Workflow orchestration
+  temporal:
+    image: temporalio/auto-setup:latest
+    container_name: temporal
+    restart: always
+    ports:
+      - "7233:7233"  # gRPC
+      - "8233:8233"  # Web UI
+    environment:
+      - DB=postgres12
+      - DB_PORT=5432
+      - POSTGRES_USER=temporal
+      - POSTGRES_PWD=temporal
+      - POSTGRES_SEEDS=postgresql
+    depends_on:
+      - postgresql
+    networks:
+      - orchestration_net
+
+  # PostgreSQL - Database for Temporal
+  postgresql:
+    image: postgres:13
+    container_name: postgresql
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: temporal
+      POSTGRES_USER: temporal
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - orchestration_net
+
+  # Temporal Web UI
+  temporal-ui:
+    image: temporalio/ui:latest
+    container_name: temporal-ui
+    restart: always
+    ports:
+      - "8081:8080"
+    environment:
+      - TEMPORAL_ADDRESS=temporal:7233
+      - TEMPORAL_CORS_ORIGINS=http://localhost:3000
+    depends_on:
+      - temporal
+    networks:
+      - orchestration_net
+
+  # Ray Head Node - Distributed computing
+  ray-head:
+    image: rayproject/ray:latest
+    container_name: ray-head
+    restart: always
+    ports:
+      - "6380:6379"   # Redis
+      - "8265:8265"   # Dashboard
+      - "10001:10001" # Client port
+    command: >
+      bash -c "ray start --head 
+      --dashboard-host=0.0.0.0 
+      --dashboard-port=8265 
+      --port=6379 
+      --redis-password=raypassword 
+      --block"
+    shm_size: 2g
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: '4g'
+    networks:
+      - orchestration_net
+
+  # Ray Worker Nodes (scaled for 620 agents)
+  ray-worker:
+    image: rayproject/ray:latest
+    restart: always
+    command: >
+      bash -c "ray start 
+      --address=ray-head:6379 
+      --redis-password=raypassword 
+      --num-cpus=4 
+      --block"
+    shm_size: 2g
+    deploy:
+      mode: replicated
+      replicas: 10  # Scale this based on your needs
+      resources:
+        limits:
+          cpus: '4'
+          memory: '4g'
+    depends_on:
+      - ray-head
+    networks:
+      - orchestration_net
+
+  # Nomad Server - Agent lifecycle management
+  nomad:
+    image: hashicorp/nomad:latest
+    container_name: nomad
+    restart: always
+    ports:
+      - "4646:4646"  # HTTP
+      - "4647:4647"  # RPC
+      - "4648:4648"  # Serf
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:rw
+      - nomad_data:/opt/nomad/data
+    command: agent -dev -bind=0.0.0.0 -consul-address=consul:8500
+    privileged: true
+    depends_on:
+      - consul
+    networks:
+      - orchestration_net
+
+  # Prometheus - Metrics collection
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    restart: always
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+    networks:
+      - orchestration_net
+
+  # Grafana - Monitoring dashboard
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    restart: always
+    ports:
+      - "3001:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_SECURITY_ADMIN_USER=admin
+    volumes:
+      - grafana_data:/var/lib/grafana
+    depends_on:
+      - prometheus
+    networks:
+      - orchestration_net
+
+volumes:
+  consul_data:
+  postgres_data:
+  nomad_data:
+  prometheus_data:
+  grafana_data:
+
+networks:
+  orchestration_net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16

@@ -1,0 +1,16 @@
+ast
+dataset
+fastapi
+model
+numpy
+openai
+pandas
+pydantic
+sklearn
+streamlit
+swanlab
+tokenizers
+torch
+trainer
+transformers
+uvicorn

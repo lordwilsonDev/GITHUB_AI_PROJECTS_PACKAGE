@@ -1,0 +1,63 @@
+# 🎪 Love Engine Playpen Setup - Docker Compose
+# This file sets up our robot's complete playground!
+
+version: '3.8'
+
+services:
+  love-engine:
+    build: .
+    container_name: lovebot2000
+    ports:
+      - "8001:8001"
+    environment:
+      # Robot's backpack settings (override .env if needed)
+      - ROBOT_NAME=LoveBot2000
+      - ENGINE_VERSION=0.2.0
+      - HOST=0.0.0.0
+      - PORT=8001
+      # Point to Ollama running on host machine
+      - OLLAMA_URL=http://host.docker.internal:11434/api/chat
+    volumes:
+      # Mount robot's diary so it persists
+      - ./logs:/app/logs
+      # Mount config for easy updates
+      - ./.env:/app/.env:ro
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8001/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    depends_on:
+      - ollama-check
+
+  # Helper service to check if Ollama is running
+  ollama-check:
+    image: curlimages/curl:latest
+    container_name: ollama-checker
+    command: >
+      sh -c "
+        echo 'Checking if Ollama is running...'
+        for i in 1 2 3 4 5; do
+          if curl -f http://host.docker.internal:11434/api/tags 2>/dev/null; then
+            echo 'Ollama is running! 🎉'
+            exit 0
+          fi
+          echo "Attempt $$i: Ollama not ready, waiting..."
+          sleep 5
+        done
+        echo 'Warning: Ollama might not be running. Please start it with: ollama serve'
+        exit 1
+      "
+    restart: "no"
+
+# Create a network for our robot playground
+networks:
+  default:
+    name: love-engine-network
+
+# Persistent storage for our robot's memories
+volumes:
+  love_logs:
+    driver: local

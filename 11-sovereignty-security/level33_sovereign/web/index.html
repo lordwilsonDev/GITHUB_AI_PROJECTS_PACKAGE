@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level 33 Dashboard</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h1>🦁 Level 33</h1>
+                <p class="subtitle">Sovereign Architecture</p>
+            </div>
+            
+            <nav class="nav">
+                <a href="#" class="nav-item active" data-page="dashboard">
+                    <span class="icon">📊</span>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#" class="nav-item" data-page="activities">
+                    <span class="icon">📋</span>
+                    <span>Activities</span>
+                </a>
+                <a href="#" class="nav-item" data-page="metrics">
+                    <span class="icon">📈</span>
+                    <span>Metrics</span>
+                </a>
+                <a href="#" class="nav-item" data-page="automations">
+                    <span class="icon">🤖</span>
+                    <span>Automations</span>
+                </a>
+                <a href="#" class="nav-item" data-page="llm">
+                    <span class="icon">🧠</span>
+                    <span>LLM Logs</span>
+                </a>
+                <a href="#" class="nav-item" data-page="config">
+                    <span class="icon">⚙️</span>
+                    <span>Configuration</span>
+                </a>
+                <a href="#" class="nav-item" data-page="health">
+                    <span class="icon">💚</span>
+                    <span>Health</span>
+                </a>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="status-indicator">
+                    <span class="status-dot online"></span>
+                    <span>System Online</span>
+                </div>
+                <p class="version">v1.0.0</p>
+            </div>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <h2 id="page-title">Dashboard</h2>
+                <div class="header-actions">
+                    <span id="last-update">Last update: --:--:--</span>
+                    <button class="btn btn-primary" onclick="refreshData()">🔄 Refresh</button>
+                </div>
+            </header>
+            
+            <div class="content" id="content">
+                <!-- Dashboard Page -->
+                <div id="page-dashboard" class="page active">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon">💻</div>
+                            <div class="stat-info">
+                                <p class="stat-label">CPU Usage</p>
+                                <p class="stat-value" id="cpu-usage">--</p>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon">🧠</div>
+                            <div class="stat-info">
+                                <p class="stat-label">Memory</p>
+                                <p class="stat-value" id="memory-usage">--</p>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon">💾</div>
+                            <div class="stat-info">
+                                <p class="stat-label">Disk Space</p>
+                                <p class="stat-value" id="disk-usage">--</p>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon">🤖</div>
+                            <div class="stat-info">
+                                <p class="stat-label">Ollama</p>
+                                <p class="stat-value" id="ollama-status">--</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="grid-2">
+                        <div class="card">
+                            <h3>Recent Activities</h3>
+                            <div id="recent-activities" class="activity-list">
+                                <p class="loading">Loading...</p>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <h3>Quick Actions</h3>
+                            <div class="quick-actions">
+                                <button class="action-btn" onclick="runAutomation('workspace_launcher')">
+                                    🚀 Launch Workspace
+                                </button>
+                                <button class="action-btn" onclick="runAutomation('file_organizer')">
+                                    📦 Organize Files
+                                </button>
+                                <button class="action-btn" onclick="runAutomation('system_health_check')">
+                                    🔍 Health Check
+                                </button>
+                                <button class="action-btn" onclick="runAutomation('screenshot_documenter')">
+                                    📸 Screenshot
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>System Metrics (Last 24h)</h3>
+                        <canvas id="metrics-chart"></canvas>
+                    </div>
+                </div>
+                
+                <!-- Activities Page -->
+                <div id="page-activities" class="page">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Activity Log</h3>
+                            <input type="text" id="activity-search" placeholder="Search activities..." class="search-input">
+                        </div>
+                        <div id="activities-table" class="table-container">
+                            <p class="loading">Loading...</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Metrics Page -->
+                <div id="page-metrics" class="page">
+                    <div class="card">
+                        <h3>Performance Metrics</h3>
+                        <canvas id="performance-chart"></canvas>
+                    </div>
+                </div>
+                
+                <!-- Automations Page -->
+                <div id="page-automations" class="page">
+                    <div class="automations-grid" id="automations-grid">
+                        <p class="loading">Loading...</p>
+                    </div>
+                </div>
+                
+                <!-- LLM Page -->
+                <div id="page-llm" class="page">
+                    <div class="card">
+                        <h3>LLM Interaction History</h3>
+                        <div id="llm-interactions" class="table-container">
+                            <p class="loading">Loading...</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Config Page -->
+                <div id="page-config" class="page">
+                    <div class="card">
+                        <h3>System Configuration</h3>
+                        <div id="config-viewer">
+                            <p class="loading">Loading...</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Health Page -->
+                <div id="page-health" class="page">
+                    <div class="card">
+                        <h3>System Health Check</h3>
+                        <div id="health-status">
+                            <p class="loading">Loading...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="/static/js/app.js"></script>
+</body>
+</html>

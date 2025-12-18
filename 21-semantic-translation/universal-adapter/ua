@@ -1,0 +1,70 @@
+#!/bin/bash
+# 🔮 Universal Adapter Quick Run Script
+
+ADAPTER_DIR="$HOME/universal-adapter"
+ADAPTER_SCRIPT="$ADAPTER_DIR/universal_adapter.py"
+
+# Colors
+GREEN='\033[0;32m'
+BLUE='\033[0;34m'
+NC='\033[0m' # No Color
+
+show_help() {
+    echo ""
+    echo -e "${BLUE}🔮 Universal Adapter${NC}"
+    echo "===================="
+    echo ""
+    echo "Quick Commands:"
+    echo "  ua run <sequence>     - Run a sequence"
+    echo "  ua list               - List available sequences"
+    echo "  ua status <sequence>  - Show sequence status"
+    echo "  ua health             - Run health check"
+    echo "  ua mega               - Run mega breakthrough pipeline"
+    echo "  ua quick              - Run quick inversion"
+    echo "  ua init <name>        - Create new sequence"
+    echo ""
+    echo "Examples:"
+    echo "  ua run full-cognitive-cycle"
+    echo "  ua run consciousness-evolution --resume"
+    echo "  ua mega"
+    echo ""
+}
+
+case "$1" in
+    run)
+        shift
+        python3 "$ADAPTER_SCRIPT" run "$@"
+        ;;
+    list)
+        python3 "$ADAPTER_SCRIPT" list
+        ;;
+    status)
+        shift
+        python3 "$ADAPTER_SCRIPT" status "$@"
+        ;;
+    init)
+        shift
+        python3 "$ADAPTER_SCRIPT" init "$@"
+        ;;
+    systems)
+        shift
+        python3 "$ADAPTER_SCRIPT" systems "$@"
+        ;;
+    health)
+        python3 "$ADAPTER_SCRIPT" run health-check
+        ;;
+    mega)
+        python3 "$ADAPTER_SCRIPT" run mega-breakthrough-pipeline
+        ;;
+    quick)
+        python3 "$ADAPTER_SCRIPT" run quick-inversion
+        ;;
+    help|--help|-h|"")
+        show_help
+        ;;
+    *)
+        echo "Unknown command: $1"
+        show_help
+        exit 1
+        ;;
+esac

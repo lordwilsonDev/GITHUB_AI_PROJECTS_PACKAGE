@@ -1,0 +1,26 @@
+{
+  "python_advanced": {
+    "skill_id": "python_advanced",
+    "name": "Advanced Python",
+    "category": "Programming Languages",
+    "description": "Master advanced Python concepts including decorators, generators, and metaclasses",
+    "prerequisites": [],
+    "proficiency_level": 2,
+    "status": "learning",
+    "created_at": "2025-12-15T22:52:33.783499",
+    "updated_at": "2025-12-15T22:52:33.783847"
+  },
+  "machine_learning": {
+    "skill_id": "machine_learning",
+    "name": "Machine Learning",
+    "category": "AI/ML",
+    "description": "Learn machine learning algorithms and frameworks",
+    "prerequisites": [
+      "python_advanced"
+    ],
+    "proficiency_level": 0,
+    "status": "not_started",
+    "created_at": "2025-12-15T22:52:33.783617",
+    "updated_at": "2025-12-15T22:52:33.783619"
+  }
+}

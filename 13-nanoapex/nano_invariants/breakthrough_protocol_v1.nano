@@ -1,0 +1,14 @@
+{
+  "id": "breakthrough_protocol_v1",
+  "type": "process",
+  "timestamp": "auto",
+  "content": {
+    "description": "Structured inversion and evaluation loop for generating new insights",
+    "agents": ["critic", "analyst", "synthesizer", "challenger"],
+    "decision_metric": "Impact × Adoption (Probability of rewrite)"
+  },
+  "meta": {
+    "tags": ["research", "inference", "inversion"],
+    "success_pattern": "Across multiple domains"
+  }
+}

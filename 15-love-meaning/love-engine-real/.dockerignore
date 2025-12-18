@@ -1,0 +1,43 @@
+# 🧹 Keep our robot's playpen clean!
+# These files don't need to go into the container
+
+# Python cache and virtual environment
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+.venv/
+venv/
+env/
+
+# Development files
+.git/
+.gitignore
+README.md
+*.md
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs (we'll mount these as volumes instead)
+logs/
+*.log
+love_logs.jsonl
+
+# Docker files (no need to copy these into the container)
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Test files
+test_*
+*_test.py
+tests/

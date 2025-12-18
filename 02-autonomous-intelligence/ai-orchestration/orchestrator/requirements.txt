@@ -1,0 +1,16 @@
+# Temporal SDK
+temporalio>=1.5.0
+
+# NATS client
+nats-py>=2.6.0
+
+# Consul client
+python-consul2>=0.1.5
+
+# Ray
+ray[default]>=2.9.0
+
+# Utilities
+aiohttp>=3.9.0
+pydantic>=2.5.0
+python-dotenv>=1.0.0

@@ -1,0 +1,40 @@
+# MOIE-OS Configuration
+# Phase 2: Upgraded to Llama3
+# Generated: 2025-12-12
+
+system:
+  name: "MOIE-OS Sovereign Intelligence"
+  version: "1.0.0"
+  operator: "Lord Wilson"
+  base_path: "/Users/lordwilson/vy-nexus"
+
+reasoning_core:
+  model: "llama3:latest"
+  provider: "ollama"
+  temperature: 0.7
+  max_tokens: 4096
+  context_window: 8192
+
+logging:
+  level: "info"
+  journal_path: "/Users/lordwilson/research_logs/daily.md"
+  safety_log: "/Users/lordwilson/research_logs/safety.log"
+  system_journal: "/Users/lordwilson/research_logs/system_journal.md"
+
+safety:
+  enabled: true
+  critical_error_threshold: 3
+  auto_shutdown: true
+  save_state_on_shutdown: true
+
+file_system:
+  safe_mode: true
+  allowed_paths:
+    - "/Users/lordwilson/vy-nexus"
+    - "/Users/lordwilson/research_logs"
+  max_file_size: 10485760  # 10MB
+
+heartbeat:
+  enabled: true
+  interval_minutes: 10
+  state_file: "/Users/lordwilson/vy-nexus/sovereign_state.json"

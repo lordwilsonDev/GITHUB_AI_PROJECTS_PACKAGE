@@ -1,0 +1,39 @@
+[
+  {
+    "id": "test_1_20251215_222650",
+    "name": "Basic Script Test",
+    "description": "Test basic script execution",
+    "type": "script",
+    "script_path": "/Users/lordwilson/vy-nexus/sandbox/test_script.py",
+    "command": null,
+    "expected_outcome": {
+      "return_code": 0,
+      "output_contains": [
+        "Test completed!"
+      ],
+      "no_errors": true
+    },
+    "created_at": "2025-12-15T22:26:50.150622",
+    "status": "pending",
+    "runs": 2,
+    "last_run": "2025-12-15T22:26:50.210850"
+  },
+  {
+    "id": "test_2_20251215_222650",
+    "name": "Command Test",
+    "description": "Test command execution",
+    "type": "command",
+    "script_path": null,
+    "command": "echo 'Hello from sandbox' && ls -la",
+    "expected_outcome": {
+      "return_code": 0,
+      "output_contains": [
+        "Hello from sandbox"
+      ]
+    },
+    "created_at": "2025-12-15T22:26:50.150698",
+    "status": "pending",
+    "runs": 2,
+    "last_run": "2025-12-15T22:26:50.217415"
+  }
+]

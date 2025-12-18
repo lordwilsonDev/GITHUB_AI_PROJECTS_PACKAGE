@@ -1,0 +1,33 @@
+{
+  "api_module": [
+    {
+      "version": "1.0.0",
+      "timestamp": "2025-12-15T23:13:18.414490",
+      "changes": [
+        "Initial release",
+        "Basic API endpoints"
+      ],
+      "dependencies": {
+        "database": "1.0.0",
+        "auth": "1.0.0"
+      },
+      "status": "active",
+      "rollback_available": false
+    },
+    {
+      "version": "1.1.0",
+      "timestamp": "2025-12-15T23:13:18.414654",
+      "changes": [
+        "Added caching",
+        "Performance improvements"
+      ],
+      "dependencies": {
+        "database": "1.0.0",
+        "auth": "1.1.0",
+        "cache": "1.0.0"
+      },
+      "status": "rolled_back",
+      "rollback_available": true
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "type": "duration_optimization",
+    "task_type": "code_analysis",
+    "priority": "medium",
+    "reason": "Average duration is 720 seconds",
+    "potential_impact": "medium",
+    "recommendation": "Optimize workflow for code_analysis to reduce duration",
+    "identified_at": "2025-12-15T22:16:06.958400",
+    "status": "identified"
+  },
+  {
+    "type": "complexity_reduction",
+    "task_type": "code_analysis",
+    "priority": "medium",
+    "reason": "Average of 25.0 steps per task",
+    "potential_impact": "medium",
+    "recommendation": "Simplify workflow for code_analysis by combining steps",
+    "identified_at": "2025-12-15T22:16:06.958402",
+    "status": "identified"
+  }
+]

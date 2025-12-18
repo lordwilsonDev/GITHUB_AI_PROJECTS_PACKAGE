@@ -1,0 +1,13 @@
+{
+  "ins_001": {
+    "insight_id": "ins_001",
+    "domain_id": "ai_automation",
+    "title": "Implement Multi-Agent Collaboration",
+    "description": "Multiple AI agents working together can solve complex problems more effectively than single agents",
+    "actionable": true,
+    "applied": false,
+    "impact": null,
+    "tags": [],
+    "timestamp": "2025-12-15T22:53:51.602390"
+  }
+}

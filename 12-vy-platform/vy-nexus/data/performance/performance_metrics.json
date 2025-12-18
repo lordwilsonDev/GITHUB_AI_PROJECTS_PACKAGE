@@ -1,0 +1,36 @@
+{
+  "components": {
+    "learning_engine": {
+      "metrics": {
+        "response_time": [
+          {
+            "timestamp": "2025-12-18T11:04:08.429580",
+            "value": 850,
+            "metadata": {
+              "operation": "pattern_analysis"
+            }
+          }
+        ]
+      },
+      "first_recorded": "2025-12-18T11:04:08.429580",
+      "total_measurements": 1
+    },
+    "automation_generator": {
+      "metrics": {
+        "response_time": [
+          {
+            "timestamp": "2025-12-18T11:04:08.429743",
+            "value": 1500,
+            "metadata": {
+              "operation": "script_generation"
+            }
+          }
+        ]
+      },
+      "first_recorded": "2025-12-18T11:04:08.429743",
+      "total_measurements": 1
+    }
+  },
+  "system_wide": [],
+  "last_updated": "2025-12-18T11:04:08.429743"
+}

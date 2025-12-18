@@ -1,0 +1,74 @@
+[
+  {
+    "report_id": "report_1",
+    "plan_id": "q1_2025",
+    "plan_name": "Q1 2025 System Improvements",
+    "generated_at": "2025-12-15T22:47:05.156202",
+    "status": "active",
+    "progress": {
+      "overall_percentage": 40.0,
+      "time_percentage": 0.0,
+      "on_track": true
+    },
+    "initiatives": {
+      "summary": {
+        "total": 2,
+        "completed": 0,
+        "in_progress": 2,
+        "planned": 0,
+        "blocked": 0
+      },
+      "details": [
+        {
+          "initiative_id": "perf_opt_001",
+          "name": "Database Query Optimization",
+          "status": "in_progress",
+          "progress": 50,
+          "priority": "high",
+          "expected_impact": "high"
+        },
+        {
+          "initiative_id": "reliability_001",
+          "name": "Error Handling Improvements",
+          "status": "in_progress",
+          "progress": 30,
+          "priority": "critical",
+          "expected_impact": "high"
+        }
+      ]
+    },
+    "impact": {
+      "measured_at": "2025-12-15T22:47:05.156065",
+      "improvements": {
+        "response_time": {
+          "baseline": 250,
+          "current": 180,
+          "target": 100,
+          "improvement_percentage": -28.000000000000004,
+          "target_achievement": 46.666666666666664
+        },
+        "success_rate": {
+          "baseline": 95.0,
+          "current": 97.5,
+          "target": 99.5,
+          "improvement_percentage": 2.631578947368421,
+          "target_achievement": 55.55555555555556
+        },
+        "user_satisfaction": {
+          "baseline": 75,
+          "current": 82,
+          "target": 90,
+          "improvement_percentage": 9.333333333333334,
+          "target_achievement": 46.666666666666664
+        }
+      },
+      "overall_target_achievement": 49.629629629629626
+    },
+    "timeline": {
+      "start_date": "2025-12-15T22:47:05.155350",
+      "end_date": "2026-03-15T22:47:05.154832",
+      "elapsed_days": 0,
+      "remaining_days": 89
+    }
+  }
+]

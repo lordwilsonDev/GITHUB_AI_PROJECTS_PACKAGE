@@ -1,0 +1,23 @@
+[
+  {
+    "feature_id": "feature_20251215_224109",
+    "user_id": "user_001",
+    "success": true,
+    "metrics": {},
+    "timestamp": "2025-12-15T22:41:09.830331"
+  },
+  {
+    "feature_id": "feature_20251215_224109",
+    "user_id": "user_002",
+    "success": true,
+    "metrics": {},
+    "timestamp": "2025-12-15T22:41:09.830406"
+  },
+  {
+    "feature_id": "feature_20251215_224109",
+    "user_id": "user_001",
+    "success": true,
+    "metrics": {},
+    "timestamp": "2025-12-15T22:41:09.830478"
+  }
+]

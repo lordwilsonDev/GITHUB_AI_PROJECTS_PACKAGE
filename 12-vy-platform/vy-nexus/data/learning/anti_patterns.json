@@ -1,0 +1,15 @@
+[
+  {
+    "id": "e42c63805c1b",
+    "task_type": "code_execution",
+    "error_type": "module_not_found",
+    "title": "Anti-pattern: module_not_found in code_execution",
+    "description": "Repeatedly fails with module_not_found",
+    "root_cause": "Missing dependency",
+    "occurrences": 2,
+    "first_seen": "2025-12-15T22:10:27.077903",
+    "last_seen": "2025-12-15T22:10:27.077977",
+    "severity": "medium",
+    "prevention": "Avoid: direct_execution. These approaches have failed before."
+  }
+]

@@ -1,0 +1,21 @@
+{
+  "insights": [
+    {
+      "type": "positive",
+      "insight": "High user satisfaction (81.0/100)",
+      "priority": "low"
+    },
+    {
+      "type": "negative",
+      "insight": "Low satisfaction in reliability (40.0/100)",
+      "priority": "high"
+    }
+  ],
+  "recommendations": [
+    {
+      "recommendation": "Improve reliability functionality and user experience",
+      "priority": "high"
+    }
+  ],
+  "last_generated": "2025-12-15T22:46:50.349217"
+}

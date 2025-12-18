@@ -1,0 +1,73 @@
+import ollama from 'ollama';
+import { MOIE_SYSTEM_PROMPT } from './system_prompts.js';
+import { insertRun, getLastRuns } from './db.js';
+
+function cleanJsonFences(text) {
+  return text
+    .trim()
+    .replace(/^```json/i, '')
+    .replace(/^```/, '')
+    .replace(/```$/, '')
+    .trim();
+}
+
+export class MoIEEngine {
+  async invert({ domain, axiom, why, inversionMode }) {
+    const modeLabel =
+      inversionMode === 'reverse_engineering'
+        ? 'Reverse engineering approach'
+        : inversionMode === 'systematic_reduction'
+        ? 'Systematic reduction approach'
+        : 'Standard inversion';
+
+    const userPrompt = `
+DOMAIN: ${domain}
+CONSENSUS_AXIOM: ${axiom}
+WHY_IS_IT_ASSUMED: ${why}
+INVERSION_MODE: ${modeLabel}
+`;
+
+    const res = await ollama.chat({
+      model: 'gemma2:2b',
+      messages: [
+        { role: 'system', content: MOIE_SYSTEM_PROMPT },
+        { role: 'user', content: userPrompt }
+      ]
+    });
+
+    let content = res.message.content;
+    content = cleanJsonFences(content);
+
+    let parsed;
+    try {
+      parsed = JSON.parse(content);
+    } catch (e) {
+      console.error('Failed to parse JSON from model:', e);
+      console.error('Raw content:\n', content);
+      throw e;
+    }
+
+    const now = new Date().toISOString();
+
+    const run = {
+      timestamp: now,
+      domain: parsed.domain ?? domain,
+      consensus_axiom: parsed.consensus_axiom ?? axiom,
+      inverted_truth: parsed.inverted_truth ?? '',
+      vdr: parsed.metrics?.VDR ?? null,
+      sem: parsed.metrics?.SEM ?? null,
+      complexity: parsed.metrics?.complexity ?? null,
+      is_safe: parsed.safety?.is_safe ? 1 : 0,
+      safety_reason: parsed.safety?.reason ?? '',
+      raw_json: JSON.stringify(parsed),
+      inversion_mode: inversionMode
+    };
+
+    insertRun(run);
+    return run;
+  }
+
+  metaReview(limit = 5) {
+    return getLastRuns(limit);
+  }
+}

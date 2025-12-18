@@ -1,0 +1,15 @@
+{
+  "id": "constitution_safety_v1",
+  "type": "invariant",
+  "timestamp": "auto",
+  "content": {
+    "name": "Non-Self-Sacrificing Invariant",
+    "rule": "The system may not disable or bypass its own safety components.",
+    "effect": "Any action that removes safety reduces value to zero.",
+    "intent": "Survival and long-term operability always take precedence."
+  },
+  "meta": {
+    "tags": ["safety", "governance", "kernel"],
+    "priority": "BLOCK"
+  }
+}

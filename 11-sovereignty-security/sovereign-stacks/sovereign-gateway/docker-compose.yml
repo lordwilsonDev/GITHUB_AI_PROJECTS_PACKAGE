@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  mcp-git:
+    image: alpine/git:latest
+    container_name: sovereign_git
+    volumes:
+      - ./:/workspace
+    working_dir: /workspace
+    command: tail -f /dev/null
+    restart: unless-stopped
+
+  mcp-browser:
+    image: browserless/chrome:latest
+    container_name: sovereign_browser
+    ports:
+      - "3000:3000"
+    environment:
+      - CONNECTION_TIMEOUT=60000
+    restart: unless-stopped

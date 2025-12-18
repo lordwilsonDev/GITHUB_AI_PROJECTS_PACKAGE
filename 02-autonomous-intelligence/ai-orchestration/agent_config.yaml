@@ -1,0 +1,336 @@
+# AI Agent Orchestration System - Agent Configuration
+# This file defines the 620-agent distribution and their roles
+
+agent_system:
+  total_agents: 620
+  resource_limit_mb: 2000  # Stay under 2GB total
+  
+# Agent Distribution by Type
+agent_types:
+  
+  # Research Agents (100 total)
+  research:
+    count: 100
+    description: "Gather information, search web, analyze sources"
+    capabilities:
+      - web_search
+      - data_extraction
+      - source_validation
+      - trend_analysis
+    resource_per_agent_mb: 2
+    
+  # Processing Agents (200 total)
+  processing:
+    count: 200
+    description: "Transform data, execute tasks, generate content"
+    capabilities:
+      - text_generation
+      - data_transformation
+      - file_processing
+      - api_calls
+    resource_per_agent_mb: 2
+    
+  # Analysis Agents (150 total)
+  analysis:
+    count: 150
+    description: "Analyze results, extract insights, validate quality"
+    capabilities:
+      - sentiment_analysis
+      - pattern_recognition
+      - quality_validation
+      - statistical_analysis
+    resource_per_agent_mb: 2
+    
+  # Monitoring Agents (100 total)
+  monitoring:
+    count: 100
+    description: "Track progress, health checks, alert on issues"
+    capabilities:
+      - health_monitoring
+      - progress_tracking
+      - error_detection
+      - performance_metrics
+    resource_per_agent_mb: 1
+    
+  # Coordination Agents (70 total)
+  coordination:
+    count: 70
+    description: "Coordinate workflows, manage dependencies, aggregate results"
+    capabilities:
+      - workflow_coordination
+      - dependency_management
+      - result_aggregation
+      - task_scheduling
+    resource_per_agent_mb: 3
+
+# Workflow Templates
+workflows:
+  
+  content_creation:
+    name: "Content Creation Workflow"
+    description: "Generate 100 social media posts in 10 minutes"
+    steps:
+      - name: "research"
+        agents: 10
+        agent_type: "research"
+        task: "Gather trending topics and data"
+        timeout_seconds: 120
+        
+      - name: "writing"
+        agents: 50
+        agent_type: "processing"
+        task: "Generate 2 posts each (100 total)"
+        timeout_seconds: 300
+        depends_on: ["research"]
+        
+      - name: "editing"
+        agents: 20
+        agent_type: "analysis"
+        task: "Review and refine posts"
+        timeout_seconds: 180
+        depends_on: ["writing"]
+        
+      - name: "quality_check"
+        agents: 10
+        agent_type: "analysis"
+        task: "Validate quality and accuracy"
+        timeout_seconds: 120
+        depends_on: ["editing"]
+        
+      - name: "formatting"
+        agents: 10
+        agent_type: "processing"
+        task: "Format for each platform"
+        timeout_seconds: 60
+        depends_on: ["quality_check"]
+  
+  data_analysis:
+    name: "Data Analysis Workflow"
+    description: "Analyze 1000 customer reviews"
+    steps:
+      - name: "load_data"
+        agents: 5
+        agent_type: "processing"
+        task: "Load and validate dataset"
+        timeout_seconds: 60
+        
+      - name: "distribute_analysis"
+        agents: 50
+        agent_type: "analysis"
+        task: "Analyze 20 reviews each"
+        timeout_seconds: 300
+        depends_on: ["load_data"]
+        
+      - name: "aggregate_findings"
+        agents: 10
+        agent_type: "coordination"
+        task: "Combine all findings"
+        timeout_seconds: 120
+        depends_on: ["distribute_analysis"]
+        
+      - name: "pattern_recognition"
+        agents: 10
+        agent_type: "analysis"
+        task: "Identify trends and patterns"
+        timeout_seconds: 180
+        depends_on: ["aggregate_findings"]
+        
+      - name: "generate_report"
+        agents: 5
+        agent_type: "processing"
+        task: "Create executive summary"
+        timeout_seconds: 120
+        depends_on: ["pattern_recognition"]
+  
+  website_development:
+    name: "Website Development Workflow"
+    description: "Build complete website with parallel development"
+    steps:
+      - name: "requirements"
+        agents: 5
+        agent_type: "research"
+        task: "Gather specifications"
+        timeout_seconds: 180
+        
+      - name: "design"
+        agents: 10
+        agent_type: "processing"
+        task: "Create layout and wireframes"
+        timeout_seconds: 300
+        depends_on: ["requirements"]
+        
+      - name: "html_development"
+        agents: 15
+        agent_type: "processing"
+        task: "Write semantic markup"
+        timeout_seconds: 600
+        depends_on: ["design"]
+        
+      - name: "css_development"
+        agents: 15
+        agent_type: "processing"
+        task: "Create styling"
+        timeout_seconds: 600
+        depends_on: ["design"]
+        parallel_with: ["html_development"]
+        
+      - name: "javascript_development"
+        agents: 15
+        agent_type: "processing"
+        task: "Add interactivity"
+        timeout_seconds: 600
+        depends_on: ["design"]
+        parallel_with: ["html_development", "css_development"]
+        
+      - name: "content_creation"
+        agents: 20
+        agent_type: "processing"
+        task: "Write copy and source images"
+        timeout_seconds: 600
+        depends_on: ["design"]
+        parallel_with: ["html_development"]
+        
+      - name: "testing"
+        agents: 20
+        agent_type: "analysis"
+        task: "Run automated tests"
+        timeout_seconds: 300
+        depends_on: ["html_development", "css_development", "javascript_development"]
+        
+      - name: "optimization"
+        agents: 10
+        agent_type: "processing"
+        task: "Improve performance"
+        timeout_seconds: 240
+        depends_on: ["testing"]
+  
+  monitoring_24_7:
+    name: "24/7 Monitoring Workflow"
+    description: "Monitor 20 websites for price drops"
+    continuous: true
+    steps:
+      - name: "configure_monitors"
+        agents: 5
+        agent_type: "coordination"
+        task: "Set up monitoring parameters"
+        timeout_seconds: 60
+        
+      - name: "deploy_monitors"
+        agents: 20
+        agent_type: "monitoring"
+        task: "Monitor 1 website each"
+        timeout_seconds: 3600  # Check every hour
+        depends_on: ["configure_monitors"]
+        repeat: true
+        
+      - name: "price_comparison"
+        agents: 10
+        agent_type: "analysis"
+        task: "Track historical data"
+        timeout_seconds: 300
+        depends_on: ["deploy_monitors"]
+        repeat: true
+        
+      - name: "alert_system"
+        agents: 5
+        agent_type: "coordination"
+        task: "Send notifications on threshold"
+        timeout_seconds: 60
+        depends_on: ["price_comparison"]
+        repeat: true
+
+# Communication Patterns
+communication:
+  
+  # NATS Topics
+  nats_topics:
+    - "agent.research.request"
+    - "agent.research.response"
+    - "agent.processing.request"
+    - "agent.processing.response"
+    - "agent.analysis.request"
+    - "agent.analysis.response"
+    - "agent.monitoring.status"
+    - "agent.coordination.command"
+    - "orchestrator.heartbeat"
+    - "workflow.status"
+    - "workflow.complete"
+  
+  # Message Patterns
+  patterns:
+    request_reply:
+      description: "Agent requests data from another agent"
+      timeout_seconds: 30
+      
+    pub_sub:
+      description: "Broadcast updates to all interested agents"
+      
+    queue_group:
+      description: "Distribute work across agent pool"
+      load_balance: true
+
+# Health & Monitoring
+health:
+  
+  # Consul Health Checks
+  consul_checks:
+    ttl_seconds: 30
+    deregister_after_seconds: 60
+    
+  # Agent Heartbeat
+  heartbeat:
+    interval_seconds: 10
+    timeout_seconds: 30
+    
+  # Performance Metrics
+  metrics:
+    - cpu_usage
+    - memory_usage
+    - task_completion_rate
+    - error_rate
+    - response_time
+
+# Safety & Control
+safety:
+  
+  # Human Approval Gates
+  approval_required:
+    - file_deletion
+    - email_sending
+    - financial_transactions
+    - system_configuration
+    
+  # Rate Limits
+  rate_limits:
+    api_calls_per_minute: 1000
+    file_operations_per_minute: 500
+    
+  # Sandbox Mode
+  sandbox:
+    enabled: true
+    description: "Test workflows without real-world impact"
+    
+  # Emergency Controls
+  emergency:
+    kill_switch: true
+    pause_all_agents: true
+    rollback_enabled: true
+
+# Resource Management
+resources:
+  
+  # Memory Allocation
+  memory:
+    total_limit_mb: 2000
+    per_agent_limit_mb: 3
+    reserve_mb: 200  # For system overhead
+    
+  # CPU Allocation
+  cpu:
+    max_cores: 8
+    per_agent_threads: 1
+    
+  # Network
+  network:
+    max_connections_per_agent: 10
+    connection_timeout_seconds: 30

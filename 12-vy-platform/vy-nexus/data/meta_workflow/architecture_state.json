@@ -1,0 +1,10 @@
+{
+  "components": {},
+  "resources": {
+    "cpu": "high",
+    "memory": "8GB",
+    "storage": "200GB"
+  },
+  "data_flows": [],
+  "security_level": "high"
+}

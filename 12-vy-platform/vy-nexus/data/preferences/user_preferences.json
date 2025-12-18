@@ -1,0 +1,50 @@
+{
+  "communication": {
+    "style": "technical",
+    "formality": "professional",
+    "verbosity": 0.5,
+    "emoji_usage": true,
+    "explanation_depth": "medium"
+  },
+  "workflow": {
+    "preferred_tools": [
+      "finder",
+      "terminal",
+      "python"
+    ],
+    "avoided_tools": [],
+    "automation_level": "aggressive",
+    "confirmation_required": true,
+    "parallel_tasks": false
+  },
+  "timing": {
+    "peak_hours": [
+      22
+    ],
+    "preferred_days": [
+      "Monday"
+    ],
+    "task_duration_preference": "medium",
+    "break_frequency": "normal"
+  },
+  "interface": {
+    "preferred_applications": {
+      "text_editing": "vscode"
+    },
+    "keyboard_shortcuts": true,
+    "visual_feedback": true,
+    "sound_notifications": false
+  },
+  "content": {
+    "detail_level": "medium",
+    "technical_depth": "medium",
+    "examples_preferred": true,
+    "visual_aids": true
+  },
+  "learning": {
+    "feedback_frequency": "normal",
+    "suggestion_acceptance_rate": 0.5,
+    "experimentation_tolerance": "medium",
+    "learning_speed": "adaptive"
+  }
+}

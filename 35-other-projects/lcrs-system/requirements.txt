@@ -1,0 +1,15 @@
+dotenv
+fastapi
+googletrans
+httpx
+joblib
+langdetect
+matplotlib
+numpy
+openai
+pandas
+pydantic
+requests
+seaborn
+sklearn
+uvicorn

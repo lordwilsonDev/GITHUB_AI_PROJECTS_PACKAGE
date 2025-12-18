@@ -1,0 +1,4 @@
+# file: /Users/lordwilson/sovereign-keep/src/analysis.py
+# hypothesis_version: 6.141.1
+
+[0.0, 0.3, 0.7, 0.85, 1.0, '[Empty Note]', '[Empty]', '__main__', 'age_days', 'all-MiniLM-L6-v2', 'entropy', 'id', 'is_archived', 'is_trashed', 'label_count', 'length', 'title', 'vitality']

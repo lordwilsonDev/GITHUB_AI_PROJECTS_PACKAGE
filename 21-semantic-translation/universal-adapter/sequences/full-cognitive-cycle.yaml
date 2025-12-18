@@ -1,0 +1,66 @@
+# Full Cognitive Cycle - Master Sequence
+# Runs the complete breakthrough generation pipeline
+
+name: full-cognitive-cycle
+description: Complete MoIE -> VY-NEXUS -> Synthesis pipeline
+version: "1.0"
+
+variables:
+  home: /Users/lordwilson
+  domain: "default"
+  
+steps:
+  # Step 1: Prepare environment
+  - name: environment-check
+    type: shell
+    config:
+      command: |
+        echo "🔍 Environment Check"
+        echo "Date: $(date)"
+        echo "User: $(whoami)"
+        echo "Python: $(python3 --version)"
+        echo "Node: $(node --version)"
+    on_failure: stop
+    
+  # Step 2: Run Elisya cognitive cycle (MoIE inversion)
+  - name: elisya-cycle
+    type: shell
+    config:
+      script: ${home}/01_Active_Projects/elisya-system/elisya_cycle.sh
+      cwd: ${home}/01_Active_Projects/elisya-system
+    timeout_seconds: 120
+    on_failure: continue
+    
+  # Step 3: Run VY-NEXUS pattern synthesis  
+  - name: nexus-synthesis
+    type: python
+    config:
+      script: ${home}/vy-nexus/nexus_core.py
+    timeout_seconds: 180
+    on_failure: continue
+    
+  # Step 4: Run nano dispatcher to process any pending items
+  - name: nano-dispatch
+    type: python
+    config:
+      script: ${home}/nano_dispatcher.py
+      args: ["--mode", "once"]
+    timeout_seconds: 60
+    on_failure: continue
+    
+  # Step 5: Generate synthesis report
+  - name: synthesis-report
+    type: shell
+    config:
+      command: |
+        echo "📊 SYNTHESIS COMPLETE"
+        echo "===================="
+        echo ""
+        echo "📁 VY-NEXUS outputs:"
+        ls -la ${home}/vy-nexus/synthesis/ 2>/dev/null | tail -5 || echo "  (no outputs yet)"
+        echo ""
+        echo "📁 MoIE history:"
+        wc -l ${home}/moie-mac-loop/moie_history.jsonl 2>/dev/null || echo "  (no history)"
+        echo ""
+        echo "📁 Nano memory index:"
+        wc -l ${home}/nano_memory/index.jsonl 2>/dev/null || echo "  (no index)"

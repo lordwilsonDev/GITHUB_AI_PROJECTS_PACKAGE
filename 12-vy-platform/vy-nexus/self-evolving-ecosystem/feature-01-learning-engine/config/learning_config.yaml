@@ -1,0 +1,79 @@
+# Learning Engine Configuration
+# Feature 01: Continuous Learning Engine
+
+# Learning Cycle Settings
+learning_cycle:
+  interval_seconds: 300  # Run learning cycle every 5 minutes
+  enable_real_time: true  # Enable real-time learning
+  enable_background: true  # Enable background learning
+  
+# Interaction Monitoring
+interaction_monitoring:
+  max_history: 10000  # Maximum interactions to keep in memory
+  save_interval: 100  # Save to disk every N interactions
+  track_types:
+    - task_request
+    - task_completion
+    - user_feedback
+    - user_correction
+    - preference_indication
+    - error_occurrence
+
+# Pattern Recognition
+pattern_recognition:
+  min_occurrences: 3  # Minimum occurrences to identify pattern
+  sequence_lengths: [2, 3, 4]  # Sequence lengths to analyze
+  confidence_threshold: 0.6  # Minimum confidence for pattern
+  max_patterns_stored: 1000
+
+# Success/Failure Analysis
+success_failure:
+  min_samples: 5  # Minimum samples before generating insights
+  low_success_threshold: 0.5  # Threshold for low success rate
+  save_interval: 50  # Save outcomes every N records
+
+# Preference Learning
+preference_learning:
+  confidence_decay: 0.95  # Confidence decay over time
+  min_confidence: 0.3  # Minimum confidence to keep preference
+  categories:
+    - communication
+    - workflow
+    - tools
+    - timing
+    - formatting
+  inference_enabled: true
+
+# Productivity Analysis
+productivity:
+  bottleneck_threshold_seconds: 300  # Tasks over 5 min flagged
+  efficiency_baseline_seconds: 600  # 10 min baseline for scoring
+  save_interval: 50
+  metrics_window_hours: 24
+
+# Data Storage
+storage:
+  base_dir: "~/vy-nexus/data"
+  subdirs:
+    interactions: "interactions"
+    patterns: "patterns"
+    outcomes: "outcomes"
+    preferences: "preferences"
+    productivity: "productivity"
+  retention_days: 90  # Keep data for 90 days
+  auto_cleanup: true
+
+# Logging
+logging:
+  level: INFO
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "~/vy-nexus/logs/learning_engine.log"
+  max_size_mb: 100
+  backup_count: 5
+
+# Performance
+performance:
+  async_enabled: true
+  max_concurrent_tasks: 10
+  timeout_seconds: 30
+  retry_attempts: 3

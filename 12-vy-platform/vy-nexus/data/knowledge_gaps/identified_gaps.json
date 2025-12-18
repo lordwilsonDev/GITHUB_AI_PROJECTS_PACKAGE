@@ -1,0 +1,80 @@
+{
+  "gaps": {
+    "gap_1": {
+      "gap_id": "gap_1",
+      "task_description": "Implement neural network from scratch",
+      "failure_reason": "Don't know how to implement backpropagation algorithm",
+      "domain": "ai_ml",
+      "identified_gaps": [
+        "knowledge_of_implement_backpropagation_algorithm"
+      ],
+      "context": {},
+      "identified_at": "2025-12-15T22:45:22.040428",
+      "status": "open",
+      "priority": "high",
+      "learning_attempts": 0,
+      "resolved": false
+    },
+    "gap_2": {
+      "gap_id": "gap_2",
+      "task_description": "Optimize database queries",
+      "failure_reason": "Unfamiliar with query optimization techniques",
+      "domain": "programming",
+      "identified_gaps": [
+        "understanding_query_optimization_techniques"
+      ],
+      "context": {},
+      "identified_at": "2025-12-15T22:45:22.040876",
+      "status": "open",
+      "priority": "high",
+      "learning_attempts": 0,
+      "resolved": false
+    },
+    "gap_3": {
+      "gap_id": "gap_3",
+      "task_description": "Create marketing strategy",
+      "failure_reason": "No experience with digital marketing",
+      "domain": "business",
+      "identified_gaps": [
+        "experience_with_digital_marketing"
+      ],
+      "context": {},
+      "identified_at": "2025-12-15T22:45:22.041128",
+      "status": "open",
+      "priority": "medium",
+      "learning_attempts": 0,
+      "resolved": false
+    },
+    "gap_4": {
+      "gap_id": "gap_4",
+      "task_description": "Answer query: What is database indexing?",
+      "failure_reason": "Insufficient knowledge or low confidence",
+      "domain": "programming",
+      "identified_gaps": [
+        "general_Answer_query:_What_is_database"
+      ],
+      "context": {},
+      "identified_at": "2025-12-15T22:45:22.041504",
+      "status": "open",
+      "priority": "high",
+      "learning_attempts": 0,
+      "resolved": false
+    },
+    "gap_5": {
+      "gap_id": "gap_5",
+      "task_description": "Answer query: Explain SEO best practices",
+      "failure_reason": "Insufficient knowledge or low confidence",
+      "domain": "business",
+      "identified_gaps": [
+        "general_Answer_query:_Explain_SEO_best"
+      ],
+      "context": {},
+      "identified_at": "2025-12-15T22:45:22.041755",
+      "status": "open",
+      "priority": "medium",
+      "learning_attempts": 0,
+      "resolved": false
+    }
+  },
+  "last_updated": "2025-12-15T22:45:22.041759"
+}

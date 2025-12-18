@@ -1,0 +1,210 @@
+# System Monitoring Dashboard Configuration
+# Updated: December 17, 2025
+
+server:
+  host: 0.0.0.0
+  port: 9000
+  debug: false
+  workers: 4
+
+database:
+  path: ./database/monitoring.db
+  backup_interval_hours: 24
+  backup_path: ./database/backups
+
+monitoring:
+  poll_interval_seconds: 30
+  health_check_timeout_seconds: 5
+  retry_attempts: 3
+  retry_delay_seconds: 2
+  max_concurrent_checks: 10
+
+metrics:
+  collection_interval_seconds: 60
+  retention_days: 30
+  aggregation_intervals:
+    - 1h
+    - 6h
+    - 24h
+    - 7d
+
+alerts:
+  enabled: true
+  slow_response_threshold_ms: 5000
+  error_rate_threshold_percent: 5
+  downtime_alert_after_seconds: 60
+  notification_channels:
+    - console
+    - log
+    - dashboard
+  alert_cooldown_seconds: 300
+
+logging:
+  level: INFO
+  format: '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+  file_path: ./logs
+  max_file_size_mb: 10
+  backup_count: 5
+
+services:
+  - name: love-engine
+    display_name: Love Engine Real
+    url: http://localhost:8001/health
+    port: 8001
+    category: core
+    description: AI Safety & Validation Framework
+    priority: critical
+    expected_response_time_ms: 100
+    
+  - name: jarvis-m1
+    display_name: Jarvis M1
+    url: http://localhost:8002/health
+    port: 8002
+    category: core
+    description: M1 Hardware Optimization & Meta-Learning
+    priority: high
+    expected_response_time_ms: 150
+    
+  - name: lcrs-system
+    display_name: LCRS System
+    url: http://localhost:8003/health
+    port: 8003
+    category: core
+    description: Emotional Intelligence & Interaction System
+    priority: high
+    expected_response_time_ms: 100
+    
+  - name: level33-sovereign
+    display_name: Level33 Sovereign
+    url: http://localhost:8004/health
+    port: 8004
+    category: automation
+    description: Physical World Automation Platform
+    priority: high
+    expected_response_time_ms: 200
+    
+  - name: nanoapex
+    display_name: Nanoapex Vision
+    url: http://localhost:8005/health
+    port: 8005
+    category: vision
+    description: Computer Vision & Orchestration
+    priority: medium
+    expected_response_time_ms: 300
+    
+  - name: sovereign-brain
+    display_name: Sovereign Brain
+    url: http://localhost:8006/health
+    port: 8006
+    category: core
+    description: AGI Brain Module - Cognitive Processing
+    priority: critical
+    expected_response_time_ms: 100
+    
+  - name: sovereign-heart
+    display_name: Sovereign Heart
+    url: http://localhost:8007/health
+    port: 8007
+    category: core
+    description: AGI Heart Module - Emotional Core
+    priority: critical
+    expected_response_time_ms: 100
+    
+  - name: moie-os
+    display_name: MoIE OS v3
+    url: http://localhost:8008/health
+    port: 8008
+    category: cognitive
+    description: Mixture of Inversion Experts Operating System
+    priority: high
+    expected_response_time_ms: 150
+    
+  - name: metadata-universe
+    display_name: Metadata Universe
+    url: http://localhost:8009/health
+    port: 8009
+    category: knowledge
+    description: Knowledge Architecture & Level20 System
+    priority: medium
+    expected_response_time_ms: 200
+    
+  - name: cord-project
+    display_name: CORD Project
+    url: http://localhost:8010/health
+    port: 8010
+    category: coordination
+    description: Multi-Agent Coordination Platform
+    priority: high
+    expected_response_time_ms: 150
+    
+  - name: motia-scheduler
+    display_name: Motia Scheduler
+    url: http://localhost:3001/health
+    port: 3001
+    category: infrastructure
+    description: Task Scheduling & Orchestration
+    priority: medium
+    expected_response_time_ms: 100
+    
+  - name: lcrs-grafana
+    display_name: LCRS Grafana
+    url: http://localhost:3002/
+    port: 3002
+    category: monitoring
+    description: Metrics Visualization Dashboard
+    priority: low
+    expected_response_time_ms: 500
+
+# Service Categories
+categories:
+  core:
+    color: '#ff6b6b'
+    icon: '❤️'
+    description: Core AGI Components
+  automation:
+    color: '#4ecdc4'
+    icon: '🤖'
+    description: Automation & Control
+  vision:
+    color: '#45b7d1'
+    icon: '👁️'
+    description: Computer Vision
+  cognitive:
+    color: '#96ceb4'
+    icon: '🧠'
+    description: Cognitive Architecture
+  knowledge:
+    color: '#ffeaa7'
+    icon: '📚'
+    description: Knowledge Management
+  coordination:
+    color: '#dfe6e9'
+    icon: '🤝'
+    description: Multi-Agent Coordination
+  infrastructure:
+    color: '#74b9ff'
+    icon: '🏭'
+    description: Infrastructure Services
+  monitoring:
+    color: '#a29bfe'
+    icon: '📊'
+    description: Monitoring & Observability
+
+# Priority Levels
+priorities:
+  critical:
+    level: 1
+    alert_immediately: true
+    escalation_minutes: 5
+  high:
+    level: 2
+    alert_immediately: true
+    escalation_minutes: 15
+  medium:
+    level: 3
+    alert_immediately: false
+    escalation_minutes: 30
+  low:
+    level: 4
+    alert_immediately: false
+    escalation_minutes: 60

@@ -1,0 +1,106 @@
+{
+  "reports": [
+    {
+      "report_id": "evening_2025-12-17_062517",
+      "date": "2025-12-17",
+      "generated_at": "2025-12-17T06:25:17.567872",
+      "knowledge_acquired": {
+        "technical_skills": [],
+        "domain_expertise": [],
+        "research_completed": [],
+        "total_learning_time": 0.0
+      },
+      "patterns_discovered": {
+        "user_patterns": [],
+        "workflow_patterns": [],
+        "performance_patterns": [],
+        "total_patterns": 0
+      },
+      "optimization_opportunities": {
+        "automation_opportunities": [],
+        "process_optimizations": [],
+        "bottlenecks_identified": [],
+        "total_opportunities": 0
+      },
+      "experiments_conducted": {
+        "total_experiments": 2,
+        "successful_experiments": 0,
+        "failed_experiments": 1,
+        "experiments": [
+          {
+            "name": "File Organization Automation Test",
+            "hypothesis": null,
+            "status": "completed",
+            "results_count": 4,
+            "created_at": "2025-12-15T22:50:14.979837"
+          },
+          {
+            "name": "UI Layout Comparison",
+            "hypothesis": null,
+            "status": "designed",
+            "results_count": 0,
+            "created_at": "2025-12-15T22:50:14.980192"
+          }
+        ]
+      },
+      "planned_implementations": {
+        "deployments_planned": [],
+        "automations_ready": [],
+        "optimizations_staged": [],
+        "total_planned": 0
+      },
+      "report_text": "================================================================================\nEVENING LEARNING REPORT\nGenerated: 2025-12-17 06:25:17\n================================================================================\n\nKNOWLEDGE ACQUIRED TODAY:\n  Total Learning Time: 0.00 hours\n  Technical Skills: 0\n  Domain Expertise: 0\n  Research Completed: 0\n\nPATTERNS & INSIGHTS DISCOVERED:\n  Total Patterns: 0\n  User Patterns: 0\n  Workflow Patterns: 0\n  Performance Patterns: 0\n\nOPTIMIZATION OPPORTUNITIES IDENTIFIED:\n  Total Opportunities: 0\n  Automation Opportunities: 0\n  Process Optimizations: 0\n  Bottlenecks Identified: 0\n\nEXPERIMENTS CONDUCTED:\n  Total Experiments: 2\n  Successful: 0\n  Failed: 1\n  Details:\n    - File Organization Automation Test: completed (4 results)\n    - UI Layout Comparison: designed (0 results)\n\nPLANNED IMPLEMENTATIONS FOR OVERNIGHT:\n  Total Planned: 0\n  Deployments: 0\n  Automations Ready: 0\n  Optimizations Staged: 0\n\n================================================================================"
+    },
+    {
+      "report_id": "evening_2025-12-17_062641",
+      "date": "2025-12-17",
+      "generated_at": "2025-12-17T06:26:41.584824",
+      "knowledge_acquired": {
+        "technical_skills": [],
+        "domain_expertise": [],
+        "research_completed": [],
+        "total_learning_time": 0.0
+      },
+      "patterns_discovered": {
+        "user_patterns": [],
+        "workflow_patterns": [],
+        "performance_patterns": [],
+        "total_patterns": 0
+      },
+      "optimization_opportunities": {
+        "automation_opportunities": [],
+        "process_optimizations": [],
+        "bottlenecks_identified": [],
+        "total_opportunities": 0
+      },
+      "experiments_conducted": {
+        "total_experiments": 2,
+        "successful_experiments": 0,
+        "failed_experiments": 1,
+        "experiments": [
+          {
+            "name": "File Organization Automation Test",
+            "hypothesis": null,
+            "status": "completed",
+            "results_count": 4,
+            "created_at": "2025-12-15T22:50:14.979837"
+          },
+          {
+            "name": "UI Layout Comparison",
+            "hypothesis": null,
+            "status": "designed",
+            "results_count": 0,
+            "created_at": "2025-12-15T22:50:14.980192"
+          }
+        ]
+      },
+      "planned_implementations": {
+        "deployments_planned": [],
+        "automations_ready": [],
+        "optimizations_staged": [],
+        "total_planned": 0
+      },
+      "report_text": "================================================================================\nEVENING LEARNING REPORT\nGenerated: 2025-12-17 06:26:41\n================================================================================\n\nKNOWLEDGE ACQUIRED TODAY:\n  Total Learning Time: 0.00 hours\n  Technical Skills: 0\n  Domain Expertise: 0\n  Research Completed: 0\n\nPATTERNS & INSIGHTS DISCOVERED:\n  Total Patterns: 0\n  User Patterns: 0\n  Workflow Patterns: 0\n  Performance Patterns: 0\n\nOPTIMIZATION OPPORTUNITIES IDENTIFIED:\n  Total Opportunities: 0\n  Automation Opportunities: 0\n  Process Optimizations: 0\n  Bottlenecks Identified: 0\n\nEXPERIMENTS CONDUCTED:\n  Total Experiments: 2\n  Successful: 0\n  Failed: 1\n  Details:\n    - File Organization Automation Test: completed (4 results)\n    - UI Layout Comparison: designed (0 results)\n\nPLANNED IMPLEMENTATIONS FOR OVERNIGHT:\n  Total Planned: 0\n  Deployments: 0\n  Automations Ready: 0\n  Optimizations Staged: 0\n\n================================================================================"
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "proposed": [
+    {
+      "id": "7cc9183b144b",
+      "component": "learning_engine",
+      "issue_type": "high_response_time",
+      "current_metrics": {
+        "response_time_ms": 1500,
+        "cpu_usage_percent": 75
+      },
+      "analyzed_at": "2025-12-18T11:04:08.432615",
+      "suggestions": [
+        {
+          "category": "caching",
+          "title": "Implement result caching",
+          "description": "Cache frequently accessed results in learning_engine to reduce computation time",
+          "implementation": [
+            "Add LRU cache decorator to expensive functions",
+            "Implement Redis/Memcached for distributed caching",
+            "Set appropriate cache TTL based on data freshness requirements"
+          ],
+          "expected_improvement": "30-50% reduction in response time",
+          "priority": "high"
+        },
+        {
+          "category": "parallel_processing",
+          "title": "Convert to async processing",
+          "description": "Move heavy operations to background tasks",
+          "implementation": [
+            "Identify blocking operations",
+            "Implement async/await pattern",
+            "Use task queue for long-running operations"
+          ],
+          "expected_improvement": "40-60% reduction in response time",
+          "priority": "high"
+        },
+        {
+          "category": "code_optimization",
+          "title": "Optimize database queries",
+          "description": "Improve database query efficiency",
+          "implementation": [
+            "Add appropriate indexes",
+            "Optimize query structure",
+            "Implement query result caching",
+            "Use connection pooling"
+          ],
+          "expected_improvement": "20-40% reduction in response time",
+          "priority": "medium"
+        }
+      ],
+      "estimated_impact": {
+        "overall": "medium",
+        "time_saved_hours_per_week": 8,
+        "performance_improvement_percent": 30.0
+      },
+      "implementation_complexity": "medium"
+    },
+    {
+      "id": "a017ac4d2d6c",
+      "component": "data_processor",
+      "issue_type": "high_memory_usage",
+      "current_metrics": {
+        "memory_usage_mb": 2048
+      },
+      "analyzed_at": "2025-12-18T11:04:08.432933",
+      "suggestions": [
+        {
+          "category": "resource_allocation",
+          "title": "Implement memory pooling",
+          "description": "Reuse memory allocations to reduce overhead",
+          "implementation": [
+            "Create object pools for frequently used objects",
+            "Implement buffer reuse strategies",
+            "Add memory cleanup routines"
+          ],
+          "expected_improvement": "25-40% reduction in memory usage",
+          "priority": "high"
+        },
+        {
+          "category": "data_structure_optimization",
+          "title": "Optimize data structures",
+          "description": "Use more memory-efficient data structures",
+          "implementation": [
+            "Replace large dictionaries with more efficient structures",
+            "Use generators instead of lists where possible",
+            "Implement lazy loading for large datasets"
+          ],
+          "expected_improvement": "30-50% reduction in memory usage",
+          "priority": "medium"
+        }
+      ],
+      "estimated_impact": {
+        "overall": "medium",
+        "time_saved_hours_per_week": 7,
+        "performance_improvement_percent": 27.5
+      },
+      "implementation_complexity": "low"
+    }
+  ],
+  "approved": [],
+  "implemented": [],
+  "rejected": []
+}

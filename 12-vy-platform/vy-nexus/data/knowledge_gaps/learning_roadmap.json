@@ -1,0 +1,71 @@
+{
+  "roadmap": [
+    {
+      "domain": "ai_ml",
+      "priority": "high",
+      "gaps_count": 1,
+      "learning_items": [
+        {
+          "gap_id": "gap_1",
+          "description": "Implement neural network from scratch",
+          "priority": "high",
+          "identified_gaps": [
+            "knowledge_of_implement_backpropagation_algorithm"
+          ],
+          "identified_at": "2025-12-15T22:45:22.040428"
+        }
+      ]
+    },
+    {
+      "domain": "programming",
+      "priority": "high",
+      "gaps_count": 2,
+      "learning_items": [
+        {
+          "gap_id": "gap_2",
+          "description": "Optimize database queries",
+          "priority": "high",
+          "identified_gaps": [
+            "understanding_query_optimization_techniques"
+          ],
+          "identified_at": "2025-12-15T22:45:22.040876"
+        },
+        {
+          "gap_id": "gap_4",
+          "description": "Answer query: What is database indexing?",
+          "priority": "high",
+          "identified_gaps": [
+            "general_Answer_query:_What_is_database"
+          ],
+          "identified_at": "2025-12-15T22:45:22.041504"
+        }
+      ]
+    },
+    {
+      "domain": "business",
+      "priority": "medium",
+      "gaps_count": 2,
+      "learning_items": [
+        {
+          "gap_id": "gap_3",
+          "description": "Create marketing strategy",
+          "priority": "medium",
+          "identified_gaps": [
+            "experience_with_digital_marketing"
+          ],
+          "identified_at": "2025-12-15T22:45:22.041128"
+        },
+        {
+          "gap_id": "gap_5",
+          "description": "Answer query: Explain SEO best practices",
+          "priority": "medium",
+          "identified_gaps": [
+            "general_Answer_query:_Explain_SEO_best"
+          ],
+          "identified_at": "2025-12-15T22:45:22.041755"
+        }
+      ]
+    }
+  ],
+  "last_generated": "2025-12-15T22:45:22.041967"
+}

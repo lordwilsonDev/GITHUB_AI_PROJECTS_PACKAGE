@@ -1,0 +1,88 @@
+{
+  "manifest_patterns": [
+    {
+      "pattern": "[2025-12-04 17",
+      "count": 9
+    },
+    {
+      "pattern": "[2025-12-04 07",
+      "count": 4
+    },
+    {
+      "pattern": "[2025-12-04 18",
+      "count": 4
+    },
+    {
+      "pattern": "[2025-12-04 19",
+      "count": 4
+    },
+    {
+      "pattern": "[2025-12-04 20",
+      "count": 4
+    },
+    {
+      "pattern": "[2025-12-04 21",
+      "count": 4
+    },
+    {
+      "pattern": "[2025-12-04 22",
+      "count": 4
+    },
+    {
+      "pattern": "[2025-12-05 01",
+      "count": 4
+    },
+    {
+      "pattern": "[2025-12-05 02",
+      "count": 4
+    },
+    {
+      "pattern": "[2025-12-04 06",
+      "count": 3
+    }
+  ],
+  "entropy_patterns": [
+    {
+      "pattern": "[2025-12-04 17",
+      "count": 3
+    },
+    {
+      "pattern": "[2025-12-04 07",
+      "count": 1
+    },
+    {
+      "pattern": "After reviewing the code, I have identified the following discrepancies that violate the MOIE-OS CONSTITUTION",
+      "count": 1
+    },
+    {
+      "pattern": "After conducting a thorough audit of the provided code, I have identified the following discrepancies that violate the MOIE-OS Constitution",
+      "count": 1
+    },
+    {
+      "pattern": "1. In the `multiply` function, an exception handler catches both `TypeError` and `ValueError`, but there is no explicit error handling block for `ZeroDivisionError`. The Constitution requires explicit exception types for common Python errors (at minimum",
+      "count": 1
+    },
+    {
+      "pattern": "3. In the `divide` function, an exception is caught as `Exception`, which can lead to unexpected behavior if not properly handled. The Constitution requires that error handling blocks use explicit exception types for common Python errors (at minimum",
+      "count": 1
+    },
+    {
+      "pattern": "Since there are no other violations detected, the output is",
+      "count": 1
+    },
+    {
+      "pattern": "Discrepancies found",
+      "count": 1
+    },
+    {
+      "pattern": "AUDIT_FAILURE",
+      "count": 1
+    },
+    {
+      "pattern": "The task is to compare the given code with the provided constitution. Upon reviewing both documents, I found some potential issues that violate certain rules",
+      "count": 1
+    }
+  ],
+  "governance_cycles": 22,
+  "timestamp": "2025-12-07T22:29:31.685764"
+}

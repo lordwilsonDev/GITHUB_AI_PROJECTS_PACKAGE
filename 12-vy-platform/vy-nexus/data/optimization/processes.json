@@ -1,0 +1,37 @@
+[
+  {
+    "id": "proc_1_20251215_222352",
+    "name": "Data Processing Pipeline",
+    "description": "Process and analyze data files",
+    "steps": [
+      {
+        "name": "Load Data",
+        "description": "Load data from file"
+      },
+      {
+        "name": "Validate Data",
+        "description": "Validate data integrity"
+      },
+      {
+        "name": "Transform Data",
+        "description": "Apply transformations"
+      },
+      {
+        "name": "Analyze Data",
+        "description": "Perform analysis"
+      },
+      {
+        "name": "Save Results",
+        "description": "Save results to file"
+      }
+    ],
+    "expected_duration": 100,
+    "registered_at": "2025-12-15T22:23:52.958312",
+    "status": "active",
+    "executions": 5,
+    "total_duration": 608,
+    "average_duration": 121.6,
+    "optimization_level": 0,
+    "last_execution": "2025-12-15T22:23:52.959550"
+  }
+]

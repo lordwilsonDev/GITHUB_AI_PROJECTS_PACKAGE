@@ -1,0 +1,4 @@
+# file: /Users/lordwilson/sovereign-keep/src/text_utils.py
+# hypothesis_version: 6.141.1
+
+[0.0, 100.0, ',', '--', 'NFKC', '\\s+', "aren't", "can't", 'cannot', "didn't", "don't", "hadn't", "hasn't", "haven't", "isn't", "n't", 'never', 'no', 'not', 'sent from my', "wasn't", "weren't", 'without', "won't"]

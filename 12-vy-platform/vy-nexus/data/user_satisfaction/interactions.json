@@ -1,0 +1,42 @@
+[
+  {
+    "interaction_id": "interaction_1",
+    "interaction_type": "task_completion",
+    "task_completed": true,
+    "duration": 45.5,
+    "user_effort": "low",
+    "context": {},
+    "timestamp": "2025-12-15T22:46:50.348350",
+    "satisfaction_signal": 100.0
+  },
+  {
+    "interaction_id": "interaction_2",
+    "interaction_type": "task_completion",
+    "task_completed": true,
+    "duration": 120.0,
+    "user_effort": "medium",
+    "context": {},
+    "timestamp": "2025-12-15T22:46:50.348530",
+    "satisfaction_signal": 90.0
+  },
+  {
+    "interaction_id": "interaction_3",
+    "interaction_type": "task_completion",
+    "task_completed": false,
+    "duration": 300.0,
+    "user_effort": "high",
+    "context": {},
+    "timestamp": "2025-12-15T22:46:50.348688",
+    "satisfaction_signal": 40.0
+  },
+  {
+    "interaction_id": "interaction_4",
+    "interaction_type": "task_completion",
+    "task_completed": true,
+    "duration": 60.0,
+    "user_effort": "low",
+    "context": {},
+    "timestamp": "2025-12-15T22:46:50.348854",
+    "satisfaction_signal": 100.0
+  }
+]

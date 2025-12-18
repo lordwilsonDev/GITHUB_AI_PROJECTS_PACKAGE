@@ -1,0 +1,47 @@
+{
+  "domain_coverage": {
+    "ai_ml": {
+      "gaps_identified": 1,
+      "gaps_resolved": 0,
+      "coverage_score": 0
+    },
+    "programming": {
+      "gaps_identified": 2,
+      "gaps_resolved": 0,
+      "coverage_score": 0
+    },
+    "business": {
+      "gaps_identified": 2,
+      "gaps_resolved": 0,
+      "coverage_score": 0
+    }
+  },
+  "topic_coverage": {
+    "knowledge_of_implement_backpropagation_algorithm": {
+      "domain": "ai_ml",
+      "gaps_count": 1,
+      "last_encountered": "2025-12-15T22:45:22.040705"
+    },
+    "understanding_query_optimization_techniques": {
+      "domain": "programming",
+      "gaps_count": 1,
+      "last_encountered": "2025-12-15T22:45:22.041054"
+    },
+    "experience_with_digital_marketing": {
+      "domain": "business",
+      "gaps_count": 1,
+      "last_encountered": "2025-12-15T22:45:22.041204"
+    },
+    "general_Answer_query:_What_is_database": {
+      "domain": "programming",
+      "gaps_count": 1,
+      "last_encountered": "2025-12-15T22:45:22.041616"
+    },
+    "general_Answer_query:_Explain_SEO_best": {
+      "domain": "business",
+      "gaps_count": 1,
+      "last_encountered": "2025-12-15T22:45:22.041855"
+    }
+  },
+  "last_updated": "2025-12-15T22:45:22.041856"
+}

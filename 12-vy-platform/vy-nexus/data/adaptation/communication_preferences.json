@@ -1,0 +1,16 @@
+{
+  "default_style": "concise",
+  "context_styles": {
+    "error": "detailed",
+    "success": "concise",
+    "complex_task": "detailed",
+    "simple_task": "concise",
+    "first_interaction": "friendly",
+    "technical_task": "technical"
+  },
+  "verbosity_level": 4,
+  "include_reasoning": false,
+  "include_next_steps": true,
+  "use_emojis": false,
+  "formatting_preference": "markdown"
+}

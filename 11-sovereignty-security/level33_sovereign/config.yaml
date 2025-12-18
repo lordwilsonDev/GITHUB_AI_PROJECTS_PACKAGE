@@ -1,0 +1,273 @@
+# Level 33 Sovereign Architecture - Configuration
+# Edit this file to customize your system settings
+
+# System Settings
+system:
+  name: "Level 33 Sovereign"
+  version: "1.0.0"
+  environment: "production"  # development, staging, production
+  debug: false
+  log_level: "INFO"  # DEBUG, INFO, WARNING, ERROR, CRITICAL
+
+# Ollama Configuration
+ollama:
+  base_url: "http://localhost:11434"
+  model: "gemma2:9b"
+  timeout: 120
+  temperature: 0.7
+  max_tokens: 2048
+
+# Physical Agency Settings
+physical_agency:
+  require_confirmation: true  # Ask before clicking/typing
+  safety_mode: true  # Enable safety checks
+  max_retries: 3
+  retry_delay: 1.0  # seconds
+  screen_resolution:
+    auto_detect: true
+    fallback_width: 1920
+    fallback_height: 1080
+
+# AutoGen Configuration
+autogen:
+  use_docker: false
+  max_consecutive_auto_reply: 5
+  human_input_mode: "ALWAYS"  # ALWAYS, NEVER, TERMINATE
+  work_dir: "workspace"
+  code_execution_timeout: 60
+
+# DSPy Optimization
+dspy:
+  enabled: true
+  cache_dir: ".dspy_cache"
+  optimization_metric: "answer_exact_match"
+  bootstrap_examples: 10
+
+# Automation Settings
+automations:
+  workspace_launcher:
+    enabled: true
+    apps:
+      - Terminal
+      - "Google Chrome"
+      - Notes
+      - Calendar
+    browser_tabs:
+      - "https://github.com"
+      - "https://mail.google.com"
+      - "https://calendar.google.com"
+  
+  file_organizer:
+    enabled: true
+    source_dir: "~/Downloads"
+    dry_run_default: true
+    categories:
+      images:
+        extensions: ["jpg", "jpeg", "png", "gif", "bmp", "svg", "webp"]
+        destination: "~/Pictures/Downloads"
+      documents:
+        extensions: ["pdf", "doc", "docx", "txt", "rtf", "odt"]
+        destination: "~/Documents/Downloads"
+      spreadsheets:
+        extensions: ["xls", "xlsx", "csv", "numbers"]
+        destination: "~/Documents/Spreadsheets"
+      archives:
+        extensions: ["zip", "tar", "gz", "rar", "7z"]
+        destination: "~/Documents/Archives"
+      videos:
+        extensions: ["mp4", "mov", "avi", "mkv", "webm"]
+        destination: "~/Movies/Downloads"
+      audio:
+        extensions: ["mp3", "wav", "aac", "flac", "m4a"]
+        destination: "~/Music/Downloads"
+      code:
+        extensions: ["py", "js", "java", "cpp", "c", "h", "swift", "go"]
+        destination: "~/Documents/Code"
+  
+  system_health_check:
+    enabled: true
+    thresholds:
+      disk_space_gb: 10
+      memory_percent: 90
+      cpu_percent: 80
+      uptime_days: 30
+    check_interval: 3600  # seconds (1 hour)
+  
+  screenshot_documenter:
+    enabled: true
+    output_dir: "documentation"
+    image_format: "png"
+    generate_html: true
+    thumbnail_size: [300, 200]
+  
+  quick_note:
+    enabled: true
+    output_dir: "quick_notes"
+    default_type: "general"
+    templates:
+      general: "# {title}\n\nDate: {date}\nTime: {time}\n\n{content}"
+      todo: "# TODO: {title}\n\nDate: {date}\n\n{content}"
+      meeting: "# Meeting: {title}\n\nDate: {date}\nTime: {time}\n\n## Attendees\n\n## Agenda\n\n## Notes\n\n## Action Items\n"
+      idea: "# Idea: {title}\n\nDate: {date}\n\n## Description\n{content}\n\n## Validation\n- [ ] Research\n- [ ] Prototype\n- [ ] Test\n"
+      bug: "# Bug Report: {title}\n\nDate: {date}\n\n## Description\n{content}\n\n## Steps to Reproduce\n\n## Expected Behavior\n\n## Actual Behavior\n"
+
+# AI Agents Configuration
+ai_agents:
+  email_assistant:
+    enabled: true
+    batch_size: 10
+    categories: ["urgent", "important", "normal", "spam", "promotional"]
+    reply_tones: ["professional", "friendly", "brief"]
+  
+  file_analyzer:
+    enabled: true
+    max_files_per_batch: 50
+    categories:
+      - "work_documents"
+      - "personal_documents"
+      - "media"
+      - "code"
+      - "archives"
+      - "temporary"
+      - "important"
+      - "other"
+
+# Vision Tools Configuration
+vision:
+  screenshot_dir: "screenshots"
+  comparison_threshold: 0.95  # Similarity threshold (0-1)
+  ocr_enabled: false  # Requires tesseract
+  color_tolerance: 10  # RGB color matching tolerance
+
+# Logging Configuration
+logging:
+  enabled: true
+  log_dir: "logs"
+  max_file_size_mb: 10
+  backup_count: 5
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  date_format: "%Y-%m-%d %H:%M:%S"
+  handlers:
+    - console
+    - file
+
+# Database Configuration
+database:
+  enabled: true
+  type: "sqlite"  # sqlite, postgresql, mysql
+  path: "data/level33.db"
+  # For PostgreSQL/MySQL:
+  # host: "localhost"
+  # port: 5432
+  # username: "level33"
+  # password: "your_password"
+  # database: "level33_db"
+
+# API Server Configuration
+api:
+  enabled: false
+  host: "0.0.0.0"
+  port: 8000
+  cors_enabled: true
+  cors_origins:
+    - "http://localhost:3000"
+    - "http://localhost:8080"
+  authentication:
+    enabled: false
+    type: "api_key"  # api_key, jwt, oauth
+    # api_key: "your-secret-api-key-here"
+
+# Web Dashboard Configuration
+web_dashboard:
+  enabled: false
+  host: "0.0.0.0"
+  port: 8080
+  auto_open_browser: true
+  theme: "dark"  # dark, light
+  refresh_interval: 5  # seconds
+
+# Notification Settings
+notifications:
+  enabled: true
+  channels:
+    desktop: true
+    email: false
+    # email_to: "your-email@example.com"
+    # email_from: "level33@example.com"
+    # smtp_host: "smtp.gmail.com"
+    # smtp_port: 587
+    # smtp_username: "your-email@example.com"
+    # smtp_password: "your-app-password"
+  events:
+    automation_complete: true
+    automation_error: true
+    system_health_warning: true
+    disk_space_low: true
+
+# Backup Configuration
+backup:
+  enabled: true
+  backup_dir: "backups"
+  schedule: "daily"  # hourly, daily, weekly
+  retention_days: 30
+  include:
+    - "config.yaml"
+    - "data/"
+    - "quick_notes/"
+    - "documentation/"
+  exclude:
+    - "*.pyc"
+    - "__pycache__/"
+    - "*.log"
+    - "workspace/"
+
+# Performance Monitoring
+performance:
+  enabled: true
+  metrics_dir: "metrics"
+  collect_interval: 60  # seconds
+  metrics:
+    - cpu_usage
+    - memory_usage
+    - disk_io
+    - network_io
+    - automation_duration
+    - llm_response_time
+
+# Security Settings
+security:
+  sandbox_mode: false  # Run automations in isolated environment
+  allowed_domains:
+    - "github.com"
+    - "google.com"
+    - "localhost"
+  blocked_commands:
+    - "rm -rf /"
+    - "sudo rm"
+    - "format"
+  max_file_size_mb: 100
+  scan_downloads: false  # Requires antivirus integration
+
+# Plugin System
+plugins:
+  enabled: true
+  plugin_dir: "plugins"
+  auto_load: true
+  allowed_plugins:
+    # - "custom_automation"
+    # - "slack_integration"
+    # - "jira_connector"
+
+# Update Settings
+updates:
+  auto_check: true
+  check_interval_hours: 24
+  auto_install: false
+  update_channel: "stable"  # stable, beta, dev
+
+# Development Settings
+development:
+  reload_on_change: false
+  profiling_enabled: false
+  test_mode: false
+  mock_llm: false

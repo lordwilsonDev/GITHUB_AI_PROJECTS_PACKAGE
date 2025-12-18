@@ -1,0 +1,69 @@
+# prefect.yaml
+name: prefect-blueprint
+prefect-version: 3.0.0
+
+# Build: Steps to prepare the code.
+# For a local process, no compilation or Docker build is needed.
+build: null
+
+# Push: Steps to upload code to remote storage (S3, GitHub).
+# For local execution, we skip this.
+push: null
+
+# Pull: Steps for the Worker to fetch the code.
+# Since the Worker is running on the same machine (Terminal C), 
+# we simply instruct it to set its working directory to the current folder.
+pull:
+  - prefect.deployments.steps.set_working_directory:
+      directory: /Users/lordwilson/prefect-blueprint
+
+# Deployments: A list of flows to register.
+deployments:
+  - name: production-etl
+    version: 1.0.0
+    tags: ["env:prod", "team:data"]
+    description: "The primary daily ETL pipeline."
+    
+    # The crucial link to our python code: filename:function_name
+    entrypoint: data_pipeline.py:data_pipeline
+    
+    # Default parameters (can be overridden at runtime)
+    parameters: 
+        source_url: "https://api.internal.prod/v1/metrics"
+        target_table: "warehouse.public.daily_metrics"
+        batch_size: 500
+        
+    # Infrastructure binding
+    work_pool:
+      name: local-process-pool
+      work_queue_name: default
+      job_variables: {} # Used for env vars or resource limits in Docker/K8s
+      
+    # Schedule definition
+    schedules:
+      - cron: "0 9 * * *"
+        timezone: "America/Chicago"
+        active: true
+
+  # V2 Advanced Pipeline with Runtime Invariants and Failure Taxonomy
+  - name: production-etl-v2-advanced
+    version: 2.0.0
+    tags: ["env:prod", "team:data", "version:v2", "advanced"]
+    description: "Advanced pipeline with runtime invariants, failure taxonomy, and self-auditing"
+    
+    entrypoint: data_pipeline_v2_advanced.py:data_pipeline_v2
+    
+    parameters: 
+        source_url: "https://api.internal.prod/v1/metrics"
+        target_table: "warehouse.public.daily_metrics_v2"
+        batch_size: 500
+        
+    work_pool:
+      name: local-process-pool
+      work_queue_name: default
+      job_variables: {}
+      
+    schedules:
+      - cron: "0 9 * * *"
+        timezone: "America/Chicago"
+        active: true

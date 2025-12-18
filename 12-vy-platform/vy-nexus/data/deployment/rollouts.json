@@ -1,0 +1,18 @@
+[
+  {
+    "deployment_id": "deploy_20251215_223512",
+    "strategy": "immediate",
+    "started_at": "2025-12-15T22:35:12.908247",
+    "status": "completed",
+    "stages": [
+      {
+        "name": "immediate_deployment",
+        "started_at": "2025-12-15T22:35:12.908252",
+        "target": "all",
+        "status": "success",
+        "completed_at": "2025-12-15T22:35:12.908264"
+      }
+    ],
+    "completed_at": "2025-12-15T22:35:12.908266"
+  }
+]

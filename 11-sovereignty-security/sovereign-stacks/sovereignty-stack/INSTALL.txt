@@ -1,0 +1,10 @@
+INSTALLATION (M1/M2/M4 Mac)
+===========================
+
+1. Ensure Node.js and npm are installed.
+2. In Terminal: `cd` into this folder.
+3. Run: `chmod +x setup.sh`
+4. Run: `./setup.sh`
+5. Verify: `node nano_cli.cjs status` (or equivalent status command).
+
+For full explanation, see README.md and QUICKREF.md.

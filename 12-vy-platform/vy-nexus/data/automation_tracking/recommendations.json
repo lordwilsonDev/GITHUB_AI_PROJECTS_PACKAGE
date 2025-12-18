@@ -1,0 +1,21 @@
+{
+  "recommendations": [
+    {
+      "automation_id": "data_sync",
+      "name": "Data Synchronization",
+      "priority": "high",
+      "issue": "Low success rate (75.0%)",
+      "recommendation": "Review and fix common causes: timeout (1 occurrences)",
+      "current_rate": 75.0
+    },
+    {
+      "automation_id": "report_gen",
+      "name": "Report Generation",
+      "priority": "high",
+      "issue": "Low success rate (66.7%)",
+      "recommendation": "Review and fix common causes: resource_exhaustion (1 occurrences)",
+      "current_rate": 66.66666666666666
+    }
+  ],
+  "last_generated": "2025-12-15T22:46:35.012669"
+}

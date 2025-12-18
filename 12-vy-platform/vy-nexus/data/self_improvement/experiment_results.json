@@ -1,0 +1,30 @@
+[
+  {
+    "experiment_id": "exp_20251215_225014",
+    "metric": "time_saved",
+    "value": 6.5,
+    "group": "control",
+    "timestamp": "2025-12-15T22:50:14.980678"
+  },
+  {
+    "experiment_id": "exp_20251215_225014",
+    "metric": "time_saved",
+    "value": 7.2,
+    "group": "treatment",
+    "timestamp": "2025-12-15T22:50:14.980809"
+  },
+  {
+    "experiment_id": "exp_20251215_225014",
+    "metric": "user_satisfaction",
+    "value": 0.85,
+    "group": "control",
+    "timestamp": "2025-12-15T22:50:14.980979"
+  },
+  {
+    "experiment_id": "exp_20251215_225014",
+    "metric": "user_satisfaction",
+    "value": 0.92,
+    "group": "treatment",
+    "timestamp": "2025-12-15T22:50:14.981100"
+  }
+]

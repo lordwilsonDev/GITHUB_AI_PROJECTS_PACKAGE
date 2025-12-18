@@ -1,0 +1,1 @@
+/Users/lordwilson/vy-nexus/aegis-rust/target/debug/libhitl_collab.rlib: /Users/lordwilson/vy-nexus/aegis-rust/hitl-collab/src/collaborator.rs /Users/lordwilson/vy-nexus/aegis-rust/hitl-collab/src/lib.rs

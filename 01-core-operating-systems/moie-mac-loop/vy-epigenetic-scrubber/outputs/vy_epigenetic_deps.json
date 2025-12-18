@@ -1,0 +1,34 @@
+{
+  "metadata": {
+    "repo_name": "moie-mac-loop",
+    "scan_timestamp": "2025-12-02T00:00:00Z",
+    "total_dependencies": 3,
+    "ecosystems": ["npm"]
+  },
+  "dependencies": [
+    {
+      "name": "ollama",
+      "version": "^0.5.0",
+      "source_file": "package.json",
+      "type": "runtime",
+      "ecosystem": "npm",
+      "category": "ai-integration"
+    },
+    {
+      "name": "chalk",
+      "version": "^5.3.0",
+      "source_file": "package.json",
+      "type": "runtime",
+      "ecosystem": "npm",
+      "category": "ui-styling"
+    },
+    {
+      "name": "inquirer",
+      "version": "^9.2.14",
+      "source_file": "package.json",
+      "type": "runtime",
+      "ecosystem": "npm",
+      "category": "user-input"
+    }
+  ]
+}

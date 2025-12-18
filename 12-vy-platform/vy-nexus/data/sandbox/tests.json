@@ -1,0 +1,17 @@
+{
+  "registered": [
+    {
+      "id": "phase3_test_001",
+      "type": "unit",
+      "description": "Test Phase 3 functionality",
+      "registered_at": "2025-12-18T11:04:08.436145",
+      "has_function": false,
+      "script_path": null,
+      "expected_results": {
+        "success": true
+      },
+      "status": "registered"
+    }
+  ],
+  "suites": {}
+}

@@ -1,0 +1,80 @@
+nano_id: vy-epigenetic-rewrite-chalk
+version: 0.1.0
+label: "VY – Replace Chalk with ANSI Escape Codes"
+
+meta:
+  owner: "VY Epigenetic Scrubber"
+  intent: >
+    Replace the chalk npm dependency with native ANSI escape codes
+    to eliminate external dependencies for terminal styling.
+
+invariants:
+  - id: NO_BREAKING_CHANGES
+    rule: "Maintain existing terminal styling while removing npm dependency."
+  - id: ZERO_DEPENDENCIES
+    rule: "Use only native terminal ANSI codes, no external libraries."
+  - id: UNIVERSAL_SUPPORT
+    rule: "ANSI codes work across all terminal environments."
+
+task:
+  id: vy-epigenetic-rewrite-chalk-001
+  origin_goal: "Replace medium-risk chalk dependency with native alternative."
+  scope: "moie-mac-loop repository"
+  priority: 7
+
+  steps:
+    - id: analyze_chalk_usage
+      kind: "code_analysis"
+      description: "Identify all chalk usage patterns and colors used."
+      files_to_analyze:
+        - "nano_cli.cjs"
+        - "mon_cli.cjs"
+        - "node_status.cjs"
+        - "index.js"
+
+    - id: create_ansi_module
+      kind: "create_file"
+      description: "Create a nano module with ANSI escape code utilities."
+      output: "ansi_nano.js"
+      template: "ANSI color and style functions matching chalk API"
+
+    - id: replace_chalk_imports
+      kind: "code_replacement"
+      description: "Replace chalk imports with ANSI nano module."
+      pattern: "import.*chalk.*|require.*chalk.*"
+      replacement: "import { ansi } from './ansi_nano.js'"
+
+    - id: replace_chalk_calls
+      kind: "code_replacement"
+      description: "Replace chalk method calls with ANSI equivalents."
+      patterns:
+        - "chalk.red" -> "ansi.red"
+        - "chalk.green" -> "ansi.green"
+        - "chalk.blue" -> "ansi.blue"
+        - "chalk.yellow" -> "ansi.yellow"
+        - "chalk.bold" -> "ansi.bold"
+
+    - id: update_package_json
+      kind: "dependency_removal"
+      description: "Remove chalk from package.json dependencies."
+      file: "package.json"
+      remove_dependency: "chalk"
+
+    - id: test_styling
+      kind: "testing"
+      description: "Verify all terminal styling works with ANSI replacement."
+      test_commands:
+        - "node nano_cli.cjs --test-colors"
+        - "node mon_cli.cjs --test-output"
+
+acceptance_criteria:
+  - "All chalk imports/requires are replaced with ANSI module."
+  - "chalk dependency is removed from package.json."
+  - "Terminal colors and styling remain visually identical."
+  - "No external dependencies for terminal styling."
+  - "ANSI module is lightweight and self-contained."
+
+runtime_notes:
+  - "This replacement targets medium-risk dependency (0.49 fragility score)."
+  - "ANSI escape codes are universally supported and lightweight."
+  - "Easy implementation with immediate dependency reduction benefits."

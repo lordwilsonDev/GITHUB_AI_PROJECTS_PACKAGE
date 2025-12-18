@@ -1,0 +1,38 @@
+[
+  {
+    "id": "interaction_1",
+    "timestamp": "2025-12-15T22:29:37.368480",
+    "message": "Create a report",
+    "response": "Done. Report saved.",
+    "style_used": "concise",
+    "context": {
+      "type": "simple_task"
+    },
+    "response_length": 19,
+    "word_count": 3
+  },
+  {
+    "id": "interaction_2",
+    "timestamp": "2025-12-15T22:29:37.368638",
+    "message": "Analyze this data",
+    "response": "I've analyzed the data and found several interesting patterns. The analysis includes trend analysis, outlier detection, and correlation studies. Results have been saved to your reports folder.",
+    "style_used": "detailed",
+    "context": {
+      "type": "complex_task"
+    },
+    "response_length": 192,
+    "word_count": 27
+  },
+  {
+    "id": "interaction_3",
+    "timestamp": "2025-12-15T22:29:37.368794",
+    "message": "Help me with this",
+    "response": "I'd be happy to help! Let me take a look at what you need. I'll walk you through it step by step.",
+    "style_used": "friendly",
+    "context": {
+      "type": "first_interaction"
+    },
+    "response_length": 97,
+    "word_count": 22
+  }
+]

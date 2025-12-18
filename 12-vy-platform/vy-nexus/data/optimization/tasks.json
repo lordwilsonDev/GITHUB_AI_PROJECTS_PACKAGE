@@ -1,0 +1,88 @@
+[
+  {
+    "id": "task_1_20251215_221905",
+    "type": "file_organization",
+    "description": "Organize files in downloads folder",
+    "duration": 120,
+    "steps": [
+      "open_finder",
+      "select_files",
+      "move_to_folder"
+    ],
+    "tools_used": [
+      "Finder"
+    ],
+    "context": {},
+    "timestamp": "2025-12-15T22:19:05.706852",
+    "analyzed": false
+  },
+  {
+    "id": "task_2_20251215_221905",
+    "type": "file_organization",
+    "description": "Organize project files",
+    "duration": 150,
+    "steps": [
+      "open_finder",
+      "select_files",
+      "move_to_folder"
+    ],
+    "tools_used": [
+      "Finder"
+    ],
+    "context": {},
+    "timestamp": "2025-12-15T22:19:05.707133",
+    "analyzed": false
+  },
+  {
+    "id": "task_3_20251215_221905",
+    "type": "data_analysis",
+    "description": "Analyze sales data",
+    "duration": 300,
+    "steps": [
+      "open_excel",
+      "load_data",
+      "create_charts"
+    ],
+    "tools_used": [
+      "Excel",
+      "Python"
+    ],
+    "context": {},
+    "timestamp": "2025-12-15T22:19:05.707277",
+    "analyzed": false
+  },
+  {
+    "id": "task_4_20251215_221905",
+    "type": "file_organization",
+    "description": "Clean up desktop files",
+    "duration": 90,
+    "steps": [
+      "open_finder",
+      "select_files",
+      "move_to_folder"
+    ],
+    "tools_used": [
+      "Finder"
+    ],
+    "context": {},
+    "timestamp": "2025-12-15T22:19:05.707408",
+    "analyzed": false
+  },
+  {
+    "id": "task_5_20251215_221905",
+    "type": "email_management",
+    "description": "Process inbox emails",
+    "duration": 180,
+    "steps": [
+      "open_mail",
+      "read_emails",
+      "categorize"
+    ],
+    "tools_used": [
+      "Mail"
+    ],
+    "context": {},
+    "timestamp": "2025-12-15T22:19:05.707575",
+    "analyzed": false
+  }
+]

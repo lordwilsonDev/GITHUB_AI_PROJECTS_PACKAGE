@@ -1,0 +1,31 @@
+[
+  {
+    "id": "action_1_20251215_222527",
+    "name": "Daily Cleanup",
+    "description": "Clean up workspace and organize files",
+    "action_type": "maintenance",
+    "steps": [
+      {
+        "type": "command",
+        "name": "Clean Downloads",
+        "command": "echo 'Cleaning downloads...'"
+      },
+      {
+        "type": "command",
+        "name": "Organize Desktop",
+        "command": "echo 'Organizing desktop...'",
+        "wait": 1
+      },
+      {
+        "type": "command",
+        "name": "Empty Trash",
+        "command": "echo 'Emptying trash...'"
+      }
+    ],
+    "icon": null,
+    "created_at": "2025-12-15T22:25:27.405349",
+    "status": "active",
+    "uses": 0,
+    "script_path": "/Users/lordwilson/vy-nexus/shortcuts/action_1_20251215_222527.sh"
+  }
+]

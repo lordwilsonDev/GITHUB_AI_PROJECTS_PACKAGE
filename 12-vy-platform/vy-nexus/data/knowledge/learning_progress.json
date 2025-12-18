@@ -1,0 +1,23 @@
+{
+  "python_advanced": {
+    "sessions": [
+      {
+        "session_id": "session_20251215_225233",
+        "skill_id": "python_advanced",
+        "duration_minutes": 120,
+        "activities": [
+          "Read documentation",
+          "Practiced decorators",
+          "Built sample project"
+        ],
+        "insights": [
+          "Decorators are powerful for code reuse",
+          "Metaclasses are complex but useful"
+        ],
+        "timestamp": "2025-12-15T22:52:33.783844"
+      }
+    ],
+    "total_minutes": 120,
+    "session_count": 1
+  }
+}

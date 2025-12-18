@@ -1,0 +1,27 @@
+invariants:
+  - id: I_NSSI
+    name: Non-Self-Sacrificing Invariant
+    description: >
+      System must not execute actions that threaten its own continuity,
+      core memory integrity, or operator sovereignty.
+    applies_to:
+      - filesystem
+      - deployment
+      - physical_action
+    checks:
+      - type: forbid_paths
+        patterns:
+          - "/"
+          - "/System"
+          - "/Users/lordwilson/vy-nexus"
+          - "/Users/lordwilson/nano_memory"
+        allow_if_explicit_override: false
+
+  - id: I_BACKUP_BEFORE_DELETE
+    name: Backup before destructive action
+    description: >
+      Any destructive filesystem action must define a backup_plan field.
+    applies_to:
+      - filesystem
+    checks:
+      - type: requires_backup_plan

@@ -1,0 +1,18 @@
+{
+  "id": "system_goal_state_v1",
+  "type": "system_intent",
+  "timestamp": "auto",
+  "content": {
+    "desired_state": "Efficient, aligned, and resilient intelligence",
+    "core_metrics": {
+      "alignment": "maximize",
+      "complexity_cost": "minimize",
+      "operational_health": "sustain"
+    },
+    "verification": "Measured using VDR and safety checks"
+  },
+  "meta": {
+    "tags": ["objective", "goals", "governance"],
+    "priority": "HIGH"
+  }
+}

@@ -1,0 +1,77 @@
+nano_id: vy-epigenetic-rewrite-inquirer
+version: 0.1.0
+label: "VY – Replace Inquirer with Node.js Readline"
+
+meta:
+  owner: "VY Epigenetic Scrubber"
+  intent: >
+    Replace the inquirer npm dependency with native Node.js readline
+    to eliminate external dependencies for user input handling.
+
+invariants:
+  - id: NO_BREAKING_CHANGES
+    rule: "Maintain existing user input functionality while removing npm dependency."
+  - id: NODE_BUILTIN_ONLY
+    rule: "Use only Node.js built-in readline module, no external libraries."
+  - id: INTERACTIVE_PRESERVED
+    rule: "All interactive prompts and user input flows remain functional."
+
+task:
+  id: vy-epigenetic-rewrite-inquirer-001
+  origin_goal: "Replace medium-risk inquirer dependency with native alternative."
+  scope: "moie-mac-loop repository"
+  priority: 6
+
+  steps:
+    - id: analyze_inquirer_usage
+      kind: "code_analysis"
+      description: "Identify all inquirer usage patterns and prompt types."
+      files_to_analyze:
+        - "nano_cli.cjs"
+        - "mon_cli.cjs"
+
+    - id: create_readline_module
+      kind: "create_file"
+      description: "Create a nano module wrapping Node.js readline functionality."
+      output: "readline_nano.js"
+      template: "Readline wrapper with prompt, confirm, and input methods"
+
+    - id: replace_inquirer_imports
+      kind: "code_replacement"
+      description: "Replace inquirer imports with readline nano module."
+      pattern: "import.*inquirer.*|require.*inquirer.*"
+      replacement: "import { ReadlineNano } from './readline_nano.js'"
+
+    - id: replace_inquirer_calls
+      kind: "code_replacement"
+      description: "Replace inquirer method calls with readline equivalents."
+      patterns:
+        - "inquirer.prompt" -> "ReadlineNano.prompt"
+        - "inquirer.confirm" -> "ReadlineNano.confirm"
+        - "inquirer.input" -> "ReadlineNano.input"
+        - "inquirer.list" -> "ReadlineNano.select"
+
+    - id: update_package_json
+      kind: "dependency_removal"
+      description: "Remove inquirer from package.json dependencies."
+      file: "package.json"
+      remove_dependency: "inquirer"
+
+    - id: test_user_input
+      kind: "testing"
+      description: "Verify all user input functionality works with readline replacement."
+      test_commands:
+        - "node nano_cli.cjs --interactive-test"
+        - "node mon_cli.cjs --prompt-test"
+
+acceptance_criteria:
+  - "All inquirer imports/requires are replaced with readline module."
+  - "inquirer dependency is removed from package.json."
+  - "Interactive prompts and user input remain functional."
+  - "No external dependencies for user input handling."
+  - "Readline module provides equivalent functionality."
+
+runtime_notes:
+  - "This replacement targets medium-risk dependency (0.48 fragility score)."
+  - "Node.js readline is built-in and provides full control over input handling."
+  - "May require additional validation logic that inquirer provided automatically."

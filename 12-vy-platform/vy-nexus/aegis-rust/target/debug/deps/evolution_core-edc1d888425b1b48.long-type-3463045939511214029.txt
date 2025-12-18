@@ -1,0 +1,7 @@
+(dyn for<'a> Fn(rhai::tokenizer::Token, Position, &'a rhai::tokenizer::TokenizeState) -> rhai::tokenizer::Token + 'static)
+Unique<(dyn for<'a> Fn(rhai::tokenizer::Token, Position, &'a rhai::tokenizer::TokenizeState) -> rhai::tokenizer::Token + 'static)>
+Box<(dyn for<'a> Fn(rhai::tokenizer::Token, Position, &'a rhai::tokenizer::TokenizeState) -> rhai::tokenizer::Token + 'static)>
+std::option::Option<Box<(dyn for<'a> Fn(rhai::tokenizer::Token, Position, &'a rhai::tokenizer::TokenizeState) -> rhai::tokenizer::Token + 'static)>>
+Pin<Box<(dyn Future<Output = std::result::Result<std::string::String, anyhow::Error>> + Send + 'async_trait)>>
+Pin<Box<(dyn Future<Output = std::result::Result<Vec<Pattern>, anyhow::Error>> + Send + 'async_trait)>>
+Pin<Box<(dyn Future<Output = std::result::Result<Vec<Improvement>, anyhow::Error>> + Send + 'async_trait)>>

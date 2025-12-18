@@ -1,0 +1,1 @@
+/Users/lordwilson/vy-nexus/nexus-core/target/release/examples/test_automation: /Users/lordwilson/vy-nexus/nexus-core/examples/test_automation.rs /Users/lordwilson/vy-nexus/nexus-core/src/contracts/mod.rs /Users/lordwilson/vy-nexus/nexus-core/src/contracts/open_app.rs /Users/lordwilson/vy-nexus/nexus-core/src/ledger/mod.rs /Users/lordwilson/vy-nexus/nexus-core/src/lib.rs

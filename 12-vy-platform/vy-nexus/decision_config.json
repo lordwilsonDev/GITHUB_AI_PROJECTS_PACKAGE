@@ -1,0 +1,17 @@
+{
+  "criteria_weights": {
+    "effectiveness": 0.3,
+    "safety": 0.3,
+    "speed": 0.15,
+    "reversibility": 0.15,
+    "resource_cost": 0.1
+  },
+  "risk_thresholds": {
+    "low": 0.85,
+    "medium": 0.7,
+    "high": 0.5
+  },
+  "minimum_confidence": 0.75,
+  "require_human_approval_above_risk": "high",
+  "enable_learning": true
+}

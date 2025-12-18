@@ -1,0 +1,7 @@
+difflib
+fastapi
+love_engine
+numpy
+pydantic
+requests
+uvicorn

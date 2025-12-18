@@ -1,0 +1,108 @@
+# Health Check Sequence
+# Verify all systems are operational
+
+name: system-health-check
+description: Check health of all cognitive systems
+version: "1.0"
+
+variables:
+  home: /Users/lordwilson
+  moie_api: http://localhost:8000
+  love_engine_api: http://localhost:8001
+  age_api: http://localhost:9000
+
+steps:
+  # Check file system structure
+  - name: check-directories
+    type: shell
+    config:
+      command: |
+        echo "📁 Directory Structure Check"
+        echo "============================"
+        
+        check_dir() {
+          if [ -d "$1" ]; then
+            echo "✅ $1"
+          else
+            echo "❌ $1 (missing)"
+          fi
+        }
+        
+        check_dir "${home}/vy-nexus"
+        check_dir "${home}/moie-mac-loop"
+        check_dir "${home}/01_Active_Projects/elisya-system"
+        check_dir "${home}/nano_memory"
+        check_dir "${home}/sovereignty-stack"
+        check_dir "${home}/MoIE_OS_v3"
+    on_failure: continue
+    
+  # Check Python dependencies
+  - name: check-python
+    type: shell
+    config:
+      command: |
+        echo ""
+        echo "🐍 Python Environment Check"
+        echo "============================"
+        python3 -c "import yaml; print('✅ PyYAML')" 2>/dev/null || echo "❌ PyYAML"
+        python3 -c "import requests; print('✅ Requests')" 2>/dev/null || echo "❌ Requests"
+        python3 -c "import json; print('✅ JSON')" 2>/dev/null || echo "❌ JSON"
+    on_failure: continue
+    
+  # Check Node.js
+  - name: check-node
+    type: shell
+    config:
+      command: |
+        echo ""
+        echo "📦 Node.js Check"
+        echo "================"
+        if command -v node &> /dev/null; then
+          echo "✅ Node.js: $(node --version)"
+        else
+          echo "❌ Node.js not found"
+        fi
+    on_failure: continue
+    
+  # Check MoIE API (if running)
+  - name: check-moie-api
+    type: http
+    config:
+      url: ${moie_api}/health
+      method: GET
+      timeout: 5
+    on_failure: continue
+    
+  # Check key files
+  - name: check-files
+    type: shell
+    config:
+      command: |
+        echo ""
+        echo "📄 Key Files Check"
+        echo "=================="
+        
+        check_file() {
+          if [ -f "$1" ]; then
+            echo "✅ $1"
+          else
+            echo "⚠️  $1 (missing)"
+          fi
+        }
+        
+        check_file "${home}/vy-nexus/nexus_core.py"
+        check_file "${home}/moie-mac-loop/motia.js"
+        check_file "${home}/nano_dispatcher.py"
+        check_file "${home}/01_Active_Projects/elisya-system/elisya_cycle.sh"
+    on_failure: continue
+    
+  # Summary
+  - name: summary
+    type: shell
+    config:
+      command: |
+        echo ""
+        echo "🏁 HEALTH CHECK COMPLETE"
+        echo "========================"
+        echo "Review any ❌ or ⚠️ items above"
+        echo ""

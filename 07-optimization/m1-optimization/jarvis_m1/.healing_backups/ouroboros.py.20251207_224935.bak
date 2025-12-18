@@ -1,0 +1,26 @@
+import os
+
+def calculate_vdr(path="."):
+    commits = 50 # Mocked from git log for audit
+    refactors = 12
+    complexity = 0
+    
+    for root, dirs, files in os.walk(path):
+        for file in files:
+            if file.endswith(".py"):
+                with open(os.path.join(root, file), 'r') as f:
+                    complexity += len(f.readlines())
+    
+    # VDR Formula
+    vdr = (commits + refactors) / (complexity / 100) # Scaling factor
+    print(f"🔥 Vitality: {commits + refactors}")
+    print(f"🪨 Density (LOC): {complexity}")
+    print(f"🧬 VDR SCORE: {vdr:.2f}")
+    
+    if vdr < 1.0:
+        print("⚠️  METABOLIC COLLAPSE IMMINENT. TRIGGERING SUBTRACTION.")
+    else:
+        print("✅  SYSTEM IS ANTIFRAGILE.")
+
+if __name__ == "__main__":
+    calculate_vdr()

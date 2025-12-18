@@ -1,0 +1,22 @@
+[
+  {
+    "timestamp": "2025-12-15T23:12:58.259998",
+    "forecast": {
+      "activity_type": "code_review",
+      "optimal_time": "10:00",
+      "optimal_day": "Monday",
+      "confidence": "low",
+      "reasoning": "Default recommendation",
+      "alternatives": [
+        {
+          "time": "14:00",
+          "suitability": "good"
+        },
+        {
+          "time": "09:00",
+          "suitability": "acceptable"
+        }
+      ]
+    }
+  }
+]

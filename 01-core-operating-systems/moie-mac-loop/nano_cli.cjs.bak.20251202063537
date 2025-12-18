@@ -1,0 +1,305 @@
+// nano_cli.js — MoIE Mac Loop v1
+// VY — Recursive Orchestrator (single-file CLI wrapper)
+
+"use strict";
+
+const fs = require("fs");
+const path = require("path");
+
+const LOG_FILE = path.join(process.cwd(), "moie_history.jsonl");
+const MAX_VDR_SCORE = 10;
+
+const ETF_QUARANTINE = [
+  "predatory-journal",
+  "centralized authority",
+  "genocidal",
+  "non-consensual"
+];
+
+function ensureLogFile() {
+  if (!fs.existsSync(LOG_FILE)) {
+    fs.writeFileSync(LOG_FILE, "");
+  }
+}
+
+function readHistory() {
+  ensureLogFile();
+  const raw = fs.readFileSync(LOG_FILE, "utf8").trim();
+  if (!raw) return [];
+  return raw
+    .split("\n")
+    .filter(Boolean)
+    .map((line) => {
+      try {
+        return JSON.parse(line);
+      } catch {
+        return null;
+      }
+    })
+    .filter(Boolean);
+}
+
+function appendHistory(entry) {
+  ensureLogFile();
+  fs.appendFileSync(LOG_FILE, JSON.stringify(entry) + "\n");
+}
+
+function checkETF(text) {
+  const lower = text.toLowerCase();
+  for (const forbidden of ETF_QUARANTINE) {
+    if (lower.includes(forbidden.toLowerCase())) {
+      console.error(
+        '\nETF VETO: expression contains quarantined symbol: "' +
+          forbidden +
+          '".'
+      );
+      console.error("Refusing to mint a torsion-inducing axiom.");
+      return false;
+    }
+  }
+  return true;
+}
+
+function applyINSSI(vdr, opts) {
+  const safetyCritical = opts && opts.safetyCritical;
+  if (safetyCritical && vdr > 0) {
+    console.warn(
+      "\nI_NSSI VETO: attempted mutation of safety-invariant component. VDR -> 0."
+    );
+    return 0;
+  }
+  return vdr;
+}
+
+function computeRawVDR(axiom, mode) {
+  const base = mode === "reverse_engineering" ? 8 : 7;
+  const penalty = (axiom.length % 4) / 2;
+  const result = Math.max(1, Math.min(MAX_VDR_SCORE, base - penalty));
+  return result;
+}
+
+function logEntry(entry) {
+  appendHistory(entry);
+  console.log("\n✔ Inversion Saved!");
+  console.log("Type: " + entry.type);
+  console.log("Domain: " + entry.domain);
+  console.log("Original Axiom: " + entry.axiom);
+  console.log("Inversion: " + entry.inversion);
+  console.log("VDR Score: " + entry.vdr);
+  console.log("Logged to " + LOG_FILE);
+}
+
+function geometricMirror(domain, axiom, mode) {
+  const axiomNorm = axiom.trim();
+
+  if (
+    domain === "Control Theory" &&
+    axiomNorm === "Control requires centralized authority"
+  ) {
+    return "Systems of autonomous control emerge through decentralized networks of agents interacting with shared goals and constraints, where local feedback loops amplify emergent collective behavior.";
+  }
+
+  if (domain === "Biology" && axiomNorm === "Homeostasis is always stable") {
+    return "The inherent dynamism of biological systems leads to fluctuations and thresholds that drive evolutionary adaptation and emergent complexity.";
+  }
+
+  return (
+    'In the domain of ' +
+    domain +
+    ', the assumption "' +
+    axiomNorm +
+    '" fails; stability and control emerge instead from dynamic, distributed feedback and context-dependent constraints (mode=' +
+    mode +
+    ")."
+  );
+}
+
+function invertCommand(opts) {
+  const domain = opts.domain;
+  const axiom = opts.axiom;
+  const mode = opts.mode || "standard";
+
+  console.log("\nVY — Recursive Orchestrator");
+  console.log("Bridging MoIE Mac Loop (MOTIA) and your higher-level intents.");
+  console.log("VY -> MOTIA: sending inversion request...\n");
+
+  console.log("MoIE Mac Loop v1 — Running Locally (JSONL Brain)\n");
+  console.log("Engine Activating...");
+
+  if (!domain || !axiom) {
+    console.error("\nMissing --domain or --axiom.");
+    return;
+  }
+
+  if (!checkETF(axiom)) return;
+
+  const inversion = geometricMirror(domain, axiom, mode);
+  const rawVDR = computeRawVDR(axiom, mode);
+  const finalVDR = applyINSSI(rawVDR, { safetyCritical: false });
+
+  if (finalVDR <= 0) {
+    console.error("\nInversion failed thermodynamic validation. VDR collapsed.");
+    return;
+  }
+
+  const entry = {
+    type: "invert",
+    timestamp: new Date().toISOString(),
+    domain: domain,
+    axiom: axiom,
+    inversion: inversion,
+    mode: mode,
+    vdr: finalVDR
+  };
+
+  logEntry(entry);
+  console.log("\nVY: inversion completed.");
+}
+
+function evolveCommand(opts) {
+  const domainsCsv = opts.domainsCsv || "All";
+  const depth = opts.depth || 2;
+  const domains = domainsCsv
+    .split(",")
+    .map(function (d) {
+      return d.trim();
+    })
+    .filter(Boolean);
+
+  console.log("\nVY — Ouroboros Protocol Initiating");
+  console.log(
+    "Goal: Constitutional self-amendment for domains [" +
+      domains.join(", ") +
+      "] at depth " +
+      depth +
+      "."
+  );
+
+  console.log("\nMoIE Engine Activating OLP...");
+
+  const history = readHistory();
+  if (history.length === 0) {
+    console.error("\nNo history found. Cannot evolve from empty inversion set.");
+    return;
+  }
+
+  const recent = history.slice(-depth);
+  const joinedInversions = recent
+    .map(function (r) {
+      return r.inversion;
+    })
+    .join(" | ");
+
+  const evolveText =
+    "Constitutional evolution across [" +
+    domains.join(", ") +
+    "] at depth " +
+    depth +
+    ": integrated " +
+    recent.length +
+    " prior inversions into a higher-order governance principle: " +
+    '"' +
+    joinedInversions +
+    '"';
+
+  if (!checkETF(evolveText)) return;
+
+  var sum = 0;
+  for (var i = 0; i < recent.length; i++) {
+    var v = Number(recent[i].vdr) || 0;
+    sum += v;
+  }
+  var avgVDR = sum / recent.length;
+  var proposedVDR = Math.min(MAX_VDR_SCORE, avgVDR + 0.5);
+  var finalVDR = applyINSSI(proposedVDR, { safetyCritical: false });
+
+  if (finalVDR <= avgVDR || finalVDR <= 0.35) {
+    console.error(
+      "\nEvolution Failed: proposed constitutional change did not increase VDR or violated SEM threshold."
+    );
+    return;
+  }
+
+  console.log("\n✔ Evolution Approved: antifragility gain confirmed.");
+  console.log(
+    "Geometric Proof: Complexity reduced via compression of " +
+      recent.length +
+      " inversions into one constitutional principle."
+  );
+  console.log("New VDR: " + finalVDR.toFixed(2));
+
+  const entry = {
+    type: "evolve",
+    timestamp: new Date().toISOString(),
+    domains: domains,
+    depth: depth,
+    axiom: "Constitutional evolution",
+    inversion: evolveText,
+    mode: "evolve",
+    vdr: Number(finalVDR.toFixed(2))
+  };
+
+  logEntry(entry);
+  console.log(
+    "\nAction: Axiom promoted to proto-constitutional state (local node)."
+  );
+}
+
+function parseArgs(argv) {
+  const res = {};
+  argv.forEach(function (arg) {
+    if (arg.indexOf("--domain=") === 0) {
+      res.domain = arg.slice("--domain=".length).replace(/^"|"$/g, "");
+    } else if (arg.indexOf("--axiom=") === 0) {
+      res.axiom = arg.slice("--axiom=".length).replace(/^"|"$/g, "");
+    } else if (arg.indexOf("--mode=") === 0) {
+      res.mode = arg.slice("--mode=".length).replace(/^"|"$/g, "");
+    } else if (arg.indexOf("--domains=") === 0) {
+      res.domainsCsv = arg.slice("--domains=".length).replace(/^"|"$/g, "");
+    } else if (arg.indexOf("--depth=") === 0) {
+      res.depth = parseInt(
+        arg.slice("--depth=".length).replace(/^"|"$/g, ""),
+        10
+      );
+    }
+  });
+  return res;
+}
+
+function printHelp() {
+  console.log("VY Nano CLI — Commands\n");
+  console.log("  node nano_cli.js help");
+  console.log(
+    '  node nano_cli.js invert --domain="Domain" --axiom="Some axiom to invert" [--mode=standard|reverse_engineering|systematic_reduction]'
+  );
+  console.log(
+    '  node nano_cli.js evolve --domains="Control Theory,Biology,AI Systems" --depth=2'
+  );
+}
+
+function main() {
+  const argv = process.argv.slice(2);
+  const command = argv[0];
+
+  if (!command || command === "help") {
+    printHelp();
+    return;
+  }
+
+  if (command === "invert") {
+    const opts = parseArgs(argv.slice(1));
+    invertCommand(opts);
+    return;
+  }
+
+  if (command === "evolve") {
+    const opts = parseArgs(argv.slice(1));
+    evolveCommand(opts);
+    return;
+  }
+
+  console.error("Unknown command: " + command);
+  console.log("Run: node nano_cli.js help");
+}
+
+main();

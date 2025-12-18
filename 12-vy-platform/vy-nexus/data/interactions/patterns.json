@@ -1,0 +1,50 @@
+{
+  "task_frequency": {
+    "create_file": 1,
+    "data_analysis": 1,
+    "delete_file": 1
+  },
+  "time_patterns": {
+    "peak_hours": {
+      "22": 5
+    },
+    "active_days": {
+      "Monday": 5
+    },
+    "total_sessions": 1
+  },
+  "success_patterns": {
+    "command": {
+      "rate": 100.0,
+      "total": 2,
+      "successful": 2
+    },
+    "query": {
+      "rate": 100.0,
+      "total": 1,
+      "successful": 1
+    },
+    "task": {
+      "rate": 100.0,
+      "total": 1,
+      "successful": 1
+    },
+    "error": {
+      "rate": 0.0,
+      "total": 1,
+      "successful": 0
+    }
+  },
+  "tool_usage": {},
+  "error_patterns": [
+    {
+      "error_type": "FileNotFoundError",
+      "count": 1
+    }
+  ],
+  "response_time_patterns": {
+    "command": 0.4,
+    "query": 1.2,
+    "task": 5.3
+  }
+}

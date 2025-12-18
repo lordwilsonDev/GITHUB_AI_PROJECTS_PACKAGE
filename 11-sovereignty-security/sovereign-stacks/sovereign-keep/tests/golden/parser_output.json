@@ -1,0 +1,40 @@
+[
+  {
+    "archived": false,
+    "color": "DEFAULT",
+    "created": "2020-12-31T18:00:00",
+    "id": "note1",
+    "labels": [],
+    "pinned": false,
+    "text": "Milk\nEggs\nBread",
+    "title": "Shopping List",
+    "trashed": false,
+    "updated": "2020-12-31T18:00:00"
+  },
+  {
+    "archived": false,
+    "color": "DEFAULT",
+    "created": "2020-12-31T18:01:40",
+    "id": "note2",
+    "labels": [],
+    "pinned": false,
+    "text": "Eggs\nMilk\nBread",
+    "title": "Grocery Shopping",
+    "trashed": false,
+    "updated": "2020-12-31T18:01:40"
+  },
+  {
+    "archived": false,
+    "color": "BLUE",
+    "created": "2020-12-31T18:03:20",
+    "id": "note3",
+    "labels": [
+      "Work"
+    ],
+    "pinned": true,
+    "text": "Build a semantic note analyzer\nUse NLP for duplicate detection",
+    "title": "Project Ideas",
+    "trashed": false,
+    "updated": "2020-12-31T18:03:20"
+  }
+]

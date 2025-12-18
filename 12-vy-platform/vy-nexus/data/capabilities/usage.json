@@ -1,0 +1,18 @@
+[
+  {
+    "capability_id": "cap_20251215_223948",
+    "success": true,
+    "context": {
+      "test": true
+    },
+    "timestamp": "2025-12-15T22:39:48.032701"
+  },
+  {
+    "capability_id": "cap_20251215_223948",
+    "success": true,
+    "context": {
+      "test": true
+    },
+    "timestamp": "2025-12-15T22:39:48.032768"
+  }
+]

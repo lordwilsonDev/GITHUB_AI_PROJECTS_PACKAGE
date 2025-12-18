@@ -1,0 +1,14 @@
+{
+  "id": "ouroboros_simplification_v1",
+  "type": "maintenance_rule",
+  "timestamp": "auto",
+  "content": {
+    "rule": "Remove complexity when value contribution declines",
+    "measure": "Vitality / Density (VDR)",
+    "effect": "System remains lightweight, fast, and maintainable"
+  },
+  "meta": {
+    "tags": ["antifragile", "refactor", "maintenance"],
+    "schedule": "on-demand"
+  }
+}

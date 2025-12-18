@@ -1,0 +1,32 @@
+{
+  "impact_measurements": {
+    "q1_2025": {
+      "measured_at": "2025-12-15T22:47:05.156065",
+      "improvements": {
+        "response_time": {
+          "baseline": 250,
+          "current": 180,
+          "target": 100,
+          "improvement_percentage": -28.000000000000004,
+          "target_achievement": 46.666666666666664
+        },
+        "success_rate": {
+          "baseline": 95.0,
+          "current": 97.5,
+          "target": 99.5,
+          "improvement_percentage": 2.631578947368421,
+          "target_achievement": 55.55555555555556
+        },
+        "user_satisfaction": {
+          "baseline": 75,
+          "current": 82,
+          "target": 90,
+          "improvement_percentage": 9.333333333333334,
+          "target_achievement": 46.666666666666664
+        }
+      },
+      "overall_target_achievement": 49.629629629629626
+    }
+  },
+  "last_analyzed": "2025-12-15T22:47:05.156103"
+}

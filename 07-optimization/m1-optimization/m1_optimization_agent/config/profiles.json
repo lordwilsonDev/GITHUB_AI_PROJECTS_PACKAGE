@@ -1,0 +1,248 @@
+{
+  "_comment": "Pre-configured optimization profiles for different scenarios",
+  
+  "profiles": {
+    "daily_driver": {
+      "name": "Daily Driver",
+      "description": "Balanced settings for everyday use with occasional LLM inference",
+      "optimization_level": "conservative",
+      "settings": {
+        "windowserver": {
+          "disable_transparency": false,
+          "disable_animations": false
+        },
+        "spotlight": {
+          "disable_indexing": false
+        },
+        "background_services": {
+          "disable_photoanalysisd": false
+        },
+        "ollama": {
+          "num_parallel": 1,
+          "max_loaded_models": 1,
+          "keep_alive": "5m"
+        },
+        "process_management": {
+          "disable_app_nap": false,
+          "prevent_sleep_during_inference": false
+        }
+      }
+    },
+    
+    "power_user": {
+      "name": "Power User",
+      "description": "Moderate optimizations for frequent LLM use while maintaining usability",
+      "optimization_level": "moderate",
+      "settings": {
+        "windowserver": {
+          "disable_transparency": true,
+          "disable_animations": false
+        },
+        "spotlight": {
+          "disable_indexing": false
+        },
+        "background_services": {
+          "disable_photoanalysisd": true
+        },
+        "ollama": {
+          "num_parallel": 1,
+          "max_loaded_models": 1,
+          "keep_alive": "10m"
+        },
+        "process_management": {
+          "disable_app_nap": true,
+          "prevent_sleep_during_inference": false
+        }
+      }
+    },
+    
+    "dedicated_inference": {
+      "name": "Dedicated Inference Machine",
+      "description": "Maximum performance for a Mac dedicated to LLM inference",
+      "optimization_level": "aggressive",
+      "settings": {
+        "windowserver": {
+          "disable_transparency": true,
+          "disable_animations": true
+        },
+        "spotlight": {
+          "disable_indexing": true
+        },
+        "background_services": {
+          "disable_photoanalysisd": true,
+          "disable_mediaanalysisd": true
+        },
+        "ollama": {
+          "num_parallel": 1,
+          "max_loaded_models": 1,
+          "keep_alive": "-1"
+        },
+        "process_management": {
+          "disable_app_nap": true,
+          "prevent_sleep_during_inference": true,
+          "optimize_ollama_priority": true
+        },
+        "thermal_management": {
+          "enable_custom_fan_control": true,
+          "min_fan_speed_rpm": 3000
+        }
+      }
+    },
+    
+    "development": {
+      "name": "Development & Testing",
+      "description": "Settings for developing and testing LLM applications",
+      "optimization_level": "moderate",
+      "settings": {
+        "windowserver": {
+          "disable_transparency": true,
+          "disable_animations": false
+        },
+        "spotlight": {
+          "disable_indexing": false,
+          "exclude_directories": [
+            "~/venv",
+            "~/node_modules",
+            "~/.ollama"
+          ]
+        },
+        "background_services": {
+          "disable_photoanalysisd": true
+        },
+        "ollama": {
+          "num_parallel": 1,
+          "max_loaded_models": 2,
+          "keep_alive": "15m"
+        },
+        "process_management": {
+          "disable_app_nap": true,
+          "optimize_python_priority": true
+        },
+        "python_environment": {
+          "use_uv": true,
+          "install_mlx": true
+        }
+      }
+    },
+    
+    "8gb_survival": {
+      "name": "8GB RAM Survival Mode",
+      "description": "Extreme optimizations for stable operation on 8GB M1 systems",
+      "optimization_level": "aggressive",
+      "ram_requirement": 8,
+      "settings": {
+        "windowserver": {
+          "disable_transparency": true,
+          "disable_animations": true,
+          "disable_dock_animations": true,
+          "disable_finder_animations": true
+        },
+        "spotlight": {
+          "disable_indexing": true
+        },
+        "background_services": {
+          "disable_photoanalysisd": true,
+          "disable_mediaanalysisd": true,
+          "disable_photolibraryd": true
+        },
+        "ollama": {
+          "num_parallel": 1,
+          "max_loaded_models": 1,
+          "keep_alive": "5m",
+          "default_context_size": 2048
+        },
+        "process_management": {
+          "disable_app_nap": true,
+          "optimize_ollama_priority": true
+        },
+        "monitoring": {
+          "alert_thresholds": {
+            "memory_percent": 75,
+            "swap_percent": 30
+          }
+        }
+      },
+      "recommended_models": [
+        "llama3.2:3b",
+        "phi3:3.8b",
+        "gemma:2b"
+      ]
+    },
+    
+    "16gb_performance": {
+      "name": "16GB Performance Mode",
+      "description": "Optimized settings for 16GB M1 systems with larger models",
+      "optimization_level": "moderate",
+      "ram_requirement": 16,
+      "settings": {
+        "windowserver": {
+          "disable_transparency": true,
+          "disable_animations": false
+        },
+        "spotlight": {
+          "disable_indexing": false
+        },
+        "background_services": {
+          "disable_photoanalysisd": true
+        },
+        "ollama": {
+          "num_parallel": 2,
+          "max_loaded_models": 1,
+          "keep_alive": "15m",
+          "default_context_size": 4096
+        },
+        "process_management": {
+          "disable_app_nap": true,
+          "optimize_ollama_priority": true
+        }
+      },
+      "recommended_models": [
+        "llama3.1:8b",
+        "mistral:7b-instruct-q8_0",
+        "codellama:13b-code-q4_K_M"
+      ]
+    },
+    
+    "headless_server": {
+      "name": "Headless Server",
+      "description": "Settings for Mac Mini running as headless LLM server",
+      "optimization_level": "aggressive",
+      "settings": {
+        "windowserver": {
+          "disable_transparency": true,
+          "disable_animations": true
+        },
+        "spotlight": {
+          "disable_indexing": true
+        },
+        "background_services": {
+          "disable_photoanalysisd": true,
+          "disable_mediaanalysisd": true
+        },
+        "ollama": {
+          "num_parallel": 2,
+          "max_loaded_models": 1,
+          "keep_alive": "-1"
+        },
+        "process_management": {
+          "disable_app_nap": true,
+          "prevent_sleep_during_inference": true,
+          "optimize_ollama_priority": true
+        },
+        "thermal_management": {
+          "enable_custom_fan_control": true,
+          "min_fan_speed_rpm": 3000
+        },
+        "monitoring": {
+          "enabled": true,
+          "log_interval_seconds": 60
+        }
+      },
+      "notes": [
+        "Use HDMI dummy plug for stable GPU initialization",
+        "Access via SSH for remote management",
+        "Consider using tmux/screen for persistent sessions"
+      ]
+    }
+  }
+}

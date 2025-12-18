@@ -1,0 +1,74 @@
+{
+  "default_strategy": "PRIORITY_BASED",
+  "resources": {
+    "cpu": {
+      "capacity": 100.0,
+      "unit": "percent"
+    },
+    "memory": {
+      "capacity": 16384.0,
+      "unit": "MB"
+    },
+    "time": {
+      "capacity": 86400.0,
+      "unit": "seconds"
+    },
+    "network": {
+      "capacity": 1000.0,
+      "unit": "Mbps"
+    },
+    "storage": {
+      "capacity": 102400.0,
+      "unit": "MB"
+    }
+  },
+  "allocation_limits": {
+    "max_per_task": 0.5,
+    "min_reserve": 0.1,
+    "reallocation_threshold": 0.9
+  },
+  "optimization": {
+    "enable_predictive": true,
+    "enable_adaptive": true,
+    "rebalance_interval_seconds": 60,
+    "fairness_weight": 0.3,
+    "efficiency_weight": 0.7
+  },
+  "strategies": {
+    "greedy": {
+      "enabled": true,
+      "description": "Allocate to highest priority first"
+    },
+    "fair_share": {
+      "enabled": true,
+      "description": "Equal distribution among tasks"
+    },
+    "proportional": {
+      "enabled": true,
+      "description": "Allocate based on task weights"
+    },
+    "predictive": {
+      "enabled": true,
+      "description": "Allocate based on predicted needs",
+      "prediction_horizon_hours": 24
+    },
+    "adaptive": {
+      "enabled": true,
+      "description": "Learn from usage patterns",
+      "learning_rate": 0.1
+    },
+    "round_robin": {
+      "enabled": true,
+      "description": "Rotate allocations"
+    },
+    "priority_based": {
+      "enabled": true,
+      "description": "Strict priority ordering"
+    }
+  },
+  "performance_targets": {
+    "min_success_rate": 0.9,
+    "max_avg_wait_time_seconds": 5.0,
+    "target_utilization": 0.75
+  }
+}

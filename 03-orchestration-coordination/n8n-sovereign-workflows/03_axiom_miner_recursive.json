@@ -1,0 +1,94 @@
+{
+  "name": "Axiom Miner - Recursive Self-Improvement Loop",
+  "instructions": {
+    "purpose": "Monitor execution logs → Extract proven patterns → Store as axioms → Update system knowledge",
+    "flow": [
+      {
+        "step": "1_trigger",
+        "action": "Cron schedule every 1 hour OR after N successful executions",
+        "threshold": "10 completed tasks"
+      },
+      {
+        "step": "2_fetch_execution_logs",
+        "action": "Query Redis memory",
+        "commands": [
+          "LRANGE execution_history 0 -1",
+          "HGETALL validation_results",
+          "GET torsion_measurements"
+        ],
+        "filter": "Only executions with torsion < 0.01 AND success = true"
+      },
+      {
+        "step": "3_pattern_extraction",
+        "action": "Analyze successful executions for common patterns",
+        "extract": [
+          "Problem types that consistently pass validation",
+          "Action sequences with zero torsion",
+          "Stakeholder perspectives that led to breakthroughs",
+          "Geometric configurations (intent → action mappings)"
+        ]
+      },
+      {
+        "step": "4_generate_zk_proof",
+        "action": "Create cryptographic proof of pattern validity",
+        "method": "Hash the (problem_type, action_sequence, validation_score)",
+        "check": "bitsSaved = size(original_logs) - size(proof) > 0"
+      },
+      {
+        "step": "5_conditional_axiom_creation",
+        "action": "IF bitsSaved > 0 AND pattern appears 3+ times",
+        "then": "Create axiom entry",
+        "axiom_structure": {
+          "id": "axiom_{{timestamp}}",
+          "pattern": "{{extracted_pattern}}",
+          "proof_hash": "{{sha256_hash}}",
+          "confidence": "{{occurrence_count / total_executions}}",
+          "domain": "{{problem_domain}}",
+          "created_at": "{{timestamp}}"
+        }
+      },
+      {
+        "step": "6_store_axiom",
+        "action": "Write to Redis",
+        "commands": [
+          "HSET axioms:{{domain}} {{axiom_id}} {{axiom_json}}",
+          "ZADD axiom_confidence {{confidence_score}} {{axiom_id}}",
+          "LPUSH axiom_history {{axiom_id}}"
+        ]
+      },
+      {
+        "step": "7_update_omni_kernel",
+        "action": "Inject new axiom into omni-kernel knowledge",
+        "method": "POST to sovereign_brain /kernel/update",
+        "payload": {
+          "type": "axiom_injection",
+          "axiom_id": "{{axiom_id}}",
+          "priority": "{{confidence_score}}"
+        }
+      },
+      {
+        "step": "8_recursive_validation",
+        "action": "Test new axiom against recent problems",
+        "test": "Re-run last 5 problems using axiom shortcut instead of full planning",
+        "measure": "Time saved + accuracy maintained",
+        "accept_threshold": "80% accuracy AND 50% faster"
+      },
+      {
+        "step": "9_evolution_metrics",
+        "action": "Log system improvement",
+        "metrics": {
+          "total_axioms": "COUNT axioms",
+          "avg_confidence": "AVG confidence scores",
+          "compression_ratio": "SUM bitsSaved / SUM original_size",
+          "speed_improvement": "{{time_with_axioms}} / {{time_without_axioms}}"
+        }
+      }
+    ]
+  },
+  "configuration": {
+    "mining_interval": "1 hour",
+    "min_pattern_occurrences": 3,
+    "min_confidence_threshold": 0.75,
+    "redis_host": "localhost:6379"
+  }
+}

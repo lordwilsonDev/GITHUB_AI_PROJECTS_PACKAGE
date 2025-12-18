@@ -1,0 +1,12 @@
+# M1 LLM Optimizer Requirements
+# Python dependencies for the optimization agent
+
+# Core system monitoring
+psutil>=5.9.0
+
+# Optional: For enhanced functionality
+# Uncomment if needed
+
+# requests>=2.31.0  # For API testing and benchmarking
+# torch>=2.0.0  # For PyTorch MPS verification
+# mlx>=0.0.1  # For Apple MLX support

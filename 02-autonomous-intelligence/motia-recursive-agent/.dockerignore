@@ -1,0 +1,8 @@
+node_modules
+.git
+.env
+dist
+.motia
+coverage
+Dockerfile
+docker-compose.yml

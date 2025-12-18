@@ -1,0 +1,13 @@
+{
+  "color": "BLUE",
+  "isArchived": false,
+  "isTrashed": false,
+  "isPinned": true,
+  "labels": [
+    {
+      "name": "Work"
+    }
+  ],
+  "createdTimestampUsec": 1609459400000000,
+  "userEditedTimestampUsec": 1609459400000000
+}

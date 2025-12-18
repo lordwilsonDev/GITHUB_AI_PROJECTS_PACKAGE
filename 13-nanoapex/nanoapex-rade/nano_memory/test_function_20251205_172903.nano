@@ -1,0 +1,3 @@
+def test_function(a, b):
+    # @nanoapex: please optimize this function
+    return a + b

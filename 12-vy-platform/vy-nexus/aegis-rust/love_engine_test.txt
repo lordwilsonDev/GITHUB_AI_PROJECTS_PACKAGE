@@ -1,0 +1,71 @@
+   Compiling smallvec v1.15.1
+   Compiling errno v0.3.14
+   Compiling core-foundation v0.9.4
+   Compiling getrandom v0.3.4
+   Compiling security-framework-sys v2.15.0
+   Compiling indexmap v2.12.1
+   Compiling tracing v0.1.43
+   Compiling socket2 v0.5.10
+   Compiling system-configuration-sys v0.5.0
+   Compiling criterion v0.5.1
+   Compiling parking_lot_core v0.9.12
+   Compiling rustix v1.1.2
+   Compiling icu_normalizer v2.1.1
+   Compiling security-framework v2.11.1
+   Compiling system-configuration v0.5.1
+   Compiling parking_lot v0.12.5
+   Compiling tokio v1.48.0
+   Compiling idna_adapter v1.2.1
+   Compiling idna v1.1.0
+   Compiling url v2.5.7
+   Compiling tempfile v3.23.0
+   Compiling native-tls v0.2.14
+   Compiling tokio-util v0.7.17
+   Compiling tokio-native-tls v0.3.1
+   Compiling h2 v0.3.27
+   Compiling hyper v0.14.32
+   Compiling hyper-tls v0.5.0
+   Compiling reqwest v0.11.27
+   Compiling rig-core v0.1.0
+   Compiling love-engine v0.1.0 (/Users/lordwilson/vy-nexus/aegis-rust/love-engine)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 8.03s
+     Running unittests src/lib.rs (target/debug/deps/love_engine-f167a86a6aa2c421)
+
+running 13 tests
+test tests::test_basic_love_engine_with_threshold ... ok
+test tests::test_compute_love_metric_negative ... ok
+test tests::test_action_creation ... ok
+test tests::test_compute_love_metric_positive ... ok
+test tests::test_entropy_reduction ... ok
+test tests::test_basic_love_engine_creation ... FAILED
+test tests::test_detect_hallucination_clean_output ... ok
+test tests::test_check_ethics_safe_action ... ok
+test tests::test_check_ethics_dimensions ... ok
+test tests::test_detect_hallucination_suspicious_output ... ok
+test tests::test_evaluate_alignment ... ok
+test tests::test_check_ethics_harmful_action ... ok
+test tests::test_ethical_concerns_collection ... FAILED
+
+failures:
+
+---- tests::test_basic_love_engine_creation stdout ----
+
+thread 'tests::test_basic_love_engine_creation' panicked at love-engine/src/lib.rs:361:9:
+assertion `left == right` failed
+  left: 0.4
+ right: 0.3
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+---- tests::test_ethical_concerns_collection stdout ----
+
+thread 'tests::test_ethical_concerns_collection' panicked at love-engine/src/lib.rs:498:9:
+Should have multiple concerns for problematic action
+
+
+failures:
+    tests::test_basic_love_engine_creation
+    tests::test_ethical_concerns_collection
+
+test result: FAILED. 11 passed; 2 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+error: test failed, to rerun pass `-p love-engine --lib`

@@ -1,0 +1,38 @@
+[
+  {
+    "feedback_id": "feedback_1",
+    "rating": 5,
+    "category": "performance",
+    "comment": "System is very fast and responsive!",
+    "context": {},
+    "timestamp": "2025-12-15T22:46:50.347608",
+    "sentiment": "neutral"
+  },
+  {
+    "feedback_id": "feedback_2",
+    "rating": 4,
+    "category": "usability",
+    "comment": "Easy to use, but could be more intuitive",
+    "context": {},
+    "timestamp": "2025-12-15T22:46:50.347887",
+    "sentiment": "neutral"
+  },
+  {
+    "feedback_id": "feedback_3",
+    "rating": 2,
+    "category": "reliability",
+    "comment": "System crashed twice today, very frustrating",
+    "context": {},
+    "timestamp": "2025-12-15T22:46:50.348039",
+    "sentiment": "negative"
+  },
+  {
+    "feedback_id": "feedback_4",
+    "rating": 5,
+    "category": "features",
+    "comment": "Love the new automation features!",
+    "context": {},
+    "timestamp": "2025-12-15T22:46:50.348180",
+    "sentiment": "positive"
+  }
+]

@@ -1,0 +1,75 @@
+{
+  "name": "Sovereign Stack Deployment & Health Monitor",
+  "instructions": {
+    "purpose": "One-click deployment + continuous health monitoring of full Sovereign Stack",
+    "flow": [
+      {
+        "step": "1_trigger",
+        "action": "Manual button OR scheduled cron (every 5 min)",
+        "type": "deployment_or_health_check"
+      },
+      {
+        "step": "2_check_docker_status",
+        "action": "Execute shell command",
+        "command": "docker ps --filter name=sovereign",
+        "parse": "Check if sovereign_brain, sovereign_heart, sovereign_memory are running"
+      },
+      {
+        "step": "3_conditional_deploy",
+        "action": "IF any containers missing or unhealthy",
+        "then": "cd /Users/lordwilson/sovereign-stack && docker-compose up -d --build",
+        "wait": "30 seconds for boot"
+      },
+      {
+        "step": "4_health_checks",
+        "action": "Parallel HTTP requests",
+        "endpoints": [
+          {
+            "service": "sovereign_brain",
+            "url": "http://localhost:3000/health",
+            "expect": {"status": "healthy"}
+          },
+          {
+            "service": "love_engine",
+            "url": "http://localhost:9001/health",
+            "expect": {"status": "operational", "torsion": "<0.01"}
+          },
+          {
+            "service": "redis_memory",
+            "url": "redis://localhost:6379/ping",
+            "expect": "PONG"
+          }
+        ]
+      },
+      {
+        "step": "5_test_spark",
+        "action": "Fire test query to validate full stack",
+        "request": "POST http://localhost:3000/engage",
+        "payload": {
+          "goal": "calculate fibonacci(5) and return result"
+        },
+        "timeout": "10 seconds"
+      },
+      {
+        "step": "6_collect_metrics",
+        "action": "Gather system stats",
+        "metrics": [
+          "docker stats --no-stream sovereign_brain sovereign_heart sovereign_memory",
+          "curl localhost:3000/status",
+          "Redis INFO memory"
+        ]
+      },
+      {
+        "step": "7_alert_or_confirm",
+        "action": "IF all healthy",
+        "then": "Log success + send metrics to dashboard",
+        "else": "Send alert with failed component details"
+      }
+    ]
+  },
+  "configuration": {
+    "stack_directory": "/Users/lordwilson/sovereign-stack",
+    "health_check_interval": "5 minutes",
+    "deployment_timeout": "120 seconds"
+  }
+}

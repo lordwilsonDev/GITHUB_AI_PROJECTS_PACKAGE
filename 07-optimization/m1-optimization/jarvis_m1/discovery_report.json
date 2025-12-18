@@ -1,0 +1,13 @@
+{
+  "timestamp": "2025-12-07T22:49:35.780452",
+  "governance_cycles": 5397,
+  "issues_found": [
+    "Log errors: 704",
+    "jarvis_hub.py: High code duplication (12 duplicate lines)",
+    "dreaming_engine.py: High code duplication (11 duplicate lines)",
+    "optimization_agent.py: High code duplication (16 duplicate lines)",
+    "code_generator.py: High code duplication (20 duplicate lines)",
+    "sounddevice.py: Very long file (2960 lines)"
+  ],
+  "patterns_detected": 0
+}

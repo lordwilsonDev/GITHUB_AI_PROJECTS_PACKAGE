@@ -1,0 +1,46 @@
+{
+  "prefect-blueprint": {
+    "name": "prefect-blueprint",
+    "repository_path": "~/prefect-blueprint",
+    "capabilities": [
+      "data pipeline orchestration",
+      "ETL workflows",
+      "data validation and quality checks"
+    ],
+    "capability_embeddings": null,
+    "routing_threshold": 0.75
+  },
+  "love-engine-real": {
+    "name": "love-engine-real",
+    "repository_path": "~/love-engine-real",
+    "capabilities": [
+      "energy system optimization",
+      "constraint satisfaction",
+      "safety-critical systems"
+    ],
+    "capability_embeddings": null,
+    "routing_threshold": 0.75
+  },
+  "system-dashboard": {
+    "name": "system-dashboard",
+    "repository_path": "~/system-dashboard",
+    "capabilities": [
+      "data visualization",
+      "dashboard creation",
+      "reporting and analytics"
+    ],
+    "capability_embeddings": null,
+    "routing_threshold": 0.75
+  },
+  "nanoapex-rade": {
+    "name": "nanoapex-rade",
+    "repository_path": "~/nanoapex-rade",
+    "capabilities": [
+      "autonomous agent development",
+      "code generation and synthesis",
+      "recursive self-improvement"
+    ],
+    "capability_embeddings": null,
+    "routing_threshold": 0.75
+  }
+}

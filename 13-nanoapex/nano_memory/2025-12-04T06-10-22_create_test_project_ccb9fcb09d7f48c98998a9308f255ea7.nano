@@ -1,0 +1,23 @@
+# nano_type: snippet
+# source_path: /Users/lordwilson/nanoapex-rade/test_rade_pipeline.py
+# function: create_test_project
+# created_at: 2025-12-04T06-10-22
+# trigger: @nanoapex
+def create_test_project():
+    """Create a temporary project directory with a test Python file"""
+    temp_dir = tempfile.mkdtemp(prefix="rade_test_")
+    test_file = Path(temp_dir) / "test_main.py"
+    
+    # Create a test file with @nanoapex tag
+    test_content = '''def test_function(a, b):
+    # @nanoapex: please optimize this function
+    return a + b
+
+def normal_function():
+    return "no tag here"
+'''
+    
+    test_file.write_text(test_content)
+    print(f"[TEST] Created test project at: {temp_dir}")
+    print(f"[TEST] Test file: {test_file}")
+    return temp_dir, test_file

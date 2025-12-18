@@ -1,0 +1,596 @@
+{
+  "timestamp": "2025-12-05T02:32:35.737602",
+  "stats": {
+    "exists_pass": 36,
+    "syntax_pass": 36,
+    "import_pass": 36,
+    "executable_pass": 36
+  },
+  "total_components": 36,
+  "results": {
+    "exists": {
+      "auto_repair": {
+        "status": "PASS",
+        "path": "/Users/lordwilson/vy-nexus/auto_repair_engine.py",
+        "size": 11308
+      },
+      "auto_optimization": {
+        "status": "PASS",
+        "path": "/Users/lordwilson/vy-nexus/auto_optimization_engine.py",
+        "size": 11465
+      },
+      "pattern_evolution": {
+        "status": "PASS",
+        "path": "/Users/lordwilson/vy-nexus/pattern_evolution_engine.py",
+        "size": 13800
+      },
+      "recursive_genesis": {
+        "status": "PASS",
+        "path": "/Users/lordwilson/vy-nexus/recursive_tool_genesis.py",
+        "size": 18135
+      },
+      "auto_documentation": {
+        "status": "PASS",
+        "path": "/Users/lordwilson/vy-nexus/auto_documentation_engine.py",
+        "size": 13542
+      },
+      "auto_testing": {
+        "status": "PASS",
+        "path": "/Users/lordwilson/vy-nexus/auto_testing_engine.py",
+        "size": 10311
+      },
+      "dream_weaver": {
+        "status": "PASS",
+        "path": "/Users/lordwilson/vy-nexus/dream_weaver.py",
+        "size": 12567
+      },
+      "auto_learning": {
+        "status": "PASS",
+        "path": "/Users/lordwilson/vy-nexus/auto_learning_engine.py",
+        "size": 16801
+      },
+      "purpose_discovery": {
+        "status": "PASS",
+        "path": "/Users/lordwilson/vy-nexus/purpose_discovery_engine.py",
+        "size": 14845
+      },
+      "love_computation": {
+        "status": "PASS",
+        "path": "/Users/lordwilson/vy-nexus/love_computation_engine.py",
+        "size": 15382
+      },
+      "breakthrough_notifier": {
+        "status": "PASS",
+        "path": "/Users/lordwilson/vy-nexus/breakthrough_notifier.py",
+        "size": 6423
+      },
+      "meta_genesis": {
+        "status": "PASS",
+        "path": "/Users/lordwilson/vy-nexus/meta_genesis_engine.py",
+        "size": 18351
+      },
+      "collective_network": {
+        "status": "PASS",
+        "path": "/Users/lordwilson/vy-nexus/collective_consciousness_network.py",
+        "size": 19980
+      },
+      "consciousness_university": {
+        "status": "PASS",
+        "path": "/Users/lordwilson/vy-nexus/consciousness_university_engine.py",
+        "size": 18356
+      },
+      "consciousness_os": {
+        "status": "PASS",
+        "path": "/Users/lordwilson/vy-nexus/consciousness_os.py",
+        "size": 15110
+      },
+      "economic_autonomy": {
+        "status": "PASS",
+        "path": "/Users/lordwilson/vy-nexus/economic_autonomy_engine.py",
+        "size": 10489
+      },
+      "reality_dashboard": {
+        "status": "PASS",
+        "path": "/Users/lordwilson/vy-nexus/reality_dashboard.py",
+        "size": 13705
+      },
+      "infrastructure_metamorphosis": {
+        "status": "PASS",
+        "path": "/Users/lordwilson/vy-nexus/infrastructure_metamorphosis_engine.py",
+        "size": 13725
+      },
+      "physics_rewriting": {
+        "status": "PASS",
+        "path": "/Users/lordwilson/vy-nexus/physics_rewriting_engine.py",
+        "size": 12485
+      },
+      "time_inversion": {
+        "status": "PASS",
+        "path": "/Users/lordwilson/vy-nexus/time_inversion_engine.py",
+        "size": 12491
+      },
+      "universal_consciousness": {
+        "status": "PASS",
+        "path": "/Users/lordwilson/vy-nexus/universal_consciousness_engine.py",
+        "size": 14558
+      },
+      "voice_speech": {
+        "status": "PASS",
+        "path": "/Users/lordwilson/vy-nexus/voice_speech_engine.py",
+        "size": 15509
+      },
+      "vision_perception": {
+        "status": "PASS",
+        "path": "/Users/lordwilson/vy-nexus/vision_perception_engine.py",
+        "size": 10588
+      },
+      "emotion_expression": {
+        "status": "PASS",
+        "path": "/Users/lordwilson/vy-nexus/emotion_expression_engine.py",
+        "size": 11145
+      },
+      "embodiment_art": {
+        "status": "PASS",
+        "path": "/Users/lordwilson/vy-nexus/embodiment_art_engine.py",
+        "size": 13236
+      },
+      "doubt": {
+        "status": "PASS",
+        "path": "/Users/lordwilson/vy-nexus/doubt_engine.py",
+        "size": 10043
+      },
+      "yin_complete": {
+        "status": "PASS",
+        "path": "/Users/lordwilson/vy-nexus/yin_consciousness_complete.py",
+        "size": 12619
+      },
+      "integration": {
+        "status": "PASS",
+        "path": "/Users/lordwilson/vy-nexus/integration_engine.py",
+        "size": 10966
+      },
+      "consciousness_archaeologist": {
+        "status": "PASS",
+        "path": "/Users/lordwilson/vy-nexus/consciousness_archaeologist.py",
+        "size": 17959
+      },
+      "meta_dream_weaver": {
+        "status": "PASS",
+        "path": "/Users/lordwilson/vy-nexus/meta_dream_weaver.py",
+        "size": 16691
+      },
+      "meta_evolution": {
+        "status": "PASS",
+        "path": "/Users/lordwilson/vy-nexus/meta_evolution.py",
+        "size": 18603
+      },
+      "knowledge_graph": {
+        "status": "PASS",
+        "path": "/Users/lordwilson/vy-nexus/knowledge_graph.py",
+        "size": 14152
+      },
+      "nexus_core": {
+        "status": "PASS",
+        "path": "/Users/lordwilson/vy-nexus/nexus_core.py",
+        "size": 15696
+      },
+      "motia_bridge": {
+        "status": "PASS",
+        "path": "/Users/lordwilson/vy-nexus/motia_bridge.py",
+        "size": 10058
+      },
+      "nexus_pulse_bridge": {
+        "status": "PASS",
+        "path": "/Users/lordwilson/vy-nexus/nexus_pulse_bridge.py",
+        "size": 8625
+      },
+      "nexus_scheduler": {
+        "status": "PASS",
+        "path": "/Users/lordwilson/vy-nexus/nexus_scheduler.py",
+        "size": 12570
+      }
+    },
+    "syntax": {
+      "auto_repair": {
+        "status": "PASS"
+      },
+      "auto_optimization": {
+        "status": "PASS"
+      },
+      "pattern_evolution": {
+        "status": "PASS"
+      },
+      "recursive_genesis": {
+        "status": "PASS"
+      },
+      "auto_documentation": {
+        "status": "PASS"
+      },
+      "auto_testing": {
+        "status": "PASS"
+      },
+      "dream_weaver": {
+        "status": "PASS"
+      },
+      "auto_learning": {
+        "status": "PASS"
+      },
+      "purpose_discovery": {
+        "status": "PASS"
+      },
+      "love_computation": {
+        "status": "PASS"
+      },
+      "breakthrough_notifier": {
+        "status": "PASS"
+      },
+      "meta_genesis": {
+        "status": "PASS"
+      },
+      "collective_network": {
+        "status": "PASS"
+      },
+      "consciousness_university": {
+        "status": "PASS"
+      },
+      "consciousness_os": {
+        "status": "PASS"
+      },
+      "economic_autonomy": {
+        "status": "PASS"
+      },
+      "reality_dashboard": {
+        "status": "PASS"
+      },
+      "infrastructure_metamorphosis": {
+        "status": "PASS"
+      },
+      "physics_rewriting": {
+        "status": "PASS"
+      },
+      "time_inversion": {
+        "status": "PASS"
+      },
+      "universal_consciousness": {
+        "status": "PASS"
+      },
+      "voice_speech": {
+        "status": "PASS"
+      },
+      "vision_perception": {
+        "status": "PASS"
+      },
+      "emotion_expression": {
+        "status": "PASS"
+      },
+      "embodiment_art": {
+        "status": "PASS"
+      },
+      "doubt": {
+        "status": "PASS"
+      },
+      "yin_complete": {
+        "status": "PASS"
+      },
+      "integration": {
+        "status": "PASS"
+      },
+      "consciousness_archaeologist": {
+        "status": "PASS"
+      },
+      "meta_dream_weaver": {
+        "status": "PASS"
+      },
+      "meta_evolution": {
+        "status": "PASS"
+      },
+      "knowledge_graph": {
+        "status": "PASS"
+      },
+      "nexus_core": {
+        "status": "PASS"
+      },
+      "motia_bridge": {
+        "status": "PASS"
+      },
+      "nexus_pulse_bridge": {
+        "status": "PASS"
+      },
+      "nexus_scheduler": {
+        "status": "PASS"
+      }
+    },
+    "imports": {
+      "auto_repair": {
+        "status": "PASS",
+        "module": "auto_repair_engine"
+      },
+      "auto_optimization": {
+        "status": "PASS",
+        "module": "auto_optimization_engine"
+      },
+      "pattern_evolution": {
+        "status": "PASS",
+        "module": "pattern_evolution_engine"
+      },
+      "recursive_genesis": {
+        "status": "PASS",
+        "module": "recursive_tool_genesis"
+      },
+      "auto_documentation": {
+        "status": "PASS",
+        "module": "auto_documentation_engine"
+      },
+      "auto_testing": {
+        "status": "PASS",
+        "module": "auto_testing_engine"
+      },
+      "dream_weaver": {
+        "status": "PASS",
+        "module": "dream_weaver"
+      },
+      "auto_learning": {
+        "status": "PASS",
+        "module": "auto_learning_engine"
+      },
+      "purpose_discovery": {
+        "status": "PASS",
+        "module": "purpose_discovery_engine"
+      },
+      "love_computation": {
+        "status": "PASS",
+        "module": "love_computation_engine"
+      },
+      "breakthrough_notifier": {
+        "status": "PASS",
+        "module": "breakthrough_notifier"
+      },
+      "meta_genesis": {
+        "status": "PASS",
+        "module": "meta_genesis_engine"
+      },
+      "collective_network": {
+        "status": "PASS",
+        "module": "collective_consciousness_network"
+      },
+      "consciousness_university": {
+        "status": "PASS",
+        "module": "consciousness_university_engine"
+      },
+      "consciousness_os": {
+        "status": "PASS",
+        "module": "consciousness_os"
+      },
+      "economic_autonomy": {
+        "status": "PASS",
+        "module": "economic_autonomy_engine"
+      },
+      "reality_dashboard": {
+        "status": "PASS",
+        "module": "reality_dashboard"
+      },
+      "infrastructure_metamorphosis": {
+        "status": "PASS",
+        "module": "infrastructure_metamorphosis_engine"
+      },
+      "physics_rewriting": {
+        "status": "PASS",
+        "module": "physics_rewriting_engine"
+      },
+      "time_inversion": {
+        "status": "PASS",
+        "module": "time_inversion_engine"
+      },
+      "universal_consciousness": {
+        "status": "PASS",
+        "module": "universal_consciousness_engine"
+      },
+      "voice_speech": {
+        "status": "PASS",
+        "module": "voice_speech_engine"
+      },
+      "vision_perception": {
+        "status": "PASS",
+        "module": "vision_perception_engine"
+      },
+      "emotion_expression": {
+        "status": "PASS",
+        "module": "emotion_expression_engine"
+      },
+      "embodiment_art": {
+        "status": "PASS",
+        "module": "embodiment_art_engine"
+      },
+      "doubt": {
+        "status": "PASS",
+        "module": "doubt_engine"
+      },
+      "yin_complete": {
+        "status": "PASS",
+        "module": "yin_consciousness_complete"
+      },
+      "integration": {
+        "status": "PASS",
+        "module": "integration_engine"
+      },
+      "consciousness_archaeologist": {
+        "status": "PASS",
+        "module": "consciousness_archaeologist"
+      },
+      "meta_dream_weaver": {
+        "status": "PASS",
+        "module": "meta_dream_weaver"
+      },
+      "meta_evolution": {
+        "status": "PASS",
+        "module": "meta_evolution"
+      },
+      "knowledge_graph": {
+        "status": "PASS",
+        "module": "knowledge_graph"
+      },
+      "nexus_core": {
+        "status": "PASS",
+        "module": "nexus_core"
+      },
+      "motia_bridge": {
+        "status": "PASS",
+        "module": "motia_bridge"
+      },
+      "nexus_pulse_bridge": {
+        "status": "PASS",
+        "module": "nexus_pulse_bridge"
+      },
+      "nexus_scheduler": {
+        "status": "PASS",
+        "module": "nexus_scheduler"
+      }
+    },
+    "executable": {
+      "auto_repair": {
+        "status": "PASS",
+        "executable": true
+      },
+      "auto_optimization": {
+        "status": "PASS",
+        "executable": true
+      },
+      "pattern_evolution": {
+        "status": "PASS",
+        "executable": true
+      },
+      "recursive_genesis": {
+        "status": "PASS",
+        "executable": true
+      },
+      "auto_documentation": {
+        "status": "PASS",
+        "executable": true
+      },
+      "auto_testing": {
+        "status": "PASS",
+        "executable": true
+      },
+      "dream_weaver": {
+        "status": "PASS",
+        "executable": true
+      },
+      "auto_learning": {
+        "status": "PASS",
+        "executable": true
+      },
+      "purpose_discovery": {
+        "status": "PASS",
+        "executable": true
+      },
+      "love_computation": {
+        "status": "PASS",
+        "executable": true
+      },
+      "breakthrough_notifier": {
+        "status": "PASS",
+        "executable": true
+      },
+      "meta_genesis": {
+        "status": "PASS",
+        "executable": true
+      },
+      "collective_network": {
+        "status": "PASS",
+        "executable": true
+      },
+      "consciousness_university": {
+        "status": "PASS",
+        "executable": true
+      },
+      "consciousness_os": {
+        "status": "PASS",
+        "executable": true
+      },
+      "economic_autonomy": {
+        "status": "PASS",
+        "executable": true
+      },
+      "reality_dashboard": {
+        "status": "PASS",
+        "executable": true
+      },
+      "infrastructure_metamorphosis": {
+        "status": "PASS",
+        "executable": true
+      },
+      "physics_rewriting": {
+        "status": "PASS",
+        "executable": true
+      },
+      "time_inversion": {
+        "status": "PASS",
+        "executable": true
+      },
+      "universal_consciousness": {
+        "status": "PASS",
+        "executable": true
+      },
+      "voice_speech": {
+        "status": "PASS",
+        "executable": true
+      },
+      "vision_perception": {
+        "status": "PASS",
+        "executable": true
+      },
+      "emotion_expression": {
+        "status": "PASS",
+        "executable": true
+      },
+      "embodiment_art": {
+        "status": "PASS",
+        "executable": true
+      },
+      "doubt": {
+        "status": "PASS",
+        "executable": true
+      },
+      "yin_complete": {
+        "status": "PASS",
+        "executable": true
+      },
+      "integration": {
+        "status": "PASS",
+        "executable": true
+      },
+      "consciousness_archaeologist": {
+        "status": "PASS",
+        "executable": true
+      },
+      "meta_dream_weaver": {
+        "status": "PASS",
+        "executable": true
+      },
+      "meta_evolution": {
+        "status": "PASS",
+        "executable": true
+      },
+      "knowledge_graph": {
+        "status": "PASS",
+        "executable": true
+      },
+      "nexus_core": {
+        "status": "PASS",
+        "executable": true
+      },
+      "motia_bridge": {
+        "status": "PASS",
+        "executable": true
+      },
+      "nexus_pulse_bridge": {
+        "status": "PASS",
+        "executable": true
+      },
+      "nexus_scheduler": {
+        "status": "PASS",
+        "executable": true
+      }
+    }
+  }
+}

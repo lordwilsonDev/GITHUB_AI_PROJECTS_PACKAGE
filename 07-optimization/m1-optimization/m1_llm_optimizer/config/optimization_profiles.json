@@ -1,0 +1,217 @@
+{
+  "profiles": {
+    "conservative_8gb": {
+      "name": "Conservative (8GB RAM)",
+      "description": "Maximum stability for 8GB M1 systems",
+      "ram_requirement": 8,
+      "os_optimizations": {
+        "windowserver_level": "aggressive",
+        "disable_animations": true,
+        "reduce_transparency": true,
+        "disable_spotlight": true,
+        "disable_app_nap": true,
+        "manage_background_services": true
+      },
+      "ollama_config": {
+        "OLLAMA_NUM_PARALLEL": "1",
+        "OLLAMA_MAX_LOADED_MODELS": "1",
+        "OLLAMA_KEEP_ALIVE": "5m",
+        "OLLAMA_MAX_QUEUE": "1"
+      },
+      "model_recommendations": [
+        {
+          "model": "llama3.2:3b-q4_K_M",
+          "size": "~2GB",
+          "context_limit": 2048
+        },
+        {
+          "model": "phi3:3.8b-mini-q4_K_M",
+          "size": "~2.3GB",
+          "context_limit": 2048
+        },
+        {
+          "model": "mistral:7b-q4_K_M",
+          "size": "~4.1GB",
+          "context_limit": 2048
+        }
+      ],
+      "thermal_management": {
+        "min_fan_speed_rpm": 3000,
+        "fan_curve_trigger_temp": 60,
+        "monitoring_recommended": true
+      }
+    },
+    "balanced_16gb": {
+      "name": "Balanced (16GB RAM)",
+      "description": "Balance between performance and stability for 16GB systems",
+      "ram_requirement": 16,
+      "os_optimizations": {
+        "windowserver_level": "moderate",
+        "disable_animations": true,
+        "reduce_transparency": true,
+        "disable_spotlight": false,
+        "disable_app_nap": true,
+        "manage_background_services": false
+      },
+      "ollama_config": {
+        "OLLAMA_NUM_PARALLEL": "1",
+        "OLLAMA_MAX_LOADED_MODELS": "1",
+        "OLLAMA_KEEP_ALIVE": "10m",
+        "OLLAMA_MAX_QUEUE": "2"
+      },
+      "model_recommendations": [
+        {
+          "model": "llama3.1:8b-q5_K_M",
+          "size": "~5.5GB",
+          "context_limit": 4096
+        },
+        {
+          "model": "mistral:7b-q8_0",
+          "size": "~7.7GB",
+          "context_limit": 4096
+        },
+        {
+          "model": "codellama:7b-q5_K_M",
+          "size": "~5GB",
+          "context_limit": 4096
+        }
+      ],
+      "thermal_management": {
+        "min_fan_speed_rpm": 2500,
+        "fan_curve_trigger_temp": 65,
+        "monitoring_recommended": true
+      }
+    },
+    "performance_32gb": {
+      "name": "Performance (32GB+ RAM)",
+      "description": "Maximum performance for high-RAM systems",
+      "ram_requirement": 32,
+      "os_optimizations": {
+        "windowserver_level": "minimal",
+        "disable_animations": false,
+        "reduce_transparency": false,
+        "disable_spotlight": false,
+        "disable_app_nap": true,
+        "manage_background_services": false
+      },
+      "ollama_config": {
+        "OLLAMA_NUM_PARALLEL": "2",
+        "OLLAMA_MAX_LOADED_MODELS": "2",
+        "OLLAMA_KEEP_ALIVE": "15m",
+        "OLLAMA_MAX_QUEUE": "4"
+      },
+      "model_recommendations": [
+        {
+          "model": "llama3.1:8b-q8_0",
+          "size": "~8.5GB",
+          "context_limit": 8192
+        },
+        {
+          "model": "mixtral:8x7b-q4_K_M",
+          "size": "~26GB",
+          "context_limit": 8192
+        },
+        {
+          "model": "codellama:13b-q5_K_M",
+          "size": "~9GB",
+          "context_limit": 8192
+        }
+      ],
+      "thermal_management": {
+        "min_fan_speed_rpm": 2000,
+        "fan_curve_trigger_temp": 70,
+        "monitoring_recommended": false
+      }
+    },
+    "headless_server": {
+      "name": "Headless Server",
+      "description": "Optimized for headless Mac Mini deployment",
+      "ram_requirement": 16,
+      "os_optimizations": {
+        "windowserver_level": "aggressive",
+        "disable_animations": true,
+        "reduce_transparency": true,
+        "disable_spotlight": true,
+        "disable_app_nap": true,
+        "manage_background_services": true,
+        "use_dummy_plug": true
+      },
+      "ollama_config": {
+        "OLLAMA_NUM_PARALLEL": "2",
+        "OLLAMA_MAX_LOADED_MODELS": "1",
+        "OLLAMA_KEEP_ALIVE": "-1",
+        "OLLAMA_MAX_QUEUE": "4"
+      },
+      "model_recommendations": [
+        {
+          "model": "llama3.1:8b-q5_K_M",
+          "size": "~5.5GB",
+          "context_limit": 4096
+        },
+        {
+          "model": "mistral:7b-q5_K_M",
+          "size": "~5GB",
+          "context_limit": 4096
+        }
+      ],
+      "thermal_management": {
+        "min_fan_speed_rpm": 3500,
+        "fan_curve_trigger_temp": 55,
+        "monitoring_recommended": true
+      },
+      "additional_notes": [
+        "Use HDMI dummy plug for GPU stability",
+        "Run via SSH for remote management",
+        "Use screen/tmux for persistent sessions"
+      ]
+    }
+  },
+  "quantization_guide": {
+    "Q4_K_M": {
+      "description": "4-bit quantization, optimal balance",
+      "size_multiplier": 0.5,
+      "quality": "Good",
+      "recommended_for": "8GB systems"
+    },
+    "Q5_K_M": {
+      "description": "5-bit quantization, higher quality",
+      "size_multiplier": 0.625,
+      "quality": "Very Good",
+      "recommended_for": "16GB systems"
+    },
+    "Q8_0": {
+      "description": "8-bit quantization, near-original quality",
+      "size_multiplier": 1.0,
+      "quality": "Excellent",
+      "recommended_for": "32GB+ systems"
+    },
+    "F16": {
+      "description": "Full 16-bit precision",
+      "size_multiplier": 2.0,
+      "quality": "Original",
+      "recommended_for": "Not recommended for M1"
+    }
+  },
+  "context_window_guide": {
+    "2048": {
+      "ram_usage": "~500MB",
+      "suitable_for": "8GB systems",
+      "use_cases": ["Short conversations", "Code snippets", "Quick queries"]
+    },
+    "4096": {
+      "ram_usage": "~1GB",
+      "suitable_for": "16GB systems",
+      "use_cases": ["Standard conversations", "Document analysis", "Code review"]
+    },
+    "8192": {
+      "ram_usage": "~2GB",
+      "suitable_for": "32GB+ systems",
+      "use_cases": ["Long conversations", "Large document analysis", "Complex reasoning"]
+    },
+    "16384": {
+      "ram_usage": "~4GB",
+      "suitable_for": "64GB+ systems",
+      "use_cases": ["Very long conversations", "Book-length analysis", "Extended reasoning"]
+    }
+  }
+}

@@ -1,0 +1,47 @@
+# Quick Inversion Cycle
+# Fast MoIE inversion without full synthesis
+
+name: quick-inversion
+description: Run a single MoIE inversion cycle for rapid testing
+version: "1.0"
+
+variables:
+  home: /Users/lordwilson
+  domain: "AI Development"
+  axiom: "Complex systems require centralized control"
+
+steps:
+  # Prepare the job
+  - name: prepare-job
+    type: python
+    config:
+      script: ${home}/01_Active_Projects/elisya-system/elisya_to_motia.py
+    timeout_seconds: 30
+    on_failure: stop
+    
+  # Run MOTIA inversion
+  - name: motia-inversion
+    type: node
+    config:
+      script: ${home}/moie-mac-loop/motia.js
+      cwd: ${home}/moie-mac-loop
+    timeout_seconds: 60
+    on_failure: stop
+    
+  # Import results
+  - name: import-results
+    type: python
+    config:
+      script: ${home}/01_Active_Projects/elisya-system/elisya_import_moie.py
+    timeout_seconds: 30
+    on_failure: continue
+    
+  # Display result
+  - name: show-result
+    type: shell
+    config:
+      command: |
+        echo ""
+        echo "💡 INVERSION RESULT"
+        echo "==================="
+        cat ${home}/01_Active_Projects/elisya-system/moie_results/last_inversion.json 2>/dev/null | python3 -m json.tool || echo "No result file found"

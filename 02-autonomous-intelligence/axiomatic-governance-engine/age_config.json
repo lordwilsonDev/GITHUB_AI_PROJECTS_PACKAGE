@@ -1,0 +1,29 @@
+{
+  "dignity_threshold": -1.0,
+  "vdr_target": 2.0,
+  "stf_target": 0.95,
+  "cac_target": 1.0,
+  "ollama_host": "localhost:11434",
+  "model_name": "llama3.2-vision",
+  "whisper_model": "mlx-community/whisper-large-v3-mlx",
+  "axiom_enforcement": {
+    "lexicographic_dignity": true,
+    "temporal_fidelity": true,
+    "boundary_permeability": true,
+    "coherence_acceleration": true
+  },
+  "m1_optimizations": {
+    "unified_memory_usage": true,
+    "native_tts": true,
+    "mlx_acceleration": true,
+    "async_orchestration": true
+  },
+  "monitoring": {
+    "metrics_retention_hours": 24,
+    "alert_thresholds": {
+      "vdr_critical": 1.0,
+      "stf_critical": 0.8,
+      "cac_critical": 0.0
+    }
+  }
+}

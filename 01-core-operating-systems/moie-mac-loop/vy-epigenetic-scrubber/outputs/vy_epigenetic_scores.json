@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "scoring_algorithm_version": "1.0",
+    "analysis_timestamp": "2025-12-02T00:00:00Z",
+    "scoring_factors": [
+      "age_factor (0-0.3)",
+      "blast_radius (0-0.4)",
+      "category_risk (0-0.2)",
+      "maintenance_risk (0-0.1)"
+    ],
+    "total_dependencies_analyzed": 3
+  },
+  "dependencies": {
+    "ollama": {
+      "fragility_score": 0.66,
+      "age_factor": 6,
+      "blast_radius": 5,
+      "category": "ai-integration",
+      "maintenance_risk": "medium",
+      "replacement_difficulty": "high",
+      "risk_level": "high"
+    },
+    "chalk": {
+      "fragility_score": 0.49,
+      "age_factor": 36,
+      "blast_radius": 4,
+      "category": "ui-styling",
+      "maintenance_risk": "low",
+      "replacement_difficulty": "low",
+      "risk_level": "medium"
+    },
+    "inquirer": {
+      "fragility_score": 0.48,
+      "age_factor": 48,
+      "blast_radius": 2,
+      "category": "user-input",
+      "maintenance_risk": "low",
+      "replacement_difficulty": "medium",
+      "risk_level": "medium"
+    }
+  },
+  "summary": {
+    "high_risk_dependencies": ["ollama"],
+    "medium_risk_dependencies": ["chalk", "inquirer"],
+    "low_risk_dependencies": [],
+    "top_fragile_deps": ["ollama", "chalk", "inquirer"]
+  }
+}

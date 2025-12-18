@@ -1,0 +1,118 @@
+[
+  {
+    "id": "result_1_20251215_222650",
+    "test_id": "test_1_20251215_222650",
+    "environment_id": "env_1_20251215_222650",
+    "status": "passed",
+    "duration": 0.025424957275390625,
+    "output": "Test script running...\nSandbox path: /Users/lordwilson/vy-nexus/sandbox/env_1_20251215_222650\nInput path: /Users/lordwilson/vy-nexus/sandbox/env_1_20251215_222650/input\nOutput path: /Users/lordwilson/vy-nexus/sandbox/env_1_20251215_222650/output\nTest completed!\n",
+    "error": "",
+    "return_code": 0,
+    "validation": {
+      "passed": true,
+      "checks": [
+        {
+          "check": "return_code",
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        },
+        {
+          "check": "output_contains",
+          "expected": "Test completed!",
+          "passed": true
+        },
+        {
+          "check": "no_errors",
+          "passed": true
+        }
+      ]
+    },
+    "timestamp": "2025-12-15T22:26:50.176223"
+  },
+  {
+    "id": "result_2_20251215_222650",
+    "test_id": "test_2_20251215_222650",
+    "environment_id": "env_1_20251215_222650",
+    "status": "passed",
+    "duration": 0.012341022491455078,
+    "output": "Hello from sandbox\ntotal 0\ndrwxr-xr-x@ 6 lordwilson  staff  192 Dec 15 22:26 .\ndrwxr-xr-x@ 4 lordwilson  staff  128 Dec 15 22:26 ..\ndrwxr-xr-x@ 2 lordwilson  staff   64 Dec 15 22:26 input\ndrwxr-xr-x@ 2 lordwilson  staff   64 Dec 15 22:26 logs\ndrwxr-xr-x@ 3 lordwilson  staff   96 Dec 15 22:26 output\ndrwxr-xr-x@ 2 lordwilson  staff   64 Dec 15 22:26 temp\n",
+    "error": "",
+    "return_code": 0,
+    "validation": {
+      "passed": true,
+      "checks": [
+        {
+          "check": "return_code",
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        },
+        {
+          "check": "output_contains",
+          "expected": "Hello from sandbox",
+          "passed": true
+        }
+      ]
+    },
+    "timestamp": "2025-12-15T22:26:50.189260"
+  },
+  {
+    "id": "result_3_20251215_222650",
+    "test_id": "test_1_20251215_222650",
+    "environment_id": "env_1_20251215_222650",
+    "status": "passed",
+    "duration": 0.02093219757080078,
+    "output": "Test script running...\nSandbox path: /Users/lordwilson/vy-nexus/sandbox/env_1_20251215_222650\nInput path: /Users/lordwilson/vy-nexus/sandbox/env_1_20251215_222650/input\nOutput path: /Users/lordwilson/vy-nexus/sandbox/env_1_20251215_222650/output\nTest completed!\n",
+    "error": "",
+    "return_code": 0,
+    "validation": {
+      "passed": true,
+      "checks": [
+        {
+          "check": "return_code",
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        },
+        {
+          "check": "output_contains",
+          "expected": "Test completed!",
+          "passed": true
+        },
+        {
+          "check": "no_errors",
+          "passed": true
+        }
+      ]
+    },
+    "timestamp": "2025-12-15T22:26:50.210664"
+  },
+  {
+    "id": "result_4_20251215_222650",
+    "test_id": "test_2_20251215_222650",
+    "environment_id": "env_1_20251215_222650",
+    "status": "passed",
+    "duration": 0.0060846805572509766,
+    "output": "Hello from sandbox\ntotal 0\ndrwxr-xr-x@ 6 lordwilson  staff  192 Dec 15 22:26 .\ndrwxr-xr-x@ 4 lordwilson  staff  128 Dec 15 22:26 ..\ndrwxr-xr-x@ 2 lordwilson  staff   64 Dec 15 22:26 input\ndrwxr-xr-x@ 2 lordwilson  staff   64 Dec 15 22:26 logs\ndrwxr-xr-x@ 3 lordwilson  staff   96 Dec 15 22:26 output\ndrwxr-xr-x@ 2 lordwilson  staff   64 Dec 15 22:26 temp\n",
+    "error": "",
+    "return_code": 0,
+    "validation": {
+      "passed": true,
+      "checks": [
+        {
+          "check": "return_code",
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        },
+        {
+          "check": "output_contains",
+          "expected": "Hello from sandbox",
+          "passed": true
+        }
+      ]
+    },
+    "timestamp": "2025-12-15T22:26:50.217174"
+  }
+]

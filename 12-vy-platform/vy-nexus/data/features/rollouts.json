@@ -1,0 +1,93 @@
+[
+  {
+    "id": "rollout_20251215_224109",
+    "feature_id": "feature_20251215_224109",
+    "strategy": "gradual",
+    "target_percentage": 100,
+    "segment_ids": [],
+    "current_percentage": 100,
+    "status": "completed",
+    "started_at": "2025-12-15T22:41:09.830015",
+    "stages": [
+      {
+        "name": "stage_5",
+        "target": 5,
+        "started_at": "2025-12-15T22:41:09.830025",
+        "completed_at": "2025-12-15T22:41:09.830026",
+        "status": "completed",
+        "users_enabled": 50,
+        "metrics": {
+          "engagement_rate": 0.6470705894610799,
+          "error_rate": 0.013505665226991809
+        }
+      },
+      {
+        "name": "stage_10",
+        "target": 10,
+        "started_at": "2025-12-15T22:41:09.830030",
+        "completed_at": "2025-12-15T22:41:09.830030",
+        "status": "completed",
+        "users_enabled": 100,
+        "metrics": {
+          "engagement_rate": 0.7657263119797182,
+          "error_rate": 0.03290119777925922
+        }
+      },
+      {
+        "name": "stage_25",
+        "target": 25,
+        "started_at": "2025-12-15T22:41:09.830033",
+        "completed_at": "2025-12-15T22:41:09.830034",
+        "status": "completed",
+        "users_enabled": 250,
+        "metrics": {
+          "engagement_rate": 0.6109883760400814,
+          "error_rate": 0.02571908411396173
+        }
+      },
+      {
+        "name": "stage_50",
+        "target": 50,
+        "started_at": "2025-12-15T22:41:09.830036",
+        "completed_at": "2025-12-15T22:41:09.830037",
+        "status": "completed",
+        "users_enabled": 500,
+        "metrics": {
+          "engagement_rate": 0.8996544380561724,
+          "error_rate": 0.004000972759888366
+        }
+      },
+      {
+        "name": "stage_75",
+        "target": 75,
+        "started_at": "2025-12-15T22:41:09.830039",
+        "completed_at": "2025-12-15T22:41:09.830039",
+        "status": "completed",
+        "users_enabled": 750,
+        "metrics": {
+          "engagement_rate": 0.7144644129838056,
+          "error_rate": 0.043557320351019946
+        }
+      },
+      {
+        "name": "stage_100",
+        "target": 100,
+        "started_at": "2025-12-15T22:41:09.830041",
+        "completed_at": "2025-12-15T22:41:09.830042",
+        "status": "completed",
+        "users_enabled": 1000,
+        "metrics": {
+          "engagement_rate": 0.694491032959032,
+          "error_rate": 0.014704615396680366
+        }
+      }
+    ],
+    "metrics": {
+      "enabled_users": 1000,
+      "active_users": 0,
+      "engagement_rate": 0,
+      "error_rate": 0
+    },
+    "completed_at": "2025-12-15T22:41:09.830043"
+  }
+]

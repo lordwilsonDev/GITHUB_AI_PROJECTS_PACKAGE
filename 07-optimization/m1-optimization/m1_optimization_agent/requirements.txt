@@ -1,0 +1,24 @@
+# AutoGen and AI dependencies
+pyautogen>=0.2.0
+openai>=1.0.0
+
+# System monitoring and management
+psutil>=5.9.0
+py-cpuinfo>=9.0.0
+
+# Configuration and utilities
+pyyaml>=6.0
+python-dotenv>=1.0.0
+click>=8.1.0
+rich>=13.0.0
+
+# Logging and monitoring
+loguru>=0.7.0
+
+# Optional: MLX for Apple Silicon native support
+mlx>=0.0.1
+mlx-lm>=0.0.1
+
+# Optional: PyTorch with MPS support
+# torch>=2.0.0
+# torchvision>=0.15.0

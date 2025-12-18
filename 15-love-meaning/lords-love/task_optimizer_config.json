@@ -1,0 +1,65 @@
+{
+  "optimizer_settings": {
+    "priority_weights": {
+      "urgency": 0.4,
+      "importance": 0.3,
+      "dependencies": 0.2,
+      "deadline_proximity": 0.1
+    },
+    "scheduling": {
+      "max_parallel_tasks": 5,
+      "default_task_duration_minutes": 30,
+      "buffer_time_percentage": 0.15,
+      "working_hours_start": 9,
+      "working_hours_end": 17
+    },
+    "resource_allocation": {
+      "max_resources_per_task": 3,
+      "load_balance_threshold": 0.8,
+      "utilization_target": 0.75
+    },
+    "learning": {
+      "learning_rate": 0.1,
+      "min_samples_for_learning": 10,
+      "adaptation_window_days": 30,
+      "confidence_threshold": 0.7
+    },
+    "optimization_goals": {
+      "minimize_completion_time": true,
+      "maximize_resource_utilization": true,
+      "respect_deadlines": true,
+      "balance_workload": true
+    }
+  },
+  "task_categories": {
+    "critical": {
+      "base_priority": 10,
+      "urgency_multiplier": 1.5
+    },
+    "high": {
+      "base_priority": 7,
+      "urgency_multiplier": 1.2
+    },
+    "medium": {
+      "base_priority": 5,
+      "urgency_multiplier": 1.0
+    },
+    "low": {
+      "base_priority": 3,
+      "urgency_multiplier": 0.8
+    }
+  },
+  "constraints": {
+    "max_tasks_per_day": 20,
+    "min_task_duration_minutes": 5,
+    "max_task_duration_minutes": 480,
+    "required_break_minutes": 15,
+    "break_frequency_hours": 2
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "created": "2025-12-15",
+    "description": "Configuration for Task Management Optimizer",
+    "author": "Vy-Nexus Self-Evolving AI"
+  }
+}

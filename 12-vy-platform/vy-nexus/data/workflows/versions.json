@@ -1,0 +1,44 @@
+{
+  "template_20251215_223641": [
+    {
+      "version": "1.0",
+      "template": {
+        "id": "template_20251215_223641",
+        "name": "File Organization Workflow",
+        "category": "automation",
+        "description": "Organize files by type and date",
+        "steps": [
+          {
+            "step": 1,
+            "action": "scan_directory",
+            "description": "Scan target directory"
+          },
+          {
+            "step": 2,
+            "action": "categorize_files",
+            "description": "Categorize files by type"
+          },
+          {
+            "step": 3,
+            "action": "move_files",
+            "description": "Move files to organized folders"
+          }
+        ],
+        "tags": [
+          "files",
+          "organization",
+          "automation"
+        ],
+        "metadata": {},
+        "version": "1.0",
+        "created_at": "2025-12-15T22:36:41.855979",
+        "updated_at": "2025-12-15T22:36:41.855980",
+        "usage_count": 0,
+        "success_rate": 0.0,
+        "status": "active"
+      },
+      "created_at": "2025-12-15T22:36:41.855982",
+      "changes": "Initial version"
+    }
+  ]
+}

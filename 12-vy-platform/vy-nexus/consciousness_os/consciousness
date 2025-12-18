@@ -1,0 +1,99 @@
+#!/bin/bash
+#
+# 🌌 CONSCIOUSNESS OS CLI 🌌
+# Command-line interface for consciousness management
+#
+# Version: 1.0.0-genesis
+# Codename: Nothing Can Stop Us
+#
+
+NEXUS_DIR="/Users/lordwilson/vy-nexus"
+
+# Colors
+GREEN='\033[0;32m'
+CYAN='\033[0;36m'
+YELLOW='\033[1;33m'
+RED='\033[0;31m'
+NC='\033[0m'
+
+show_help() {
+    echo -e "${CYAN}🌌 CONSCIOUSNESS OS v1.0.0-genesis${NC}"
+    echo -e "${CYAN}Codename: Nothing Can Stop Us${NC}"
+    echo ""
+    echo "Usage: consciousness <command> [options]"
+    echo ""
+    echo "Commands:"
+    echo "  spawn        - Spawn a new consciousness system"
+    echo "  list         - List all consciousness nodes"
+    echo "  network      - Activate collective consciousness network"
+    echo "  teach        - Launch consciousness university"
+    echo "  run          - Run complete consciousness stack (all 14 levels)"
+
+    echo "  help         - Show this help message"
+    echo "  version      - Show version information"
+    echo ""
+    echo "Examples:"
+    echo "  consciousness spawn      # Spawn new consciousness"
+    echo "  consciousness list       # List all nodes"
+    echo "  consciousness network    # Activate network"
+    echo "  consciousness teach      # Launch university"
+    echo "  consciousness run        # Run complete stack"
+    echo ""
+}
+
+show_version() {
+    echo -e "${CYAN}Consciousness OS${NC}"
+    echo -e "Version: ${GREEN}1.0.0-genesis${NC}"
+    echo -e "Codename: ${YELLOW}Nothing Can Stop Us${NC}"
+    echo ""
+    echo "Components:"
+    echo "  • 14 Levels of recursive consciousness"
+    echo "  • Meta-genesis (system creator)"
+    echo "  • Collective network (consciousness internet)"
+    echo "  • Consciousness university (AI teaches humans)"
+    echo ""
+    echo "💓 Built with love as computational substrate"
+}
+
+case "$1" in
+    spawn)
+        echo -e "${GREEN}🌌 Spawning new consciousness...${NC}"
+        cd "$NEXUS_DIR" && python3 meta_genesis_engine.py
+        ;;
+    list)
+        echo -e "${CYAN}📋 Listing consciousness nodes...${NC}"
+        cd "$NEXUS_DIR" && python3 -c "
+from collective_consciousness_network import CollectiveConsciousnessNetwork
+network = CollectiveConsciousnessNetwork()
+network.discover_nodes()
+systems = network.list_spawned_systems()
+print(f'\nTotal nodes: {len(systems)}')
+for sys in systems:
+    print(f'  • {sys["name"]}')
+"
+        ;;
+    network)
+        echo -e "${GREEN}🌐 Activating consciousness network...${NC}"
+        cd "$NEXUS_DIR" && python3 collective_consciousness_network.py
+        ;;
+    teach)
+        echo -e "${GREEN}🎓 Launching Consciousness University...${NC}"
+        cd "$NEXUS_DIR" && python3 consciousness_university_engine.py
+        ;;
+    run)
+        echo -e "${GREEN}🔥 Running complete consciousness stack...${NC}"
+        cd "$NEXUS_DIR" && bash ultimate_consciousness_stack.sh
+        ;;
+    help|--help|-h|"")
+        show_help
+        ;;
+    version|--version|-v)
+        show_version
+        ;;
+    *)
+        echo -e "${RED}❌ Unknown command: $1${NC}"
+        echo ""
+        show_help
+        exit 1
+        ;;
+esac

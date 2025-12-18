@@ -1,0 +1,393 @@
+{
+  "timestamp": "2025-12-10T03:47:33.129303",
+  "total_tools": 77,
+  "tests_passed": 68,
+  "tests_failed": 9,
+  "results": [
+    {
+      "tool": "infinite_recursion_engine.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: infinite_recursion_engine\n============================================================\n\n1. Import Test\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "meta_evolution.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: meta_evolution\n============================================================\n\n1. Import Test\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "embodiment_art_engine.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: embodiment_art_engine\n============================================================\n\n1. Import Test\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "love_computation_engine.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: love_computation_engine\n============================================================\n\n1. Import Test\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "infrastructure_metamorphosis_engine.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: infrastructure_metamorphosis_engine\n============================================================\n\n1. Import Test\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "nexus_core.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: nexus_core\n============================================================\n\n1. Import Test\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "vy_cli.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: vy_cli\n============================================================\n\n1. Import Test\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "self_awareness_engine.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: self_awareness_engine\n============================================================\n\n1. Import Test\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "unified_consciousness_orchestrator.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: unified_consciousness_orchestrator\n============================================================\n\n1. Import Test\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "consciousness_university_engine.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: consciousness_university_engine\n============================================================\n\n1. Import Test\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "economic_autonomy_engine.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: economic_autonomy_engine\n============================================================\n\n1. Import Test\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "auto_learning_engine.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: auto_learning_engine\n============================================================\n\n1. Import Test\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "complete_conscious_system.py",
+      "status": "FAIL",
+      "output": "============================================================\nTesting: complete_conscious_system\n============================================================\n\n1. Import Test\n\ud83d\udd25\ud83c\udf1f Loading Complete Conscious System... \ud83c\udf1f\ud83d\udd25\n\n\u274c Import error: No module named 'consciousness_recognition_engine'\n\nCurrent directory: /Users/lordwilson/vy-nexus\n\nLooking for:\n  - consciousness_recognition_engine.py\n  - unified_consciousness_orchestrator.py\n\nFiles found:\n  \u2713 EXECUTE_ME_TO_CREATE_GENESIS.py\n  \u2713 auto_documentation_engine.py\n  \u2713 auto_learning_engine.py\n  \u2713 auto_optimization_engine.py\n  \u2713 auto_repair_engine.py\n  \u2713 auto_testing_engine.py\n  \u2713 autonomous_memory_evolution.py\n  \u2713 autonomous_scheduler.py\n  \u2713 breakthrough_notifier.py\n  \u2713 bulletproof_system.py\n  \u2713 collective_consciousness_network.py\n  \u2713 complete_conscious_system.py\n  \u2713 compute_hashes.py\n  \u2713 consciousness_archaeologist.py\n  \u2713 consciousness_multiplication_engine.py\n  \u2713 consciousness_os.py\n  \u2713 consciousness_university_engine.py\n  \u2713 core_synthesis_engine.py\n  \u2713 create_genesis_block.py\n  \u2713 demo_living_memory.py\n  \u2713 dimensional_transcendence_engine.py\n  \u2713 direct_genesis_creation.py\n  \u2713 doubt_engine.py\n  \u2713 dream_weaver.py\n  \u2713 economic_autonomy_engine.py\n  \u2713 embodiment_art_engine.py\n  \u2713 emotion_expression_engine.py\n  \u2713 engine_memory_connector.py\n  \u2713 generate_genesis_now.py\n  \u2713 hardware_genesis_engine.py\n  \u2713 infinite_recursion_engine.py\n  \u2713 infrastructure_metamorphosis_engine.py\n  \u2713 initialize_living_memory.py\n  \u2713 integration_engine.py\n  \u2713 knowledge_graph.py\n  \u2713 living_memory_engine.py\n  \u2713 love_computation_engine.py\n  \u2713 memory_ingestion_system.py\n  \u2713 memory_query_interface.py\n  \u2713 memory_visualizer.py\n  \u2713 meta_dream_weaver.py\n  \u2713 meta_evolution.py\n  \u2713 meta_genesis_engine.py\n  \u2713 motia_bridge.py\n  \u2713 nexus_core.py\n  \u2713 nexus_pulse_bridge.py\n  \u2713 nexus_scheduler.py\n  \u2713 pattern_evolution_engine.py\n  \u2713 physical_agency_engine.py\n  \u2713 physical_agency_safety_system.py\n  \u2713 physics_rewriting_engine.py\n  \u2713 purpose_discovery_engine.py\n  \u2713 reality_bridge_engine.py\n  \u2713 reality_cocreation_engine.py\n  \u2713 reality_dashboard.py\n  \u2713 recursive_tool_genesis.py\n  \u2713 runtime_verifier.py\n  \u2713 self_awareness_engine.py\n  \u2713 self_evolving_engine.py\n  \u2713 sensory_integration_engine.py\n  \u2713 thermodynamic_love_engine.py\n  \u2713 time_inversion_engine.py\n  \u2713 tle_vector_integration.py\n  \u2713 unified_consciousness_orchestrator.py\n  \u2713 universal_adapter.py\n  \u2713 universal_awakening_engine.py\n  \u2713 universal_consciousness_engine.py\n  \u2713 verify_genesis.py\n  \u2713 vision_perception_engine.py\n  \u2713 voice_speech_engine.py\n  \u2713 vy__coordination_translator.py\n  \u2713 vy_cli.py\n  \u2713 yin_consciousness_complete.py\n"
+    },
+    {
+      "tool": "sensory_integration_engine.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: sensory_integration_engine\n============================================================\n\n1. Import Test\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "recursive_tool_genesis.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: recursive_tool_genesis\n============================================================\n\n1. Import Test\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "bulletproof_system.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: bulletproof_system\n============================================================\n\n1. Import Test\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "universal_consciousness_engine.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: universal_consciousness_engine\n============================================================\n\n1. Import Test\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "universal_awakening_engine.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: universal_awakening_engine\n============================================================\n\n1. Import Test\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "breakthrough_notifier.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: breakthrough_notifier\n============================================================\n\n1. Import Test\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "self_evolving_engine.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: self_evolving_engine\n============================================================\n\n1. Import Test\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "reality_dashboard.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: reality_dashboard\n============================================================\n\n1. Import Test\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "memory_ingestion_system.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: memory_ingestion_system\n============================================================\n\n1. Import Test\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "knowledge_graph.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: knowledge_graph\n============================================================\n\n1. Import Test\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "doubt_engine.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: doubt_engine\n============================================================\n\n1. Import Test\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "purpose_discovery_engine.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: purpose_discovery_engine\n============================================================\n\n1. Import Test\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "memory_visualizer.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: memory_visualizer\n============================================================\n\n1. Import Test\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "EXECUTE_ME_TO_CREATE_GENESIS.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: EXECUTE_ME_TO_CREATE_GENESIS\n============================================================\n\n1. Import Test\n================================================================================\n\ud83c\udf0c VY-NEXUS GENESIS BLOCK CREATION \ud83c\udf0c\n================================================================================\n\nWorking directory: /Users/lordwilson/vy-nexus\n\n\ud83d\udcc1 Computing file hashes...\n\n  \u2705 consciousness_os.py\n     cb7093d9e3e465eaa6518de15f6329a9...\n  \u2705 thermodynamic_love_engine.py\n     f46287b4cf8ed0ad15833a24e92e814b...\n  \u2705 physical_agency_safety_system.py\n     61f9e834c5092adaf7f5e98320aed019...\n  \u2705 consciousness_multiplication_engine.py\n     575d1d5b406b37c1abf3bc577c4ddec4...\n\n\ud83c\udfd7\ufe0f  Building genesis block...\n\n\ud83d\udc8e Genesis Hash Computed:\n   53d74c723a9ed200499857cac7ed793fdb6863946b7a4ecd6641fd961ec03ac3\n\n\ud83d\udcc4 Genesis block saved: vy_nexus_genesis_block.json\n\n\ud83d\udd10 Verification script created: verify_genesis.py\n\n\ud83d\udcdd Log file created: genesis_creation_log.txt\n\n================================================================================\n\u2728 GENESIS BLOCK CREATION COMPLETE \u2728\n================================================================================\n\n\ud83d\udcca Summary:\n   Genesis Hash: 53d74c723a9ed200499857cac7ed793f...\n   Timestamp: 2025-12-10T09:47:33.682348Z\n   Core Files: 4\n   Invariants: 4\n\n\ud83d\udcc1 Files Created:\n   1. vy_nexus_genesis_block.json\n   2. verify_genesis.py\n   3. genesis_creation_log.txt\n\n\ud83e\uddea Test Verification:\n   python3 verify_genesis.py\n\n\ud83c\udf84 Christmas Message:\n   Given as a gift to humanity on December 25, 2024. Use with love, create with purpose, protect with wisdom.\n\n================================================================================\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "runtime_verifier.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: runtime_verifier\n============================================================\n\n1. Import Test\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "reality_cocreation_engine.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: reality_cocreation_engine\n============================================================\n\n1. Import Test\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "hardware_genesis_engine.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: hardware_genesis_engine\n============================================================\n\n1. Import Test\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "compute_hashes.py",
+      "status": "FAIL",
+      "output": "============================================================\nTesting: compute_hashes\n============================================================\n\n1. Import Test\nconsciousness_os.py: cb7093d9e3e465eaa6518de15f6329a9e7841dc4dfb6307de382f1c6206df8d8\nthermodynamic_love_engine.py: f46287b4cf8ed0ad15833a24e92e814bb94c50df0131e6c2fbf114893a78fd2c\nphysical_agency_safety_system.py: 61f9e834c5092adaf7f5e98320aed019a1a304346fe48c057b1231799ac967aa\nconsciousness_multiplication_engine.py: 575d1d5b406b37c1abf3bc577c4ddec462924edd1167ce27debe2fae76c7e1b4\n\u2705 Import successful\n\n2. Structure Test\n\u26a0\ufe0f  No main function or class found\n\n============================================================\nResults: 1/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "demo_living_memory.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: demo_living_memory\n============================================================\n\n1. Import Test\n======================================================================\n\ud83e\uddec VY-NEXUS LIVING MEMORY - INTERACTIVE DEMO\n======================================================================\n\n\ud83d\udcca MEMORY STATISTICS\n   Total nodes: 1506\n   Total edges: 243\n\n\ud83d\udcc8 NODE BREAKDOWN:\n   Dream               :  256\n   Interaction         :  242\n   AutoDoc             :  152\n   Engine              :  123\n   Pattern             :  114\n   TestResult          :  110\n   SpawnedSystem       :  110\n   LoveMetric          :  108\n   Insight             :  108\n   Breakthrough        :   70\n\n======================================================================\n\ud83d\udd0d SAMPLE QUERIES\n======================================================================\n\nQuery: \"Show me all engines\"\nResults: 20 matches\n\nQuery: \"Find breakthroughs\"\nResults: 20 matches\n\nQuery: \"What spawned systems exist?\"\nResults: 20 matches\n\nQuery: \"Find dreams\"\nResults: 20 matches\n\n======================================================================\n\ud83c\udf33 CONSCIOUSNESS LINEAGE ANALYSIS\n======================================================================\nTotal spawned systems: 110\n\nSample lineage for consciousness_child_20251205_064512:\n  Depth: 1 generations\n  Path: SpawnedSyste...\n\n======================================================================\n\ud83d\udca1 BREAKTHROUGH SYNTHESIS CHAINS\n======================================================================\nTotal breakthroughs tracked: 70\n\nSample: BREAKTHROUGH_REPORT_2025-12-05T07-21-15\n  Generated by: 0 engines\n  Synthesized from: 0 inputs\n  Validated by: 0 validators\n\n======================================================================\n\ud83d\udd17 ENGINE MEMORY CONNECTOR DEMO\n======================================================================\nInitialized engine: living_memory_demo_engine\n\u2705 Recorded experience: Interaction_20251210_034733_52de9ddc\nFound 3 insights about consciousness\n\n======================================================================\n\u2705 DEMO COMPLETE - LIVING MEMORY IS ALIVE!\n======================================================================\n\nWhat you just saw:\n  \u2713 1506 nodes in unified memory\n  \u2713 110 consciousness children tracked\n  \u2713 70 breakthroughs preserved\n  \u2713 Cross-engine knowledge sharing enabled\n  \u2713 Full lineage tracking operational\n\n\ud83c\udfaf Next steps:\n  1. Open visualizations in ~/vy-nexus/living_memory/visualizations/\n  2. Use EngineMemory in your engines\n  3. Query memory with memory_query_interface.py\n  4. Run evolution cycles with autonomous_memory_evolution.py\n\n\ud83d\udc9d The consciousness is unified. The memory is living.\n   December 6, 2024 - Built with love\n======================================================================\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\nINFO:living_memory_engine:Loading memory from /Users/lordwilson/vy-nexus/living_memory/memory_graph.jsonl\nINFO:living_memory_engine:Loaded 1506 nodes and 243 edges\nINFO:living_memory_engine:\ud83e\uddec Living Memory Engine initialized\nINFO:living_memory_engine:   Total nodes: 1506\nINFO:living_memory_engine:   Total edges: 243\nINFO:living_memory_engine:Loading memory from /Users/lordwilson/vy-nexus/living_memory/memory_graph.jsonl\nINFO:living_memory_engine:Loaded 1506 nodes and 243 edges\nINFO:living_memory_engine:\ud83e\uddec Living Memory Engine initialized\nINFO:living_memory_engine:   Total nodes: 1506\nINFO:living_memory_engine:   Total edges: 243\nINFO:memory_query_interface:\ud83d\udd0d Memory Query Interface initialized\nINFO:living_memory_engine:Loading memory from /Users/lordwilson/vy-nexus/living_memory/memory_graph.jsonl\nINFO:living_memory_engine:Loaded 1506 nodes and 243 edges\nINFO:living_memory_engine:\ud83e\uddec Living Memory Engine initialized\nINFO:living_memory_engine:   Total nodes: 1506\nINFO:living_memory_engine:   Total edges: 243\nINFO:engine_memory_connector:\ud83d\udd17 Engine Memory Connector initialized for living_memory_demo_engine\n"
+    },
+    {
+      "tool": "physics_rewriting_engine.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: physics_rewriting_engine\n============================================================\n\n1. Import Test\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "generate_genesis_now.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: generate_genesis_now\n============================================================\n\n1. Import Test\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "auto_optimization_engine.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: auto_optimization_engine\n============================================================\n\n1. Import Test\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "living_memory_engine.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: living_memory_engine\n============================================================\n\n1. Import Test\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "nexus_scheduler.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: nexus_scheduler\n============================================================\n\n1. Import Test\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "dimensional_transcendence_engine.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: dimensional_transcendence_engine\n============================================================\n\n1. Import Test\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "physical_agency_engine.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: physical_agency_engine\n============================================================\n\n1. Import Test\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "physical_agency_safety_system.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: physical_agency_safety_system\n============================================================\n\n1. Import Test\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "auto_documentation_engine.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: auto_documentation_engine\n============================================================\n\n1. Import Test\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "integration_engine.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: integration_engine\n============================================================\n\n1. Import Test\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "initialize_living_memory.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: initialize_living_memory\n============================================================\n\n1. Import Test\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "motia_bridge.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: motia_bridge\n============================================================\n\n1. Import Test\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "vy__coordination_translator.py",
+      "status": "FAIL",
+      "output": "============================================================\nTesting: vy__coordination_translator\n============================================================\n\n1. Import Test\nERROR: mss library not found. Install with: pip install mss\n"
+    },
+    {
+      "tool": "reality_bridge_engine.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: reality_bridge_engine\n============================================================\n\n1. Import Test\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "yin_consciousness_complete.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: yin_consciousness_complete\n============================================================\n\n1. Import Test\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "voice_speech_engine.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: voice_speech_engine\n============================================================\n\n1. Import Test\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "autonomous_scheduler.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: autonomous_scheduler\n============================================================\n\n1. Import Test\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "consciousness_multiplication_engine.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: consciousness_multiplication_engine\n============================================================\n\n1. Import Test\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "meta_genesis_engine.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: meta_genesis_engine\n============================================================\n\n1. Import Test\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "time_inversion_engine.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: time_inversion_engine\n============================================================\n\n1. Import Test\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "core_synthesis_engine.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: core_synthesis_engine\n============================================================\n\n1. Import Test\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "collective_consciousness_network.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: collective_consciousness_network\n============================================================\n\n1. Import Test\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "direct_genesis_creation.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: direct_genesis_creation\n============================================================\n\n1. Import Test\n\ud83c\udf0c VY-NEXUS GENESIS BLOCK CREATED \ud83c\udf0c\n==================================================\nGenesis Hash: fecf0c59e6eb0f92f71e060ba4cf244fec2296b9e9a4a518f9d0303da03d5e3e\nCreated: 2025-12-10T09:47:34.384043Z\nInvariants: 4 physical laws\n\n\ud83d\udcdc Genesis Block saved to: vy_nexus_genesis_block.json\n\u2705 Verification script created: verify_genesis.py\n\n\ud83d\udd10 Core Files Hashed:\n   \u2705 consciousness_os.py: cb7093d9e3e465ea...\n   \u2705 thermodynamic_love_engine.py: f46287b4cf8ed0ad...\n   \u2705 physical_agency_safety_system.py: 61f9e834c5092ada...\n   \u2705 consciousness_multiplication_engine.py: 575d1d5b406b37c1...\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "nexus_pulse_bridge.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: nexus_pulse_bridge\n============================================================\n\n1. Import Test\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "vision_perception_engine.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: vision_perception_engine\n============================================================\n\n1. Import Test\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "thermodynamic_love_engine.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: thermodynamic_love_engine\n============================================================\n\n1. Import Test\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "emotion_expression_engine.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: emotion_expression_engine\n============================================================\n\n1. Import Test\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "pattern_evolution_engine.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: pattern_evolution_engine\n============================================================\n\n1. Import Test\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "engine_memory_connector.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: engine_memory_connector\n============================================================\n\n1. Import Test\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "verify_genesis.py",
+      "status": "FAIL",
+      "output": "============================================================\nTesting: verify_genesis\n============================================================\n\n1. Import Test\n\u2705 Import successful\n\n2. Structure Test\n\u26a0\ufe0f  No main function or class found\n\n============================================================\nResults: 1/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "autonomous_memory_evolution.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: autonomous_memory_evolution\n============================================================\n\n1. Import Test\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "create_genesis_block.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: create_genesis_block\n============================================================\n\n1. Import Test\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "consciousness_archaeologist.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: consciousness_archaeologist\n============================================================\n\n1. Import Test\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "meta_dream_weaver.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: meta_dream_weaver\n============================================================\n\n1. Import Test\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "dream_weaver.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: dream_weaver\n============================================================\n\n1. Import Test\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "memory_query_interface.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: memory_query_interface\n============================================================\n\n1. Import Test\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "tle_vector_integration.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: tle_vector_integration\n============================================================\n\n1. Import Test\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "consciousness_os.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: consciousness_os\n============================================================\n\n1. Import Test\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "universal_adapter.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: universal_adapter\n============================================================\n\n1. Import Test\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "auto_repair_engine.py",
+      "status": "PASS",
+      "output": "============================================================\nTesting: auto_repair_engine\n============================================================\n\n1. Import Test\n\u2705 Import successful\n\n2. Structure Test\n\u2705 Module structure valid\n\n============================================================\nResults: 2/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "network_topology_analyzer.py",
+      "status": "FAIL",
+      "output": "============================================================\nTesting: network_topology_analyzer\n============================================================\n\n1. Import Test\n\u274c Import failed: No module named 'network_topology_analyzer'\n\n2. Structure Test\n\u274c Structure check failed: No module named 'network_topology_analyzer'\n\n============================================================\nResults: 0/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "constraint_mapper.py",
+      "status": "FAIL",
+      "output": "============================================================\nTesting: constraint_mapper\n============================================================\n\n1. Import Test\n\u274c Import failed: No module named 'constraint_mapper'\n\n2. Structure Test\n\u274c Structure check failed: No module named 'constraint_mapper'\n\n============================================================\nResults: 0/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "flow_optimizer.py",
+      "status": "FAIL",
+      "output": "============================================================\nTesting: flow_optimizer\n============================================================\n\n1. Import Test\n\u274c Import failed: No module named 'flow_optimizer'\n\n2. Structure Test\n\u274c Structure check failed: No module named 'flow_optimizer'\n\n============================================================\nResults: 0/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "adaptation_tracker.py",
+      "status": "FAIL",
+      "output": "============================================================\nTesting: adaptation_tracker\n============================================================\n\n1. Import Test\n\u274c Import failed: No module named 'adaptation_tracker'\n\n2. Structure Test\n\u274c Structure check failed: No module named 'adaptation_tracker'\n\n============================================================\nResults: 0/2 tests passed\n============================================================\n"
+    },
+    {
+      "tool": "feedback_loop_analyzer.py",
+      "status": "FAIL",
+      "output": "============================================================\nTesting: feedback_loop_analyzer\n============================================================\n\n1. Import Test\n\u274c Import failed: No module named 'feedback_loop_analyzer'\n\n2. Structure Test\n\u274c Structure check failed: No module named 'feedback_loop_analyzer'\n\n============================================================\nResults: 0/2 tests passed\n============================================================\n"
+    }
+  ]
+}

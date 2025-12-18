@@ -1,0 +1,12 @@
+[
+  {
+    "id": "env_1_20251215_222650",
+    "name": "Test Environment 1",
+    "description": "Environment for testing file operations",
+    "path": "/Users/lordwilson/vy-nexus/sandbox/env_1_20251215_222650",
+    "base_path": null,
+    "created_at": "2025-12-15T22:26:50.150261",
+    "status": "active",
+    "tests_run": 4
+  }
+]

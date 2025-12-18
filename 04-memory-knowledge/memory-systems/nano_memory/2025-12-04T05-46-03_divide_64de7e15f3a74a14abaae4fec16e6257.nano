@@ -1,0 +1,8 @@
+# nano_type: snippet
+# source_path: /Users/lordwilson/test_project_rade/main.py
+# function: divide
+# created_at: 2025-12-04T05-46-03
+# trigger: @nanoapex
+def divide(a, b):
+    # @nanoapex: please add error handling
+    return a / b

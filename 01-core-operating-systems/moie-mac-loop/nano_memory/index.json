@@ -1,0 +1,82 @@
+[
+  {
+    "path": "runs/2025-12-01T02-53-54-374Z_software-architecture-microservices-are-.md",
+    "timestamp": "2025-12-01T02:53:54.374Z",
+    "domain": "Software Architecture",
+    "axiom": "Microservices are always better than monoliths",
+    "mode": "standard",
+    "vdr": null
+  },
+  {
+    "path": "runs/2025-12-01T02-55-51-716Z_economics-free-markets-always-lead-to-op.md",
+    "timestamp": "2025-12-01T02:55:51.716Z",
+    "domain": "Economics",
+    "axiom": "Free markets always lead to optimal outcomes",
+    "mode": "standard",
+    "vdr": null
+  },
+  {
+    "path": "runs/2025-12-01T02-58-24-495Z_technology-more-data-always-leads-to-bet.md",
+    "timestamp": "2025-12-01T02:58:24.495Z",
+    "domain": "Technology",
+    "axiom": "More data always leads to better AI performance",
+    "mode": "standard",
+    "vdr": null
+  },
+  {
+    "path": "runs/2025-12-01T04-19-12-021Z_healthcare-preventive-care-is-always-mor.md",
+    "timestamp": "2025-12-01T04:19:12.021Z",
+    "domain": "Healthcare",
+    "axiom": "Preventive care is always more expensive than reactive treatment",
+    "mode": "systematic_reduction",
+    "vdr": 6
+  },
+  {
+    "path": "runs/2025-12-01T04-21-58-206Z_communication-more-information-always-le.md",
+    "timestamp": "2025-12-01T04:21:58.206Z",
+    "domain": "Communication",
+    "axiom": "More information always leads to better understanding",
+    "mode": "reverse_engineering",
+    "vdr": 8
+  },
+  {
+    "path": "runs/2025-12-01T04-22-48-092Z_physics-reductionism-explains-all-comple.md",
+    "timestamp": "2025-12-01T04:22:48.092Z",
+    "domain": "Physics",
+    "axiom": "Reductionism explains all complex phenomena.",
+    "mode": "standard",
+    "vdr": 9
+  },
+  {
+    "path": "runs/2025-12-01T04-55-43-385Z_consciousness-consciousness-emerges-from.md",
+    "timestamp": "2025-12-01T04:55:43.385Z",
+    "domain": "Consciousness",
+    "axiom": "Consciousness emerges from complex neural activity",
+    "mode": "systematic_reduction",
+    "vdr": 7
+  },
+  {
+    "path": "runs/2025-12-01T05-01-19-954Z_governance-democracy-is-the-optimal-form.md",
+    "timestamp": "2025-12-01T05:01:19.954Z",
+    "domain": "Governance",
+    "axiom": "Democracy is the optimal form of governance.",
+    "mode": "standard",
+    "vdr": 7
+  },
+  {
+    "path": "runs/2025-12-01T05-01-41-891Z_education-standardized-testing-measures-.md",
+    "timestamp": "2025-12-01T05:01:41.891Z",
+    "domain": "Education",
+    "axiom": "Standardized testing measures true intelligence.",
+    "mode": "systematic_reduction",
+    "vdr": 3
+  },
+  {
+    "path": "runs/2025-12-01T05-02-18-898Z_psychology-past-trauma-determines-future.md",
+    "timestamp": "2025-12-01T05:02:18.898Z",
+    "domain": "Psychology",
+    "axiom": "Past trauma determines future behavior.",
+    "mode": "reverse_engineering",
+    "vdr": 8
+  }
+]

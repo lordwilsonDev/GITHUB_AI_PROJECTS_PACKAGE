@@ -1,0 +1,168 @@
+   Compiling hitl-collab v0.1.0 (/Users/lordwilson/vy-nexus/aegis-rust/hitl-collab)
+warning: unused import: `VerifyingKey`
+ --> audit-system/src/logger.rs:9:52
+  |
+9 | use ed25519_dalek::{SigningKey, Signature, Signer, VerifyingKey};
+  |                                                    ^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: fields `tools` and `rhai_engine` are never read
+  --> evolution-core/src/engine.rs:10:5
+   |
+7  | pub struct BasicEvolutionEngine {
+   |            -------------------- fields in this struct
+...
+10 |     tools: HashMap<String, ToolImplementation>,
+   |     ^^^^^
+11 |     metrics: CapabilityMetrics,
+12 |     rhai_engine: rhai::Engine,
+   |     ^^^^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` on by default
+
+warning: `audit-system` (lib) generated 1 warning (run `cargo fix --lib -p audit-system` to apply 1 suggestion)
+warning: `evolution-core` (lib) generated 1 warning
+warning: `audit-system` (lib test) generated 1 warning (1 duplicate)
+warning: `evolution-core` (lib test) generated 1 warning (1 duplicate)
+warning: field `default_timeout` is never read
+  --> hitl-collab/src/collaborator.rs:23:5
+   |
+20 | pub struct BasicHITLCollaborator {
+   |            --------------------- field in this struct
+...
+23 |     default_timeout: u64,
+   |     ^^^^^^^^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` on by default
+
+warning: unused variable: `collaborator`
+   --> hitl-collab/src/lib.rs:374:17
+    |
+374 |         let mut collaborator = BasicHITLCollaborator::new(300);
+    |                 ^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_collaborator`
+    |
+    = note: `#[warn(unused_variables)]` on by default
+
+warning: variable does not need to be mutable
+   --> hitl-collab/src/lib.rs:374:13
+    |
+374 |         let mut collaborator = BasicHITLCollaborator::new(300);
+    |             ----^^^^^^^^^^^^
+    |             |
+    |             help: remove this `mut`
+    |
+    = note: `#[warn(unused_mut)]` on by default
+
+warning: `hitl-collab` (lib) generated 1 warning
+warning: `hitl-collab` (lib test) generated 3 warnings (1 duplicate) (run `cargo fix --lib -p hitl-collab --tests` to apply 1 suggestion)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 2.02s
+     Running unittests src/lib.rs (target/debug/deps/audit_system-afb6e81e79cfa511)
+
+running 15 tests
+test tests::test_hash_creation ... ok
+test tests::test_basic_audit_logger_creation ... ok
+test tests::test_get_merkle_root ... ok
+test tests::test_log_single_action ... ok
+test tests::test_log_multiple_actions ... ok
+test tests::test_query_history_no_filter ... ok
+test tests::test_zero_hash ... ok
+test tests::test_query_history_with_action_type_filter ... ok
+test tests::test_export_log ... ok
+test tests::test_verify_chain_empty ... ok
+test tests::test_signature_uniqueness ... ok
+test tests::test_persistent_storage ... ok
+test tests::test_verify_chain_valid ... ok
+test tests::test_query_history_with_limit ... ok
+test tests::test_query_history_with_time_range ... ok
+
+test result: ok. 15 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.07s
+
+     Running unittests src/lib.rs (target/debug/deps/evolution_core-dcd872fe393d0d7c)
+
+running 12 tests
+test tests::test_ethical_learning ... ok
+test tests::test_improvement_suggestions ... ok
+test tests::test_pattern_recognition ... ok
+test tests::test_experience_retrieval ... ok
+test tests::test_failure_tracking ... ok
+test tests::test_log_experience ... ok
+test tests::test_pattern_frequency ... ok
+test tests::test_ethical_violation_detection ... ok
+test tests::test_capability_metrics ... ok
+test tests::test_safety_issue_detection ... ok
+test tests::test_safety_learning ... ok
+test tests::test_success_tracking ... ok
+
+test result: ok. 12 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running unittests src/lib.rs (target/debug/deps/hitl_collab-47773db62af8d85e)
+
+running 9 tests
+test tests::test_action_creation ... ok
+test tests::test_priority_ordering ... ok
+test tests::test_decision_rejection_workflow ... ok
+test tests::test_get_pending_decisions ... ok
+test tests::test_cannot_approve_twice ... ok
+test tests::test_decision_request_workflow ... ok
+test tests::test_decision_escalation ... ok
+test tests::test_concurrent_decisions ... ok
+test tests::test_timeout_handling ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 2.00s
+
+     Running unittests src/lib.rs (target/debug/deps/intent_firewall-d255daed5025851a)
+
+running 11 tests
+test tests::test_basic_firewall_creation ... ok
+test tests::test_custom_threshold ... ok
+test tests::test_block_pattern ... ok
+test tests::test_threshold_clamping ... ok
+test tests::test_request_creation ... ok
+test tests::test_unblock_nonexistent_pattern ... ok
+test tests::test_unblock_pattern ... ok
+test tests::test_check_safety_destructive_action ... ok
+test tests::test_validate_blocked_pattern ... ok
+test tests::test_validate_safe_request ... ok
+test tests::test_check_safety_low_confidence ... ok
+
+test result: ok. 11 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/debug/deps/love_engine-1242c9dde24f7869)
+
+running 13 tests
+test tests::test_basic_love_engine_creation ... ok
+test tests::test_basic_love_engine_with_threshold ... ok
+test tests::test_compute_love_metric_negative ... ok
+test tests::test_compute_love_metric_positive ... ok
+test tests::test_action_creation ... ok
+test tests::test_entropy_reduction ... ok
+test tests::test_check_ethics_safe_action ... ok
+test tests::test_detect_hallucination_suspicious_output ... ok
+test tests::test_detect_hallucination_clean_output ... ok
+test tests::test_evaluate_alignment ... ok
+test tests::test_check_ethics_dimensions ... ok
+test tests::test_check_ethics_harmful_action ... FAILED
+test tests::test_ethical_concerns_collection ... FAILED
+
+failures:
+
+---- tests::test_check_ethics_harmful_action stdout ----
+
+thread 'tests::test_check_ethics_harmful_action' panicked at love-engine/src/lib.rs:399:9:
+Harmful action should have low ethical score
+
+---- tests::test_ethical_concerns_collection stdout ----
+
+thread 'tests::test_ethical_concerns_collection' panicked at love-engine/src/lib.rs:498:9:
+Should have multiple concerns for problematic action
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    tests::test_check_ethics_harmful_action
+    tests::test_ethical_concerns_collection
+
+test result: FAILED. 11 passed; 2 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+error: test failed, to rerun pass `-p love-engine --lib`

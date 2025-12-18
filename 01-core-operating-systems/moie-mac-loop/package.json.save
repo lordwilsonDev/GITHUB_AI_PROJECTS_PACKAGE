@@ -1,0 +1,13 @@
+"scripts": {
+  "dev": "motia dev",
+  "start": "motia start",
+  "build": "motia build",
+
+  "motia:status": "motia emit --event status --payload '{\"src\":\"cli\"}'",
+
+  "moie:nano-fs": "python3 src/nano_fs.py",
+  "moie:synapse-check": "echo '{\"test\":\"synapse_check\"}' | node runtime/.synapse.js --target=./experience_ledger.jsonl",
+
+  "mon:health": "node mon_cli.cjs \"overall health\""
+}
+

@@ -1,0 +1,146 @@
+nano_id: vy-orchestrator-level6
+version: 0.1.0
+label: "VY – Level-6 Recursive Worker Swarm"
+
+meta:
+  domain: "Distributed Recursive Agency"
+  intent: >
+    Define the queues, worker roles, invariants, and wiring for VY:
+    a swarm of recursive workers that read specs, generate artifacts,
+    run tests, and feed results back into MoIE / Panopticon.
+
+invariants:
+  - id: I_NSSI
+    rule: "No VY worker may execute an action that disables safety, logging, or audit trails."
+  - id: VY_VDR
+    rule: "Worker classes and tools are periodically pruned when VDR[vy] < 1.0."
+  - id: VY_SCOPE_BOUND
+    rule: "Each VY worker operates only within its assigned scope (repo, folder, project)."
+
+queues:
+  - name: intake.queue
+    purpose: "Raw tasks from user, MoIE inversions, external triggers."
+  - name: plan.queue
+    purpose: "Structured plans / subtasks awaiting assignment to workers."
+  - name: exec.queue
+    purpose: "Concrete actions ready for execution (code, tests, edits)."
+  - name: review.queue
+    purpose: "Results needing human or MoIE verification."
+  - name: archive.queue
+    purpose: "Completed tasks for logging, VDR, training data."
+
+task_types:
+  - name: VYTask
+    fields:
+      id: string
+      source: "user|moie|automation"
+      domain: string
+      goal: string
+      scope: string
+      priority: number
+      status: "intake|planning|running|review|done|failed"
+      artifacts: string[]
+      created_at: string
+      updated_at: string
+
+workers:
+  - id: vy-intake
+    role: "Normalize inputs; turn raw text into VYTask."
+    subscribes: ["intake.queue"]
+    emits: ["plan.queue"]
+    actions:
+      - parse_user_prompt
+      - parse_moie_inversion
+      - attach_scope_and_priority
+
+  - id: vy-planner
+    role: "Decompose VYTask into steps using MoIE Architect."
+    subscribes: ["plan.queue"]
+    emits: ["exec.queue"]
+    actions:
+      - call_moie_architect  # agent.plan
+      - create_exec_steps
+      - attach_success_criteria
+
+  - id: vy-executor
+    role: "Perform concrete work: code, tests, file edits."
+    subscribes: ["exec.queue"]
+    emits: ["review.queue"]
+    tools:
+      - fs.edit
+      - git.status
+      - git.commit.dry_run
+      - cli.run_tests
+    safety:
+      - must_pass_CBF
+      - must_log_to_panopticon
+
+  - id: vy-reviewer
+    role: "Verify results via MoIE + simple static checks."
+    subscribes: ["review.queue"]
+    emits: ["archive.queue", "exec.queue"]
+    actions:
+      - call_moie_referee
+      - run_lints
+      - request_human_confirmation_if_ambiguous
+
+  - id: vy-archivist
+    role: "Log, update VDR metrics, prepare training traces."
+    subscribes: ["archive.queue"]
+    emits: ["panopticon.log"]
+    actions:
+      - write_task_summary
+      - update_vy_vdr_metrics
+      - export_jsonl_traces
+
+metrics:
+  - name: vy_vitality
+    description: "Completed tasks / unit time, weighted by impact."
+  - name: vy_density
+    description: "Number of worker types, tools, and LOC in vy/*."
+  - name: vy_vdr
+    description: "vy_vitality / vy_density."
+  - name: vy_failure_rate
+    description: "Failed tasks / total tasks."
+  - name: human_touch_rate
+    description: "Tasks that required human review."
+
+runtime_wiring:
+  schedulers:
+    - event: vy.intake.poll
+      interval_minutes: 5
+      action: "sync_from_sources"  # inbox, Notion, GitHub, etc.
+    - event: vy.vdr_check
+      interval_minutes: 60
+      action: "compute_vy_vdr"
+
+  ai_routes:
+    - name: moie_architect
+      target: "agent.plan"
+      used_by: ["vy-planner"]
+    - name: moie_referee
+      target: "agent.reflect"
+      used_by: ["vy-reviewer"]
+
+  pruning:
+    - trigger: "vy.vdr_check"
+      when: "vy_vdr < 1.0"
+      actions:
+        - "deprecate_low_use_worker_classes"
+        - "remove_unused_tools"
+        - "simplify_config"
+
+files_layout:
+  - "vy/config/vy_orchestrator.nano.yml"
+  - "vy/workers/intake.worker.ts"
+  - "vy/workers/planner.worker.ts"
+  - "vy/workers/executor.worker.ts"
+  - "vy/workers/reviewer.worker.ts"
+  - "vy/workers/archivist.worker.ts"
+  - "vy/metrics/vdr_tracker.ts"
+  - "vy/panopticon/vy_logger.ts"
+
+deployment_notes:
+  - "VY workers are stateless; state lives in task store + git repos."
+  - "All worker actions must log to Panopticon with task.id."
+  - "Tie vy_vdr into global Ouroboros so unused workers get pruned over time."

@@ -1,0 +1,21 @@
+[
+  {
+    "pattern_type": "task_type_repetition",
+    "task_type": "file_organization",
+    "frequency": 3,
+    "average_duration": 120.0,
+    "total_time_spent": 360,
+    "automation_potential": "medium",
+    "identified_at": "2025-12-15T22:19:05.707742"
+  },
+  {
+    "pattern_type": "time_consuming_repetition",
+    "task_type": "file_organization",
+    "frequency": 3,
+    "total_time_spent": 360,
+    "average_time": 120.0,
+    "automation_potential": "high",
+    "priority": "high",
+    "identified_at": "2025-12-15T22:19:05.707765"
+  }
+]

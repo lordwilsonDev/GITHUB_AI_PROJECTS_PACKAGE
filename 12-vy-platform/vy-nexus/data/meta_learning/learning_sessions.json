@@ -1,0 +1,71 @@
+{
+  "sessions": [
+    {
+      "id": "session_20251215_224349",
+      "method_id": "obs_001",
+      "topic": "Python syntax",
+      "duration_minutes": 30,
+      "success": true,
+      "knowledge_gained": [
+        "list comprehensions",
+        "decorators"
+      ],
+      "retention_score": 0.7,
+      "difficulty": "medium",
+      "context": {
+        "environment": "tutorial"
+      },
+      "timestamp": "2025-12-15T22:43:49.389215"
+    },
+    {
+      "id": "session_20251215_224349",
+      "method_id": "exp_001",
+      "topic": "API integration",
+      "duration_minutes": 60,
+      "success": true,
+      "knowledge_gained": [
+        "REST APIs",
+        "authentication"
+      ],
+      "retention_score": 0.9,
+      "difficulty": "hard",
+      "context": {
+        "environment": "project"
+      },
+      "timestamp": "2025-12-15T22:43:49.389458"
+    },
+    {
+      "id": "session_20251215_224349",
+      "method_id": "doc_001",
+      "topic": "Framework basics",
+      "duration_minutes": 45,
+      "success": true,
+      "knowledge_gained": [
+        "routing",
+        "middleware"
+      ],
+      "retention_score": 0.6,
+      "difficulty": "easy",
+      "context": {
+        "environment": "documentation"
+      },
+      "timestamp": "2025-12-15T22:43:49.389598"
+    },
+    {
+      "id": "session_20251215_224349",
+      "method_id": "exp_001",
+      "topic": "Database queries",
+      "duration_minutes": 40,
+      "success": false,
+      "knowledge_gained": [
+        "SQL basics"
+      ],
+      "retention_score": 0.4,
+      "difficulty": "medium",
+      "context": {
+        "environment": "project"
+      },
+      "timestamp": "2025-12-15T22:43:49.389792"
+    }
+  ]
+}

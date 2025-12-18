@@ -1,0 +1,81 @@
+```
+import logging
+from typing import Union, Dict
+
+logging.basicConfig(level=logging.INFO)
+
+def add(a: int, b: int) -> int:
+    """
+    Returns the sum of two integers.
+
+    Args:
+        a (int): The first integer.
+        b (int): The second integer.
+
+    Returns:
+        int: The sum of a and b.
+    """
+    try:
+        if not isinstance(a, int) or not isinstance(b, int):
+            raise ValueError("Both inputs must be integers.")
+        return a + b
+    except TypeError as e:
+        logging.error(f"TypeError in the add function: {e}")
+        raise ValueError("Invalid input type") from e
+    except Exception as e:
+        logging.error(f"Unexpected error in the add function: {e}")
+        raise
+
+def multiply(a: Union[int, float], b: Union[int, float]) -> Union[int, float]:
+    """
+    Returns the product of two integers or floats.
+
+    Args:
+        a (int or float): The first value.
+        b (int or float): The second value.
+
+    Returns:
+        int or float: The product of a and b. If b is 0, returns 0.
+    """
+    try:
+        if not isinstance(a, (int, float)) or not isinstance(b, (int, float)):
+            raise ValueError("Both inputs must be integers or floats.")
+        if not isinstance(b, int) and b == 0:
+            return 0
+        result = a * b
+        return result
+    except TypeError as e:
+        logging.error(f"TypeError in the multiply function: {e}")
+        raise TypeError("Invalid input type") from e
+    except ValueError as e:
+        logging.error(f"ValueError in the multiply function: {e}")
+        raise
+
+def divide(a: Union[int, float], b: Union[int, float]) -> Union[float, None]:
+    """
+    Returns the result of dividing two integers or floats.
+
+    Args:
+        a (int or float): The dividend.
+        b (int or float): The divisor.
+
+    Returns:
+        float or None: The result of the division. If b is 0, returns None.
+    """
+    try:
+        if not isinstance(a, (int, float)) or not isinstance(b, (int, float)):
+            raise ValueError("Both inputs must be integers or floats.")
+        if not isinstance(b, int) and b == 0:
+            return None
+        result = a / b
+        return result
+    except TypeError as e:
+        logging.error(f"TypeError in the divide function: {e}")
+        raise TypeError("Invalid input type") from e
+    except ZeroDivisionError as e:
+        logging.error(f"ZeroDivisionError in the divide function: {e}")
+        raise ValueError("Cannot divide by zero")
+    except ValueError as e:
+        logging.error(f"ValueError in the divide function: {e}")
+        raise
+

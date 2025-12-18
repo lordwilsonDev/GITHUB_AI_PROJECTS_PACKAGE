@@ -1,0 +1,30 @@
+{
+  "exp_20251215_224109": {
+    "id": "exp_20251215_224109",
+    "name": "Task Prioritization Algorithm Test",
+    "feature_id": "feature_20251215_224109",
+    "variant_a": {
+      "algorithm": "rule_based"
+    },
+    "variant_b": {
+      "algorithm": "ml_based"
+    },
+    "traffic_split": 0.5,
+    "status": "running",
+    "started_at": "2025-12-15T22:41:09.830245",
+    "results": {
+      "variant_a": {
+        "users": 0,
+        "conversions": 0,
+        "engagement": 0,
+        "errors": 0
+      },
+      "variant_b": {
+        "users": 0,
+        "conversions": 0,
+        "engagement": 0,
+        "errors": 0
+      }
+    }
+  }
+}

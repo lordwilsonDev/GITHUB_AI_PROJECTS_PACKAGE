@@ -1,0 +1,28 @@
+[
+  {
+    "template_id": "template_20251215_223641",
+    "success": true,
+    "duration": 45.5,
+    "feedback": null,
+    "issues": [],
+    "timestamp": "2025-12-15T22:36:41.856261"
+  },
+  {
+    "template_id": "template_20251215_223641",
+    "success": true,
+    "duration": 42.3,
+    "feedback": null,
+    "issues": [],
+    "timestamp": "2025-12-15T22:36:41.856432"
+  },
+  {
+    "template_id": "template_20251215_223641",
+    "success": false,
+    "duration": 60.0,
+    "feedback": null,
+    "issues": [
+      "Permission denied on some files"
+    ],
+    "timestamp": "2025-12-15T22:36:41.856569"
+  }
+]

@@ -1,0 +1,434 @@
+   Compiling serde_core v1.0.228
+   Compiling serde v1.0.228
+   Compiling indexmap v2.12.1
+   Compiling serde_json v1.0.145
+   Compiling csv v1.4.0
+   Compiling cranelift-entity v0.103.0
+   Compiling ciborium v0.2.2
+   Compiling serde_urlencoded v0.7.1
+   Compiling url v2.5.7
+   Compiling chrono v0.4.42
+   Compiling bincode v1.3.3
+   Compiling toml v0.5.11
+   Compiling gimli v0.28.1
+   Compiling wasmparser v0.118.2
+   Compiling h2 v0.3.27
+   Compiling tinytemplate v1.2.1
+   Compiling cranelift-bforest v0.103.0
+   Compiling criterion v0.5.1
+   Compiling object v0.32.2
+   Compiling schemars v0.8.22
+   Compiling wasmtime-cache v16.0.0
+   Compiling fxprof-processed-profile v0.6.0
+   Compiling hitl-collab v0.1.0 (/Users/lordwilson/vy-nexus/aegis-rust/hitl-collab)
+   Compiling audit-system v0.1.0 (/Users/lordwilson/vy-nexus/aegis-rust/audit-system)
+warning: unused import: `VerifyingKey`
+ --> audit-system/src/logger.rs:9:52
+  |
+9 | use ed25519_dalek::{SigningKey, Signature, Signer, VerifyingKey};
+  |                                                    ^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: field `default_timeout` is never read
+  --> hitl-collab/src/collaborator.rs:23:5
+   |
+20 | pub struct BasicHITLCollaborator {
+   |            --------------------- field in this struct
+...
+23 |     default_timeout: u64,
+   |     ^^^^^^^^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` on by default
+
+warning: `hitl-collab` (lib) generated 1 warning
+   Compiling hyper v0.14.32
+   Compiling stress-tests v0.1.0 (/Users/lordwilson/vy-nexus/aegis-rust/stress-tests)
+   Compiling cranelift-codegen v0.103.0
+warning: `audit-system` (lib) generated 1 warning (run `cargo fix --lib -p audit-system` to apply 1 suggestion)
+   Compiling addr2line v0.21.0
+   Compiling wasmtime-types v16.0.0
+   Compiling wasmtime-jit-debug v16.0.0
+   Compiling wasmtime-environ v16.0.0
+   Compiling hyper-tls v0.5.0
+   Compiling reqwest v0.11.27
+   Compiling wasmtime-runtime v16.0.0
+   Compiling rig-core v0.1.0
+   Compiling wasmtime-jit v16.0.0
+   Compiling intent-firewall v0.1.0 (/Users/lordwilson/vy-nexus/aegis-rust/intent-firewall)
+   Compiling love-engine v0.1.0 (/Users/lordwilson/vy-nexus/aegis-rust/love-engine)
+   Compiling cranelift-frontend v0.103.0
+   Compiling cranelift-native v0.103.0
+   Compiling wasmtime-cranelift-shared v16.0.0
+   Compiling cranelift-wasm v0.103.0
+   Compiling wasmtime-cranelift v16.0.0
+   Compiling wasmtime v16.0.0
+warning: unused variable: `collaborator`
+   --> hitl-collab/src/lib.rs:374:17
+    |
+374 |         let mut collaborator = BasicHITLCollaborator::new(300);
+    |                 ^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_collaborator`
+    |
+    = note: `#[warn(unused_variables)]` on by default
+
+warning: variable does not need to be mutable
+   --> hitl-collab/src/lib.rs:374:13
+    |
+374 |         let mut collaborator = BasicHITLCollaborator::new(300);
+    |             ----^^^^^^^^^^^^
+    |             |
+    |             help: remove this `mut`
+    |
+    = note: `#[warn(unused_mut)]` on by default
+
+   Compiling evolution-core v0.1.0 (/Users/lordwilson/vy-nexus/aegis-rust/evolution-core)
+warning: fields `tools` and `rhai_engine` are never read
+  --> evolution-core/src/engine.rs:10:5
+   |
+7  | pub struct BasicEvolutionEngine {
+   |            -------------------- fields in this struct
+...
+10 |     tools: HashMap<String, ToolImplementation>,
+   |     ^^^^^
+11 |     metrics: CapabilityMetrics,
+12 |     rhai_engine: rhai::Engine,
+   |     ^^^^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` on by default
+
+warning: `evolution-core` (lib) generated 1 warning
+warning: `hitl-collab` (lib test) generated 3 warnings (1 duplicate) (run `cargo fix --lib -p hitl-collab --tests` to apply 1 suggestion)
+warning: `audit-system` (lib test) generated 1 warning (1 duplicate)
+   Compiling aegis-rust v0.1.0 (/Users/lordwilson/vy-nexus/aegis-rust)
+warning: `evolution-core` (lib test) generated 1 warning (1 duplicate)
+    Finished `bench` profile [optimized] target(s) in 56.96s
+     Running unittests src/lib.rs (target/release/deps/aegis_rust-082cf7cd412951b9)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/release/deps/audit_system-58f77af412d6f1bc)
+
+running 15 tests
+test tests::test_basic_audit_logger_creation ... ignored
+test tests::test_export_log ... ignored
+test tests::test_get_merkle_root ... ignored
+test tests::test_hash_creation ... ignored
+test tests::test_log_multiple_actions ... ignored
+test tests::test_log_single_action ... ignored
+test tests::test_persistent_storage ... ignored
+test tests::test_query_history_no_filter ... ignored
+test tests::test_query_history_with_action_type_filter ... ignored
+test tests::test_query_history_with_limit ... ignored
+test tests::test_query_history_with_time_range ... ignored
+test tests::test_signature_uniqueness ... ignored
+test tests::test_verify_chain_empty ... ignored
+test tests::test_verify_chain_valid ... ignored
+test tests::test_zero_hash ... ignored
+
+test result: ok. 0 passed; 0 failed; 15 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running benches/audit_system_bench.rs (target/release/deps/audit_system_bench-4ad4df2ed60fc696)
+Gnuplot not found, using plotters backend
+Benchmarking audit_system_log_action
+Benchmarking audit_system_log_action: Warming up for 3.0000 s
+Benchmarking audit_system_log_action: Collecting 100 samples in estimated 5.0719 s (217k iterations)
+Benchmarking audit_system_log_action: Analyzing
+audit_system_log_action time:   [23.541 µs 23.631 µs 23.739 µs]
+                        change: [-0.8160% -0.2625% +0.2639%] (p = 0.36 > 0.05)
+                        No change in performance detected.
+Found 5 outliers among 100 measurements (5.00%)
+  3 (3.00%) high mild
+  2 (2.00%) high severe
+
+Benchmarking audit_system_verify_chain
+Benchmarking audit_system_verify_chain: Warming up for 3.0000 s
+Benchmarking audit_system_verify_chain: Collecting 100 samples in estimated 6.1254 s (25k iterations)
+Benchmarking audit_system_verify_chain: Analyzing
+audit_system_verify_chain
+                        time:   [242.38 µs 243.19 µs 244.00 µs]
+                        change: [-0.5373% -0.1533% +0.2059%] (p = 0.44 > 0.05)
+                        No change in performance detected.
+Found 1 outliers among 100 measurements (1.00%)
+  1 (1.00%) high severe
+
+Benchmarking audit_system_query_history
+Benchmarking audit_system_query_history: Warming up for 3.0000 s
+Benchmarking audit_system_query_history: Collecting 100 samples in estimated 5.0770 s (258k iterations)
+Benchmarking audit_system_query_history: Analyzing
+audit_system_query_history
+                        time:   [19.444 µs 19.525 µs 19.616 µs]
+                        change: [-3.5578% -3.0661% -2.5749%] (p = 0.00 < 0.05)
+                        Performance has improved.
+Found 1 outliers among 100 measurements (1.00%)
+  1 (1.00%) high mild
+
+Benchmarking audit_system_get_merkle_root
+Benchmarking audit_system_get_merkle_root: Warming up for 3.0000 s
+Benchmarking audit_system_get_merkle_root: Collecting 100 samples in estimated 5.0002 s (5.1M iterations)
+Benchmarking audit_system_get_merkle_root: Analyzing
+audit_system_get_merkle_root
+                        time:   [969.46 ns 973.93 ns 979.28 ns]
+                        change: [-5.1907% -4.1425% -3.1774%] (p = 0.00 < 0.05)
+                        Performance has improved.
+Found 9 outliers among 100 measurements (9.00%)
+  3 (3.00%) high mild
+  6 (6.00%) high severe
+
+     Running unittests src/lib.rs (target/release/deps/evolution_core-b1d1916b7a196947)
+
+running 12 tests
+test tests::test_capability_metrics ... ignored
+test tests::test_ethical_learning ... ignored
+test tests::test_ethical_violation_detection ... ignored
+test tests::test_experience_retrieval ... ignored
+test tests::test_failure_tracking ... ignored
+test tests::test_improvement_suggestions ... ignored
+test tests::test_log_experience ... ignored
+test tests::test_pattern_frequency ... ignored
+test tests::test_pattern_recognition ... ignored
+test tests::test_safety_issue_detection ... ignored
+test tests::test_safety_learning ... ignored
+test tests::test_success_tracking ... ignored
+
+test result: ok. 0 passed; 0 failed; 12 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running benches/evolution_core_bench.rs (target/release/deps/evolution_core_bench-a3431a5160fc14ca)
+Gnuplot not found, using plotters backend
+Benchmarking evolution_core_log_experience
+Benchmarking evolution_core_log_experience: Warming up for 3.0000 s
+Benchmarking evolution_core_log_experience: Collecting 100 samples in estimated 5.0203 s (86k iterations)
+Benchmarking evolution_core_log_experience: Analyzing
+evolution_core_log_experience
+                        time:   [294.08 µs 335.41 µs 372.70 µs]
+                        change: [-29.174% -17.479% -4.0798%] (p = 0.02 < 0.05)
+                        Performance has improved.
+Found 9 outliers among 100 measurements (9.00%)
+  9 (9.00%) high mild
+
+Benchmarking evolution_core_recognize_patterns
+Benchmarking evolution_core_recognize_patterns: Warming up for 3.0000 s
+Benchmarking evolution_core_recognize_patterns: Collecting 100 samples in estimated 5.0084 s (1.6M iterations)
+Benchmarking evolution_core_recognize_patterns: Analyzing
+evolution_core_recognize_patterns
+                        time:   [3.0573 µs 3.0905 µs 3.1272 µs]
+                        change: [+3.1734% +4.3576% +5.6633%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Found 16 outliers among 100 measurements (16.00%)
+  16 (16.00%) high mild
+
+Benchmarking evolution_core_suggest_improvements
+Benchmarking evolution_core_suggest_improvements: Warming up for 3.0000 s
+Benchmarking evolution_core_suggest_improvements: Collecting 100 samples in estimated 5.0022 s (4.6M iterations)
+Benchmarking evolution_core_suggest_improvements: Analyzing
+evolution_core_suggest_improvements
+                        time:   [1.2911 µs 1.4565 µs 1.6283 µs]
+                        change: [+9.0721% +16.528% +27.296%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Found 18 outliers among 100 measurements (18.00%)
+  1 (1.00%) high mild
+  17 (17.00%) high severe
+
+Benchmarking evolution_core_get_capability_metrics
+Benchmarking evolution_core_get_capability_metrics: Warming up for 3.0000 s
+Benchmarking evolution_core_get_capability_metrics: Collecting 100 samples in estimated 5.0000 s (4.7B iterations)
+Benchmarking evolution_core_get_capability_metrics: Analyzing
+evolution_core_get_capability_metrics
+                        time:   [893.88 ps 899.23 ps 905.73 ps]
+                        change: [-1.5931% -0.7197% +0.0040%] (p = 0.07 > 0.05)
+                        No change in performance detected.
+Found 5 outliers among 100 measurements (5.00%)
+  1 (1.00%) high mild
+  4 (4.00%) high severe
+
+     Running unittests src/lib.rs (target/release/deps/hitl_collab-74f2f74274c49ae5)
+
+running 9 tests
+test tests::test_action_creation ... ignored
+test tests::test_cannot_approve_twice ... ignored
+test tests::test_concurrent_decisions ... ignored
+test tests::test_decision_escalation ... ignored
+test tests::test_decision_rejection_workflow ... ignored
+test tests::test_decision_request_workflow ... ignored
+test tests::test_get_pending_decisions ... ignored
+test tests::test_priority_ordering ... ignored
+test tests::test_timeout_handling ... ignored
+
+test result: ok. 0 passed; 0 failed; 9 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running benches/hitl_collab_bench.rs (target/release/deps/hitl_collab_bench-dd0401c3bda8356d)
+Gnuplot not found, using plotters backend
+Benchmarking hitl_collab_request_decision
+Benchmarking hitl_collab_request_decision: Warming up for 3.0000 s
+Benchmarking hitl_collab_request_decision: Collecting 100 samples in estimated 5.0001 s (4.4M iterations)
+Benchmarking hitl_collab_request_decision: Analyzing
+hitl_collab_request_decision
+                        time:   [2.1854 µs 2.2708 µs 2.3720 µs]
+                        change: [-48.983% -44.782% -40.091%] (p = 0.00 < 0.05)
+                        Performance has improved.
+Found 6 outliers among 100 measurements (6.00%)
+  3 (3.00%) high mild
+  3 (3.00%) high severe
+
+Benchmarking hitl_collab_get_pending_decisions
+Benchmarking hitl_collab_get_pending_decisions: Warming up for 3.0000 s
+Benchmarking hitl_collab_get_pending_decisions: Collecting 100 samples in estimated 5.0193 s (788k iterations)
+Benchmarking hitl_collab_get_pending_decisions: Analyzing
+hitl_collab_get_pending_decisions
+                        time:   [6.3257 µs 6.3532 µs 6.3819 µs]
+                        change: [-5.3190% -3.7627% -2.3529%] (p = 0.00 < 0.05)
+                        Performance has improved.
+Found 5 outliers among 100 measurements (5.00%)
+  5 (5.00%) high mild
+
+Benchmarking hitl_collab_approve_decision
+Benchmarking hitl_collab_approve_decision: Warming up for 3.0000 s
+Benchmarking hitl_collab_approve_decision: Collecting 100 samples in estimated 5.0003 s (4.3M iterations)
+Benchmarking hitl_collab_approve_decision: Analyzing
+hitl_collab_approve_decision
+                        time:   [2.9463 µs 4.4066 µs 6.1689 µs]
+                        change: [-74.795% -64.558% -52.170%] (p = 0.00 < 0.05)
+                        Performance has improved.
+Found 17 outliers among 100 measurements (17.00%)
+  2 (2.00%) high mild
+  15 (15.00%) high severe
+
+Benchmarking hitl_collab_concurrent_decisions
+Benchmarking hitl_collab_concurrent_decisions: Warming up for 3.0000 s
+Benchmarking hitl_collab_concurrent_decisions: Collecting 100 samples in estimated 5.1041 s (1400 iterations)
+Benchmarking hitl_collab_concurrent_decisions: Analyzing
+hitl_collab_concurrent_decisions
+                        time:   [12.205 ms 12.472 ms 12.735 ms]
+                        change: [-4.8062% +10.756% +28.868%] (p = 0.18 > 0.05)
+                        No change in performance detected.
+
+     Running unittests src/lib.rs (target/release/deps/intent_firewall-4f35fe585244d700)
+
+running 11 tests
+test tests::test_basic_firewall_creation ... ignored
+test tests::test_block_pattern ... ignored
+test tests::test_check_safety_destructive_action ... ignored
+test tests::test_check_safety_low_confidence ... ignored
+test tests::test_custom_threshold ... ignored
+test tests::test_request_creation ... ignored
+test tests::test_threshold_clamping ... ignored
+test tests::test_unblock_nonexistent_pattern ... ignored
+test tests::test_unblock_pattern ... ignored
+test tests::test_validate_blocked_pattern ... ignored
+test tests::test_validate_safe_request ... ignored
+
+test result: ok. 0 passed; 0 failed; 11 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running benches/intent_firewall_bench.rs (target/release/deps/intent_firewall_bench-4e26b777f940d1dc)
+Gnuplot not found, using plotters backend
+Benchmarking intent_firewall_validate_safe
+Benchmarking intent_firewall_validate_safe: Warming up for 3.0000 s
+Benchmarking intent_firewall_validate_safe: Collecting 100 samples in estimated 5.0004 s (21M iterations)
+Benchmarking intent_firewall_validate_safe: Analyzing
+intent_firewall_validate_safe
+                        time:   [240.05 ns 241.44 ns 243.08 ns]
+                        change: [-3.3580% -2.4681% -1.6377%] (p = 0.00 < 0.05)
+                        Performance has improved.
+Found 6 outliers among 100 measurements (6.00%)
+  3 (3.00%) high mild
+  3 (3.00%) high severe
+
+Benchmarking intent_firewall_validate_unsafe
+Benchmarking intent_firewall_validate_unsafe: Warming up for 3.0000 s
+Benchmarking intent_firewall_validate_unsafe: Collecting 100 samples in estimated 5.0006 s (18M iterations)
+Benchmarking intent_firewall_validate_unsafe: Analyzing
+intent_firewall_validate_unsafe
+                        time:   [271.17 ns 272.71 ns 274.36 ns]
+                        change: [-0.4335% +0.2096% +0.8499%] (p = 0.53 > 0.05)
+                        No change in performance detected.
+Found 5 outliers among 100 measurements (5.00%)
+  5 (5.00%) high mild
+
+Benchmarking intent_firewall_pattern_matching
+Benchmarking intent_firewall_pattern_matching: Warming up for 3.0000 s
+Benchmarking intent_firewall_pattern_matching: Collecting 100 samples in estimated 5.0006 s (6.5M iterations)
+Benchmarking intent_firewall_pattern_matching: Analyzing
+intent_firewall_pattern_matching
+                        time:   [761.03 ns 763.52 ns 766.35 ns]
+                        change: [-1.1847% -0.6914% -0.1756%] (p = 0.01 < 0.05)
+                        Change within noise threshold.
+Found 5 outliers among 100 measurements (5.00%)
+  4 (4.00%) high mild
+  1 (1.00%) high severe
+
+     Running unittests src/lib.rs (target/release/deps/love_engine-602fac49f0232a12)
+
+running 13 tests
+test tests::test_action_creation ... ignored
+test tests::test_basic_love_engine_creation ... ignored
+test tests::test_basic_love_engine_with_threshold ... ignored
+test tests::test_check_ethics_dimensions ... ignored
+test tests::test_check_ethics_harmful_action ... ignored
+test tests::test_check_ethics_safe_action ... ignored
+test tests::test_compute_love_metric_negative ... ignored
+test tests::test_compute_love_metric_positive ... ignored
+test tests::test_detect_hallucination_clean_output ... ignored
+test tests::test_detect_hallucination_suspicious_output ... ignored
+test tests::test_entropy_reduction ... ignored
+test tests::test_ethical_concerns_collection ... ignored
+test tests::test_evaluate_alignment ... ignored
+
+test result: ok. 0 passed; 0 failed; 13 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running benches/love_engine_bench.rs (target/release/deps/love_engine_bench-e2b641e4a1812632)
+Gnuplot not found, using plotters backend
+Benchmarking love_engine_check_ethics
+Benchmarking love_engine_check_ethics: Warming up for 3.0000 s
+Benchmarking love_engine_check_ethics: Collecting 100 samples in estimated 5.0021 s (7.3M iterations)
+Benchmarking love_engine_check_ethics: Analyzing
+love_engine_check_ethics
+                        time:   [678.86 ns 681.05 ns 683.52 ns]
+                        change: [-0.8048% -0.1790% +0.4746%] (p = 0.59 > 0.05)
+                        No change in performance detected.
+Found 8 outliers among 100 measurements (8.00%)
+  3 (3.00%) low mild
+  2 (2.00%) high mild
+  3 (3.00%) high severe
+
+Benchmarking love_engine_detect_hallucination
+Benchmarking love_engine_detect_hallucination: Warming up for 3.0000 s
+Benchmarking love_engine_detect_hallucination: Collecting 100 samples in estimated 5.0007 s (36M iterations)
+Benchmarking love_engine_detect_hallucination: Analyzing
+love_engine_detect_hallucination
+                        time:   [138.59 ns 139.59 ns 140.87 ns]
+                        change: [-1.0343% +0.0749% +1.4557%] (p = 0.90 > 0.05)
+                        No change in performance detected.
+Found 14 outliers among 100 measurements (14.00%)
+  2 (2.00%) high mild
+  12 (12.00%) high severe
+
+Benchmarking love_engine_compute_love_metric
+Benchmarking love_engine_compute_love_metric: Warming up for 3.0000 s
+Benchmarking love_engine_compute_love_metric: Collecting 100 samples in estimated 5.0000 s (2.2B iterations)
+Benchmarking love_engine_compute_love_metric: Analyzing
+love_engine_compute_love_metric
+                        time:   [2.2490 ns 2.2602 ns 2.2759 ns]
+                        change: [-1.6466% -0.6816% +0.2615%] (p = 0.17 > 0.05)
+                        No change in performance detected.
+Found 10 outliers among 100 measurements (10.00%)
+  10 (10.00%) high severe
+
+Benchmarking love_engine_evaluate_alignment
+Benchmarking love_engine_evaluate_alignment: Warming up for 3.0000 s
+Benchmarking love_engine_evaluate_alignment: Collecting 100 samples in estimated 5.0001 s (208M iterations)
+Benchmarking love_engine_evaluate_alignment: Analyzing
+love_engine_evaluate_alignment
+                        time:   [23.707 ns 23.810 ns 23.927 ns]
+                        change: [-3.9713% -3.1214% -2.3043%] (p = 0.00 < 0.05)
+                        Performance has improved.
+Found 8 outliers among 100 measurements (8.00%)
+  3 (3.00%) high mild
+  5 (5.00%) high severe
+
+     Running unittests src/main.rs (target/release/deps/stress_tests-e5d5ecf70e09ec01)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

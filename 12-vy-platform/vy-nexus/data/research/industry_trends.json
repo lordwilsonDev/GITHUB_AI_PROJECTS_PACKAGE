@@ -1,0 +1,18 @@
+[
+  {
+    "id": "66a728d9a5c1",
+    "trend": "AI-Powered Development Tools",
+    "category": "tool",
+    "relevance": "high",
+    "identified_at": "2025-12-15T22:14:24.966165",
+    "status": "monitoring"
+  },
+  {
+    "id": "05228ebfaaa0",
+    "trend": "Low-Code Platforms",
+    "category": "methodology",
+    "relevance": "medium",
+    "identified_at": "2025-12-15T22:14:24.966316",
+    "status": "monitoring"
+  }
+]

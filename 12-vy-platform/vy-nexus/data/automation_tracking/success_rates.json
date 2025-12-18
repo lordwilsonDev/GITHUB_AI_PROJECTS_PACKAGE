@@ -1,0 +1,35 @@
+{
+  "automation_rates": {
+    "data_sync": {
+      "success_rate": 75.0,
+      "recent_success_rate": 75.0,
+      "avg_duration": 33.625,
+      "expected_duration": 30.0,
+      "reliability_score": 77.84386617100373,
+      "total_executions": 4,
+      "last_updated": "2025-12-15T22:46:35.011882"
+    },
+    "report_gen": {
+      "success_rate": 66.66666666666666,
+      "recent_success_rate": 66.66666666666666,
+      "avg_duration": 70.13333333333334,
+      "expected_duration": 60.0,
+      "reliability_score": 70.44359949302914,
+      "total_executions": 3,
+      "last_updated": "2025-12-15T22:46:35.012492"
+    }
+  },
+  "category_rates": {
+    "data_processing": {
+      "success_rate": 75.0,
+      "avg_duration": 33.625,
+      "total_executions": 4
+    },
+    "workflow": {
+      "success_rate": 66.66666666666666,
+      "avg_duration": 70.13333333333334,
+      "total_executions": 3
+    }
+  },
+  "last_updated": "2025-12-15T22:46:35.012495"
+}

@@ -1,0 +1,13 @@
+{
+  "segment_20251215_224109": {
+    "id": "segment_20251215_224109",
+    "name": "Power Users",
+    "description": "Users with high engagement",
+    "criteria": {
+      "usage_frequency": "high",
+      "feature_adoption": "early"
+    },
+    "created_at": "2025-12-15T22:41:09.829924",
+    "user_count": 0
+  }
+}

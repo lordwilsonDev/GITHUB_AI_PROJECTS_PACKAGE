@@ -1,0 +1,48 @@
+{
+  "file_processing": {
+    "count": 5,
+    "contexts": [
+      {
+        "timestamp": "2025-12-15T23:12:58.259210",
+        "context": {
+          "file_type": "csv",
+          "size_mb": 10
+        }
+      },
+      {
+        "timestamp": "2025-12-15T23:12:58.259481",
+        "context": {
+          "file_type": "csv",
+          "size_mb": 11
+        }
+      },
+      {
+        "timestamp": "2025-12-15T23:12:58.259588",
+        "context": {
+          "file_type": "csv",
+          "size_mb": 12
+        }
+      },
+      {
+        "timestamp": "2025-12-15T23:12:58.259665",
+        "context": {
+          "file_type": "csv",
+          "size_mb": 13
+        }
+      },
+      {
+        "timestamp": "2025-12-15T23:12:58.259828",
+        "context": {
+          "file_type": "csv",
+          "size_mb": 14
+        }
+      }
+    ],
+    "time_patterns": {
+      "23": 5
+    },
+    "day_patterns": {
+      "Monday": 5
+    }
+  }
+}

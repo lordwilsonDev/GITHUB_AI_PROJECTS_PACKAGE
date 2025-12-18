@@ -1,0 +1,84 @@
+[
+  {
+    "name": "Love Engine Real",
+    "check_type": "http",
+    "target": "http://localhost:8001/health",
+    "method": "GET"
+  },
+  {
+    "name": "Jarvis M1",
+    "check_type": "http",
+    "target": "http://localhost:8002/health",
+    "method": "GET"
+  },
+  {
+    "name": "LCRS System",
+    "check_type": "http",
+    "target": "http://localhost:8003/health",
+    "method": "GET"
+  },
+  {
+    "name": "Level33 Sovereign",
+    "check_type": "http",
+    "target": "http://localhost:8004/health",
+    "method": "GET"
+  },
+  {
+    "name": "Nanoapex Vision",
+    "check_type": "http",
+    "target": "http://localhost:8005/health",
+    "method": "GET"
+  },
+  {
+    "name": "Sovereign Brain",
+    "check_type": "http",
+    "target": "http://localhost:8006/health",
+    "method": "GET"
+  },
+  {
+    "name": "Sovereign Heart",
+    "check_type": "http",
+    "target": "http://localhost:8007/health",
+    "method": "GET"
+  },
+  {
+    "name": "MoIE OS v3",
+    "check_type": "http",
+    "target": "http://localhost:8008/health",
+    "method": "GET"
+  },
+  {
+    "name": "Metadata Universe",
+    "check_type": "http",
+    "target": "http://localhost:8009/health",
+    "method": "GET"
+  },
+  {
+    "name": "CORD Project",
+    "check_type": "http",
+    "target": "http://localhost:8010/health",
+    "method": "GET"
+  },
+  {
+    "name": "Motia Scheduler",
+    "check_type": "http",
+    "target": "http://localhost:3001/health",
+    "method": "GET"
+  },
+  {
+    "name": "LCRS Grafana",
+    "check_type": "http",
+    "target": "http://localhost:3002/",
+    "method": "GET"
+  },
+  {
+    "name": "VY-NEXUS Scheduler",
+    "check_type": "process",
+    "target": "vy-nexus/autonomous_scheduler.py"
+  },
+  {
+    "name": "RADE Task Runner",
+    "check_type": "process",
+    "target": "nanoapex-rade/vy_task_runner.py"
+  }
+]

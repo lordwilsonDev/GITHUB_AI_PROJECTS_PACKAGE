@@ -1,0 +1,15 @@
+{
+  "res_001": {
+    "resource_id": "res_001",
+    "skill_id": "python_advanced",
+    "type": "tutorial",
+    "title": "Advanced Python Tutorial",
+    "url": "https://example.com/python-advanced",
+    "difficulty": "advanced",
+    "status": "not_started",
+    "rating": null,
+    "notes": "",
+    "created_at": "2025-12-15T22:52:33.783768",
+    "updated_at": "2025-12-15T22:52:33.783770"
+  }
+}

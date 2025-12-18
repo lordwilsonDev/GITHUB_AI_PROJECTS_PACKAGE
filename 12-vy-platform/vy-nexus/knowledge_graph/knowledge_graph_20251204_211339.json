@@ -1,0 +1,168 @@
+{
+  "timestamp": "2025-12-04T21:13:39.881493",
+  "nodes": {
+    "constraint": {
+      "vdr": 7.03125,
+      "frequency": 64,
+      "domains": [
+        "Technology",
+        "Unknown",
+        "Communication",
+        "Control Theory",
+        "Biology",
+        "Governance",
+        "Psychology"
+      ],
+      "first_seen": "2025-12-04T21:13:39.783227"
+    },
+    "feedback": {
+      "vdr": 6.954545454545454,
+      "frequency": 44,
+      "domains": [
+        "Control Theory",
+        "Biology",
+        "Unknown",
+        "Embodiment"
+      ],
+      "first_seen": "2025-12-04T21:13:39.783256"
+    },
+    "flow": {
+      "vdr": 7.0,
+      "frequency": 32,
+      "domains": [
+        "Technology",
+        "Consciousness",
+        "Communication",
+        "Control Theory",
+        "Biology",
+        "Governance",
+        "Psychology"
+      ],
+      "first_seen": "2025-12-04T21:13:39.783268"
+    },
+    "adaptation": {
+      "vdr": 7.071428571428571,
+      "frequency": 28,
+      "domains": [
+        "Biology",
+        "Unknown",
+        "Psychology",
+        "Embodiment"
+      ],
+      "first_seen": "2025-12-04T21:13:39.783276"
+    },
+    "network": {
+      "vdr": 7.375,
+      "frequency": 16,
+      "domains": [
+        "Control Theory",
+        "Consciousness",
+        "Unknown",
+        "Psychology"
+      ],
+      "first_seen": "2025-12-04T21:13:39.783282"
+    },
+    "complexity": {
+      "vdr": 6.833333333333333,
+      "frequency": 12,
+      "domains": [
+        "Biology",
+        "Technology",
+        "Unknown"
+      ],
+      "first_seen": "2025-12-04T21:13:39.783287"
+    }
+  },
+  "edges": {
+    "constraint": [
+      "Control Theory",
+      "Psychology",
+      "Communication",
+      "Biology",
+      "Technology",
+      "Unknown",
+      "Governance"
+    ],
+    "feedback": [
+      "Control Theory",
+      "Biology",
+      "Embodiment",
+      "Unknown"
+    ],
+    "flow": [
+      "Control Theory",
+      "Psychology",
+      "Communication",
+      "Biology",
+      "Consciousness",
+      "Technology",
+      "Governance"
+    ],
+    "adaptation": [
+      "Psychology",
+      "Biology",
+      "Embodiment",
+      "Unknown"
+    ],
+    "network": [
+      "Control Theory",
+      "Psychology",
+      "Unknown",
+      "Consciousness"
+    ],
+    "complexity": [
+      "Biology",
+      "Technology",
+      "Unknown"
+    ]
+  },
+  "domain_clusters": {
+    "Control Theory": [
+      "constraint",
+      "network",
+      "flow",
+      "feedback"
+    ],
+    "Psychology": [
+      "constraint",
+      "network",
+      "adaptation",
+      "flow"
+    ],
+    "Communication": [
+      "constraint",
+      "flow"
+    ],
+    "Biology": [
+      "constraint",
+      "flow",
+      "complexity",
+      "feedback",
+      "adaptation"
+    ],
+    "Technology": [
+      "constraint",
+      "complexity",
+      "flow"
+    ],
+    "Unknown": [
+      "constraint",
+      "complexity",
+      "feedback",
+      "adaptation",
+      "network"
+    ],
+    "Governance": [
+      "constraint",
+      "flow"
+    ],
+    "Embodiment": [
+      "adaptation",
+      "feedback"
+    ],
+    "Consciousness": [
+      "network",
+      "flow"
+    ]
+  }
+}

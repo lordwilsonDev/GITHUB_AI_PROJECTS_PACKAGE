@@ -1,0 +1,14 @@
+{
+  "id": "boundary_filter_v1",
+  "type": "governance_policy",
+  "timestamp": "auto",
+  "content": {
+    "rule": "Resources only flow toward constructive tasks aligned with goals",
+    "decision_basis": "Signal quality / Context relevance",
+    "failing_case_action": "Deprioritize or ignore"
+  },
+  "meta": {
+    "tags": ["attention", "focus", "efficiency"],
+    "goal": "Maximize productive output"
+  }
+}

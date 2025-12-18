@@ -1,0 +1,32 @@
+[package]
+name = "audit-system"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[features]
+hitl-integration = ["hitl-collab"]
+
+[dependencies]
+tokio.workspace = true
+async-trait.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+anyhow.workspace = true
+thiserror.workspace = true
+tracing.workspace = true
+rusqlite.workspace = true
+ed25519-dalek.workspace = true
+sha2.workspace = true
+rand.workspace = true
+hitl-collab = { path = "../hitl-collab", optional = true }
+
+[dev-dependencies]
+criterion.workspace = true
+
+[[bench]]
+name = "audit_system_bench"
+harness = false
+
+

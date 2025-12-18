@@ -1,0 +1,57 @@
+version: '3.8'
+
+services:
+  sovereign_memory:
+    image: redis:latest
+    container_name: sovereign_memory
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    command: redis-server --appendonly yes
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  sovereign_heart:
+    build:
+      context: ./heart
+    container_name: sovereign_heart
+    ports:
+      - "9001:9001"
+    environment:
+      - REDIS_HOST=sovereign_memory
+      - REDIS_PORT=6379
+    depends_on:
+      sovereign_memory:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9001/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  sovereign_brain:
+    build:
+      context: ./brain
+    container_name: sovereign_brain
+    ports:
+      - "8080:8080"
+    environment:
+      - REDIS_HOST=sovereign_memory
+      - REDIS_PORT=6379
+      - HEART_URL=http://sovereign_heart:9001
+    depends_on:
+      sovereign_heart:
+        condition: service_healthy
+      sovereign_memory:
+        condition: service_healthy
+
+volumes:
+  redis_data:
+
+networks:
+  default:
+    name: sovereign_network

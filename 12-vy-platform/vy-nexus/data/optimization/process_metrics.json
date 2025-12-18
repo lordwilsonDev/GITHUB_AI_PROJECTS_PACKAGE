@@ -1,0 +1,77 @@
+[
+  {
+    "id": "metric_1_20251215_222352",
+    "process_id": "proc_1_20251215_222352",
+    "duration": 120,
+    "step_durations": [
+      10,
+      15,
+      60,
+      25,
+      10
+    ],
+    "success": true,
+    "metadata": {},
+    "timestamp": "2025-12-15T22:23:52.958655"
+  },
+  {
+    "id": "metric_2_20251215_222352",
+    "process_id": "proc_1_20251215_222352",
+    "duration": 115,
+    "step_durations": [
+      10,
+      12,
+      58,
+      25,
+      10
+    ],
+    "success": true,
+    "metadata": {},
+    "timestamp": "2025-12-15T22:23:52.959009"
+  },
+  {
+    "id": "metric_3_20251215_222352",
+    "process_id": "proc_1_20251215_222352",
+    "duration": 130,
+    "step_durations": [
+      12,
+      15,
+      65,
+      28,
+      10
+    ],
+    "success": true,
+    "metadata": {},
+    "timestamp": "2025-12-15T22:23:52.959148"
+  },
+  {
+    "id": "metric_4_20251215_222352",
+    "process_id": "proc_1_20251215_222352",
+    "duration": 125,
+    "step_durations": [
+      11,
+      14,
+      62,
+      28,
+      10
+    ],
+    "success": false,
+    "metadata": {},
+    "timestamp": "2025-12-15T22:23:52.959272"
+  },
+  {
+    "id": "metric_5_20251215_222352",
+    "process_id": "proc_1_20251215_222352",
+    "duration": 118,
+    "step_durations": [
+      10,
+      13,
+      58,
+      27,
+      10
+    ],
+    "success": true,
+    "metadata": {},
+    "timestamp": "2025-12-15T22:23:52.959471"
+  }
+]

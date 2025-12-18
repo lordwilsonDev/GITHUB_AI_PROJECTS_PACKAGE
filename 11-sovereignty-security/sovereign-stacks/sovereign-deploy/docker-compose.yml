@@ -1,0 +1,109 @@
+services:
+  love-engine:
+    build: ../love-engine-real
+    container_name: sovereign_heart
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 512M
+        reservations:
+          cpus: '0.5'
+          memory: 256M
+    environment:
+    - OLLAMA_HOST=host.docker.internal:11434
+    healthcheck:
+      interval: 30s
+      retries: 3
+      start_period: 40s
+      test:
+      - CMD
+      - wget
+      - --no-verbose
+      - --tries=1
+      - --spider
+      - http://localhost:9001/health
+      timeout: 10s
+    logging:
+      driver: json-file
+      options:
+        max-file: '3'
+        max-size: 10m
+    ports:
+    - 9001:9001
+    restart: unless-stopped
+    volumes:
+    - ~/.ollama:/root/.ollama
+  motia-brain:
+    build: ../motia-recursive-agent
+    container_name: sovereign_brain
+    depends_on:
+    - redis
+    - love-engine
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 512M
+        reservations:
+          cpus: '0.5'
+          memory: 256M
+    environment:
+    - NODE_ENV=production
+    - LOVE_ENGINE_URL=http://love-engine:9001
+    - REDIS_URL=redis://redis:6379
+    - HEART_URL=http://sovereign_heart:9001
+    healthcheck:
+      interval: 30s
+      retries: 3
+      start_period: 40s
+      test:
+      - CMD
+      - wget
+      - --no-verbose
+      - --tries=1
+      - --spider
+      - http://localhost:3000/health
+      timeout: 10s
+    logging:
+      driver: json-file
+      options:
+        max-file: '3'
+        max-size: 10m
+    ports:
+    - 3000:3000
+    restart: unless-stopped
+    volumes:
+    - /Users/lordwilson/ai-agent-orchestration:/app/workspace
+  redis:
+    container_name: sovereign_memory
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 256M
+        reservations:
+          cpus: '0.25'
+          memory: 128M
+    healthcheck:
+      interval: 30s
+      retries: 3
+      test:
+      - CMD
+      - redis-cli
+      - ping
+      timeout: 10s
+    image: redis:alpine
+    logging:
+      driver: json-file
+      options:
+        max-file: '3'
+        max-size: 10m
+    ports:
+    - 6379:6379
+    restart: unless-stopped
+    volumes:
+    - motia_data:/data
+version: '3.8'
+volumes:
+  motia_data: null

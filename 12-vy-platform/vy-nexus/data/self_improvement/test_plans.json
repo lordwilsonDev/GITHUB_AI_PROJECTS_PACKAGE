@@ -1,0 +1,96 @@
+[
+  {
+    "id": "plan_20251215_225014",
+    "experiment_id": "exp_20251215_225014",
+    "steps": [
+      {
+        "step": 1,
+        "action": "Identify 50 file organization tasks",
+        "duration": "1 day"
+      },
+      {
+        "step": 2,
+        "action": "Measure baseline time for manual organization",
+        "duration": "2 days"
+      },
+      {
+        "step": 3,
+        "action": "Deploy automation",
+        "duration": "1 hour"
+      },
+      {
+        "step": 4,
+        "action": "Measure automated organization time",
+        "duration": "2 days"
+      },
+      {
+        "step": 5,
+        "action": "Collect user satisfaction feedback",
+        "duration": "1 day"
+      }
+    ],
+    "control_group": {},
+    "treatment_groups": [],
+    "metrics": [
+      "time_saved",
+      "user_satisfaction",
+      "error_rate"
+    ],
+    "data_collection_method": "automated",
+    "analysis_method": "statistical",
+    "created_at": "2025-12-15T22:50:14.980004",
+    "approved": false,
+    "executed": false
+  },
+  {
+    "id": "plan_20251215_225014",
+    "experiment_id": "exp_20251215_225014",
+    "steps": [
+      {
+        "step": 1,
+        "action": "Split users into two equal groups",
+        "duration": "1 hour"
+      },
+      {
+        "step": 2,
+        "action": "Deploy variant A to group 1",
+        "duration": "1 hour"
+      },
+      {
+        "step": 3,
+        "action": "Deploy variant B to group 2",
+        "duration": "1 hour"
+      },
+      {
+        "step": 4,
+        "action": "Collect metrics for both groups",
+        "duration": "14 days"
+      },
+      {
+        "step": 5,
+        "action": "Analyze results and determine winner",
+        "duration": "2 hours"
+      }
+    ],
+    "control_group": {
+      "name": "Current Layout",
+      "description": "Existing UI design"
+    },
+    "treatment_groups": [
+      {
+        "name": "New Layout",
+        "description": "Redesigned UI with improved flow"
+      }
+    ],
+    "metrics": [
+      "task_completion_time",
+      "user_satisfaction",
+      "error_rate"
+    ],
+    "data_collection_method": "automated",
+    "analysis_method": "statistical",
+    "created_at": "2025-12-15T22:50:14.980375",
+    "approved": false,
+    "executed": false
+  }
+]

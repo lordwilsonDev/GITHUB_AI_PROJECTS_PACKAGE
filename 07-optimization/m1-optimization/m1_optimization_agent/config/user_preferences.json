@@ -1,0 +1,184 @@
+{
+  "_comment": "M1 Optimization Agent - User Preferences",
+  "_description": "Customize these settings based on your system and use case",
+  
+  "system": {
+    "ram_gb": 8,
+    "_ram_comment": "Your system RAM: 8 or 16 GB",
+    
+    "device_type": "mac_mini",
+    "_device_comment": "Device type: mac_mini, macbook_pro, or macbook_air (affects thermal management)",
+    
+    "primary_use_case": "general",
+    "_use_case_comment": "Primary use case: general, coding, or reasoning"
+  },
+  
+  "optimization": {
+    "level": "moderate",
+    "_level_comment": "Optimization level: conservative, moderate, or aggressive",
+    
+    "auto_apply_on_startup": false,
+    "_auto_comment": "Automatically apply optimizations when agent starts",
+    
+    "backup_before_changes": true,
+    "_backup_comment": "Always backup settings before making changes"
+  },
+  
+  "windowserver": {
+    "disable_transparency": true,
+    "disable_animations": false,
+    "disable_dock_animations": false,
+    "disable_finder_animations": false,
+    "_comment": "UI optimizations - set to true to reduce WindowServer overhead"
+  },
+  
+  "spotlight": {
+    "disable_indexing": false,
+    "_comment": "Disable Spotlight indexing (aggressive optimization only)",
+    
+    "exclude_directories": [
+      "~/Library/Caches",
+      "~/.ollama",
+      "~/venv",
+      "~/node_modules"
+    ],
+    "_exclude_comment": "Directories to exclude from Spotlight indexing"
+  },
+  
+  "background_services": {
+    "disable_photoanalysisd": true,
+    "disable_mediaanalysisd": false,
+    "disable_photolibraryd": false,
+    "_comment": "Background services that compete for Neural Engine and GPU resources"
+  },
+  
+  "ollama": {
+    "num_parallel": 1,
+    "_parallel_comment": "Number of parallel requests: 1 for 8GB, 1-2 for 16GB",
+    
+    "max_loaded_models": 1,
+    "_max_models_comment": "Maximum models to keep in memory simultaneously",
+    
+    "keep_alive": "5m",
+    "_keep_alive_comment": "How long to keep models loaded: '5m', '10m', or '-1' for infinite",
+    
+    "default_context_size": 2048,
+    "_context_comment": "Default context window: 2048 for 8GB, 4096 for 16GB",
+    
+    "preferred_models": {
+      "8gb": [
+        "llama3.2:3b",
+        "mistral:7b-instruct-q4_K_M",
+        "phi3:3.8b"
+      ],
+      "16gb": [
+        "llama3.1:8b",
+        "mistral:7b-instruct-q8_0",
+        "codellama:13b-code-q4_K_M"
+      ]
+    },
+    "_models_comment": "Recommended models based on RAM size"
+  },
+  
+  "process_management": {
+    "optimize_ollama_priority": true,
+    "optimize_python_priority": false,
+    "_priority_comment": "Use taskpolicy to boost process priority",
+    
+    "disable_app_nap": true,
+    "_app_nap_comment": "Prevent macOS from throttling background processes",
+    
+    "prevent_sleep_during_inference": false,
+    "_sleep_comment": "Use caffeinate to prevent system sleep"
+  },
+  
+  "thermal_management": {
+    "enable_custom_fan_control": false,
+    "_thermal_comment": "Requires Macs Fan Control app",
+    
+    "min_fan_speed_rpm": 3000,
+    "_fan_speed_comment": "Minimum fan speed for active cooling (Mac Mini/MacBook Pro only)",
+    
+    "target_sensor": "CPU Efficiency Core",
+    "_sensor_comment": "Sensor to monitor: 'CPU Efficiency Core', 'CPU Performance Core', or 'GPU'"
+  },
+  
+  "python_environment": {
+    "use_uv": true,
+    "_uv_comment": "Use uv package manager (8-10x faster than pip)",
+    
+    "install_mlx": false,
+    "_mlx_comment": "Install Apple MLX for native M1 support",
+    
+    "install_pytorch_mps": false,
+    "_pytorch_comment": "Install PyTorch with Metal Performance Shaders support",
+    
+    "default_env_name": "m1_llm_env",
+    "_env_name_comment": "Default virtual environment name"
+  },
+  
+  "monitoring": {
+    "enabled": true,
+    "log_interval_seconds": 300,
+    "_interval_comment": "How often to log system status (in seconds)",
+    
+    "alert_thresholds": {
+      "memory_percent": 85,
+      "cpu_percent": 90,
+      "disk_percent": 90,
+      "swap_percent": 50
+    },
+    "_thresholds_comment": "Alert when resource usage exceeds these percentages",
+    
+    "track_ollama_performance": true,
+    "_performance_comment": "Track Ollama process CPU and memory usage"
+  },
+  
+  "autogen": {
+    "model": "gpt-4",
+    "_model_comment": "LLM model for AutoGen agent: gpt-4, gpt-3.5-turbo, or local model",
+    
+    "temperature": 0.7,
+    "_temperature_comment": "Temperature for LLM responses (0.0-1.0)",
+    
+    "max_consecutive_auto_reply": 10,
+    "_auto_reply_comment": "Maximum automatic replies before requiring user input",
+    
+    "timeout_seconds": 120,
+    "_timeout_comment": "Timeout for LLM API calls"
+  },
+  
+  "safety": {
+    "require_confirmation_for_aggressive": true,
+    "_confirmation_comment": "Require user confirmation before aggressive optimizations",
+    
+    "create_restore_point": true,
+    "_restore_comment": "Create system restore point before major changes",
+    
+    "dry_run_mode": false,
+    "_dry_run_comment": "Show what would be done without actually doing it"
+  },
+  
+  "advanced": {
+    "custom_ollama_host": "http://localhost:11434",
+    "_host_comment": "Ollama API endpoint",
+    
+    "custom_models_path": "~/.ollama/models",
+    "_models_path_comment": "Custom path for Ollama models",
+    
+    "enable_experimental_features": false,
+    "_experimental_comment": "Enable experimental optimizations (use with caution)",
+    
+    "custom_env_vars": {},
+    "_custom_env_comment": "Additional environment variables to set"
+  },
+  
+  "notifications": {
+    "enabled": false,
+    "_notifications_comment": "Send system notifications for important events",
+    
+    "notify_on_optimization_complete": true,
+    "notify_on_high_memory": true,
+    "notify_on_thermal_throttle": true
+  }
+}

@@ -1,0 +1,49 @@
+[
+  {
+    "opportunity_id": "auto_1",
+    "type": "task_automation",
+    "title": "Automate file_organization tasks",
+    "description": "This task type occurs 3 times. Consider creating an automation.",
+    "potential_time_saved": 360,
+    "priority": "medium",
+    "implementation_suggestions": [
+      "Create a script or macro",
+      "Build a workflow template",
+      "Use keyboard shortcuts"
+    ],
+    "pattern_reference": {
+      "pattern_type": "task_type_repetition",
+      "task_type": "file_organization",
+      "frequency": 3,
+      "average_duration": 120.0,
+      "total_time_spent": 360,
+      "automation_potential": "medium",
+      "identified_at": "2025-12-15T22:19:05.707742"
+    },
+    "created_at": "2025-12-15T22:19:05.707993"
+  },
+  {
+    "opportunity_id": "auto_2",
+    "type": "high_priority_automation",
+    "title": "Automate time-consuming file_organization",
+    "description": "This task takes 360.0s total. High ROI for automation.",
+    "potential_time_saved": 360,
+    "priority": "high",
+    "implementation_suggestions": [
+      "Create dedicated automation script",
+      "Optimize existing process",
+      "Use batch processing"
+    ],
+    "pattern_reference": {
+      "pattern_type": "time_consuming_repetition",
+      "task_type": "file_organization",
+      "frequency": 3,
+      "total_time_spent": 360,
+      "average_time": 120.0,
+      "automation_potential": "high",
+      "priority": "high",
+      "identified_at": "2025-12-15T22:19:05.707765"
+    },
+    "created_at": "2025-12-15T22:19:05.707997"
+  }
+]

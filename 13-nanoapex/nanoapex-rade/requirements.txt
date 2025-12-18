@@ -1,0 +1,6 @@
+psutil
+target_finder
+tempfile
+tree_sitter
+tree_sitter_python
+watchdog

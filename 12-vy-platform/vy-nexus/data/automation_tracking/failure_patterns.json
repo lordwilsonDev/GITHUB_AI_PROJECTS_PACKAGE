@@ -1,0 +1,35 @@
+{
+  "patterns": {
+    "data_sync": {
+      "error_types": {
+        "timeout": 1
+      },
+      "failure_contexts": [
+        {
+          "error_message": "Connection timeout",
+          "context": null,
+          "timestamp": "2025-12-15T22:46:35.011681"
+        }
+      ],
+      "common_causes": [
+        "timeout (1 occurrences)"
+      ]
+    },
+    "report_gen": {
+      "error_types": {
+        "resource_exhaustion": 1
+      },
+      "failure_contexts": [
+        {
+          "error_message": "Memory exhausted",
+          "context": null,
+          "timestamp": "2025-12-15T22:46:35.012561"
+        }
+      ],
+      "common_causes": [
+        "resource_exhaustion (1 occurrences)"
+      ]
+    }
+  },
+  "last_analyzed": "2025-12-15T22:46:35.012565"
+}

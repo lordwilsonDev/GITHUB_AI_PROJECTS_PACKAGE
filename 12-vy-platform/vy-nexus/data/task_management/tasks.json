@@ -1,0 +1,77 @@
+{
+  "tasks": [
+    {
+      "task_id": "task_000001",
+      "title": "Write documentation",
+      "description": "Write API documentation",
+      "task_type": "documentation",
+      "status": "pending",
+      "priority": 7,
+      "adaptive_priority": 5.95,
+      "estimated_duration": 60,
+      "actual_duration": null,
+      "deadline": "2025-12-17T22:50:59.051754",
+      "dependencies": [],
+      "context": {
+        "complexity": "medium"
+      },
+      "created_at": "2025-12-15T22:50:59.051764",
+      "updated_at": "2025-12-15T22:50:59.052954",
+      "started_at": null,
+      "completed_at": null,
+      "attempts": 0,
+      "success_probability": 0.5
+    },
+    {
+      "task_id": "task_000002",
+      "title": "Fix critical bug",
+      "description": "Fix production bug",
+      "task_type": "bugfix",
+      "status": "completed",
+      "priority": 9,
+      "adaptive_priority": 7.43,
+      "estimated_duration": 30,
+      "actual_duration": 0.0,
+      "deadline": "2025-12-16T02:50:59.051947",
+      "dependencies": [],
+      "context": {
+        "complexity": "high"
+      },
+      "created_at": "2025-12-15T22:50:59.051951",
+      "updated_at": "2025-12-15T22:50:59.052351",
+      "started_at": "2025-12-15T22:50:59.052273",
+      "completed_at": "2025-12-15T22:50:59.052350",
+      "attempts": 1,
+      "success_probability": 0.5,
+      "completion_notes": "Completed successfully"
+    },
+    {
+      "task_id": "task_000003",
+      "title": "Deploy to production",
+      "description": "Deploy after testing",
+      "task_type": "deployment",
+      "status": "pending",
+      "priority": 8,
+      "adaptive_priority": 5.71,
+      "estimated_duration": 15,
+      "actual_duration": null,
+      "deadline": null,
+      "dependencies": [
+        "task_000001"
+      ],
+      "context": {
+        "complexity": "low"
+      },
+      "created_at": "2025-12-15T22:50:59.052652",
+      "updated_at": "2025-12-15T22:50:59.052757",
+      "started_at": null,
+      "completed_at": null,
+      "attempts": 0,
+      "success_probability": 0.5
+    }
+  ],
+  "metadata": {
+    "total_tasks": 3,
+    "completed_tasks": 1
+  }
+}

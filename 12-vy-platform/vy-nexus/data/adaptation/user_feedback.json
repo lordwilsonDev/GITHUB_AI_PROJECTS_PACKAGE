@@ -1,0 +1,18 @@
+[
+  {
+    "id": "feedback_1",
+    "timestamp": "2025-12-15T22:29:37.368877",
+    "interaction_id": "interaction_1",
+    "feedback_type": "positive",
+    "feedback_text": "Perfect! Just what I needed.",
+    "rating": 5
+  },
+  {
+    "id": "feedback_2",
+    "timestamp": "2025-12-15T22:29:37.369023",
+    "interaction_id": "interaction_2",
+    "feedback_type": "negative",
+    "feedback_text": "Too long, please be more concise.",
+    "rating": 2
+  }
+]

@@ -1,0 +1,65 @@
+[
+  {
+    "execution_id": "exec_1",
+    "automation_id": "data_sync",
+    "success": true,
+    "duration": 28.5,
+    "error_message": null,
+    "context": {},
+    "timestamp": "2025-12-15T22:46:35.011073"
+  },
+  {
+    "execution_id": "exec_2",
+    "automation_id": "data_sync",
+    "success": true,
+    "duration": 31.2,
+    "error_message": null,
+    "context": {},
+    "timestamp": "2025-12-15T22:46:35.011309"
+  },
+  {
+    "execution_id": "exec_3",
+    "automation_id": "data_sync",
+    "success": false,
+    "duration": 45.0,
+    "error_message": "Connection timeout",
+    "context": {},
+    "timestamp": "2025-12-15T22:46:35.011494"
+  },
+  {
+    "execution_id": "exec_4",
+    "automation_id": "data_sync",
+    "success": true,
+    "duration": 29.8,
+    "error_message": null,
+    "context": {},
+    "timestamp": "2025-12-15T22:46:35.011754"
+  },
+  {
+    "execution_id": "exec_5",
+    "automation_id": "report_gen",
+    "success": true,
+    "duration": 58.3,
+    "error_message": null,
+    "context": {},
+    "timestamp": "2025-12-15T22:46:35.011939"
+  },
+  {
+    "execution_id": "exec_6",
+    "automation_id": "report_gen",
+    "success": true,
+    "duration": 62.1,
+    "error_message": null,
+    "context": {},
+    "timestamp": "2025-12-15T22:46:35.012132"
+  },
+  {
+    "execution_id": "exec_7",
+    "automation_id": "report_gen",
+    "success": false,
+    "duration": 90.0,
+    "error_message": "Memory exhausted",
+    "context": {},
+    "timestamp": "2025-12-15T22:46:35.012357"
+  }
+]

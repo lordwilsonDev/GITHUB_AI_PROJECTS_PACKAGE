@@ -1,0 +1,5 @@
+backend
+fastapi
+psutil
+pydantic
+requests

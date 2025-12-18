@@ -1,0 +1,78 @@
+/Users/lordwilson/sovereign-keep/venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+
+======================================================================
+  SOVEREIGN KEEP PROTOCOL - DEMO
+======================================================================
+
+Loading sample notes from: /Users/lordwilson/sovereign-keep/demo_data/sample_notes.json
+Loaded 10 sample notes
+
+Initializing Semantic Auditor...
+  - Loading all-MiniLM-L6-v2 model...
+[Analysis] Loading embedding model: all-MiniLM-L6-v2...
+[Analysis] ✓ Model loaded successfully.
+  ✓ Model loaded
+
+Analyzing note vitality (entropy + age)...
+----------------------------------------------------------------------
+Note Title                          Entropy    Age (days)   Vitality
+----------------------------------------------------------------------
+Book Recommendations                4.69       727          0.19
+Workout Routine                     4.49       728          0.18
+Meeting Notes - Q4 Planning         4.32       728          0.17
+Q4 Planning Meeting                 4.30       729          0.17
+Project Ideas                       4.22       729          0.17
+Shopping                            4.18       731          0.16
+App Development Ideas               4.07       730          0.16
+Password Reset                      3.91       733          0.15
+Grocery List                        3.84       730          0.15
+Random Thought                      1.92       732          0.08
+
+======================================================================
+Finding redundancy clusters (similarity threshold: 0.85)...
+======================================================================
+
+[Analysis] Fetching notes...
+[Analysis] Analyzing 10 notes...
+[Analysis] Generating embeddings...
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  7.44it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  7.44it/s]
+[Analysis] Calculating similarity matrix...
+[Analysis] Building similarity graph (threshold=0.85)...
+[Analysis] Found 1 similarity connections.
+[Analysis] ✓ Found 1 redundancy clusters.
+Found 1 redundancy cluster(s):
+
+Cluster 1: 2 similar notes
+----------------------------------------------------------------------
+  • Meeting Notes - Q4 Planning
+    Preview: Discussed quarterly goals
+Reviewed budget allocations
+Set te...
+    Labels: Work
+    Updated: 2023-12-18
+
+  • Q4 Planning Meeting
+    Preview: Team meeting about Q4
+Budget review
+Objectives for the quart...
+    Labels: Work
+    Updated: 2023-12-17
+
+  → Recommended survivor: 'Meeting Notes - Q4 Planning'
+    (Most detailed: 90 chars)
+
+======================================================================
+SUMMARY
+======================================================================
+Total notes analyzed: 10
+Redundancy clusters found: 1
+Potential duplicates: 1
+
+Highest vitality: Book Recommendations (0.19)
+Lowest vitality: Random Thought (0.08)
+
+======================================================================
+Demo complete! The semantic analysis engine is working correctly.
+======================================================================
+

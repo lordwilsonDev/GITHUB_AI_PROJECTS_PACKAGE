@@ -1,0 +1,49 @@
+[
+  {
+    "timestamp": "2025-12-15T22:16:06.957912",
+    "task_id": "task_001",
+    "task_type": "file_organization",
+    "duration": 180,
+    "steps_count": 8,
+    "tools_used": [
+      "finder",
+      "terminal"
+    ],
+    "success": true,
+    "user_satisfaction": 0.9,
+    "complexity": "medium",
+    "automation_level": 0.6,
+    "efficiency_score": 0.655
+  },
+  {
+    "timestamp": "2025-12-15T22:16:06.958069",
+    "task_id": "task_002",
+    "task_type": "code_analysis",
+    "duration": 720,
+    "steps_count": 25,
+    "tools_used": [
+      "terminal",
+      "python"
+    ],
+    "success": true,
+    "user_satisfaction": 0.7,
+    "complexity": "high",
+    "automation_level": 0.3,
+    "efficiency_score": 0.45
+  },
+  {
+    "timestamp": "2025-12-15T22:16:06.958231",
+    "task_id": "task_003",
+    "task_type": "file_organization",
+    "duration": 150,
+    "steps_count": 6,
+    "tools_used": [
+      "finder"
+    ],
+    "success": true,
+    "user_satisfaction": 0.95,
+    "complexity": "low",
+    "automation_level": 0.8,
+    "efficiency_score": 0.747
+  }
+]

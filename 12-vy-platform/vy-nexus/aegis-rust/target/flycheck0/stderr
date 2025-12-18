@@ -1,0 +1,77 @@
+   0.415041167s  INFO prepare_target{force=false package_id=aegis-rust v0.1.0 (/Users/lordwilson/vy-nexus/aegis-rust) target="aegis-rust"}: cargo::core::compiler::fingerprint: fingerprint error for aegis-rust v0.1.0 (/Users/lordwilson/vy-nexus/aegis-rust)/Check { test: false }/TargetInner { name: "aegis-rust", doc: true, ..: with_path("/Users/lordwilson/vy-nexus/aegis-rust/src/main.rs", Edition2021) }
+   0.415169750s  INFO prepare_target{force=false package_id=aegis-rust v0.1.0 (/Users/lordwilson/vy-nexus/aegis-rust) target="aegis-rust"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/lordwilson/vy-nexus/aegis-rust/target/debug/.fingerprint/aegis-rust-593ae629ff587769/bin-aegis-rust`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: <std::io::error::Error as anyhow::context::ext::StdError>::ext_context::<alloc::string::String>
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   6: cargo::ops::cargo_compile::compile_ws
+   7: cargo::ops::cargo_compile::compile_with_exec
+   8: cargo::ops::cargo_compile::compile
+   9: cargo::commands::check::exec
+  10: <cargo::cli::Exec>::exec
+  11: cargo::cli::main
+  12: cargo::main
+  13: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  14: std::rt::lang_start::<()>::{closure#0}
+  15: std::rt::lang_start_internal
+  16: _main
+   0.443404958s  INFO prepare_target{force=false package_id=aegis-rust v0.1.0 (/Users/lordwilson/vy-nexus/aegis-rust) target="aegis-rust"}: cargo::core::compiler::fingerprint: fingerprint error for aegis-rust v0.1.0 (/Users/lordwilson/vy-nexus/aegis-rust)/Check { test: true }/TargetInner { name: "aegis-rust", doc: true, ..: with_path("/Users/lordwilson/vy-nexus/aegis-rust/src/main.rs", Edition2021) }
+   0.443415667s  INFO prepare_target{force=false package_id=aegis-rust v0.1.0 (/Users/lordwilson/vy-nexus/aegis-rust) target="aegis-rust"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/lordwilson/vy-nexus/aegis-rust/target/debug/.fingerprint/aegis-rust-ea05ecd6d5d789db/test-bin-aegis-rust`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: <std::io::error::Error as anyhow::context::ext::StdError>::ext_context::<alloc::string::String>
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   6: cargo::ops::cargo_compile::compile_ws
+   7: cargo::ops::cargo_compile::compile_with_exec
+   8: cargo::ops::cargo_compile::compile
+   9: cargo::commands::check::exec
+  10: <cargo::cli::Exec>::exec
+  11: cargo::cli::main
+  12: cargo::main
+  13: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  14: std::rt::lang_start::<()>::{closure#0}
+  15: std::rt::lang_start_internal
+  16: _main
+   0.444788750s  INFO prepare_target{force=false package_id=aegis-rust v0.1.0 (/Users/lordwilson/vy-nexus/aegis-rust) target="integration_tests"}: cargo::core::compiler::fingerprint: fingerprint error for aegis-rust v0.1.0 (/Users/lordwilson/vy-nexus/aegis-rust)/Check { test: true }/TargetInner { kind: "test", name: "integration_tests", benched: false, ..: with_path("/Users/lordwilson/vy-nexus/aegis-rust/tests/integration_tests.rs", Edition2021) }
+   0.444795750s  INFO prepare_target{force=false package_id=aegis-rust v0.1.0 (/Users/lordwilson/vy-nexus/aegis-rust) target="integration_tests"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/lordwilson/vy-nexus/aegis-rust/target/debug/.fingerprint/aegis-rust-e49b764481b7c577/test-integration-test-integration_tests`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: <std::io::error::Error as anyhow::context::ext::StdError>::ext_context::<alloc::string::String>
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   6: cargo::ops::cargo_compile::compile_ws
+   7: cargo::ops::cargo_compile::compile_with_exec
+   8: cargo::ops::cargo_compile::compile
+   9: cargo::commands::check::exec
+  10: <cargo::cli::Exec>::exec
+  11: cargo::cli::main
+  12: cargo::main
+  13: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  14: std::rt::lang_start::<()>::{closure#0}
+  15: std::rt::lang_start_internal
+  16: _main
+    Checking aegis-rust v0.1.0 (/Users/lordwilson/vy-nexus/aegis-rust)
+error: could not compile `aegis-rust` (bin "aegis-rust") due to 21 previous errors; 1 warning emitted
+warning: build failed, waiting for other jobs to finish...
+error: could not compile `aegis-rust` (bin "aegis-rust" test) due to 21 previous errors; 1 warning emitted
+error: could not compile `aegis-rust` (test "integration_tests") due to 53 previous errors; 3 warnings emitted

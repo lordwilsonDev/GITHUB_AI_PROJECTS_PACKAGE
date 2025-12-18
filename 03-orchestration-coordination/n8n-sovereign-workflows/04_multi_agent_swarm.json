@@ -1,0 +1,103 @@
+{
+  "name": "Multi-Agent Swarm Coordinator",
+  "instructions": {
+    "purpose": "Orchestrate JARVIS + Nanoapex + Epistemic Researcher + Physical Hand for complex tasks",
+    "flow": [
+      {
+        "step": "1_problem_decomposition",
+        "action": "Receive complex multi-domain problem",
+        "input": {
+          "problem": "string - complex challenge requiring multiple domains",
+          "constraints": "array - time, safety, resource limits"
+        },
+        "process": "Use Level 8 prompt to decompose into sub-problems",
+        "output": "array of {sub_problem, required_agent, dependencies}"
+      },
+      {
+        "step": "2_agent_assignment",
+        "action": "Map sub-problems to specialized agents",
+        "agents": [
+          {
+            "name": "jarvis_analytics",
+            "endpoint": "http://localhost:8001/analyze",
+            "specialty": "data analysis, optimization, system health"
+          },
+          {
+            "name": "nanoapex_executor",
+            "endpoint": "http://localhost:8002/execute",
+            "specialty": "code generation, automation, RADE integration"
+          },
+          {
+            "name": "epistemic_researcher",
+            "endpoint": "http://localhost:3000/research",
+            "specialty": "truth validation, source verification, knowledge gaps"
+          },
+          {
+            "name": "physical_hand",
+            "endpoint": "http://localhost:3000/physical/execute",
+            "specialty": "actual execution, file ops, system commands"
+          }
+        ]
+      },
+      {
+        "step": "3_dependency_graph",
+        "action": "Build execution DAG based on dependencies",
+        "algorithm": "Topological sort of sub_problems",
+        "identify": "Which tasks can run parallel vs sequential"
+      },
+      {
+        "step": "4_parallel_execution",
+        "action": "Launch independent sub-problems simultaneously",
+        "for_each": "sub_problem with no pending dependencies",
+        "request": {
+          "agent": "{{assigned_agent}}",
+          "task": "{{sub_problem}}",
+          "context": "{{shared_context}}"
+        },
+        "track": "execution_id for each agent call"
+      },
+      {
+        "step": "5_love_engine_validation",
+        "action": "Each agent result passes through validation",
+        "endpoint": "http://localhost:9001/validate",
+        "validates": [
+          "intent alignment (torsion < 0.01)",
+          "safety constraints met",
+          "no contradictions with other agent results"
+        ]
+      },
+      {
+        "step": "6_result_synthesis",
+        "action": "Combine validated agent outputs",
+        "method": "POST to sovereign_brain /synthesize",
+        "payload": {
+          "agent_results": "array of validated outputs",
+          "original_problem": "{{complex_problem}}",
+          "synthesis_goal": "coherent unified solution"
+        }
+      },
+      {
+        "step": "7_geometric_lock",
+        "action": "Generate immutable audit trail",
+        "hash": "SHA256 of (problem + all_agent_actions + synthesis)",
+        "store": "Redis HSET execution_locks {{timestamp}} {{hash}}"
+      },
+      {
+        "step": "8_optimistic_return",
+        "action": "Return synthesized solution immediately",
+        "async_proof": "Trigger ZK proof generation in background",
+        "response": {
+          "solution": "{{synthesis_result}}",
+          "confidence": "{{min(agent_confidences)}}",
+          "execution_lock": "{{geometry_hash}}",
+          "agents_involved": "{{agent_names}}"
+        }
+      }
+    ]
+  },
+  "configuration": {
+    "max_parallel_agents": 4,
+    "agent_timeout": "30 seconds",
+    "synthesis_timeout": "10 seconds"
+  }
+}
