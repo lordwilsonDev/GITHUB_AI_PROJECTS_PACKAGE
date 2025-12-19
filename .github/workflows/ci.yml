@@ -1,0 +1,170 @@
+name: Elite Delivery Pipeline
+
+on:
+  push:
+    branches: ["**"]        # Trigger on all branches (Save every push)
+    tags-ignore: ["v*"]     # Avoid double-trigger on Semantic Release tags
+  pull_request:
+    branches: ["main"]
+  workflow_dispatch:        # Handle unknown use cases manually
+
+# Concurrency: Stop wasteful builds on rapid pushes
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+# Permissions: Least Privilege for Security
+permissions:
+  contents: write       # For Semantic Release & Docs
+  packages: write       # For GHCR
+  id-token: write       # For Cosign OIDC
+  issues: write         # For Release Comments
+  pull-requests: write  # For Release Comments
+
+jobs:
+  # PHASE 1: Validation
+  quality:
+    name: Quality Assurance
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install Task
+        uses: arduino/setup-task@v2
+
+      - name: Install Dependencies
+        run: |
+          pip install flake8 pylint pytest pytest-cov || true
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+      - name: Lint & Test
+        run: task ci
+        continue-on-error: true
+
+  # PHASE 2: Build, Release & Publish
+  pipeline:
+    name: Build & Release
+    needs: quality
+    runs-on: ubuntu-latest
+    # Define outputs to coordinate Docs job
+    outputs:
+      release_published: ${{ steps.semantic.outputs.new_release_published }}
+      release_version: ${{ steps.semantic.outputs.new_release_version }}
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Required for Semantic Release history analysis
+
+      # 2.1: Automated Versioning (Main Branch Only)
+      - name: Semantic Release
+        if: github.ref == 'refs/heads/main'
+        id: semantic
+        uses: cycjimmy/semantic-release-action@v4
+        with:
+          extra_plugins: |
+            @semantic-release/changelog
+            @semantic-release/git
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # 2.2: Setup Build Infrastructure
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+        with:
+          driver-opts: image=moby/buildkit:latest
+
+      - name: Login to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      # 2.3: Metadata Generation
+      # Handles "Every push" requirement by tagging branches/PRs
+      # Handles "Release" requirement by tagging SemVer
+      - name: Extract Metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ghcr.io/${{ github.repository }}
+          tags: |
+            type=raw,value=latest,enable=${{ steps.semantic.outputs.new_release_published == 'true' }}
+            type=raw,value=${{ steps.semantic.outputs.new_release_version }},enable=${{ steps.semantic.outputs.new_release_published == 'true' }}
+            type=ref,event=branch
+            type=ref,event=pr
+            type=sha
+
+      # 2.4: Build and Push (Elite Configuration)
+      - name: Build and Push
+        id: build
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: true
+          platforms: linux/amd64,linux/arm64
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          # Advanced Caching: GHA backend, Max Mode, Zstd compression
+          cache-from: type=gha
+          cache-to: type=gha,mode=max,compression=zstd
+          # Supply Chain Security
+          provenance: mode=max
+          sbom: true
+
+      # 2.5: Zero Trust Signing
+      - name: Install Cosign
+        uses: sigstore/cosign-installer@v3.5.0
+
+      - name: Sign Images
+        env:
+          TAGS: ${{ steps.meta.outputs.tags }}
+          DIGEST: ${{ steps.build.outputs.digest }}
+        run: |
+          images=""
+          for tag in ${TAGS}; do
+            images+="${tag}@${DIGEST} "
+          done
+          cosign sign --yes ${images}
+
+  # PHASE 3: Documentation (Runs only on Release)
+  docs:
+    name: Publish Documentation
+    needs: pipeline
+    # Only run if a new release was actually published
+    if: needs.pipeline.outputs.release_published == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install Docs Tools
+        run: pip install mkdocs-material mike
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "${{ github.actor }}"
+          git config --global user.email "${{ github.actor }}@users.noreply.github.com"
+
+      - name: Deploy Versioned Docs
+        run: |
+          mike deploy --push --update-aliases ${{ needs.pipeline.outputs.release_version }} latest

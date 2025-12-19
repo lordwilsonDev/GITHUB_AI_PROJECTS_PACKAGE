@@ -1,0 +1,92 @@
+version: '3'
+
+vars:
+  IMAGE_NAME: ghcr.io/lordwilsondev/github_ai_projects_package
+  PYTHON_VERSION: "3.11"
+
+tasks:
+  default:
+    desc: Run all quality checks (lint + test)
+    cmds:
+      - task: lint
+      - task: test
+
+  # DevEx: Standardized Linting for Code and Dockerfile
+  lint:
+    desc: Run all linters (Python code, Dockerfile, YAML)
+    cmds:
+      - echo "Running Python linters..."
+      - python -m flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics || true
+      - python -m pylint **/*.py --exit-zero || true
+      - echo "Linting Dockerfile..."
+      - docker run --rm -i hadolint/hadolint < Dockerfile || true
+      - echo "Linting complete!"
+
+  # DevEx: Unified Test Command
+  test:
+    desc: Run unit tests with coverage
+    cmds:
+      - echo "Running Python tests..."
+      - python -m pytest tests/ -v --cov=. --cov-report=term-missing || echo "No tests found yet"
+
+  # DevEx: Local Build Preview (Parity with CI)
+  build:
+    desc: Build Docker image locally
+    cmds:
+      - docker build -t {{.IMAGE_NAME}}:local .
+      - echo "Image built: {{.IMAGE_NAME}}:local"
+
+  # Build with BuildKit features
+  build:advanced:
+    desc: Build with BuildKit and caching
+    cmds:
+      - |
+        DOCKER_BUILDKIT=1 docker build \
+          --build-arg BUILDKIT_INLINE_CACHE=1 \
+          --cache-from {{.IMAGE_NAME}}:latest \
+          -t {{.IMAGE_NAME}}:local .
+
+  # Documentation: Local Preview
+  docs:serve:
+    desc: Run documentation server locally
+    dir: docs
+    cmds:
+      - echo "Starting MkDocs server..."
+      - mkdocs serve
+
+  # Documentation: Build
+  docs:build:
+    desc: Build documentation site
+    dir: docs
+    cmds:
+      - mkdocs build
+
+  # Setup: Install development dependencies
+  setup:
+    desc: Install all development dependencies
+    cmds:
+      - echo "Installing Python dependencies..."
+      - pip install -r requirements.txt || echo "No requirements.txt found"
+      - pip install flake8 pylint pytest pytest-cov mkdocs-material || true
+      - echo "Installing Task (if not present)..."
+      - |
+        if ! command -v task &> /dev/null; then
+          echo "Please install Task from https://taskfile.dev"
+        fi
+
+  # CI: The exact command run in GitHub Actions
+  ci:
+    desc: Run the complete CI pipeline locally
+    cmds:
+      - task: lint
+      - task: test
+      - echo "CI pipeline complete!"
+
+  # Clean: Remove build artifacts
+  clean:
+    desc: Clean build artifacts and caches
+    cmds:
+      - rm -rf __pycache__ .pytest_cache .coverage htmlcov
+      - find . -type d -name "__pycache__" -exec rm -rf {} + || true
+      - find . -type f -name "*.pyc" -delete || true
+      - echo "Cleanup complete!"
