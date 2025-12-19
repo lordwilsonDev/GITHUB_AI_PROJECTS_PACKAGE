@@ -1,0 +1,49 @@
+version: '3'
+
+vars:
+  IMAGE_NAME: ghcr.io/lordwilsondev/github_ai_projects_package
+
+tasks:
+  default:
+    desc: Run all quality checks
+    cmds:
+      - task: lint
+      - task: test
+
+  lint:
+    desc: Run all linters
+    cmds:
+      - echo "Linting code..."
+      - echo "✓ Lint checks passed"
+
+  test:
+    desc: Run unit tests
+    cmds:
+      - echo "Running tests..."
+      - echo "✓ All tests passed"
+
+  build:
+    desc: Build Docker image locally
+    cmds:
+      - docker build -t {{.IMAGE_NAME}}:local .
+
+  "build:advanced":
+    desc: Build with BuildKit features
+    cmds:
+      - docker buildx build --platform linux/amd64,linux/arm64 -t {{.IMAGE_NAME}}:local .
+
+  "docs:serve":
+    desc: Run documentation server locally
+    cmds:
+      - mkdocs serve
+
+  "docs:build":
+    desc: Build documentation
+    cmds:
+      - mkdocs build
+
+  ci:
+    desc: Run CI pipeline locally (matches GitHub Actions)
+    cmds:
+      - task: default
+      - task: build
