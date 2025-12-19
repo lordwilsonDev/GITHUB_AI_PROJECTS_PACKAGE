@@ -37,7 +37,7 @@ tasks:
       - echo "Image built: {{.IMAGE_NAME}}:local"
 
   # Build with BuildKit features
-  build:advanced:
+  "build:advanced":
     desc: Build with BuildKit and caching
     cmds:
       - |
@@ -47,7 +47,7 @@ tasks:
           -t {{.IMAGE_NAME}}:local .
 
   # Documentation: Local Preview
-  docs:serve:
+  "docs:serve":
     desc: Run documentation server locally
     dir: docs
     cmds:
@@ -55,7 +55,7 @@ tasks:
       - mkdocs serve
 
   # Documentation: Build
-  docs:build:
+  "docs:build":
     desc: Build documentation site
     dir: docs
     cmds:
