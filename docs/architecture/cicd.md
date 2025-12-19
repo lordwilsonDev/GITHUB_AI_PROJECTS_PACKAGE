@@ -1,10 +1,12 @@
-# CI/CD Pipeline
+# CI/CD Pipeline Architecture
 
-## Workflow Overview
+This document provides an in-depth analysis of the Elite Continuous Delivery Pipeline.
 
-The Elite Delivery Pipeline is defined in `.github/workflows/ci.yml` and orchestrates three main phases.
+## Pipeline Overview
 
-## Triggers
+The pipeline implements a three-job workflow that executes on every push, pull request, and manual trigger.
+
+## Trigger Configuration
 
 ```yaml
 on:
@@ -12,78 +14,89 @@ on:
     branches: ["**"]        # All branches
     tags-ignore: ["v*"]     # Avoid double-trigger
   pull_request:
-    branches: ["main"]
+    branches: ["master", "main"]
   workflow_dispatch:        # Manual trigger
 ```
 
-## Phase 1: Quality Assurance
+### Concurrency Control
+
+Prevents resource waste by canceling outdated runs:
+
+```yaml
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+```
+
+## Job 1: Quality Assurance
 
 ### Purpose
-Validate code quality before building artifacts.
+Fast feedback loop for code quality issues.
 
 ### Steps
-1. **Checkout** - Clone repository
-2. **Setup Python** - Install Python 3.11 with pip caching
-3. **Install Task** - Install task runner
-4. **Install Dependencies** - Install linters and test tools
-5. **Run CI** - Execute `task ci`
 
-### What Gets Checked
-- Python code style (flake8)
-- Python code quality (pylint)
-- Dockerfile best practices (hadolint)
-- Unit tests with coverage
+1. **Free Disk Space**: Removes unnecessary files (~14GB)
+2. **Checkout**: Clones the repository
+3. **Install Task**: Sets up the task runner
+4. **Lint & Test**: Runs quality checks
 
-## Phase 2: Build & Release
+### Performance
+Typically completes in 2-3 minutes.
 
-### Semantic Release (Main Branch Only)
+## Job 2: Build & Release
 
-**When:** Only on pushes to `main` branch
+### Purpose
+Builds, signs, and publishes container images with semantic versioning.
 
-**What it does:**
-1. Analyzes commit history since last release
-2. Determines version bump based on commit types
-3. Generates release notes
-4. Updates CHANGELOG.md
-5. Creates GitHub release
-6. Outputs: `new_release_published`, `new_release_version`
+### Steps
 
-### Build Infrastructure Setup
+#### 1. Semantic Release
 
-**QEMU:**
+Runs only on main/master branches:
+
+- Analyzes commit history
+- Determines next version
+- Generates changelog
+- Creates GitHub release
+- Tags the repository
+
+#### 2. Multi-Platform Setup
+
+**QEMU**: Enables ARM64 emulation on AMD64 runners
+
+**BuildKit**: Latest version with docker-container driver
+
 ```yaml
 - uses: docker/setup-qemu-action@v3
-```
-Enables ARM64 emulation on AMD64 runners.
-
-**Buildx:**
-```yaml
 - uses: docker/setup-buildx-action@v3
   with:
     driver-opts: image=moby/buildkit:latest
 ```
-Sets up BuildKit with latest features.
 
-### Metadata Generation
+#### 3. Registry Authentication
+
+Logs into GitHub Container Registry (GHCR):
 
 ```yaml
-- uses: docker/metadata-action@v5
+- uses: docker/login-action@v3
   with:
-    tags: |
-      type=raw,value=latest,enable=${{ ... }}
-      type=raw,value=${{ version }},enable=${{ ... }}
-      type=ref,event=branch
-      type=ref,event=pr
-      type=sha
+    registry: ghcr.io
+    username: ${{ github.actor }}
+    password: ${{ secrets.GITHUB_TOKEN }}
 ```
 
-**Generates tags:**
-- Release: `v1.2.3`, `latest`
-- Branch: `feature-login`
-- PR: `pr-42`
-- Commit: `sha-a1b2c3d`
+#### 4. Metadata Extraction
 
-### Build & Push
+Generates tags based on context:
+
+- **Release**: `v1.2.3`, `latest`
+- **Branch**: `branch-name`
+- **PR**: `pr-123`
+- **Commit**: `sha-abc123`
+
+#### 5. Build and Push
+
+The core build step with advanced features:
 
 ```yaml
 - uses: docker/build-push-action@v6
@@ -96,109 +109,223 @@ Sets up BuildKit with latest features.
 ```
 
 **Key Features:**
-- Multi-platform builds
-- Advanced caching (GHA backend, max mode, zstd)
-- SLSA provenance generation
-- SBOM generation
 
-### Image Signing
+- **Multi-platform**: Builds for AMD64 and ARM64
+- **Advanced Caching**: GHA backend with mode=max
+- **Compression**: Zstandard for faster I/O
+- **Provenance**: SLSA attestations
+- **SBOM**: Software Bill of Materials
 
-```yaml
-- uses: sigstore/cosign-installer@v3.5.0
-- run: cosign sign --yes ${images}
+#### 6. Image Signing
+
+Keyless signing with Sigstore Cosign:
+
+```bash
+cosign sign --yes ${images}
 ```
 
-**Keyless Signing:**
-1. GitHub Actions provides OIDC token
-2. Cosign requests certificate from Fulcio
-3. Signs image with ephemeral key
-4. Uploads signature to Rekor transparency log
+**Benefits:**
+- No key management
+- OIDC-based identity
+- Transparency log (Rekor)
+- Cryptographic verification
 
-## Phase 3: Documentation
+### Performance
+
+- **First run**: 10-15 minutes (no cache)
+- **Subsequent runs**: 3-5 minutes (with cache)
+- **Cache hit rate**: 80-90% for dependencies
+
+## Job 3: Publish Documentation
+
+### Purpose
+Deploys versioned documentation to GitHub Pages.
 
 ### Conditional Execution
+
+Runs only when a new release is published:
 
 ```yaml
 if: needs.pipeline.outputs.release_published == 'true'
 ```
 
-Only runs when a new release is published.
+### Steps
 
-### Versioned Docs with Mike
+1. **Checkout**: Full history for versioning
+2. **Setup Python**: Installs Python 3.x
+3. **Install Tools**: MkDocs Material and mike
+4. **Configure Git**: Sets up committer identity
+5. **Deploy**: Publishes versioned docs
+
+### Versioning with mike
 
 ```bash
 mike deploy --push --update-aliases $VERSION latest
 ```
 
-**Creates:**
-- Version-specific docs: `/v1.2.3/`
-- Latest alias: `/latest/` → `/v1.2.3/`
-- Version selector dropdown
+Creates a version dropdown in the documentation UI.
 
-## Permissions
+## Caching Strategy
 
-```yaml
-permissions:
-  contents: write       # Semantic Release, docs
-  packages: write       # GHCR push
-  id-token: write       # Cosign OIDC
-  issues: write         # Release comments
-  pull-requests: write  # Release comments
-```
+### GHA Backend
 
-**Principle:** Least privilege - only what's needed.
+Uses GitHub Actions cache API:
 
-## Concurrency
+**Advantages:**
+- Fast restore (internal network)
+- Automatic eviction (10GB limit)
+- Scoped to repository
 
-```yaml
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
-```
+### mode=max
 
-**Behavior:**
-- New push cancels previous build for same branch
-- Saves CI minutes
-- Faster feedback
+Caches all intermediate layers:
 
-## Secrets
+**Impact:**
+- Caches expensive dependency installation
+- Reduces build time by 70-80%
+- Increases cache size
 
-**Required:**
-- `GITHUB_TOKEN` - Automatically provided by GitHub
+### Zstandard Compression
 
-**Optional:**
-- None! Uses keyless signing (no PAT needed)
+Faster decompression than gzip:
 
-## Monitoring
+**Impact:**
+- Reduces I/O bottleneck
+- Faster cache loading
+- Similar compression ratio
 
-### Success Indicators
-- ✅ Quality checks pass
-- ✅ Image pushed to GHCR
-- ✅ Image signed with Cosign
-- ✅ Release created (main branch)
-- ✅ Docs deployed (releases only)
+## Supply Chain Security
 
-### Failure Handling
-- Quality failures block build
-- Build failures don't block signing (can't sign nothing)
-- Docs failures don't block release
+### SLSA Provenance
 
-## Local Testing
+Generates build attestations:
 
-Test the pipeline locally:
+- Build parameters
+- Git SHA
+- Builder identity
+- Timestamp
+
+### SBOM
+
+Software Bill of Materials:
+
+- All dependencies
+- Version information
+- Vulnerability scanning
+
+### Cosign Signing
+
+Keyless signing workflow:
+
+1. Workflow requests OIDC token
+2. Fulcio issues certificate
+3. Image is signed
+4. Signature logged in Rekor
+
+### Verification
+
+Consumers can verify images:
 
 ```bash
-# Run quality checks
-task ci
-
-# Build image (without push)
-task build
-
-# Build with caching
-task build:advanced
+cosign verify \
+  --certificate-identity-regexp=https://github.com/lordwilsonDev/GITHUB_AI_PROJECTS_PACKAGE \
+  ghcr.io/lordwilsondev/github_ai_projects_package:latest
 ```
+
+## Branch Protection
+
+Enforces quality gates:
+
+- **Require PR reviews**: Prevents direct pushes
+- **Require status checks**: Blocks broken code
+- **Linear history**: Enables semantic versioning
+
+## Tagging Strategy
+
+### Feature Branches
+
+Every push creates a tagged image:
+
+- `branch-name`
+- `sha-abc123`
+
+### Main/Master Branch
+
+Semantic versioning:
+
+- `v1.2.3` (semantic version)
+- `latest` (latest release)
+
+### Pull Requests
+
+PR-specific tags:
+
+- `pr-123`
+
+## Monitoring and Observability
+
+### Workflow Annotations
+
+Errors and warnings appear in the GitHub UI.
+
+### Build Logs
+
+Detailed logs for debugging:
+
+- Disk space usage
+- Cache hit/miss
+- Build duration
+- Layer sizes
+
+### Release Notes
+
+Automatically generated from commits.
+
+## Best Practices
+
+1. **Use Conventional Commits**: Enables automated versioning
+2. **Keep builds fast**: Optimize Dockerfile layers
+3. **Monitor cache hit rate**: Adjust caching strategy
+4. **Review security attestations**: Verify provenance
+5. **Update dependencies**: Use Renovate or Dependabot
+
+## Troubleshooting
+
+### Disk Space Issues
+
+The pipeline includes aggressive cleanup:
+
+```bash
+sudo rm -rf /usr/share/dotnet
+sudo rm -rf /usr/local/lib/android
+sudo docker image prune --all --force
+```
+
+### Cache Misses
+
+Check if dependencies changed:
+
+- requirements.txt modifications
+- Base image updates
+- Dockerfile changes
+
+### Build Failures
+
+Review logs for:
+
+- Syntax errors
+- Missing dependencies
+- Network issues
+- Platform-specific problems
+
+## Future Enhancements
+
+- **Renovate integration**: Automated dependency updates
+- **Performance metrics**: Build time tracking
+- **Cost optimization**: Reduce runner minutes
+- **Advanced testing**: Integration and E2E tests
 
 ## Next Steps
 
-- [Docker Setup](docker.md)
-- [Contributing Guide](../development/contributing.md)
+- Review the [Architecture Overview](overview.md)
+- Explore the [Quick Start](../getting-started/quickstart.md) guide

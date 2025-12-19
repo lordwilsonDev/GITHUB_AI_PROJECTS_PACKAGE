@@ -1,10 +1,15 @@
-# Git files
+# Git
 .git
 .gitignore
 .gitattributes
 
-# GitHub
+# CI/CD
 .github
+
+# Documentation
+docs/
+mkdocs.yml
+*.md
 
 # Python
 __pycache__
@@ -31,48 +36,28 @@ share/python-wheels/
 *.egg
 PIPFILE.lock
 
-# Testing
-.pytest_cache/
-.coverage
-.coverage.*
-htmlcov/
-.tox/
-.nox/
+# Virtual environments
+venv/
+ENV/
+env/
+.venv
 
-# Documentation
-docs/_build/
-docs/.doctrees/
-site/
-
-# IDEs
+# IDE
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
-.DS_Store
 
-# Environment
-.env
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
 
 # Logs
 *.log
-logs/
-
-# OS
-Thumbs.db
-
-# Project specific
-README.md
-LICENSE
-.editorconfig
-Taskfile.yml
-.releaserc.json
-.releaserc.yml
-mkdocs.yml

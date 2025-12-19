@@ -1,180 +1,123 @@
 # Architecture Overview
 
-## Elite Continuous Delivery Pipeline
+This document provides a comprehensive overview of the GitHub AI Projects Package architecture.
 
-This repository implements a state-of-the-art CI/CD pipeline based on modern DevOps best practices and the principles outlined in the DORA (DevOps Research and Assessment) metrics.
+## Repository Structure
 
-## Pipeline Stages
+The repository follows a professional structure that separates concerns:
 
-### 1. Quality Assurance
+### Root Level
 
-**Trigger:** Every push, pull request
+- **Taskfile.yml**: Unified task runner configuration
+- **Dockerfile**: Multi-stage optimized container build
+- **.dockerignore**: Build context optimization
+- **mkdocs.yml**: Documentation configuration
+- **.releaserc.json**: Semantic Release configuration
 
-```yaml
-quality:
-  - Checkout code
-  - Setup Python 3.11
-  - Install Task runner
-  - Install dependencies
-  - Run: task ci
-    - Lint Python code (flake8, pylint)
-    - Lint Dockerfile (hadolint)
-    - Run tests with coverage
-```
+### .github Directory
 
-### 2. Build & Release
+Contains all GitHub-specific configurations:
 
-**Trigger:** After quality checks pass
+- **workflows/ci.yml**: Elite CI/CD pipeline
+- **ISSUE_TEMPLATE/**: Issue templates for bug reports and feature requests
+- **PULL_REQUEST_TEMPLATE/**: PR template for consistent contributions
 
-```yaml
-pipeline:
-  - Semantic Release (main branch only)
-    - Analyze commits (Conventional Commits)
-    - Generate version number
-    - Create GitHub release
-    - Update CHANGELOG.md
-  
-  - Setup Build Infrastructure
-    - QEMU for multi-platform
-    - Docker Buildx with latest BuildKit
-    - Login to GHCR
-  
-  - Build & Push
-    - Multi-platform: linux/amd64, linux/arm64
-    - Advanced caching: GHA backend, mode=max, zstd
-    - Generate SBOM and provenance
-    - Push to ghcr.io
-  
-  - Sign Images
-    - Keyless signing with Cosign
-    - OIDC identity from GitHub Actions
-```
+### docs Directory
 
-### 3. Documentation
+Contains all documentation in Markdown format, organized by topic.
 
-**Trigger:** Only when a new release is published
+## Key Components
 
-```yaml
-docs:
-  - Checkout with full history
-  - Install MkDocs Material + mike
-  - Deploy versioned docs
-  - Update 'latest' alias
-```
+### 1. Taskfile (Task Runner)
 
-## Key Technologies
-
-### Taskfile (Task Runner)
-
-Replaces traditional Makefiles with a modern YAML-based approach:
+Replaces traditional Makefiles with a modern YAML-based task runner:
 
 **Advantages:**
-- YAML syntax (consistent with GitHub Actions, K8s)
-- Native parallelism
+- YAML syntax (consistent with GitHub Actions)
+- Cross-platform compatibility
+- Built-in parallelism
 - Checksum-based caching
-- Cross-platform (Windows, macOS, Linux)
-- Import/include support
+- Local/CI parity
 
-### Docker BuildKit
+### 2. Multi-Stage Dockerfile
 
-**Features Used:**
-- Multi-stage builds with parallel execution
-- Advanced caching (GHA backend)
-- Cache mode=max (caches all intermediate layers)
-- Zstandard compression for faster I/O
-- Multi-platform builds (amd64/arm64)
+Optimized for BuildKit with two stages:
 
-### Semantic Release
+**Builder Stage:**
+- Installs system dependencies
+- Collects and installs Python requirements
+- Prepares application dependencies
 
-**Automated Versioning:**
-- Analyzes commit messages (Conventional Commits)
-- Determines version bump (major/minor/patch)
-- Generates CHANGELOG.md
-- Creates GitHub releases
-- Tags Docker images
+**Runtime Stage:**
+- Minimal Python slim image
+- Copies only necessary artifacts
+- Optimized for size and security
 
-**Commit Types:**
-- `feat:` → Minor version bump
-- `fix:` → Patch version bump
-- `BREAKING CHANGE:` → Major version bump
+### 3. GitHub Actions Workflow
 
-### Supply Chain Security
+Three-phase pipeline:
 
-**Sigstore Cosign:**
-- Keyless signing using OIDC
-- No long-lived private keys
-- Transparency log (Rekor)
-- Verifiable by anyone
+**Phase 1: Quality Assurance**
+- Disk space cleanup
+- Linting and testing
+- Fast feedback loop
 
-**SLSA Provenance:**
-- Build metadata attestation
-- Proves build origin
-- Enables policy enforcement
+**Phase 2: Build & Release**
+- Semantic versioning
+- Multi-platform Docker builds
+- Supply chain security (Cosign, SBOM, provenance)
+- Image signing
 
-**SBOM (Software Bill of Materials):**
-- Complete dependency inventory
-- Vulnerability scanning
-- License compliance
+**Phase 3: Documentation**
+- Conditional on release
+- Versioned documentation deployment
+- GitHub Pages integration
 
-## Performance Optimizations
+## Design Principles
 
-### Caching Strategy
+### 1. Shift-Left Security
 
-1. **GitHub Actions Cache (GHA):**
-   - 10GB limit per repository
-   - Fastest restore within GitHub infrastructure
-   - Automatic eviction (LRU)
+Security is integrated from the start:
+- Keyless signing with Sigstore Cosign
+- SLSA provenance generation
+- SBOM (Software Bill of Materials)
+- Cryptographic verification
 
-2. **Cache Mode: max:**
-   - Caches ALL intermediate layers
-   - Critical for multi-stage builds
-   - Speeds up dependency installation
+### 2. Developer Experience (DevEx)
 
-3. **Zstandard Compression:**
-   - Faster decompression than gzip
-   - Reduces I/O bottleneck
-   - Similar compression ratio
+Optimized for developer productivity:
+- Single command execution (`task ci`)
+- Local/CI parity
+- Fast feedback loops
+- Clear error messages
 
-### Multi-Platform Builds
+### 3. Performance
 
-**QEMU Emulation:**
-- Supports ARM64 on AMD64 runners
-- Transparent to Dockerfile
-- Mitigated by aggressive caching
+Optimized for speed:
+- Advanced caching (GHA backend, mode=max, zstd)
+- Parallel execution
+- Incremental builds
+- Efficient layer caching
 
-**Build Time Comparison:**
-- Without cache: 15-20 minutes
-- With cache (warm): 2-3 minutes
-- Speedup: ~7x
+### 4. Maintainability
 
-## Concurrency Control
+Designed for long-term maintenance:
+- Clear separation of concerns
+- Self-documenting configuration
+- Automated dependency updates (Renovate-ready)
+- Comprehensive documentation
 
-```yaml
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
-```
+## Technology Stack
 
-**Benefits:**
-- Cancels outdated builds on new push
-- Saves CI minutes
-- Faster feedback loop
-
-## Tagging Strategy
-
-### Feature Branches / PRs
-- `branch-name`
-- `pr-123`
-- `sha-a1b2c3d`
-
-### Main Branch (Releases)
-- `v1.2.3` (semantic version)
-- `latest`
-
-**Result:** Every push is saved, but clean namespace for releases.
+- **CI/CD**: GitHub Actions
+- **Container Runtime**: Docker with BuildKit
+- **Task Runner**: Task (Taskfile)
+- **Documentation**: MkDocs Material with mike
+- **Versioning**: Semantic Release
+- **Security**: Sigstore Cosign
+- **Registry**: GitHub Container Registry (GHCR)
 
 ## Next Steps
 
-- [CI/CD Pipeline Details](cicd.md)
-- [Docker Setup](docker.md)
-- [Contributing Guide](../development/contributing.md)
+- Explore the [CI/CD Pipeline](cicd.md) in detail
+- Review the [Quick Start](../getting-started/quickstart.md) guide

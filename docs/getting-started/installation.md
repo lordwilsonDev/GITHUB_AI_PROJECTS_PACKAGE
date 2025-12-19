@@ -1,105 +1,62 @@
 # Installation
 
-This guide will help you get started with the GitHub AI Projects Package.
+This guide will help you set up the development environment for the GitHub AI Projects Package.
 
 ## Prerequisites
 
-- Docker (for containerized deployment)
-- Python 3.11+ (for local development)
-- Git
-- Task (optional, but recommended)
+- **Git**: Version control system
+- **Docker**: Container runtime (20.10+)
+- **Task**: Modern task runner ([installation guide](https://taskfile.dev/installation/))
+- **Python**: 3.11 or higher (for local development)
 
-## Docker Installation (Recommended)
+## Installing Task
 
-### Pull from GitHub Container Registry
+Task is our unified task runner that provides parity between local and CI environments.
 
-The easiest way to get started is using our pre-built Docker images:
-
-```bash
-# Pull the latest version
-docker pull ghcr.io/lordwilsondev/github_ai_projects_package:latest
-
-# Or pull a specific version
-docker pull ghcr.io/lordwilsondev/github_ai_projects_package:v1.0.0
-```
-
-### Run the Container
+### macOS
 
 ```bash
-docker run -it ghcr.io/lordwilsondev/github_ai_projects_package:latest
+brew install go-task
 ```
 
-### Verify Image Signature (Security Best Practice)
-
-All our images are signed with Cosign for supply chain security:
+### Linux
 
 ```bash
-# Install Cosign
-brew install cosign  # macOS
-# or
-wget https://github.com/sigstore/cosign/releases/latest/download/cosign-linux-amd64
-
-# Verify the image
-cosign verify \
-  --certificate-identity-regexp=https://github.com/lordwilsonDev/GITHUB_AI_PROJECTS_PACKAGE \
-  --certificate-oidc-issuer=https://token.actions.githubusercontent.com \
-  ghcr.io/lordwilsondev/github_ai_projects_package:latest
+sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d -b ~/.local/bin
 ```
 
-## Local Development Installation
+### Windows
 
-### Clone the Repository
+```powershell
+choco install go-task
+```
+
+## Cloning the Repository
 
 ```bash
 git clone https://github.com/lordwilsonDev/GITHUB_AI_PROJECTS_PACKAGE.git
 cd GITHUB_AI_PROJECTS_PACKAGE
 ```
 
-### Install Task Runner
+## Verifying Installation
 
-Task is our modern task runner (replaces Make):
-
-**macOS:**
-```bash
-brew install go-task
-```
-
-**Linux:**
-```bash
-sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d -b /usr/local/bin
-```
-
-**Windows:**
-```powershell
-choco install go-task
-```
-
-### Install Python Dependencies
+Run the following command to verify your setup:
 
 ```bash
-# Using Task (recommended)
-task setup
-
-# Or manually
-pip install -r requirements.txt
-pip install flake8 pylint pytest pytest-cov mkdocs-material
+task --version
 ```
 
-### Verify Installation
+You should see the Task version number.
+
+## Docker Setup
+
+Ensure Docker is running:
 
 ```bash
-# Run quality checks
-task ci
-
-# Build Docker image locally
-task build
-
-# Serve documentation locally
-task docs:serve
+docker --version
+docker ps
 ```
 
 ## Next Steps
 
-- [Quick Start Guide](quickstart.md) - Learn the basics
-- [Architecture Overview](../architecture/overview.md) - Understand the system
-- [Contributing](../development/contributing.md) - Start contributing
+Once you have everything installed, proceed to the [Quick Start](quickstart.md) guide to learn how to use the repository.
