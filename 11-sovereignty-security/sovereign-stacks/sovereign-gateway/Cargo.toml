@@ -13,7 +13,7 @@ tracing-subscriber = { version = "0.3", features = ["env-filter"] }
 tower-http = { version = "0.5", features = ["trace"] }
 chrono = { version = "0.4", features = ["serde"] }
 once_cell = "1.19"
-rand = "0.8"
+rand = "0.9"
 
 # Production Observability Dependencies
 prometheus = "0.13"
